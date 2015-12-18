@@ -1,0 +1,139 @@
+.button {
+  width: 250px;
+  height: 42px;
+  margin: 4px auto;
+}
+
+.button a {
+  display: block;
+  height: 42px;
+  width: 250px;
+
+  /*TYPE*/
+  color: white;
+  font: 17px/42px Helvetica, Verdana, sans-serif;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+
+  /*GRADIENT*/
+  background: #900; /* Old browsers */
+  background: -moz-linear-gradient(top, #DE0000 0%, #900 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#DE0000), color-stop(100%,#900)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #DE0000 0%,#900 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #DE0000 0%,#900 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #DE0000 0%,#900 100%); /* IE10+ */
+  background: linear-gradient(top, #DE0000 0%,#900 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DE0000', endColorstr='#900',GradientType=0 ); /* IE6-9 */
+}
+
+.button a{
+    -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+
+  -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+     -moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+          box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+
+/*HOVER*/
+.button a:hover {
+    font-weight: bold;
+}
+
+
+/*ACTIVE*/
+.button a:active {
+background: #900; /* Old browsers */
+background: -moz-linear-gradient(top,  #DE0000 36%, #900 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(36%,#DE0000), color-stop(100%,#900)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #DE0000 36%,#900 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #DE0000 36%,#900 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #DE0000 36%,#900 100%); /* IE10+ */
+background: linear-gradient(top,  #DE0000 36%,#900 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b7ea', endColorstr='#009ec3',GradientType=0 ); /* IE6-9 */
+
+}
+
+.i_want_register_button {
+    position: relative;
+    top: -12px;
+}
+
+.i_want_register_form_div {
+    margin-bottom: 12px;
+    border: 2px solid #CDCDCD;
+    border-radius: 10px;
+    padding: 28px 0;
+}
+
+.i_want_register_form_div > form > .form-group > label {
+    padding-right: 0;
+}
+
+.i_want_register_form_div > form > .form-group > .col-md-6 {
+    padding-left: 4px;
+}
+
+.i_want_register_form_div > form .form-control:active,
+.i_want_register_form_div > form .form-control:focus {
+    border-color: #16A085;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(35, 255, 212, 0.60);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(35, 255, 212, 0.60);
+}
+
+.i_want_register_form_div > form .send_reg_data {
+    color: #FFF;
+    border-color: #27AE60;
+    background-color: #86cc8e;
+    font-weight: bold;
+}
+
+.i_want_register_form_div > form .send_reg_data:hover {
+    border-color: #2ECC71;
+    background-color: #2ECC71;
+}
+
+.i_want_register_form_div > form .parsley-error-list {
+    color: #473373;
+    font-weight: bold;
+    margin-left: 0;
+    padding-left: 0;
+    -moz-padding-start: 15px;
+}
+
+/* Error on Registartion Process */
+.error_register_div {
+    margin-bottom: 12px;
+    border: 2px solid #D00;
+    border-radius: 10px;
+    padding: 28px 16px;
+}
+.error_register_div h1,
+.error_register_div h2,
+.error_register_div h3 {
+    color: #A00;
+}
+
+.error_register_div h3 > span {
+    color: #500;
+}
+
+/*Complete Succesfully*/
+.complete_register_div {
+    margin-bottom: 12px;
+    border: 2px solid #86cc8e;
+    border-radius: 10px;
+    padding: 28px 16px;
+}
+.complete_register_div h1,
+.complete_register_div h2,
+.complete_register_div h3 {
+    color: #86cc8e;
+}
+
+.complete_register_div h3 > span {
+    color: #2ECC71;
+}

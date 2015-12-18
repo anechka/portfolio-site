@@ -1,0 +1,31 @@
+.navigation-menu-div {
+    background-color: #34495E;
+    border-radius: 4px;
+}
+
+.navigation-menu-div .nav li > a {
+    margin: 6px 6px; padding: 4px 8px;
+    color: #95A5A6;
+}
+
+.navigation-menu-div .nav li > a:hover {
+    color: #1ABC9C;
+    background: #44586b;
+}
+
+.nav-pills > li.active > a {
+    color: #1eeeaa;
+    background: #44586b;
+}
+
+.statistic-nav-date > ul > li > a {
+    color: #2C3E50;
+    background-color: #ECF0F1;
+    margin-left: 10px;
+}
+.statistic-nav-date > ul > li > a:hover {
+    color: white;
+    background-color: #1ABC9C;
+    margin-left: 10px;
+}
+

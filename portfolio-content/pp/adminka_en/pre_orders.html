@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head >
+    <title>Предварительные заказы</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/anechka/premium-parts/master/css/adminka.css">
+    <link rel="stylesheet" type="text/css" href="https://rawgit.com/anechka/premium-parts/master/css/admin-navigation.css">
+
+</head>
+<body style="background-color:#ffffff">
+<div class="container">
+<div class="row">
+    <div class="col-md-3">
+        <img src="images/design_logo_optimized.png" style="width: 252px; position: relative; left: -15px">
+    </div>
+    <div class="col-md-9 text-right">
+        <h5 class="text-muted">Кабинет менеджера S0002<br>v.010
+        </h5>
+    </div>
+</div>
+
+<div class="col-md-12 navigation-menu-div">
+        <nav class="container">
+            <ul class="nav nav-pills">
+                <li><a href="/">Проверка по коду</a></li>
+                <li class="active"><a href="/preorders">Предварительные заказы</a></li>
+                <li><a href="/manager">Движение заказов</a></li>
+                <li><a href="/">Прием товара</a></li>
+                <li><a href="/">Склад</a></li>
+                <li><a href="/clients">Клиенты</a></li>
+                <li><a href="/">Мой счет</a></li>
+                <li><a href="/stat">Статистика</a></li>
+                <li><a href="/">Выход</a></li>
+            </ul>
+        </nav>
+</div>
+
+    <table class="preordered-table table table-bordered table-striped">
+            <caption style="padding-bottom: 4px">
+                <h4>
+                    <span class="label label-info">Таблица предварительного заказа</span>
+                </h4>
+            </caption>
+            <thead>
+            <tr>
+                <th>PP№</th>
+                <th>Код</th>
+                <th>Бренд</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Срок доставки</th>
+                <th>Склад</th>
+                <th class="th_date">Дата</th>
+                <th>Коммент.</th>
+                <th>Добавить</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--- Tbody -->
+
+                <tr >
+                    <td><span class="ppn_label">pp2003</span></td>
+                    <td>6RF407151B</td>
+                    <td>VAG</td>
+                    <td>Рычаг</td>
+                    <td>4434 руб.</td>
+                    <td>1</td>
+                    <td>2 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-23</span></td>
+                    <td>поло</td>
+                    <td>
+                        <input type="checkbox" name=cb2051 value="2051">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp2002</span></td>
+                    <td>6RU413031B</td>
+                    <td>VAG</td>
+                    <td>Стойка передняя</td>
+                    <td>3970 руб.</td>
+                    <td>1</td>
+                    <td>2 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-23</span></td>
+                    <td>поло</td>
+                    <td>
+                        <input type="checkbox" name=cb2050 value="2050">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1999</span></td>
+                    <td>8200768927</td>
+                    <td>RENAULT</td>
+                    <td>Фильтр маслянный F9Q &lt;8200274858&lt;&lt;</td>
+                    <td>256 руб.</td>
+                    <td>1</td>
+                    <td>2 дн.</td>
+                    <td>PP Транзит МСК1</td>
+                    <td><span class="label label-table-date">2013-08-23</span></td>
+                    <td>прима</td>
+                    <td>
+                        <input type="checkbox" name=cb2048 value="2048">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1974</span></td>
+                    <td>2335578020</td>
+                    <td>TOYOTA</td>
+                    <td>Фильтр топливный</td>
+                    <td>898 руб.</td>
+                    <td>1</td>
+                    <td>на складе</td>
+                    <td>РР Склад Смоленск</td>
+                    <td><span class="label label-table-date">2013-08-16</span></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name=cb2030 value="2030">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1973</span></td>
+                    <td>ST394</td>
+                    <td>SCT</td>
+                    <td>Фильтр топливный</td>
+                    <td>643 руб.</td>
+                    <td>1</td>
+                    <td>2 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-15</span></td>
+                    <td>алексей</td>
+                    <td>
+                        <input type="checkbox" name=cb2029 value="2029">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1969</span></td>
+                    <td>U040026</td>
+                    <td>NAKAMOTO</td>
+                    <td>Бензонасос</td>
+                    <td>1931 руб.</td>
+                    <td>1</td>
+                    <td>3 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-14</span></td>
+                    <td>наталья</td>
+                    <td>
+                        <input type="checkbox" name=cb2026 value="2026">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1965</span></td>
+                    <td>7822</td>
+                    <td>NGK</td>
+                    <td>Свеча зажигания BMW / DAEWOO / FIAT / FORD / HONDA / ISUZU / KIA / LADA /
+                        MAZDA / MITSUBISHI / NISSAN / OPEL / RENAULT
+                    </td>
+                    <td>85 руб.</td>
+                    <td>1</td>
+                    <td>Четверг</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-13</span></td>
+                    <td>рено</td>
+                    <td>
+                        <input type="checkbox" name=cb2023 value="2023">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1964</span></td>
+                    <td>11311722841</td>
+                    <td>BMW</td>
+                    <td>Звездочка</td>
+                    <td>2909 руб.</td>
+                    <td>1</td>
+                    <td>2 дн.</td>
+                    <td>PP Транзит МСК1</td>
+                    <td><span class="label label-table-date">2013-08-13</span></td>
+                    <td>бмв</td>
+                    <td>
+                        <input type="checkbox" name=cb2022 value="2022">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1961</span></td>
+                    <td>OX401D</td>
+                    <td>KNECHT</td>
+                    <td>Фильтр масляный [картридж] ALFA ROMEO 159 03.07-&gt; OPEL Agila / Astra H
+                        / Corsa D / Vectra C / Zafira 07.05-&gt;</td>
+                    <td>271 руб.</td>
+                    <td>1</td>
+                    <td>Четверг</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-13</span></td>
+                    <td>макс</td>
+                    <td>
+                        <input type="checkbox" name=cb2020 value="2020">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1959</span></td>
+                    <td>E882L</td>
+                    <td>HENGST</td>
+                    <td>Фильтр воздушный CHEVROLET Captiva / / OPEL Antara 2.0-3.2 06-&gt;</td>
+                    <td>436 руб.</td>
+                    <td>1</td>
+                    <td>Среда</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-13</span></td>
+                    <td>макс</td>
+                    <td>
+                        <input type="checkbox" name=cb2018 value="2018">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1958</span></td>
+                    <td>013048070917A</td>
+                    <td>DELLO</td>
+                    <td>Фильтр воздушный CHEVROLET Captiva / / OPEL Antara 2.0-3.2 06-&gt;</td>
+                    <td>322 руб.</td>
+                    <td>1</td>
+                    <td>Среда</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-13</span></td>
+                    <td>макс</td>
+                    <td>
+                        <input type="checkbox" name=cb2017 value="2017">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1956</span></td>
+                    <td>013048070917A</td>
+                    <td>DELLO</td>
+                    <td>Фильтр воздушный CHEVROLET Captiva / / OPEL Antara 2.0-3.2 06-&gt;</td>
+                    <td>323 руб.</td>
+                    <td>1</td>
+                    <td>Вторник</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-12</span></td>
+                    <td>каптива</td>
+                    <td>
+                        <input type="checkbox" name=cb2015 value="2015">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1950</span></td>
+                    <td>213</td>
+                    <td>TSN</td>
+                    <td>Колодки тормозные</td>
+                    <td>221 руб.</td>
+                    <td>1</td>
+                    <td>3 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-07</span></td>
+                    <td>audi 100 90г.в.
+                        двиг 1.8 PH
+                    </td>
+                    <td>
+                        <input type="checkbox" name=cb2011 value="2011">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1942</span></td>
+                    <td>821411</td>
+                    <td>VALEO</td>
+                    <td>Комплект сцепления [203mm] DAEWOO Lanos 1.5 97-&gt;</td>
+                    <td>2839 руб.</td>
+                    <td>1</td>
+                    <td>Среда</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-08-06</span></td>
+                    <td>ратота</td>
+                    <td>
+                        <input type="checkbox" name=cb2007 value="2007">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1941</span></td>
+                    <td>3047</td>
+                    <td>POLMOSTROW</td>
+                    <td>глушитель Platinik</td>
+                    <td>1744 руб.</td>
+                    <td>1</td>
+                    <td>4 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-01</span></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name=cb2006 value="2006">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1940</span></td>
+                    <td>3046</td>
+                    <td>POLMOSTROW</td>
+                    <td>глушитель Platinik 233-217</td>
+                    <td>954 руб.</td>
+                    <td>1</td>
+                    <td>4 дн.</td>
+                    <td>РР Транзит МСК2</td>
+                    <td><span class="label label-table-date">2013-08-01</span></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name=cb2005 value="2005">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1922</span></td>
+                    <td>6984</td>
+                    <td>NGK</td>
+                    <td>Высоковольт.провода ком / кт FORD FIESTA MONDO</td>
+                    <td>1765 руб.</td>
+                    <td>1</td>
+                    <td>Среда</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-07-30</span></td>
+                    <td>форд мондео</td>
+                    <td>
+                        <input type="checkbox" name=cb1994 value="1994">
+                    </td>
+                </tr>
+                <tr >
+                    <td><span class="ppn_label">pp1921</span></td>
+                    <td>0242236563</td>
+                    <td>BOSCH</td>
+                    <td>Свеча зажигания Platinum FORD Mondeo III 1.8 / 2.0 00-&gt;</td>
+                    <td>264 руб.</td>
+                    <td>4</td>
+                    <td>Суббота</td>
+                    <td>PP Склад МСК2</td>
+                    <td><span class="label label-table-date">2013-07-26</span></td>
+                    <td>форд мондео 2001г.в АТ 146...</td>
+                    <td>
+                        <input type="checkbox" name=cb1979 value="1979">
+                    </td>
+                </tr>
+
+                <tr >
+                    <td><span class="ppn_label">pp580</span></td>
+                    <td>1097013</td>
+                    <td>FORD</td>
+                    <td>Синхронизатор MT75</td>
+                    <td>7691 руб.</td>
+                    <td>1</td>
+                    <td>10 дн.</td>
+                    <td>PP Транзит МСК1</td>
+                    <td><span class="label label-table-date">2013-05-13</span></td>
+                    <td>синхраниз транзит</td>
+                    <td>
+                        <input name="cb635" value="635" type="checkbox">
+                    </td>
+                </tr>
+
+            <!-- // Tbody -->
+            </tbody>
+        </table>
+
+<script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>

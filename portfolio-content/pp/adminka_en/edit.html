@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/anechka/premium-parts/master/css/main.css">
+    <style type="text/css">
+
+        .div_buttton{
+
+            margin-top:10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h4 class="text-center"><span class="label label-info">Редактирование клиента автомагазина</span></h4>
+        <form action="/p/editc2.php" method="post" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="cname" class="col-md-5 control-label">Введите имя клиента:</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="cname" id="cname" placeholder="Володя Петрович">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ctel" class="col-md-5 control-label">Введите телефон клиента:</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="ctel" id="ctel" placeholder="89107824440">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cskid" class="col-md-5 control-label">Комментарий:</label>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="cskid" id="cskid" placeholder="ул. Индустриальная">
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-offset-3 col-md-7">
+                    <label for="txtarea">Данные по автомобилю клиента: </label>
+                    <textarea class="form-control" rows="3" placeholder="VW T4 2.5 TDI 102 лс 1998г. Занимается ремонтом автомобилей санта фе vin km8sc73d22u176949" id="txtarea"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class=" col-md-offset-3 col-md-7 div_buttton">
+                    <button type="submit" class="btn btn-default  btn-block">Сохранить изменения</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+</body>
+</html>

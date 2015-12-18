@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        title HTML5-Developer | Anna Novikova
+
+        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/main.css")
+
+    body
+        #parallax_container.container
+            ul#scene.scene
+                li.layer(data-depth="0.00"): img#layer5.cloud_layer(src="images/clouds_layer_5.png")
+                li.layer(data-depth="0.10"): img.cloud_layer(src="images/clouds_layer_1.png")
+                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two(src="images/clouds_layer_2.png")
+                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three(src="images/clouds_layer_3.png")
+                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four(src="images/clouds_layer_4.png")
+
+        .container.image_container
+
+            .row
+                .col-md-12.avatar.text-center
+                    img(src="images/avatar.png", alt="Novikova Anya photo", title="Novikova Anya")
+            .row
+                .col-md-12.margined-top-div.text-center
+                    span(title="oDesk/Upwork HTML5 Developer").name-header.centered-scale-element Novikova Anya
+            .row
+                .col-md-12.margined-top-div.text-center
+                    a#mailto: span(title="Send me email").email.centered-scale-element enable javascript please
+            .row
+                .col-md-12.margined-top-div.text-center
+                    span(alt="Skype login", title="My login in Skype").skype-header.left skype
+                    span(alt="Skype login", title="My login in Skype").skype-header.center :
+                    span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
+
+            .row#show_portfolio_row
+                .col-md-12.margined-top-div.text-center
+                    button.btn.show_portfolio_button: strong SHOW PORTFOLIO
+
+            .row
+                .col-md-12
+                    p.text-center.margined-top-div(style="margin-bottom: 50px")
+                        a.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/") Upwork(oDesk) profile
+
+            .row(style="display: none")#main_content
+                .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content
+                    //Main Site Content
+                    .col-md-12.portfolio-header-div
+                        h4.header Last projects, which i coded as HTML5/Javascript developer:
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
+                            .caption
+                                h3.header Premium Parts
+                                p.description-en-center-block E-commerce market. CSS3 & Bootstrap 3, HTML5 under Django template engine.
+                                p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
+                            .caption
+                                h3.header Conclave social
+                                p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app.
+                                p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More about
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
+                            .caption
+                                h3.header ChipMark shop
+                                p.description-en-center-block HTML templates + LESS stylesheet development for e-commerce shop.
+                                p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More about
+            .row
+                .col-md-12.text-center
+
+                    img.html5_tech_logo_img(src="images/logo-html5.png", alt="HTML5 skill", title="HTML5", width="90px")
+                    img.html5_tech_logo_img(src="images/logo-css3.png", alt="CSS3 skill", title="CSS3", width="90px")
+                    img.html5_tech_logo_img(src="images/logo-js.png", alt="JS skill", title="JS", width="90px")
+
+                .col-md-12.text-center
+
+                    img.html5_tech_logo_img(src="images/logo-jquery.png", alt="jQuery skill", title="jQuery", width="245px", style="padding-top: 40px")
+                    img.html5_tech_logo_img(src="images/logo-nodejs.png", alt="nodeJS skill", title="nodeJS", width="282px")
+
+        script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", defer="defer")
+
+        script(type="text/javascript", src="js/parallax.min.js", defer="defer")
+        script(type="text/javascript", src="js/handlers.js", async="async")
+        script(type="text/javascript", src="js/controller.js", async="async")
+        script(type="text/javascript", src="js/main.js", defer="defer")
+
+        div(style="display:none")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm1.png")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2.png")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2_extra.png")

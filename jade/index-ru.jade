@@ -1,0 +1,96 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        title HTML5 разработчик | Портфолио Анна Новикова
+
+        link(rel="stylesheet", href="http://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/main.css")
+
+    body
+        #parallax_container.container
+            ul#scene.scene
+                li.layer(data-depth="0.00"): img#layer5.cloud_layer(src="images/clouds_layer_5.png")
+                li.layer(data-depth="0.10"): img.cloud_layer(src="images/clouds_layer_1.png")
+                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two(src="images/clouds_layer_2.png")
+                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three(src="images/clouds_layer_3.png")
+                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four(src="images/clouds_layer_4.png")
+
+        .container.image_container
+
+            .row
+                .col-md-12.avatar.text-center
+                    img(src="images/avatar.png", alt="Фото", title="Новикова Анна")
+            .row
+                .col-md-12.margined-top-div.text-center
+                    img(src="images/name_header_ru.png", alt="HTML5 Разработчик", title="Новикова Анна").centered-scale-element
+            .row
+                .col-md-12.margined-top-div.text-center
+                    a#mailto: img(src="images/email_header.png", alt="E-mail", title="Почта Анны Новиковой").centered-scale-element
+            .row
+                .col-md-12.margined-top-div.text-center
+                    img(src="images/skype_header.png", alt="Я в сети Skype", title="Skype Анны Новиковой").centered-scale-element
+            .row
+                // ODESK link
+                .col-md-12
+                    p.text-center.margined-top-div(style="margin-bottom: 50px")
+                        a.odesk-profile(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/") oDesk профиль
+            .row
+                //PORTFOLIO header
+                .col-md-12.text-center
+                    img(src="images/portfolio_header.png")
+
+            .row#main_content
+                .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content
+                    // Main Site Content
+                    .col-md-12.portfolio-header-div
+                        h4.header Последние проекты, которые я разрабатывала на позиции HTML5/JS разработчика:
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
+                            .caption
+                                h3.header Premium Parts
+                                p.description-ru-center-block Административная панель для управления интернет-магазином. HTML5, CSS3, Bootstrap 3.1, Django шаблоны, написанные мной.
+                                p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") Подробнее
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
+                            .caption
+                                h3.header Conclave social
+                                p.description-ru-center-block Социальная сеть для учащихся американских спортивных школ. NodeJS stack (Express, Jade шаблоны + SASS/LESS)
+                                p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") Подробнее
+
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
+                            .caption
+                                h3.header ChipMark shop
+                                p.description-ru-center-block HTML шаблоны из PSD. CSS на Bootstrap 3 использовался для создания этого российского интернет-магазина.
+                                p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") Подробнее
+            .row
+                .col-md-12.text-center
+
+                    img.html5_tech_logo_img(src="images/logo-html5.png", alt="HTML5 skill", title="HTML5", width="90px")
+                    img.html5_tech_logo_img(src="images/logo-css3.png", alt="CSS3 skill", title="CSS3", width="90px")
+                    img.html5_tech_logo_img(src="images/logo-js.png", alt="JS skill", title="JS", width="90px")
+
+                .col-md-12.text-center
+
+                    img.html5_tech_logo_img(src="images/logo-jquery.png", alt="jQuery skill", title="jQuery", width="245px", style="padding-top: 40px")
+                    img.html5_tech_logo_img(src="images/logo-nodejs.png", alt="nodeJS skill", title="nodeJS", width="282px")
+
+        script(type="text/javascript", src="http://yastatic.net/jquery/2.1.3/jquery.min.js", defer="defer")
+
+        script(type="text/javascript", src="js/parallax.min.js", defer="defer")
+        script(type="text/javascript", src="js/handlers.js", async="async")
+        script(type="text/javascript", src="js/controller.js", async="async")
+        script(type="text/javascript", src="js/main.js", defer="defer")
+
+        div(style="display:none")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm1.png")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2.png")
+            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2_extra.png")
