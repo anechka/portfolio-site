@@ -7,6 +7,7 @@ html(lang="en")
         title HTML5-Developer | Anna Novikova
 
         link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
     body
@@ -40,9 +41,11 @@ html(lang="en")
                     button.btn.show_portfolio_button: strong SHOW PORTFOLIO
 
             .row
-                .col-md-12
-                    p.text-center.margined-top-div(style="margin-bottom: 50px")
-                        a.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/") Upwork(oDesk) profile
+                .col-md-6.col-md-offset-3.text-center.margined-top-div(style="margin-bottom: 50px; margin-top: 50px")
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/") Upwork(oDesk) profile
+                        a.external-profile.github-profile(href="https://github.com/anechka")
+                            i(style="margin-right: 5px").fa.fa-github-alt
+                            | Github
 
             .row(style="display: none")#main_content
                 .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content

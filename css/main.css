@@ -207,25 +207,48 @@ BODY {
     color: #223952;
 }
 
-.container.image_container .odesk-profile {
+/* Link to External resources (buttons) */
+.container.image_container .external-profile {
     font-size: 24px;
     font-weight: bold;
-    color: #486587;
+
+    /*border: 2px solid;*/
+    border-radius: 8px;
+    padding: 10px;
+
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/* oDesk / Upwork */
+.container.image_container .odesk-profile {
+    color: #5bbc2e;
 
     background: url("../images/clouds_rain_background.png") 60% 100%;
-
-    border: 2px solid #557493;
-    border-radius: 12px;
-    padding: 12px;
 }
 
 .container.image_container .odesk-profile:hover {
-    color: #a5afbd;
-    border-color: #57588c;
-    background-color: #57588c;
+    color: #fff;
+    background: #5bbc2e;
+}
+
+/* Github */
+.container.image_container .github-profile {
+    color: #fff;
+    background: #000;
+}
+
+.container.image_container .github-profile:hover {
+    color: #7aff3d;
+    background: #494db7;
+    transition: color 0.2s ease-in-out, background 1s ease;
 }
 
 @media (max-width: 480px) {
+
+    .container.image_container .external-profile {
+        font-size: 1.0em;
+    }
 
     .centered-scale-element {
         width: 100%;
