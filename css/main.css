@@ -8,7 +8,7 @@
 
 BODY {
     background-size: cover;
-    background-color: #19254e; color: white;
+    background-color: #031b43; color: white;
 
 }
 
@@ -245,6 +245,14 @@ BODY {
 }
 
 @media (max-width: 480px) {
+
+    .container span.name-header, .container span.email {
+        font-size: 2.5em;
+    }
+
+    .container span.skype-header {
+        font-size: 2.0em;
+    }
 
     .container.image_container .external-profile {
         font-size: 1.0em;

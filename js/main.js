@@ -10,7 +10,7 @@ $(onload);
 
 onload = function() {
             // Creating e-mail link with JS (spamers prevent)
-            var email_content_string = isrussian() ? "pesik" + "@" + "ane4k" +".in": "dev" + "@" + "anya" +".site";
+            var email_content_string = isrussian() ? "pesik" + "@" + "ane4k" +".in": "anya" + "@" + "anya" +".site";
             var link_element = $("#mailto");
 
             link_element.attr("href", "mailto:" + email_content_string);

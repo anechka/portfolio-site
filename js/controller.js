@@ -25,13 +25,13 @@ show_animated_button = function() {
                 window._gaq.push(['_trackPageview']);
 
 
-
+/*TODO: remove on production
                 (function() {
                     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
                     ga.src = ('https:' == document.location.protocol ?  'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                 })();
-
+*/
                 $(document).unbind();
 
 };
@@ -46,9 +46,19 @@ set_background_and_look = function(images_uri) {
     switch (platform) {
 
         case "iPhone": {
+            $( "body" ).css( "background-size", "120%");
             image = "background-iphone.jpg";
 
             show_animated_button();
+            break;
+        }
+
+        case "iPhone Simulator": {
+            $( "body" ).css( "background-size", "120%");
+            image = "background-iphone.jpg";
+
+            show_animated_button();
+
             break;
         }
 
@@ -67,4 +77,5 @@ set_background_and_look = function(images_uri) {
 
     //alert(platform);
     $( "body" ).css( "background-image", "url(" + images_uri + "/"+ image +")");
+    //$( "body" ).css( "background-position", "center");
 };
