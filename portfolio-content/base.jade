@@ -1,0 +1,148 @@
+doctype html
+html
+    head(lang="en")
+        meta(charset="UTF-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        block title
+
+        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+        // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+          script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+          script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+        link(rel="stylesheet", href="../../css/main.css")
+        link(rel="stylesheet", href="../../css/portfolio/portfolio-index.css")
+    body(style="background-color: #1c456f; color: white;")
+        .header_clouds
+        .header_container
+            a(href="http://ane4k.in")
+                img(src="../../images/avatar.png", alt="Photo", title="Novikova Anya")
+        .container
+            .row.text-center
+                //img(src="../../images/portfolio-thumb/conclave.png")
+                block portfolio-thumb
+            .row.description-content
+                .col-md-6(style="display: table-cell; float:none; vertical-align:top;")
+                    .row
+                        h3 About project
+                        block about-project
+
+                        p.col-md-12
+                            block social-network
+                            //| This is a social network project for American schools and teachers.
+                        h4 A little bit about the team.
+                        p
+                            | On this work i contacted with my main manager from
+                            strong San Diego Calif.
+                            | ,
+                            br
+                            | The team consisted of me and NodeJS developer Alex. We worked in series:
+                            br
+                            | i received a design in
+                            strong PSD
+                            | format,
+                            | after i
+                            a(href="http://www.jetbrains.com/webstorm/") programmed html/css with Webstorm
+                            | tool and
+                            strong LESS
+                            | +
+                            strong SASS
+                            | under Compass compiler.
+                            | We used
+                            a.odesk-profile(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/") oDesk
+                            | and e-mail communication with Skype.
+                    .row
+                        h3 My role
+                        p.col-md-12
+                            | This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor
+                            | and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework.
+                            | When i worked with project"s repo i used
+                            a(href="http://git-scm.com/about") GIT version control system
+                            | and dedicated server on Linux.
+                            | I programmed this project under my Mac with SSH port-forwarding techniques.
+                            | I worked near 5 weeks with this project and developed Jade pages with many SASS code.
+                        ul(style="display: inline-block")
+                            li
+                                | Near 20 SASS files
+                            li
+                                | Near 10 LESS files
+                            li
+                                | Near 50 JavaScript files for browser
+                            li
+                                | Hierarchical Jade templates (40 files .
+                                strong jade
+                                | )
+                            li
+                                | Compass for SASS and JavaScript on server-side with jQuery on frontend.
+                            li
+                                | LESS and SASS code with Bootstrap for all elements
+                    .row
+                        h3 Result
+                        p.col-md-12
+                            | After 5 weeks i completed project and main goal was
+                            u converting inline CSS styles to SASS
+                            | under Twitter Bootstrap and completing JavaScript code.
+                            br
+                            | My American manager quote:
+                        blockquote
+                            | "I would like to keep working with her as much as possible for future projects too.".
+                        p.col-md-12
+                            | During this project I increased my skills with SASS and NodeJS.
+                            | I got a good experience with NodeJS based ecommerce architecture.
+                .col-md-6.images-a-content
+                    .col-md-6
+                        a.thumbnail(href="images/compose-page.jpg")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/conclave-page.png", alt="main page of conclave")
+                            br
+                            button.btn.btn-primary.btn-block(type="button")
+                                | Main page screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/less_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
+                            br
+                            button.btn.btn-primary.btn-block.less-button(type="button") Show LESS screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/js_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
+                            br
+                            button.btn.btn-primary.btn-block(type="button") Show JS screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/sass_1_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
+                            br
+                            button.btn.btn-primary.btn-block.sass-button(type="button")
+                                | Show
+                                b 1
+                                | SASS screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/sass_2_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
+                            br
+                            button.btn.btn-primary.btn-block.sass-button(type="button")
+                                | Show
+                                b 2
+                                | SASS screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/jade_1_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/conclave-jade.png", alt="Admin panel")
+                            br
+                            button.btn.btn-primary.btn-block.jade-button(type="button")
+                                | Show
+                                b 1
+                                | Jade screenshot
+                    .col-md-6
+                        a.thumbnail(href="images/jade_2_code_optimized.png")
+                            img.img-thumbnail(src="../../images/portfolio-thumb/conclave-jade.png", alt="Admin panel")
+                            br
+                            button.btn.btn-primary.btn-block.jade-button(type="button")
+                                | Show
+                                b 2
+                                | Jade screenshot
+        script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", defer="defer")
+        // Animation JavaScript
+        script(type="text/javascript", src="../../js/controller.js", async="async")
+        script(type="text/javascript", src="../../js/portfolio/animation_controller.js", async="async")
+        script(type="text/javascript", src="../../js/portfolio/main.js", defer="")
+        script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="")

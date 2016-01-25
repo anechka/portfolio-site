@@ -29,6 +29,12 @@ gulp.task('jade', function() {
     gulp.src('jade/index.jade')
     .pipe(jade())// jade({pretty: true}) for dev
     .pipe(gulp.dest("."));
+
+    // Portfolio description
+    gulp.src('portfolio-content/conclave/conclave.jade')
+        .pipe(jade({pretty: true}))// jade({pretty: true}) for dev
+        .pipe(gulp.dest("portfolio-content/conclave"));
+
 });
 
 gulp.task('clean', function() {
