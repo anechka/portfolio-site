@@ -222,26 +222,31 @@ BODY {
 
 /* oDesk / Upwork */
 .container.image_container .odesk-profile {
-    color: #5bbc2e;
+    background: url("../images/upwork.png");
 
-    background: url("../images/clouds_rain_background.png") 60% 100%;
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 254px;
+    height: 81px;
 }
 
 .container.image_container .odesk-profile:hover {
-    color: #fff;
-    background: #5bbc2e;
+    background: url("../images/upwork-hover.png");
 }
 
 /* Github */
 .container.image_container .github-profile {
-    color: #fff;
-    background: #000;
+    color: #bfcdda;
+    background: #00132F;
+    transition: color 2s ease-in, background 0.5s ease-in-out;
 }
 
 .container.image_container .github-profile:hover {
-    color: #7aff3d;
-    background: #494db7;
-    transition: color 0.2s ease-in-out, background 1s ease;
+    color: #273157;
+    background: #ff7700;
+
+    transition: none;
 }
 
 @media (max-width: 480px) {
