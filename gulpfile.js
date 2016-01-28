@@ -39,6 +39,10 @@ gulp.task('jade', function() {
         .pipe(jade({pretty: true}))// jade({pretty: true}) for dev
         .pipe(gulp.dest("portfolio-content/market"));
 
+    gulp.src('portfolio-content/pp/premium_parts.jade')
+        .pipe(jade({pretty: true}))// jade({pretty: true}) for dev
+        .pipe(gulp.dest("portfolio-content/pp"));
+
 });
 
 gulp.task('clean', function() {
