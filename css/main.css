@@ -208,6 +208,10 @@ BODY {
 }
 
 /* Link to External resources (buttons) */
+.container.image_container .profiles-content {
+    margin-bottom: 50px; margin-top: 50px;
+}
+
 .container.image_container .external-profile {
     font-size: 24px;
     font-weight: bold;
@@ -222,7 +226,7 @@ BODY {
 
 /* oDesk / Upwork */
 .container.image_container .odesk-profile {
-    background: url("../images/upwork.png");
+    background: url("../images/upwork-profile-link.svg");
 
     display: inline-block;
     vertical-align: middle;
@@ -232,19 +236,23 @@ BODY {
 }
 
 .container.image_container .odesk-profile:hover {
-    background: url("../images/upwork-hover.png");
+    background: url("../images/upwork-profile-hover.svg");
 }
 
 /* Github */
 .container.image_container .github-profile {
     color: #bfcdda;
     background: #00132F;
+    border: 1px solid #00132F;
     transition: color 2s ease-in, background 0.5s ease-in-out;
 }
 
 .container.image_container .github-profile:hover {
-    color: #273157;
-    background: #ff7700;
+    color: #6fda44;
+    text-decoration: dotted;
+
+    background: none;
+    border: 1px solid #6fda44;
 
     transition: none;
 }
@@ -317,6 +325,17 @@ BODY {
     .content .thumbnail .caption .description-ru-center-block {
         min-height: 220px;
         font-size: 12px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .container.image_container .profiles-content {
+        margin-bottom: 50px; margin-top: 50px;
+
+        max-width: 485px;
+        margin-left: 31%;
+
     }
 
 }
