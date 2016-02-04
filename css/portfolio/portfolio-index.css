@@ -65,6 +65,12 @@
     margin: 0;
 }
 
+.description-project {
+    display: table-cell;
+    float:none;
+    vertical-align:top;
+}
+
 .images-a-content {
     padding: 4px 0;
     background-color: #FFF;
@@ -141,4 +147,20 @@
 
 .warning-text {
     color: #FF7F00;
+}
+
+/* iPhone screen / smartphones */
+
+@media (max-width: 480px) {
+
+    .description-project {
+        display: block;
+        float:none;
+        vertical-align:top;
+    }
+
+    .images-a-content {
+        display: block;
+    }
+
 }
