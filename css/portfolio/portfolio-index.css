@@ -1,12 +1,14 @@
 .header_clouds {
     background-image: url(../../images/clouds_layer_4.png);
-    background-size: 120%;
+    background-size: 100%;
     background-position: 200% 0;
     background-repeat: repeat-x;
+    padding-top: 25px;
     width: 100%;
-    min-height: 150px;
+    height: 300px;
     position: absolute;
-    overflow: hidden;
+    z-index: -1;
+
 }
 
 .header_container {
@@ -161,6 +163,24 @@
 
     .images-a-content {
         display: block;
+    }
+
+
+
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+
+    .header_clouds {
+        background-size: 180%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header_clouds {
+        background-size: 200%;
     }
 
 }
