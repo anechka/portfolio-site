@@ -1,9 +1,8 @@
 .header_clouds {
     background-image: url(../../images/clouds_layer_4.png);
     background-size: 100%;
-    background-position: 200% 0;
+    background-position: 800% 0;
     background-repeat: repeat-x;
-    padding-top: 25px;
     width: 100%;
     height: 300px;
     position: absolute;
@@ -172,7 +171,7 @@
 @media (min-width: 481px) and (max-width: 1200px) {
 
     .header_clouds {
-        background-size: 180%;
+        background-size: 220%;
     }
 
 }
@@ -180,7 +179,7 @@
 @media (max-width: 480px) {
 
     .header_clouds {
-        background-size: 200%;
+        background-size: 320%;
     }
 
 }
