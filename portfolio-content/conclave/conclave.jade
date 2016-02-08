@@ -1,0 +1,147 @@
+extends ../base.jade
+
+block title
+    title Conclave | Anna Novikova
+
+block portfolio-thumb
+    .row.text-center
+        img(src="../../images/portfolio-thumb/conclave.png")
+
+block about-project
+    ul
+        li
+            kbd This is NDA project
+        li
+            a(href="http://git-scm.com/about") Git
+        li
+            a(href="http://nodejs.org") NodeJS with many modules such as Compass
+        li
+            a#jade(href="http://jade-lang.com/") Jade template engine
+                span.glyphicon.glyphicon-export
+        li
+            a#less(href="http://lesscss.org/features/") LESS
+                span.glyphicon.glyphicon-export
+                |&nbsp;|
+
+            a#sass(href="http://sass-lang.com/guide")   SASS
+                span.glyphicon.glyphicon-export
+        li
+            a(href="http://getbootstrap.com/css/") Bootstrap | 2
+
+        li
+            a(href="http://jquery.com/") jQuery
+
+    p.col-md-12
+        | This is a social network project for American schools and teachers.
+
+block about-team
+    p
+        | On this work i contacted with my main manager from
+        strong  San Diego Calif.
+        | ,
+        br
+        | The team consisted of me and NodeJS developer Alex. We worked in series:
+        br
+        | i received a design in
+        strong  PSD format,
+        |   after i
+        a(href="http://www.jetbrains.com/webstorm/")    programmed html/css with Webstorm tool
+        |   and
+        strong  LESS
+        |   +
+        strong  SASS
+        |   under Compass compiler.
+        | We used
+        a.odesk-profile(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/")    oDesk
+        |   and e-mail communication with Skype.
+
+block my-role
+    p.col-md-12
+        | This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor
+        | and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework.
+        | When i worked with project"s repo i used
+        a(href="http://git-scm.com/about")  GIT version control system
+        |   and dedicated server on Linux.
+        | I programmed this project under my Mac with SSH port-forwarding techniques.
+        | I worked near 5 weeks with this project and developed Jade pages with many SASS code.
+    ul(style="display: inline-block")
+        li
+            | Near 20 SASS files
+        li
+            | Near 10 LESS files
+        li
+            | Near 50 JavaScript files for browser
+        li
+            | Hierarchical Jade templates (40 files .
+            strong jade
+            | )
+        li
+            | Compass for SASS and JavaScript on server-side with jQuery on frontend.
+        li
+            | LESS and SASS code with Bootstrap for all elements
+
+block result
+    p.col-md-12
+        | After 5 weeks i completed project and main goal was
+        u converting inline CSS styles to SASS
+        |   under Twitter Bootstrap and completing JavaScript code.
+        br
+        | My American manager quote:
+    blockquote
+        | "I would like to keep working with her as much as possible for future projects too".
+    p.col-md-12
+        | During this project I increased my skills with SASS and NodeJS.
+        | I got a good experience with NodeJS based ecommerce architecture.
+
+
+
+block images-content
+    .col-md-6.images-a-content
+        .col-md-6
+            a.thumbnail(href="images/compose-page.jpg")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-page.png", alt="main page of conclave")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    | Main page screenshot
+        .col-md-6
+            a.thumbnail(href="images/less_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block.less-button(type="button") Show LESS screenshot
+        .col-md-6
+            a.thumbnail(href="images/js_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button") Show JS screenshot
+        .col-md-6
+            a.thumbnail(href="images/sass_1_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block.sass-button(type="button")
+                    | Show
+                    b   1
+                    |   SASS screenshot
+        .col-md-6
+            a.thumbnail(href="images/sass_2_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block.sass-button(type="button")
+                    | Show
+                    b   2
+                    |   SASS screenshot
+        .col-md-6
+            a.thumbnail(href="images/jade_1_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-jade.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block.jade-button(type="button")
+                    | Show
+                    b   1
+                    |   Jade screenshot
+        .col-md-6
+            a.thumbnail(href="images/jade_2_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-jade.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block.jade-button(type="button")
+                    | Show
+                    b   2
+                    |   Jade screenshot

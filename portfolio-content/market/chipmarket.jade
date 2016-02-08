@@ -1,0 +1,90 @@
+extends ../base.jade
+
+block title
+    title Chip Mark | Anna Novikova
+
+block portfolio-thumb
+    .row.text-center
+        img(src="../../images/portfolio-thumb/market.png")
+
+block about-project
+    ul
+        li
+            a(href="http://git-scm.com/about") Git
+        li
+            a(href="http://yiiframework.com") Yii PHP framework
+        li
+            a(href="http://twig.sensiolabs.org/") Twig template engine
+        li
+            a(href="http://lesscss.org/features/") LESS | CSS
+        li
+            a(href="http://getbootstrap.com/css/") Bootstrap 3
+    p.col-md-12
+        | This is a shop for sale office and home equipment, home media, smartphones, Apple computers.
+
+block about-team
+    p
+        | It consisted of me and other russian freelancers, we worked in series: design to PSD,
+        | then html/css coding with Webstorm tool and LESS compiler,
+        | after php back-end on CMS system based on php Yii framework. Yii was a new experience for me, but work with
+        | Mustache was very simple, because i like language syntax of the Django template system :)
+        br
+        | Our team: project manager, Photoshop-designer,
+        | i am as HTML developer and PHP developer.
+        | We used the remote job system with Skype communication.
+
+block my-role
+    p.col-md-12
+        | Site based on Yii and Mustache. I used my knowledge of LESS preprocessor with Twitter
+        | Bootstrap CSS framework and Mustache template system.
+        | When i worked with project"s repo i used
+        a(href="http://git-scm.com/about")  GIT version control system.
+        |   I worked near 2 weeks with this project and developed HTML main page for e-shop areas:
+    ul(style="display: inline-block")
+        li
+            | Categories
+        li
+            | Center Panel with registration button and text-info with Glyphicons Component from Bootstrap
+        li
+            | Goods Layout
+        li
+            | Help area for Clients
+        li
+            | LESS code with Bootstrap for all elements
+
+block result
+    p.col-md-12
+        | After 2 weeks i completed project and main goal was converting PSD to HTML and LESS.
+        br
+        | Also all layout based on responsive base of Twitter Bootstrap 3 for mobile and desktop.
+        | My russian client said:
+    blockquote
+        | "Well, nice! We liked your work and skills. LESS is clean and beautiful".
+    p.col-md-12
+        | During this project I increased my skills with Mustache and LESS.
+
+block images-content
+    .col-md-6.images-a-content
+        .col-md-6
+            a.thumbnail(href="market.html")
+                img.img-thumbnail(src="../../images/portfolio-thumb/market-page.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    | Browse site page
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/less")
+                img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button") Browse LESS from project
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/js")
+                img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button") Browse JS from project
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/chipmarket/blob/master/market-en.html")
+                img.img-thumbnail(src="../../images/portfolio-thumb/market-html5.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    | Show HTML5 code of site
+

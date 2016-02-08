@@ -1,12 +1,13 @@
 .header_clouds {
     background-image: url(../../images/clouds_layer_4.png);
-    background-size: 120%;
-    background-position: 200% 0;
+    background-size: 100%;
+    background-position: 800% 0;
     background-repeat: repeat-x;
     width: 100%;
-    min-height: 150px;
+    height: 300px;
     position: absolute;
-    overflow: hidden;
+    z-index: -1;
+
 }
 
 .header_container {
@@ -14,6 +15,7 @@
 }
 /* Main div in the middle */
 .description-content{
+    border-radius: 2px;
     background-image: url(../../images/background_dots.png);
     color: #223952;
     -webkit-box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.255);
@@ -65,7 +67,27 @@
     margin: 0;
 }
 
+.description-project {
+    display: table-cell;
+    float:none;
+    vertical-align:top;
+}
+
+.description-project .glyphicon{
+    top: 2px;
+    padding-right: 3px;
+}
+
+.description-project ul .glyphicon{
+    top: 0;
+    left: 3px;
+
+    color: #493A7A;
+    font-size: 10px;
+}
+
 .images-a-content {
+    border-radius: 2px;
     padding: 4px 0;
     background-color: #FFF;
     display: table-cell;
@@ -141,4 +163,38 @@
 
 .warning-text {
     color: #FF7F00;
+}
+
+/* iPhone screen / smartphones */
+
+@media (max-width: 480px) {
+
+    .description-project {
+        display: block;
+        float:none;
+        vertical-align:top;
+    }
+
+    .images-a-content {
+        display: block;
+    }
+
+
+
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+
+    .header_clouds {
+        background-size: 220%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header_clouds {
+        background-size: 320%;
+    }
+
 }
