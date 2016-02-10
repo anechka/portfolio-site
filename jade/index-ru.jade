@@ -9,6 +9,7 @@ html(lang="ru")
         meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web, веб-разработчик, программист, разработчик, смоленск, удалённый, фрилансер")
 
         link(rel="stylesheet", href="http://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
     body
@@ -34,11 +35,19 @@ html(lang="ru")
             .row
                 .col-md-12.margined-top-div.text-center
                     img(src="images/skype_header.png", alt="Я в сети Skype", title="Skype Анны Новиковой").centered-scale-element
+
+            //- PROFILES
             .row
-                // ODESK link
-                .col-md-12
-                    p.text-center.margined-top-div(style="margin-bottom: 50px")
-                        a.odesk-profile(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/") oDesk профиль
+                .col-md-6.col-md-offset-3.margined-top-div.text-center.profiles-content
+                    // Upwork profile
+                    .col-md-6
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                    // Github profile
+                    .col-md-6(style="margin-top: 25px")
+                        a.external-profile.github-profile(href="https://github.com/anechka")
+                            i(style="margin-right: 5px").fa.fa-github-alt
+                            | Github
+
             .row
                 //PORTFOLIO header
                 .col-md-12.text-center

@@ -33,7 +33,7 @@ set_background_and_look = function(images_uri) {
     switch (platform) {
 
         case "iPhone": {
-            $( "body" ).css( "background-size", "120%");
+            $( "body" ).css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
@@ -41,7 +41,7 @@ set_background_and_look = function(images_uri) {
         }
 
         case "iPhone Simulator": {
-            $( "body" ).css( "background-size", "120%");
+            $( "body" ).css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
