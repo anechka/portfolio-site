@@ -19,8 +19,8 @@ html
     body(style="background-color: #1c456f; color: white;")
         .header_clouds
         .header_container
-            a(href="http://ane4k.in")
-                img(src="../../images/avatar.png", alt="Photo", title="Novikova Anya")
+            a(href="http://anya.site")
+                img(src="../../images/avatar.png", alt="Photo", title="Anya Novikova")
 
         .container
 
@@ -57,5 +57,11 @@ html
         // Animation JavaScript
         script(type="text/javascript", src="../../js/controller.js", async="async")
         script(type="text/javascript", src="../../js/portfolio/animation_controller.js", async="async")
-        script(type="text/javascript", src="../../js/portfolio/main.js", defer="")
-        script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="")
+        script(type="text/javascript", src="../../js/portfolio/main.js", defer="defer")
+        script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="defer")
+        //- Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")

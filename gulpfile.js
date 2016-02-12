@@ -1,8 +1,14 @@
 /**
  * Created by menangen on 18.03.15.
  *
- * Run Jade compilation to /ru and current folder
+ *  [default] task compile production HTMLs
+ *  [jade] task compile pretty htmls
+ *  [clean] task remove all HTMLs
  *
+ * Run Jade compilation from 2 folders: /jade and /portfolio-content in current folder
+ * index.html for anya.site = "english" version
+ * index-ru.html for ane4k.in = "russian" version
+ * and into /portfolio-content/id-portfolio/index.html
  */
 var production = false; // False for pretty HTML output in "jade" template engine task
 
@@ -23,18 +29,11 @@ gulp.task('jade', function() {
     if (!production) { jade_config.pretty = true }// Call jade({pretty: true}) for dev
 
     // Jade templates from /jade folder
-    // RU
-    gulp.src('jade/index-ru.jade')
+    gulp.src(['jade/index.jade', 'jade/index-ru.jade'])
     .pipe(jade(jade_config))
-    .pipe(rename("index.html"))
-    .pipe(gulp.dest('ru'));
+    .pipe(gulp.dest('.'));
 
-    // EN
-    gulp.src('jade/index.jade')
-    .pipe(jade(jade_config))
-    .pipe(gulp.dest("."));
-
-    // Portfolio description
+    // Jade templates from /portfolio-content
     gulp.src('portfolio-content/conclave/conclave.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
@@ -55,7 +54,7 @@ gulp.task('jade', function() {
 gulp.task('clean', function() {
     var clean = require('gulp-clean');
 
-    gulp.src(['index.html', "ru/index.html", "portfolio-content/conclave/index.html", "portfolio-content/market/index.html", "portfolio-content/pp/index.html"], {read: false})
+    gulp.src(['index.html', "index-ru.html", "portfolio-content/conclave/index.html", "portfolio-content/market/index.html", "portfolio-content/pp/index.html"], {read: false})
     .pipe(clean());
 
 });
