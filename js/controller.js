@@ -10,7 +10,7 @@ show_animated_button = function() {
                 $(document).unbind();
 };
 
-set_background_and_look = function(imagePath) {
+set_background_and_look = function() {
 
 
     var platform = navigator.platform;
@@ -50,5 +50,5 @@ set_background_and_look = function(imagePath) {
     }
 
     //alert(platform);
-    $( document.body ).css( "background-image", "url(" + imagePath + "/"+ image +")");
+    $( document.body ).css( "background-image", "url(" + imagesFolder + image +")");
 };

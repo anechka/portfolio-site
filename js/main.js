@@ -3,7 +3,7 @@
  * Date: 19.02.14
  * Time: 19:42
  */
-backgroundImagePath = "images";
+var imagesFolder = "images/";
 
 $(onload);
 
@@ -21,7 +21,7 @@ onload = function() {
 
             $(document).on("mousemove", show_animated_button);
 
-            set_background_and_look(backgroundImagePath);
+            set_background_and_look();
 
             var scene = document.getElementById('scene');
             window.parallax_view = new Parallax(scene);
