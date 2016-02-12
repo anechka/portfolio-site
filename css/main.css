@@ -108,7 +108,7 @@ BODY {
     font-size: 24px;
     padding: 10px 100px;
     border: none;
-    opacity: 0;
+    opacity: 0.3;
 
     background: -moz-linear-gradient(top, #a5aeb8 0%, #FFF 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a5aeb8), color-stop(100%,#FFF)); /* Chrome,Safari4+ */
@@ -229,7 +229,7 @@ BODY {
 }
 
 /* oDesk / Upwork */
-.container.image_container .odesk-profile {
+.odesk-profile {
     background: url("../images/upwork-profile-link.svg");
 
     display: inline-block;
@@ -239,21 +239,21 @@ BODY {
     height: 81px;
 }
 
-.container.image_container .odesk-profile:hover {
+.odesk-profile:hover {
     background: url("../images/upwork-profile-hover.svg");
 }
 
 /* Github */
-.container.image_container .github-profile {
+.github-profile {
     color: #bfcdda;
     background: #00132F;
     border: 1px solid #00132F;
     transition: color 2s ease-in, background 0.5s ease-in-out;
 }
 
-.container.image_container .github-profile:hover {
+.github-profile:hover {
     color: #6fda44;
-    text-decoration: dotted;
+    text-decoration: none;
 
     background: none;
     border: 1px solid #6fda44;
@@ -261,6 +261,50 @@ BODY {
     transition: none;
 }
 
+.flag-language {
+    padding-bottom: 24px;
+}
+
+.flag-language > a {
+    font-family: "Days", sans-serif; font-size: larger;
+    color: #00132F;
+    text-decoration: none;
+}
+
+.flag-language > a:hover {
+    color: #FFF;
+}
+
+.flag-language > a > img { margin-right: 5px; }
+
+/* Effect 15: scale down, reveal */
+.flag-language span {
+    color: rgba(0,19,47,0.9);
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.flag-language span::before {
+    position: absolute;
+    top: 3px;
+
+    color: #fff;
+
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    content: attr(data-hover);
+}
+
+.flag-language span:hover::before,
+.flag-language span:focus::before {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+/* Mobile and media */
 @media (max-width: 480px) {
 
     .container span.name-header, .container span.email {

@@ -5,25 +5,12 @@
  */
 show_animated_button = function() {
                 // Показать div за * секунд
-                var content = $(".show_portfolio_button");
-
-                if (content.length != 1) {
-                    content = $("#row_content");
-
-                    content.slideDown(
-                        {"duration": 1500}
-                    );
-                }
-                else {
-                    content.animate({'opacity': 1}, 3 * 1000);
-                }
-
+                $(".show_portfolio_button").animate({'opacity': 1}, 3 * 1000);
 
                 $(document).unbind();
-
 };
 
-set_background_and_look = function(images_uri) {
+set_background_and_look = function(imagePath) {
 
 
     var platform = navigator.platform;
@@ -63,6 +50,5 @@ set_background_and_look = function(images_uri) {
     }
 
     //alert(platform);
-    $( "body" ).css( "background-image", "url(" + images_uri + "/"+ image +")");
-    //$( "body" ).css( "background-position", "center");
+    $( document.body ).css( "background-image", "url(" + imagePath + "/"+ image +")");
 };
