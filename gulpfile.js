@@ -43,6 +43,10 @@ gulp.task('jade', function() {
         .pipe(jade({pretty: true}))// jade({pretty: true}) for dev
         .pipe(gulp.dest("portfolio-content/pp"));
 
+    gulp.src('portfolio-content/imobo/index.jade')
+        .pipe(jade({pretty: true}))// jade({pretty: true}) for dev
+        .pipe(gulp.dest("portfolio-content/imobo"));
+
 });
 
 gulp.task('clean', function() {
