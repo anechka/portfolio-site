@@ -1,19 +1,24 @@
 extends ../base.jade
 
 block title
-    title Chip Mark | Anna Novikova
+    title Chip Mark: online shop project on Yii PHP, HTML5, adaptive Bootstrap and LESS | Anya Novikova
 
 block portfolio-thumb
     .row.text-center
-        img(src="../../images/portfolio-thumb/market.png")
+        span.portfolio-header Chip Market
 
 block about-project
     ul
-        li Git
-        li PHP
-        li Yii with Mustache template system | HTML
-        li LESS | CSS
-        li Bootstrap 3
+        li
+            a(href="http://git-scm.com/about", target="_blank") Git
+        li
+            a(href="http://yiiframework.com", target="_blank") Yii PHP framework
+        li
+            a(href="http://twig.sensiolabs.org/", target="_blank") Twig template engine
+        li
+            a(href="http://lesscss.org/features/", target="_blank") LESS | CSS
+        li
+            a(href="http://getbootstrap.com/css/", target="_blank") Bootstrap 3
     p.col-md-12
         | This is a shop for sale office and home equipment, home media, smartphones, Apple computers.
 
@@ -33,7 +38,7 @@ block my-role
         | Site based on Yii and Mustache. I used my knowledge of LESS preprocessor with Twitter
         | Bootstrap CSS framework and Mustache template system.
         | When i worked with project"s repo i used
-        a(href="http://git-scm.com/about")  GIT version control system.
+        a(href="http://git-scm.com/about", target="_blank")  GIT version control system.
         |   I worked near 2 weeks with this project and developed HTML main page for e-shop areas:
     ul(style="display: inline-block")
         li
@@ -61,25 +66,30 @@ block result
 block images-content
     .col-md-6.images-a-content
         .col-md-6
-            a.thumbnail(href="market.html")
+            a.thumbnail(href="market.html", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-page.png", alt="Admin panel")
                 br
-                button.btn.btn-primary.btn-block(type="button")
-                    | Browse site page
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.fa.fa-link
+                    | Browse ChipMarket page
         .col-md-6
-            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/less")
+            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/less", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block(type="button") Browse LESS from project
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Browse LESS from project
         .col-md-6
-            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/js")
+            a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/js", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block(type="button") Browse JS from project
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Browse JS from project
         .col-md-6
-            a.thumbnail(href="https://github.com/anechka/chipmarket/blob/master/market-en.html")
+            a.thumbnail(href="https://github.com/anechka/chipmarket/blob/master/market-en.html", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-html5.png", alt="Admin panel")
                 br
                 button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
                     | Show HTML5 code of site
-

@@ -35,7 +35,7 @@ make_thunder = function() {
         if (luke_const > 0.77) src = new_images_src_arr[2]
     }
 
-    cloud_five_image.attr('src', getpath() + "/" + src);
+    cloud_five_image.attr('src', imagesFolder + src);
 
     setTimeout(function(){
             cloud_five_image.attr('src', cloud_five_primaryimage_source);

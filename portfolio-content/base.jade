@@ -1,12 +1,14 @@
 doctype html
 html
     head(lang="en")
+        block title
+
         meta(charset="UTF-8")
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
-        block title
 
         link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
         // WARNING: Respond.js doesn't work if you view the page via file://
         //if lt IE 9
@@ -18,8 +20,8 @@ html
     body(style="background-color: #1c456f; color: white;")
         .header_clouds
         .header_container
-            a(href="http://ane4k.in")
-                img(src="../../images/avatar.png", alt="Photo", title="Novikova Anya")
+            a(href="http://anya.site")
+                img(src="../../images/avatar.png", alt="Photo", title="Anya Novikova")
 
         .container
 
@@ -29,7 +31,9 @@ html
             .row.description-content
                 .col-md-6.description-project
                     .row
-                        h3 About project
+                        h3
+                            span.glyphicon.glyphicon-briefcase
+                            | About project
 
                         block about-project
 
@@ -54,5 +58,11 @@ html
         // Animation JavaScript
         script(type="text/javascript", src="../../js/controller.js", async="async")
         script(type="text/javascript", src="../../js/portfolio/animation_controller.js", async="async")
-        script(type="text/javascript", src="../../js/portfolio/main.js", defer="")
-        script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="")
+        script(type="text/javascript", src="../../js/portfolio/main.js", defer="defer")
+        script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="defer")
+        //- Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")

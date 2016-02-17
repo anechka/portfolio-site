@@ -1,10 +1,12 @@
 doctype html
 html(lang="en")
     head
+        title Anya Novikova | Top Upwork Developer, responsive HTML5, Jade, Javascript, Django
+
         meta(charset="utf-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-
-        title HTML5-Developer | Anna Novikova
+        meta(name="description", content="Top rated 10% Upwork HTML5, CSS3, Jade, Javascript and Django templates web developer")
+        meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, freelancer, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web")
 
         link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
@@ -23,10 +25,10 @@ html(lang="en")
 
             .row
                 .col-md-12.avatar.text-center
-                    img(src="images/avatar.png", alt="Novikova Anya photo", title="Novikova Anya")
+                    img(src="images/avatar.png", alt="Anya Novikova photo", title="Anya Novikova")
             .row
                 .col-md-12.margined-top-div.text-center
-                    span(title="oDesk/Upwork HTML5 Developer").name-header.centered-scale-element Novikova Anya
+                    span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
             .row
                 .col-md-12.margined-top-div.text-center
                     a#mailto: span(title="Send me email").email.centered-scale-element enable javascript please
@@ -41,8 +43,12 @@ html(lang="en")
                     button.btn.show_portfolio_button: strong SHOW PORTFOLIO
 
             .row
-                .col-md-6.col-md-offset-3.text-center.margined-top-div(style="margin-bottom: 50px; margin-top: 50px")
-                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/") Upwork(oDesk) profile
+                .col-md-6.col-md-offset-3.margined-top-div.text-center.profiles-content
+                    // Upwork profile
+                    .col-md-6
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                    // Github profile
+                    .col-md-6(style="margin-top: 25px")
                         a.external-profile.github-profile(href="https://github.com/anechka")
                             i(style="margin-right: 5px").fa.fa-github-alt
                             | Github
@@ -53,6 +59,16 @@ html(lang="en")
                     .col-md-12.portfolio-header-div
                         h4.header Last projects, which i coded as HTML5/Javascript developer:
 
+                    //- imobo
+                    .col-xs-12.col-sm-4.col-md-4
+                        .thumbnail
+                            img(src="images/portfolio-thumb/sample.jpg", alt="Imobo")
+                            .caption
+                                h3.header Imobo
+                                p.description-en-center-block Estate Sales in Brasil. CSS3 & Bootstrap 3, Jade templates.
+                                p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
+
+                    //- premiumparts
                     .col-xs-12.col-sm-4.col-md-4
                         .thumbnail
                             img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
@@ -61,6 +77,7 @@ html(lang="en")
                                 p.description-en-center-block E-commerce market. CSS3 & Bootstrap 3, HTML5 under Django template engine.
                                 p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
 
+                    //- conclave
                     .col-xs-12.col-sm-4.col-md-4
                         .thumbnail
                             img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
@@ -69,6 +86,7 @@ html(lang="en")
                                 p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app.
                                 p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More about
 
+                    //- chipmarket
                     .col-xs-12.col-sm-4.col-md-4
                         .thumbnail
                             img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
@@ -87,15 +105,27 @@ html(lang="en")
 
                     img.html5_tech_logo_img(src="images/logo-jquery.png", alt="jQuery skill", title="jQuery", width="245px", style="padding-top: 40px")
                     img.html5_tech_logo_img(src="images/logo-nodejs.png", alt="nodeJS skill", title="nodeJS", width="282px")
+            .row
+                nav.col-md-4.col-md-offset-4.text-center.flag-language
+                    a(href="http://ane4k.in")
+                        img(src="images/flag-russian.svg", alt="russian site", title="russian", width="48px")
+                        span(data-hover="RUSSIAN") RUSSIAN
 
+        //- Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
         script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", defer="defer")
-
         script(type="text/javascript", src="js/parallax.min.js", defer="defer")
+
         script(type="text/javascript", src="js/handlers.js", async="async")
         script(type="text/javascript", src="js/controller.js", async="async")
         script(type="text/javascript", src="js/main.js", defer="defer")
 
         div(style="display:none")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm1.png")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2.png")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2_extra.png")
+            img(src="images/clouds_layer_5_storm1.png")
+            img(src="images/clouds_layer_5_storm2.png")
+            img(src="images/clouds_layer_5_storm2_extra.png")
+            img(src="images/upwork-profile-hover.svg")

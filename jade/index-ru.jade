@@ -1,12 +1,15 @@
 doctype html
 html(lang="ru")
     head
+        title Анна Новикова | Портфолио HTML5, Bootstrap, Jade, Javascript, Django разработчик
+
         meta(charset="utf-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-
-        title HTML5 разработчик | Портфолио Анна Новикова
+        meta(name="description", content="Топовый веб разработчик HTML5, CSS3, Jade, Javascript и Django шаблонов")
+        meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web, веб-разработчик, программист, разработчик, смоленск, удалённый, фрилансер")
 
         link(rel="stylesheet", href="http://yastatic.net/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
     body
@@ -32,11 +35,19 @@ html(lang="ru")
             .row
                 .col-md-12.margined-top-div.text-center
                     img(src="images/skype_header.png", alt="Я в сети Skype", title="Skype Анны Новиковой").centered-scale-element
+
+            //- PROFILES
             .row
-                // ODESK link
-                .col-md-12
-                    p.text-center.margined-top-div(style="margin-bottom: 50px")
-                        a.odesk-profile(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/") oDesk профиль
+                .col-md-6.col-md-offset-3.margined-top-div.text-center.profiles-content
+                    // Upwork profile
+                    .col-md-6
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                    // Github profile
+                    .col-md-6(style="margin-top: 25px")
+                        a.external-profile.github-profile(href="https://github.com/anechka")
+                            i(style="margin-right: 5px").fa.fa-github-alt
+                            | Github
+
             .row
                 //PORTFOLIO header
                 .col-md-12.text-center
@@ -82,7 +93,19 @@ html(lang="ru")
 
                     img.html5_tech_logo_img(src="images/logo-jquery.png", alt="jQuery skill", title="jQuery", width="245px", style="padding-top: 40px")
                     img.html5_tech_logo_img(src="images/logo-nodejs.png", alt="nodeJS skill", title="nodeJS", width="282px")
+            .row
+                nav.col-md-4.col-md-offset-4.text-center.flag-language
+                    a(href="http://anya.site")
+                        img(src="images/flag-english.svg", alt="english site", title="english", width="48px")
+                        span(data-hover="ENGLISH") ENGLISH
 
+        //- Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+
+        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
         script(type="text/javascript", src="http://yastatic.net/jquery/2.1.3/jquery.min.js", defer="defer")
 
         script(type="text/javascript", src="js/parallax.min.js", defer="defer")
@@ -91,6 +114,7 @@ html(lang="ru")
         script(type="text/javascript", src="js/main.js", defer="defer")
 
         div(style="display:none")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm1.png")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2.png")
-            img.html5_tech_logo_img(src="images/clouds_layer_5_storm2_extra.png")
+            img(src="images/clouds_layer_5_storm1.png")
+            img(src="images/clouds_layer_5_storm2.png")
+            img(src="images/clouds_layer_5_storm2_extra.png")
+            img(src="images/upwork-profile-hover.svg")

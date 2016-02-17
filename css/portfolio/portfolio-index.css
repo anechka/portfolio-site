@@ -13,8 +13,14 @@
 .header_container {
     text-align: center;
 }
+
+span.portfolio-header {
+    font-size: 52px;
+    font-family: "Days", sans-serif;
+}
 /* Main div in the middle */
 .description-content{
+    border-radius: 2px;
     background-image: url(../../images/background_dots.png);
     color: #223952;
     -webkit-box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.255);
@@ -72,7 +78,21 @@
     vertical-align:top;
 }
 
+.description-project .glyphicon{
+    top: 2px;
+    padding-right: 3px;
+}
+
+.description-project ul .glyphicon{
+    top: 0;
+    left: 3px;
+
+    color: #493A7A;
+    font-size: 10px;
+}
+
 .images-a-content {
+    border-radius: 2px;
     padding: 4px 0;
     background-color: #FFF;
     display: table-cell;
@@ -107,6 +127,20 @@
     box-shadow: 2px 0px 16px rgba(0, 0, 0, 0.22);
 }
 
+.btn-site-link {
+    color: #FFF;
+    background-color: #00A5FF;
+    border-color: #00A5FF;
+
+    font-weight: bold;
+}
+
+.btn-site-link:hover {
+    color: #655647;
+    background-color: #FCD634;
+    border-color: #FCD634;
+}
+
 .btn-success {
     color: #134400;
 }
@@ -129,7 +163,7 @@
     color: #372d7a;
 
     background-color: #aca9e0;
-    border-color: #4f497a;
+    border-color: #8c7df2;
 }
 
 
@@ -144,6 +178,11 @@
     background-color: #e2cb95;
     border-color: #e2cb95;
     color: #7c6f52;
+}
+
+/* Font Awesome icons */
+.images-a-content .btn i.fa {
+    margin-right: 4px;
 }
 
 .warning-text {

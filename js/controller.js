@@ -5,38 +5,12 @@
  */
 show_animated_button = function() {
                 // Показать div за * секунд
-                var content = $(".show_portfolio_button");
+                $(".show_portfolio_button").animate({'opacity': 1}, 3 * 1000);
 
-                if (content.length != 1) {
-                    content = $("#row_content");
-
-                    content.slideDown(
-                        {"duration": 1500}
-                    );
-                }
-                else {
-                    content.animate({'opacity': 1}, 3 * 1000);
-                }
-
-
-                window._gaq = window._gaq || [];
-
-                window._gaq.push(['_setAccount', 'UA-50636137-1']);
-                window._gaq.push(['_trackPageview']);
-
-
-/*TODO: remove on production
-                (function() {
-                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                    ga.src = ('https:' == document.location.protocol ?  'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-*/
                 $(document).unbind();
-
 };
 
-set_background_and_look = function(images_uri) {
+set_background_and_look = function() {
 
 
     var platform = navigator.platform;
@@ -46,7 +20,7 @@ set_background_and_look = function(images_uri) {
     switch (platform) {
 
         case "iPhone": {
-            $( "body" ).css( "background-size", "120%");
+            $( "body" ).css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
@@ -54,7 +28,7 @@ set_background_and_look = function(images_uri) {
         }
 
         case "iPhone Simulator": {
-            $( "body" ).css( "background-size", "120%");
+            $( "body" ).css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
@@ -76,6 +50,5 @@ set_background_and_look = function(images_uri) {
     }
 
     //alert(platform);
-    $( "body" ).css( "background-image", "url(" + images_uri + "/"+ image +")");
-    //$( "body" ).css( "background-position", "center");
+    $( document.body ).css( "background-image", "url(" + imagesFolder + image +")");
 };
