@@ -5,7 +5,7 @@ block title
 
 block portfolio-thumb
     .row.text-center
-        img(src="../../images/portfolio-thumb/market.png")
+        span.portfolio-header Chip Market
 
 block about-project
     ul
@@ -69,22 +69,27 @@ block images-content
             a.thumbnail(href="market.html", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-page.png", alt="Admin panel")
                 br
-                button.btn.btn-primary.btn-block(type="button")
-                    | Browse site page
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.fa.fa-link
+                    | Browse ChipMarket page
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/less", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block(type="button") Browse LESS from project
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Browse LESS from project
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/chipmarket/tree/master/js", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block(type="button") Browse JS from project
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Browse JS from project
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/chipmarket/blob/master/market-en.html", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/market-html5.png", alt="Admin panel")
                 br
                 button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
                     | Show HTML5 code of site
-
