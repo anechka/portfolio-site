@@ -1,0 +1,10 @@
+ansible_ssh_user: {{ server_user }}
+remote_port: {{ server_port }}
+{% raw %}
+distrfamily: "{{ ansible_distribution | lower }}"
+releasename: "{{ ansible_distribution_release | lower }}"
+site_root_dir:  /usr/share/nginx/www
+nginx_user: www-data
+nginx_group: www-data
+nginx_config_dir: /etc/nginx
+{% endraw %}
