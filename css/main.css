@@ -22,6 +22,11 @@ BODY {
     top: 20px; position: relative;
 }
 
+.container .avatar .img-circle {
+    border: 4px solid #57588C;
+    box-shadow: 0 0 10px 10px white;
+}
+
 .container span.name-header {
     font-family: "Days", sans-serif;
     font-size: 55px;
