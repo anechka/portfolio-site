@@ -1,0 +1,100 @@
+extends ../base.jade
+block title
+    title Redalgo | Anna Novikova
+block portfolio-thumb
+    .row.text-center
+        span.portfolio-header Redalgo
+
+block about-project
+    ul
+        li
+            a(href="http://git-scm.com/about") Git
+        li
+            a(href="https://github.com/anechka") Github
+        li
+            a(href="http://nodejs.org") NodeJS
+        li
+            a#jade(href="http://jade-lang.com/") Jade template engine
+        li
+            a#less(href="http://lesscss.org/features/") LESS
+        li
+            a(href="http://getbootstrap.com/css/") Bootstrap | 3
+
+    p.col-md-12 This is site of educational games for children.
+
+block about-team
+    p
+        | Our team consisted of: i as Web Developer, project manager, Web designer.
+        br
+        | Also i worked with Javascript developer.
+
+        br
+        | We communicated via&nbsp
+        a(href="https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a/") oDesk&nbsp
+        | and Skype, and also used e-mail communication.
+
+block my-role
+
+    p.col-md-12
+        | The site based on NodeJS and Jade template engine, Twitter Bootstrap as grid based CSS framework
+        | and LESS as main CSS preprocessor.
+        br
+        | I&nbsp
+        a(href="http://www.jetbrains.com/webstorm/") programmed&nbsp
+            strong Jade(HTML) / LESS(CSS) with Webstorm tool.&nbsp
+        | When i worked with project"s repo i used&nbsp
+        a(href="http://git-scm.com/about") GIT version control system.&nbsp
+
+        | I used&nbsp
+        a(href="https://www.sourcetreeapp.com") SourceTree&nbsp
+        | for pusing and pulling code to created private repo on&nbsp
+        a(href="https://github.com/anechka") Github.&nbsp
+        | I worked near 1 week with this project and developed many Jade pages with LESS code.
+    ul(style="display: inline-block")
+        li
+            | Near 7 Jade files.
+        li
+            | Near 7 LESS files.
+
+        li
+            | Main site page.
+
+block result
+
+    p.col-md-12
+        | After 1 week i completed project and main goal was
+        u coding Jade pages with LESS&nbsp
+        | under Twitter Bootstrap.
+        br
+        | My project manager quote:
+    blockquote
+        | "Anya is very fast and did a great job with bootstrap responsive coding".
+    p.col-md-12
+        | During this project i increased my Jade and LESS skills.
+
+block images-content
+    .col-md-6.images-a-content
+        .col-md-6
+            a.thumbnail(href="images/compose-page.jpg")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-page.png", alt="main page of conclave")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    | Main page screenshot
+        .col-md-6
+            a.thumbnail(href="images/less_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block.less-button(type="button") Show LESS screenshot
+        .col-md-6
+            a.thumbnail(href="images/js_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button") Show JS screenshot
+        .col-md-6
+            a.thumbnail(href="images/sass_1_code_optimized.png")
+                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
+                br
+                button.btn.btn-primary.btn-block.sass-button(type="button")
+                    | Show&nbsp
+                    b 1&nbsp
+                    | SASS screenshot

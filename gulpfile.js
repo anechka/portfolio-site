@@ -54,6 +54,11 @@ gulp.task('jade', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("portfolio-content/imobo"));
 
+    gulp.src('portfolio-content/redalgo/redalgo.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("portfolio-content/redalgo"));
+
 });
 
 gulp.task('clean', function() {
