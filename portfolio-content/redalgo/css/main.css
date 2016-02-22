@@ -1,0 +1,296 @@
+.main-content-container {
+  padding-top: 40px;
+}
+.nav-bar {
+  background: #E8BD11;
+  border: 1px solid #E4AE24;
+  padding: 0 0 0 15px;
+  min-height: 40px;
+}
+.nav-bar .navbar-nav li:not(:last-child) {
+  margin-right: 44px;
+}
+@media (max-width: 991px) {
+  .nav-bar .navbar-nav li:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+.nav-bar .navbar-nav > .active > a {
+  background: #C7B11B;
+  color: #ffffff;
+}
+.nav-bar .navbar-nav > .active > a:hover {
+  background: #BAA01D;
+  color: #a1a1a1;
+}
+.nav-bar .navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-family: 'Averia Sans Libre', cursive;
+  color: #ffffff;
+}
+.nav-bar .navbar-nav > li > a:hover {
+  background: #BAA01D;
+  color: #a1a1a1;
+}
+@media (max-width: 991px) {
+  .nav-bar .navbar-nav > li > a {
+    font-size: 14px;
+  }
+}
+.nav-language > li > a {
+  color: #a1a1a1;
+  font-size: 10px;
+}
+.carousel-container {
+  margin-top: 40px;
+}
+.carousel-control {
+  color: mediumpurple;
+  opacity: 1;
+  text-shadow: none;
+}
+.carousel-control span.glyphicon.glyphicon-chevron-left,
+.carousel-control span.glyphicon.glyphicon-chevron-right {
+  font-size: 60px;
+}
+.carousel-index {
+  top: 140px;
+  left: auto;
+  bottom: auto;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-index {
+    top: 90px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .carousel-index {
+    top: 10px;
+  }
+}
+.carousel-control.left,
+.carousel-control.right {
+  background-image: none !important;
+}
+.footer-container {
+  margin: 0 0 20px 0;
+  padding: 20px 15px 10px 15px;
+  background: #e06665;
+}
+.footer-container .navbar-footer > li {
+  margin-right: 20px;
+}
+.footer-container .navbar-footer > li > a {
+  text-decoration: none;
+  color: #fcbbb2;
+  font-size: 16px;
+}
+.footer-container .navbar-footer > li > a:hover {
+  color: white;
+}
+.footer-container .navbar-footer > li:nth-child(3) > a {
+  text-decoration: underline;
+}
+.text-area-container {
+  background: #1D75C7;
+  margin: 10px 0 40px 0;
+  padding: 15px 0 0 0;
+}
+.text-area-container .text-criamos-container {
+  font-size: 30px;
+  font-family: 'Averia Sans Libre', cursive;
+  color: #E5E5E5;
+  text-align: center;
+}
+.text-area-container .text-criamos-container span.dotted {
+  border-bottom: 1px dotted #f2b811;
+  margin: 0 5px 0 5px;
+  color: #f2b811;
+}
+.thumbnail-container {
+  padding: 0 5px 0 5px;
+}
+.thumbnail-container .btn-play {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  border-radius: 0;
+  background: limegreen;
+}
+.social-links-container {
+  margin: 20px 0 0 0;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background: #434343;
+}
+.social-links-container i {
+  display: inline-block;
+  padding: 15px 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 100px;
+  background: #e06665;
+  color: white;
+  font-size: 18px;
+}
+.social-links-container i:first-child {
+  padding: 15px 20px;
+}
+.social-links-container .navbar-down {
+  padding: 20px 0 20px 0;
+}
+.social-links-container .navbar-down > li {
+  margin-right: 5px;
+}
+.social-links-container .navbar-down > li > a {
+  text-decoration: none;
+  font-size: 16px;
+  padding-right: 20px;
+  border-right: 1px solid #F0F0F0;
+  color: #959595;
+}
+.social-links-container .navbar-down > li > a:hover {
+  color: white;
+}
+.social-links-container .navbar-down > li:last-child > a {
+  border-right: none;
+}
+figcaption {
+  font-size: 16px;
+  text-align: center;
+  color: #E34843;
+}
+figcaption.downloads {
+  color: #6DAD3B;
+}
+figcaption.quebra {
+  color: #1AAC90;
+}
+figcaption.ensino {
+  color: #019ACA;
+  padding-bottom: 20px;
+}
+figcaption.contemporaneo {
+  color: #F6A043;
+}
+@media (max-width: 991px) {
+  figcaption {
+    font-size: 12px;
+  }
+}
+p.red-line {
+  text-indent: 15px;
+  margin-top: 20px;
+}
+.bordered-block {
+  border: 1px solid #FCFB98;
+  border-radius: 5px;
+  padding: 15px 0 15px 0;
+  margin-top: 20px;
+}
+.block-bg-white {
+  background: white;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .block-bg-white p,
+  .block-bg-white a.veja {
+    font-size: 10px;
+  }
+}
+.block-bg-pink {
+  background: rgba(244, 217, 208, 0.44);
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .block-bg-pink p,
+  .block-bg-pink a.veja {
+    font-size: 10px;
+  }
+}
+.icons-container {
+  padding: 25px 0 20px 70px;
+}
+@media (max-width: 991px) {
+  .icons-container {
+    padding: 10px 0 10px 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 481px) {
+  .icons-container {
+    padding: 10px 0 10px 0;
+  }
+}
+.icons-container.five-icons-container div:not(:last-child) {
+  margin-right: 25px;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .icons-container.five-icons-container div:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 481px) {
+  .icons-container.five-icons-container div:not(:last-child) {
+    margin-right: 0;
+  }
+}
+@media (min-width: 360px) and (max-width: 480px) and (orientation: portrait) {
+  .icons-container.five-icons-container .col-xs-4 {
+    width: 28%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) and (orientation: portrait) {
+  .icons-container.five-icons-container .col-xs-4 {
+    width: 24%;
+  }
+}
+h1.silaba {
+  color: #F5BC08;
+}
+h3.noticias {
+  color: rgba(209, 73, 68, 0.55);
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  h3.noticias {
+    font-size: 16px;
+  }
+}
+a.veja {
+  text-decoration: underline;
+}
+figcaption.melhor {
+  color: #EDB747;
+}
+figcaption.ficcao {
+  color: #F6A043;
+}
+figcaption.homologado,
+figcaption.capacidade {
+  color: #86388F;
+}
+figcaption.linux,
+figcaption.windows {
+  color: #38C0D2;
+}
+figcaption.stores {
+  color: #DF594F;
+}
+.icons-second-level-container {
+  margin-top: 20px;
+}
+.icons-second-level-container div:not(:last-child) {
+  margin-right: 25px;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+  .icons-second-level-container div:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 481px) {
+  .icons-second-level-container div:not(:last-child) {
+    margin-right: 0;
+  }
+}
+.main-text-area {
+  font-size: 16px;
+}
