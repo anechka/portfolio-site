@@ -127,6 +127,12 @@ span.portfolio-header {
     box-shadow: 2px 0px 16px rgba(0, 0, 0, 0.22);
 }
 
+.btn-default:hover {
+    color: #002C4D;
+    background-color: #FFF;
+    border-color: #00d2ff;
+}
+
 .btn-site-link {
     color: #FFF;
     background-color: #00A5FF;

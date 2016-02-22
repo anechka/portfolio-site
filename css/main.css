@@ -19,12 +19,12 @@ BODY {
 }
 
 .container .avatar {
-    top: 20px; position: relative;
+    top: 30px; position: relative;
 }
 
 .container .avatar .img-circle {
     border: 4px solid #57588C;
-    box-shadow: 0 0 10px 10px white;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
 }
 
 .container span.name-header {
