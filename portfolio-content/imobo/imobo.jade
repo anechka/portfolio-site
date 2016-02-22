@@ -1,13 +1,15 @@
 extends ../base.jade
 block title
     title Imobo | Anna Novikova
+
 block portfolio-thumb
     .row.text-center
         span.portfolio-header Imobo
+
 block about-project
     ul
 
-        li
+        //- li
             a(href="http://git-scm.com/about") Git
         li
             a(href="https://github.com/anechka") Github
@@ -15,12 +17,12 @@ block about-project
         li
             a(href="http://nodejs.org") NodeJS
         li
-            a#jade(href="http://jade-lang.com/") Jade template engine
+            a(href="http://jade-lang.com/") Jade template engine
         li
-            a#less(href="http://lesscss.org/features/") LESS
+            a(href="http://lesscss.org/features/") LESS
 
         li
-            a(href="http://getbootstrap.com/css/") Bootstrap | 3
+            a(href="http://getbootstrap.com/") Bootstrap | 3
 
     p.col-md-12 This is site for buying and selling real estate.
 
@@ -96,25 +98,22 @@ block images-content
     .col-md-6.images-a-content
         .col-md-6
             a.thumbnail(href="images/compose-page.jpg")
-                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-page.png", alt="main page of conclave")
+                img.img-thumbnail(src="../../images/portfolio-thumb/imobo-page.png", alt="Imobo page example")
                 br
-                button.btn.btn-primary.btn-block(type="button")
-                    | Main page screenshot
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.fa.fa-link
+                    | Browse Imobo page
         .col-md-6
             a.thumbnail(href="images/less_code_optimized.png")
-                img.img-thumbnail(src="../../images/portfolio-thumb/market-less.png", alt="...")
+                img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block.less-button(type="button") Show LESS screenshot
+                button.btn.btn-primary.btn-block.less-button(type="button")
+                    i.fa.fa-github-alt
+                    | Show Jade code
         .col-md-6
             a.thumbnail(href="images/js_code_optimized.png")
-                img.img-thumbnail(src="../../images/portfolio-thumb/premiumparts-js.png", alt="...")
+                img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block(type="button") Show JS screenshot
-        .col-md-6
-            a.thumbnail(href="images/sass_1_code_optimized.png")
-                img.img-thumbnail(src="../../images/portfolio-thumb/conclave-sass.png", alt="Admin panel")
-                br
-                button.btn.btn-primary.btn-block.sass-button(type="button")
-                    | Show&nbsp
-                    b 1&nbsp
-                    | SASS screenshot
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Show LESS code
