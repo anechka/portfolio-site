@@ -21,7 +21,7 @@
 }
 .nav-bar .navbar-nav > .active > a:hover {
   background: #BAA01D;
-  color: #a1a1a1;
+  color: #ffcf00;
 }
 .nav-bar .navbar-nav > li > a {
   padding-top: 10px;
@@ -32,7 +32,7 @@
 }
 .nav-bar .navbar-nav > li > a:hover {
   background: #BAA01D;
-  color: #a1a1a1;
+  color: #ffcf00;
 }
 @media (max-width: 991px) {
   .nav-bar .navbar-nav > li > a {
