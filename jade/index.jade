@@ -25,7 +25,7 @@ html(lang="en")
 
             .row
                 .col-md-12.avatar.text-center
-                    img.img-circle(src="images/avatar.jpg", width="120px", height="120px", alt="Anya Novikova photo", title="Anya Novikova")
+                    img.img-circle.img-avatar(src="images/avatar.jpg", width="120px", height="120px", alt="Anya Novikova photo", title="Anya Novikova")
             .row
                 .col-md-12.margined-top-div.text-center
                     span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
@@ -56,53 +56,58 @@ html(lang="en")
             .row(style="display: none")#main_content
                 .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content
                     //Main Site Content
-                    .col-md-12.portfolio-header-div
-                        h4.header Last projects, which i coded as HTML5/Javascript developer:
+                    .row
+                        .col-md-12.portfolio-header-div
+                            h4.header Last projects, which i coded as HTML5/Javascript developer:
 
-                    //- imobo
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/imobo-page.png", alt="Imobo")
-                            .caption
-                                h3.header Imobo
-                                p.description-en-center-block Estate Sales in Brasil. CSS3 & Bootstrap 3, Jade templates.
-                                p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") More about
+                    .row
 
-                    //- premiumparts
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
-                            .caption
-                                h3.header Premium Parts
-                                p.description-en-center-block E-commerce market. CSS3 & Bootstrap 3, HTML5 under Django template engine.
-                                p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
+                        //- imobo
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/imobo-page.png", alt="Imobo")
+                                .caption
+                                    h3.header Imobo
+                                    p.description-en-center-block Estate Sales in Brasil. CSS3 & Bootstrap 3, Jade templates.
+                                    p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") More about
 
-                    //- conclave
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
-                            .caption
-                                h3.header Conclave social
-                                p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app.
-                                p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More about
+                        //- premiumparts
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
+                                .caption
+                                    h3.header Premium Parts
+                                    p.description-en-center-block E-commerce market. CSS3 & Bootstrap 3, HTML5 under Django template engine.
+                                    p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
 
-                    //- chipmarket
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
-                            .caption
-                                h3.header ChipMark shop
-                                p.description-en-center-block HTML templates + LESS stylesheet development for e-commerce shop.
-                                p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More about
+                        //- conclave
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
+                                .caption
+                                    h3.header Conclave social
+                                    p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app.
+                                    p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More about
 
-                    //- redalgo
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo education")
-                            .caption
-                                h3.header ChipMark shop
-                                p.description-en-center-block Jade templates + LESS stylesheet development for Child Education.
-                                p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") More about
+                    .row
+
+                        //- chipmarket
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
+                                .caption
+                                    h3.header ChipMark shop
+                                    p.description-en-center-block HTML templates + LESS stylesheet development for e-commerce shop.
+                                    p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More about
+
+                        //- redalgo
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo education")
+                                .caption
+                                    h3.header Redalgo
+                                    p.description-en-center-block Jade templates + LESS stylesheet development for Children Education.
+                                    p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") More about
 
             //- Skills
             .row

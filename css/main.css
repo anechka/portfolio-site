@@ -19,12 +19,13 @@ BODY {
 }
 
 .container .avatar {
-    top: 30px; position: relative;
+   position: relative;
 }
 
-.container .avatar .img-circle {
+.img-avatar {
     border: 4px solid #57588C;
     box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+    margin-top: 30px;
 }
 
 .container span.name-header {
@@ -141,10 +142,12 @@ BODY {
     /*border: #244b80 solid 1px;*/
     -webkit-box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.255);
     box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.255);
+    padding-left: 45px;
+    padding-right: 45px;
 }
 
 .content .portfolio-header-div {
-    padding: 0; margin: 15px 0 15px 15px;
+    margin: 15px 0 15px 0;
 }
 
 .content .portfolio-header-div .header {
@@ -200,7 +203,7 @@ BODY {
 }
 
 .content .thumbnail .caption .description-ru-center-block {
-    min-height: 180px;
+    min-height: 200px;
 }
 
 .content .btn-default {
