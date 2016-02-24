@@ -100,6 +100,17 @@ span.portfolio-header {
     vertical-align:top
 }
 
+.images-a-content a:focus {
+    color: #97B5C6;
+}
+
+.images-a-content a:focus > button.btn {
+    background-color: #FFF;
+    border-color: #E0EAF0;
+    color: #86A9D8;/* C0D3DA */
+    text-decoration: dotted;
+}
+
 .thumbnail {
     text-align: center;
     padding-top: 15px;

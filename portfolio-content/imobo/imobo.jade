@@ -1,6 +1,6 @@
 extends ../base.jade
 block title
-    title Imobo | Anna Novikova
+    title Imobo | Anya Novikova
 
 block portfolio-thumb
     .row.text-center
@@ -23,6 +23,8 @@ block about-project
 
         li
             a(href="http://getbootstrap.com/") Bootstrap | 3
+        li
+            span Portuguese ISO 639-1 Language
 
     p.col-md-12 This is site for buying and selling real estate.
 
@@ -36,8 +38,7 @@ block about-team
 
         br
         | I&nbsp
-        a(href="http://www.jetbrains.com/webstorm/") programmed&nbsp
-            strong Jade(HTML) / LESS(CSS) with Webstorm tool.
+        a(href="http://www.jetbrains.com/webstorm/") developed Jade(HTML) / LESS(CSS) with Webstorm tool.
 
         br
         | We used&nbsp
@@ -46,41 +47,32 @@ block about-team
 
 block my-role
     p.col-md-12
-        | This site based on NodeJS and Jade template engine, Twitter Bootstrap as grid based CSS framework
+        | This site based on NodeJS and Jade template engine, Twitter Bootstrap as a grid based CSS framework
         | and LESS as main CSS preprocessor.
 
-        | When i worked with project"s repo i used&nbsp
+        | When i worked with project's repo i used&nbsp
         a(href="http://git-scm.com/about") GIT version control system.&nbsp
 
         | For source code of this project was created private repo on&nbsp
         a(href="https://github.com/anechka") Github.&nbsp
-
         | I used&nbsp
-        a(href="https://www.sourcetreeapp.com") SourceTree&nbsp
-        | for pusing and pulling code.
 
+        a(href="https://www.sourcetreeapp.com") SourceTree&nbsp
+        | for pushing and pulling code.
         | I worked near 2 weeks with this project and developed many Jade pages with LESS code.
 
     ul(style="display: inline-block")
 
-        li
-            | Near 11 Jade files.
-        li
-            | Near 11 LESS files.
-        li
-            | Login page.
-        li
-            | 2 pages form registration.
-
-        li
-            | 4 pages for work with Email.
-        li
-            | 2 pages for selecting real estate.
-        li
-            | List of ads page.
-
-        li
-            | Main site page.
+        li Near 11 Jade files.
+        li Near 11 LESS files.
+        li Login page.
+        li 2 pages form registration.
+        li 4 pages for work with e-mails.
+        li 2 pages for selecting real estate.
+        li Google Ads page.
+        li Main&nbsp
+            a(href="imobo-page.html") site page
+            | .
 
 block result
     p.col-md-12
@@ -97,23 +89,44 @@ block result
 block images-content
     .col-md-6.images-a-content
         .col-md-6
-            a.thumbnail(href="images/compose-page.jpg")
+            a.thumbnail(href="imobo-page.html")
                 img.img-thumbnail(src="../../images/portfolio-thumb/imobo-page.png", alt="Imobo page example")
                 br
                 button.btn.btn-site-link.btn-block(type="button")
                     i.fa.fa-link
                     | Browse Imobo page
         .col-md-6
-            a.thumbnail(href="images/less_code_optimized.png")
+            a.thumbnail(href="marketing-form-page.html")
+                img.img-thumbnail(src="../../images/portfolio-thumb/imobo-marketing-page.png", alt="Imobo page example")
+                br
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.fa.fa-link
+                    | Browse marketing form page
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/imobo-project/blob/master/jade/index.jade")
                 img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="...")
                 br
-                button.btn.btn-primary.btn-block.less-button(type="button")
+                button.btn.btn-primary.btn-block(type="button")
                     i.fa.fa-github-alt
-                    | Show Jade code
+                    | Show Imopo page Jade code
         .col-md-6
-            a.thumbnail(href="images/js_code_optimized.png")
+            a.thumbnail(href="https://github.com/anechka/imobo-project/blob/master/jade/email_marketing_form.jade")
+                img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Show marketing form Jade
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/imobo-project/blob/master/less/main.less")
                 img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="...")
                 br
                 button.btn.btn-primary.btn-block(type="button")
                     i.fa.fa-github-alt
-                    | Show LESS code
+                    | Show index page LESS
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/imobo-project/blob/master/less/email_marketing_form.less")
+                img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="...")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Show marketing LESS
