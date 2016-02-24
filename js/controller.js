@@ -10,45 +10,63 @@ show_animated_button = function() {
                 $(document).unbind();
 };
 
+mobile_parallax_set = function (ismobile) {
+    var scene = document.getElementById('scene');
+    window.parallax_view = new Parallax(scene);
+
+    if (ismobile) {
+
+        parallax_view.scalar(10, 10);
+        parallax_view.invert(true, false);
+        parallax_view.friction(0.1, 0.1);
+        parallax_view.calibrate(true, true);
+        parallax_view.limit(false, 50);
+
+    } else {
+        parallax_view.scalar(20, 50);
+        parallax_view.invert(true, false);
+        parallax_view.friction(0.2, 0.1);
+    }
+};
+
+
+
 set_background_and_look = function() {
 
 
     var platform = navigator.platform;
 
-    var image = "";
 
     switch (platform) {
 
         case "iPhone": {
-            $( "body" ).css( "background-size", "100%");
-            image = "background-iphone.jpg";
 
             show_animated_button();
+            mobile_parallax_set(true);
+
             break;
         }
 
         case "iPhone Simulator": {
-            $( "body" ).css( "background-size", "100%");
-            image = "background-iphone.jpg";
 
             show_animated_button();
+            mobile_parallax_set(true);
 
             break;
         }
 
         case "Android":
         case "iPad": {
-            image = "background-ipad.jpg";
 
             show_animated_button();
+            mobile_parallax_set(true);
+
             break;
         }
 
         default : {
-            image = "background-hd.jpg";
+            mobile_parallax_set(false);
         }
     }
 
-    //alert(platform);
-    $( document.body ).css( "background-image", "url(" + imagesFolder + image +")");
 };
