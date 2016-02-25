@@ -1,0 +1,17 @@
+---
+- hosts: all 
+  sudo: yes
+  tasks:
+  - name: git checkout from remote repo 
+    git:
+     repo={{ git_repo }}   
+     dest={{ site_root_dir }}
+     force=yes
+  - name: Gulp
+    shell: node_modules/.bin/gulp chdir={{ site_root_dir }}
+  handlers:
+   - name: nginx restar
+     service:
+      name=nginx 
+      state=restarted
+#Created by Punko Punkoivan@yandex.ru on 19.02.16

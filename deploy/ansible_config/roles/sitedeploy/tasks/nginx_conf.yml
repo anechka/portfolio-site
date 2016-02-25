@@ -1,0 +1,33 @@
+---
+#- name: Nginx| copy main + hosts configs
+# template: src={{ item.src  }} dest={{ item.dest  }}
+# with_items:
+#  - { src: 'nginx.conf.j2', dest: '{{ nginx_config_dir }}/nginx.conf' }   
+#  - { src: 'ane4k.in.j2', dest: '{{ nginx_config_dir }}/sites-available/ane4k.in' }
+#  - { src: 'anya.site.j2', dest: '{{ nginx_config_dir }}/sites-available/anya.site' }
+- name: Nginx| mkdir site-available/enabled and del default config
+  file: path={{ item.path }} state={{ item.state}}   
+  with_items:
+   - { path: '{{ nginx_config_dir }}/sites-available', state: 'directory' }
+   - { path: '{{ nginx_config_dir }}/sites-enabled', state: 'directory' }
+   - { path: '{{ site_root_dir }}/nginx-config', state: 'absent' }
+- name: Nginx| copy main + hosts configs
+  template: src={{ item.src  }} dest={{ item.dest  }}
+  with_items:
+   - { src: 'nginx.conf.j2', dest: '{{ nginx_config_dir }}/nginx.conf' }   
+   - { src: 'ane4k.in.j2', dest: '{{ nginx_config_dir }}/sites-available/ane4k.in' }  
+   - { src: 'anya.site.j2', dest: '{{ nginx_config_dir }}/sites-available/anya.site' }
+- name: Nginx| set correct permission for site file
+  file:
+   path={{ site_root_dir }}
+   state=directory
+   owner={{ nginx_user }}
+   group={{ nginx_group }}
+   mode=0755
+   recurse=yes
+- name: Nginx| create symlink to sites-enabled for anya.site and ane4k.in
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items: 
+   - { src: '{{ nginx_config_dir }}/sites-available/ane4k.in', dest: '{{ nginx_config_dir }}/sites-enabled/ane4k.in' }
+   - { src: '{{ nginx_config_dir }}/sites-available/anya.site', dest: '{{ nginx_config_dir }}/sites-enabled/anya.site' }
+#Created by Punko <Punkoivan@yandex.ru> 16.02.16

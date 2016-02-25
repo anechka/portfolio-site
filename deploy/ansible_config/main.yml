@@ -1,6 +1,0 @@
----
-- name: installing Nginx and deploy site from git
-  hosts: web-server
-  sudo: yes
-  roles:
-   - sitedeploy
