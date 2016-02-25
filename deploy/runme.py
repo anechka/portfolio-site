@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 from sys import argv
 from os import path
+from base64 import b64decode
+from json import loads
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -12,10 +14,18 @@ env = Environment(loader=FileSystemLoader(current_path + '/ansible_config'))
 
 # Give a arguments from swift application
 try:
-    host_name = argv[1]
-    username = argv[2]
-    password = argv[3]
-    host_port = 22
+    base64String = argv[1]
+    print("Decoding Base64")
+
+    json_data = b64decode(base64String)
+    settings = loads(json_data)
+
+    host_name = settings.get("host")
+    username = settings.get("username")
+    password = settings.get("password")
+    host_port = settings.get("port")
+
+    print(settings)
 
 except:  # Manual running
 
@@ -39,17 +49,21 @@ except:  # Manual running
 try:
     host_name = host_name.strip()
     username = username.strip()
-    password = password.strip()
+    if type(password) is str:
+        password = password.strip()
+        if password == "": password = None
 
     if username == "": username = "root"
-    if host_port == "":
+
+    if host_port is None or host_port == "":
+        print("SSH port is 22 default")
         host_port = 22
     else:
+        print("WARNING: ssh port is not standart")
         if type(host_port) is str: host_port = host_port.strip()
 
-    if password == "" :
+    if password is None:
         print("Use private key added by ssh-add ~/.ssh/private_rsa")
-        password = None
         is_sudo_uses = False
     else:
         is_sudo_uses = True
@@ -78,5 +92,6 @@ try:
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
         fh.write(output_from_parsed_template)
 
-except:
+except Exception, e:
+    print(str(e))
     print("Error saving data to Jinja 2 templates (please checkout / reset repo to the latest commit)")

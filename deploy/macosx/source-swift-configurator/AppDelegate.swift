@@ -8,7 +8,6 @@
 
 import Cocoa
 
-
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -17,6 +16,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var serverIpTextField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSTextField!
+    var ssh_key_used: Bool = false
+    let python_script: String = "runme.py"
+    
+    
+    @IBAction func digitaloceanUse(sender: NSButton) {
+        
+        if (sender.state == 1) {
+            usernameTextField.enabled = false
+            fillrootFiled()
+        }
+        else {
+            usernameTextField.enabled = true
+        }
+    }
+    
+    @IBAction func ssh_key_used(sender: NSButton) {
+        passwordTextField.enabled = sender.state == 1 ? false : true
+        
+        if (sender.state == 1) {
+            ssh_key_used = true
+            passwordTextField.stringValue = ""
+            passwordTextField.enabled = false
+        }
+        else {
+            ssh_key_used = false
+            passwordTextField.enabled = true
+        }
+    }
+    
+    func fillrootFiled() {
+        usernameTextField.stringValue = "root"
+    }
 
     @IBAction func pressedButton(sender: NSButton) {
         var serverIp, usernameAdmin, passwordAdmin:String
@@ -26,15 +57,37 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         passwordAdmin = passwordTextField.stringValue
         
         var mainBundlePath = NSBundle.mainBundle().bundlePath
-        var pythonScriptPath = mainBundlePath.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
+        //var pythonScriptPath = mainBundlePath.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
+        var pythonScriptPath = "/Users/menangen/WebStormProjects/portfolio-site-anya/deploy";
       
         
-        if (serverIp != "" && passwordAdmin != "") {
+        if (serverIp != "" && ( passwordAdmin != "" || ssh_key_used )) {
             
-            if (usernameAdmin == "") { usernameAdmin = "root"; usernameTextField.stringValue = "root" }
+            if (usernameAdmin == "") { usernameAdmin = "root"; fillrootFiled()}
+            
+            var json: String = "{\"host\": \"\(serverIp)\""
+            json += ", \"username\": \"\(usernameAdmin)\""
+            
+            if (passwordAdmin == "") {passwordAdmin = "null"}
+            else {passwordAdmin = "\"\(passwordAdmin)\""}
+            
+            json += ", \"password\": \(passwordAdmin)}"
+            
+            let data = json.dataUsingEncoding(NSUTF8StringEncoding)
+            let argumentBase64 = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+            //print(base64)
+            
 
-            system("python \(pythonScriptPath)/runme.py \(serverIp) \(usernameAdmin) \(passwordAdmin)")
-            NSApplication.sharedApplication().terminate(self)
+            let command = "python \(python_script) \(argumentBase64)"
+
+            NSAppleScript(source: "tell application \"Terminal\"\n" +
+                "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
+                "  activate\n" +
+                "end tell"
+                )?.executeAndReturnError(nil)
+
+            
+            //NSApplication.sharedApplication().terminate(self)
         }
         else {
             var alert:NSAlert = NSAlert()
