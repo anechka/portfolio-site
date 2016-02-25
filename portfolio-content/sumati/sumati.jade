@@ -1,0 +1,94 @@
+extends ../base.jade
+block title
+    title Sumati | Anya Novikova
+block portfolio-thumb
+    .row.text-center
+        span.portfolio-header Sumati
+block about-project
+    ul
+
+        li
+            a(href="https://about.gitlab.com") GitLab
+        li
+            a(href="https://www.python.org") Python
+
+        li
+            a(href="https://www.djangoproject.com") Django
+
+        li
+            a(href="https://angularjs.org") AngularJS
+
+        li
+            a(href="http://jade-lang.com/") Jade template engine
+
+        li
+            a(href="http://lesscss.org/features/") LESS
+
+        li
+            a(href="http://getbootstrap.com/css/") Bootstrap | 3
+
+    p.col-md-12 This is site of Law firm and legal services.
+
+block about-team
+    p
+        | Our team included: i as Web Developer, project manager, Web designer, Angular js Developer, Python/Django Developer
+        br
+        | We communicated via&nbsp
+        a(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/") Upwork
+        | &nbspand Skype, and also used e-mail communication.
+block my-role
+    p.col-md-12
+        | The site based on Django and Jade template engine, Twitter Bootstrap as grid based CSS framework
+        | and LESS as main CSS preprocessor.
+        br
+        | As UI/UX Bootstrap consultant i disscused with Web designer design concept and developed design.
+        br
+        | Then i &nbsp
+        a(href="http://www.jetbrains.com/webstorm/") programmed Jade(HTML) / LESS(CSS) with Webstorm tool.
+        br
+        | Also i developed Django templates and helped Angular developer to develop angular application.
+        br
+        | When i worked with project's repo i used&nbsp
+        a(href="http://git-scm.com/about") GIT version control system.
+        br
+        | I used&nbsp
+        a(href="https://www.sourcetreeapp.com") SourceTree
+        | &nbspfor pusing and pulling code to repo on&nbsp
+        a(href="https://about.gitlab.com") GitLab.
+        | &nbspI worked near 4 month with this project and developed many Jade pages with LESS code, Django templates and some part of Angular application.
+    ul(style="display: inline-block")
+        li insert text
+        li insert text
+        li
+            a(href="sumati-page.html") Sumati main page.
+block result
+    p.col-md-12
+        | After 4 month i completed project and main goal was
+        u developing design, coding Jade pages with LESS under Twitter Bootstrap, developing Django templates and Angular application.
+        br
+        | President and CEO of Sumati quote:
+    blockquote
+        | "I very liked what Anya have done!".
+    p.col-md-12
+        | During this project i improved my knowledge of Django template engine, Angular JS and increased Jade and LESS skills.
+block images-content
+    .col-md-6.images-a-content
+        .col-md-6
+            a.thumbnail(href="sumati-page.html")
+                img.img-thumbnail(src="../../images/portfolio-thumb/redalgo-page.jpg", alt="Sumati page example")
+                br
+                button.btn.btn-site-link.btn-block(type="button") Browse Sumati page
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/redalgo-project/blob/master/less/main.less")
+                img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="Less code")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Show LESS code
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/redalgo-project/blob/master/jade/redalgo-page.jade")
+                img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Jade code")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.fa.fa-github-alt
+                    | Show Jade code

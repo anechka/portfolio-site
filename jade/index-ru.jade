@@ -1,7 +1,7 @@
 doctype html
 html(lang="ru")
     head
-        title Анна Новикова | Портфолио HTML5, Bootstrap, Jade, Javascript, Django разработчик
+        title Аня Новикова | Портфолио HTML5, Bootstrap, Jade, Javascript, Django разработчик
 
         meta(charset="utf-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -28,7 +28,7 @@ html(lang="ru")
                     img.img-circle.img-avatar(src="images/avatar.jpg", width="120px", height="120px", alt="Фото Новиковой Ани", title="Новикова Аня")
             .row
                 .col-md-12.margined-top-div.text-center
-                    img(src="images/name_header_ru.png", alt="HTML5 Разработчик", title="Новикова Аня").centered-scale-element
+                    span(title="TOP 10 Upwork HTML5 разработчик").name-header.centered-scale-element HTML5 Jade Javascript разработчик Аня Новикова
             .row
                 .col-md-12.margined-top-div.text-center
                     a#mailto: img(src="images/email_header.png", alt="E-mail", title="Почта Ани Новиковой").centered-scale-element
@@ -55,55 +55,61 @@ html(lang="ru")
 
             .row#main_content
                 .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content
-                    // Main Site Content
-                    .col-md-12.portfolio-header-div
-                        h4.header Последние проекты, которые я разрабатывала на позиции HTML5/JS разработчика:
 
-                    //- imobo
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/imobo-page.png", alt="Imobo")
-                            .caption
-                                h3.header Imobo
-                                p.description-ru-center-block Продажа недвижимости в Бразилии. CSS3 & Bootstrap 3, Jade шаблоны.
-                                p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") Подробнее
+                    .row
+                        // Main Site Content
+                        .col-md-12.portfolio-header-div
+                            h4.header Последние проекты, которые я разрабатывала на позиции HTML5/JS разработчика:
 
-                    //- premiumparts
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
-                            .caption
-                                h3.header Premium Parts
-                                p.description-ru-center-block Административная панель для управления интернет-магазином. HTML5, CSS3, Bootstrap 3.1, Django шаблоны, написанные мной.
-                                p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") Подробнее
+                    .row
 
-                    //- conclave
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
-                            .caption
-                                h3.header Conclave social
-                                p.description-ru-center-block Социальная сеть для учащихся американских спортивных школ. NodeJS stack (Express, Jade шаблоны + SASS/LESS)
-                                p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") Подробнее
+                        //- imobo
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/imobo-page.png", alt="Imobo")
+                                .caption
+                                    h3.header Imobo
+                                    p.description-ru-center-block Продажа недвижимости в Бразилии. CSS3 & Bootstrap 3, Jade шаблоны.
+                                    p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") Подробнее
 
-                    //- chipmarket
+                        //- premiumparts
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts")
+                                .caption
+                                    h3.header Premium Parts
+                                    p.description-ru-center-block Административная панель для управления интернет-магазином. HTML5, CSS3, Bootstrap 3.1, Django шаблоны, написанные мной.
+                                    p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") Подробнее
 
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
-                            .caption
-                                h3.header ChipMark shop
-                                p.description-ru-center-block HTML шаблоны из PSD. CSS на Bootstrap 3 использовался для создания этого российского интернет-магазина.
-                                p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") Подробнее
+                        //- conclave
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
+                                .caption
+                                    h3.header Conclave social
+                                    p.description-ru-center-block Социальная сеть для учащихся американских спортивных школ. NodeJS stack (Express, Jade шаблоны + SASS/LESS)
+                                    p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") Подробнее
 
-                    //- redalgo
-                    .col-xs-12.col-sm-4.col-md-4
-                        .thumbnail
-                            img(src="images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo education")
-                            .caption
-                                h3.header Redalgo
-                                p.description-ru-center-block Jade шаблоны + LESS стили для разработки сайта обучающих игр для детей.
-                                p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") Подробнее
+                    .row
+
+                        //- chipmarket
+
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
+                                .caption
+                                    h3.header ChipMark shop
+                                    p.description-ru-center-block HTML шаблоны из PSD. CSS на Bootstrap 3 использовался для создания этого российского интернет-магазина.
+                                    p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") Подробнее
+
+                        //- redalgo
+                        .col-xs-12.col-sm-4.col-md-4
+                            .thumbnail
+                                img(src="images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo education")
+                                .caption
+                                    h3.header Redalgo
+                                    p.description-ru-center-block Jade шаблоны + LESS стили для разработки сайта обучающих игр для детей.
+                                    p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") Подробнее
             .row
                 .col-md-12.text-center
 
