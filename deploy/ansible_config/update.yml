@@ -1,16 +1,16 @@
 ---
-- hosts: all 
-  sudo: yes
+- hosts: all
+  become: yes
   tasks:
-  - name: git checkout from remote repo 
+  - name: Git checkout from remote repo
     git:
      repo={{ git_repo }}   
      dest={{ site_root_dir }}
      force=yes
-  - name: Gulp
+  - name: Gulp compilation
     shell: node_modules/.bin/gulp chdir={{ site_root_dir }}
   handlers:
-   - name: nginx restar
+   - name: Nginx restart
      service:
       name=nginx 
       state=restarted

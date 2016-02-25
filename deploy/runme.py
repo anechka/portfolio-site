@@ -49,32 +49,34 @@ try:
 
     if password == "" :
         print("Use private key added by ssh-add ~/.ssh/private_rsa")
+        password = None
         is_sudo_uses = False
     else:
         is_sudo_uses = True
 
+    # Deploy template
     template = env.get_template('_anyasite.j2')
     output_from_parsed_template = template.render(need_sudo=is_sudo_uses)
-    with open(current_path + "/ansible_config/anyasite.yml", "wb") as fh:
+    with open(current_path + "/ansible_config/deploy.yml", "wb") as fh:
         fh.write(output_from_parsed_template)
 
-    print("Saving to ansible hosts file host {0} and {1} user".format(host_name, username))
+    print("Saving to ansible hosts file: {0}.yml and {1} user".format(host_name, username))
 
+    # Server inventory file template
     template = env.get_template('_hosts.j2')
     output_from_parsed_template = template.render(server=host_name)
 
-    # to save the results in /deploy/ansible_config/hosts
-    with open(current_path + "/ansible_config/hosts", "wb") as fh:
+    # Saving result in 'server' as an ansible inventory file
+    with open(current_path + "/ansible_config/server", "wb") as fh:
         fh.write(output_from_parsed_template)
 
+    # Template for Host configuration
     template = env.get_template('host_vars/_webserver.j2')
     output_from_parsed_template = template.render(server_user=username, server_port=host_port, password=password)
 
-    print(output_from_parsed_template)
-
-    # to save the results in /deploy/ansible_config/host_vars
+    # Saving result in /deploy/ansible_config/host_vars folder
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
         fh.write(output_from_parsed_template)
 
 except:
-    print("Error saving data to Jinja 2 templates (please checkout / reset repo to latest commit)")
+    print("Error saving data to Jinja 2 templates (please checkout / reset repo to the latest commit)")

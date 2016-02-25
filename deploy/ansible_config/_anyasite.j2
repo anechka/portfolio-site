@@ -4,7 +4,6 @@
   hosts: all
   roles:
    - sitedeploy
-{% endraw %}
-{% if need_sudo %}  become: yes{% endif %}
-{% raw %}# Comment next string if you ssh into host as root.
-{% endraw %}
+{% endraw %}{% if need_sudo %}
+# Comment next string if you ssh into host as root.
+  become: yes{% endif %}

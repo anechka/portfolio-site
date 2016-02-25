@@ -1,14 +1,14 @@
 ---
-- name: Git| git install
+- name: Git | git install
   apt:
    name=git
    state=present
-- name: Git| rm dir with default site, mkdir for repo
+- name: Git | rm dir with default site, mkdir for repo
   file: name={{ site_root_dir }} state={{ item.state }}
   with_items:
    - { state: absent }
    - { state: directory }
-- name: Git| clone
+- name: Git | clone
   git:
    repo={{ git_repo }}
    dest={{ site_root_dir }}

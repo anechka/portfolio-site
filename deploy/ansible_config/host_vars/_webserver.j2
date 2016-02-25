@@ -1,7 +1,7 @@
 ansible_ssh_user: {{ server_user }}
-ansible_port: {{ server_port }}
+ansible_port: {{ server_port }}{% if password %}
 ansible_ssh_pass: {{ password }}
-ansible_become_pass: {{ password }}
+ansible_become_pass: {{ password }}{% endif %}
 {% raw %}
 distrfamily: "{{ ansible_distribution | lower }}"
 releasename: "{{ ansible_distribution_release | lower }}"

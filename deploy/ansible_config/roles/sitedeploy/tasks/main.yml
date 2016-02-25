@@ -1,17 +1,17 @@
 ---
-- name: Nginx| Add apt-key
+- name: Nginx | Add apt-key
   apt_key:
    url=http://nginx.org/keys/nginx_signing.key
    state=present
-- name:  Nginx| repo to source.list
+- name:  Nginx | repo to source.list
   lineinfile: 
    dest=/etc/apt/sources.list 
    line="deb http://nginx.org/packages/mainline/{{ distrfamily }} {{ releasename }} nginx"
-- name: Nginx| apt update and Nginx install 
+- name: Nginx | apt update and Nginx install
   apt:
    name=nginx 
    update_cache=yes
-- name: Nginx| start
+- name: Nginx | start
   service:
    name=nginx
    state=started
