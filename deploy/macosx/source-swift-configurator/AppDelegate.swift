@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     //-------------------------  VAR  ---------------------------------------
     
     let python_script: String = "runme.py"
+    //let python_script: String = "test2.py"
     
     var ssh_key_used: Bool = false
     var digitaloceanUse: Bool = false
@@ -123,20 +124,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if (passwordAdmin == "") {passwordAdmin = "null"}
             else {passwordAdmin = "\"\(passwordAdmin)\""}
             
-            json += ", \"password\": \(passwordAdmin)}"
-            
-            let data = json.dataUsingEncoding(NSUTF8StringEncoding)
-            let argumentBase64 = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-            //print(base64)
+            json += ", \"password\": \(passwordAdmin)"
             
 
 
+            
             if ((task) != nil) {
                 
             
                 if (task!) {
                     // Installing
-                    println("Install process")
+                    //println("Install process")
+                    json += ", \"install\": true}"
+                    
+                    let data = json.dataUsingEncoding(NSUTF8StringEncoding)
+                    let argumentBase64 = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
                     
                     let command = "python \(python_script) \(argumentBase64)"
                     
@@ -149,7 +151,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
                 else {
                     // Updating
-                    println("Update process")
+                    //println("Update process")
                     
                     let command =
                     "ansible-playbook -i deploy/ansible_config/server /deploy/ansible_config/update.yml"
@@ -164,6 +166,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             // Saving settings into ansible configuration
             else {
+                json += ", \"install\": false}"
+                
+                let data = json.dataUsingEncoding(NSUTF8StringEncoding)
+                let argumentBase64 = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
                 
                 let command = "python \(python_script) \(argumentBase64)"
                 

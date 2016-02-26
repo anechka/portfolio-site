@@ -12,6 +12,19 @@ current_path = path.dirname(path.abspath(__file__))
 env = Environment(loader=FileSystemLoader(current_path + '/ansible_config'))
 
 
+def colored_grey_green(text):
+        CSI="\x1B["
+        reset=CSI+"0m"
+
+        return CSI+"32;2m" + text + reset
+
+
+def colored_green(text):
+        CSI="\x1B["
+        reset=CSI+"0m"
+
+        return CSI+"32;1m" + text + reset
+
 # Give a arguments from swift application
 try:
     base64String = argv[1]
@@ -24,8 +37,9 @@ try:
     username = settings.get("username")
     password = settings.get("password")
     host_port = settings.get("port")
+    need_run_ansible = settings.get("install")
 
-    print(settings)
+    # print(settings)
 
 except:  # Manual running
 
@@ -33,20 +47,16 @@ except:  # Manual running
     try: ask_user = raw_input
     except NameError: ask_user = input
 
-    def colored(text):
-        CSI="\x1B["
-        reset=CSI+"m"
-
-        return CSI+"21;00m" + text + CSI + "0m"
-
-    host_name = ask_user("Enter hostname " + colored("(DNS of host or Digitalocean ip)" +": \n"))
-    host_port = ask_user("Enter SSH port " + colored("(or press ENTER FOR 22 default)" +": \n"))
-    username = ask_user("Enter username for sudo user " + colored("(or press ENTER FOR root)" +": \n"))
-    password = ask_user("Enter SSH password for sudo " + username + colored("(or press ENTER IF private key use)" +": \n"))
-
+    host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" +": \n"))
+    host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" +": \n"))
+    username = ask_user("Enter username for sudo user " + colored_grey_green("(or press ENTER FOR root)" +": \n"))
+    password = ask_user("Enter SSH password for sudo " + username + colored_grey_green("(or press ENTER IF private key use)" +": \n"))
+    need_run_ansible = False
 
 # Loading Jinja 2 templates
 try:
+    print("Loading Jinja 2 settings")
+
     host_name = host_name.strip()
     username = username.strip()
     if type(password) is str:
@@ -91,6 +101,20 @@ try:
     # Saving result in /deploy/ansible_config/host_vars folder
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
         fh.write(output_from_parsed_template)
+
+    if need_run_ansible:
+        print(colored_green("Run ansible now..."))
+
+        import subprocess
+        subprocess.call(
+            [
+                "ansible-playbook", "-i", "{0}/ansible_config/server".format(current_path),
+                "{0}/ansible_config/deploy.yml".format(current_path)
+             ]
+        )
+
+    else:
+        print("\n\n" + colored_green("Saving settings completed"))
 
 except Exception, e:
     print(str(e))
