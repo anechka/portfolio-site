@@ -1,4 +1,7 @@
 ---
+- name: Apt | Dist upgrade to latest
+  apt: update_cache=yes upgrade=dist
+
 - name: Nginx | Add apt-key
   apt_key:
    url=http://nginx.org/keys/nginx_signing.key

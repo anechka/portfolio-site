@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
    
     @IBOutlet weak var serverIpTextField: NSTextField!
+    @IBOutlet weak var serverPortField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSTextField!
     var ssh_key_used: Bool = false
@@ -23,11 +24,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func digitaloceanUse(sender: NSButton) {
         
         if (sender.state == 1) {
-            usernameTextField.enabled = false
             fillrootFiled()
+            fillportFiled()
         }
         else {
             usernameTextField.enabled = true
+            serverPortField.enabled = true
         }
     }
     
@@ -47,12 +49,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func fillrootFiled() {
         usernameTextField.stringValue = "root"
+        usernameTextField.enabled = false
+    }
+    
+    func fillportFiled() {
+        serverPortField.stringValue = "22"
+        serverPortField.enabled = false
     }
 
     @IBAction func pressedButton(sender: NSButton) {
-        var serverIp, usernameAdmin, passwordAdmin:String
+        var serverIp, serverPort, usernameAdmin, passwordAdmin:String
         
         serverIp = serverIpTextField.stringValue
+        serverPort = serverPortField.stringValue
         usernameAdmin = usernameTextField.stringValue
         passwordAdmin = passwordTextField.stringValue
         
@@ -64,8 +73,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if (serverIp != "" && ( passwordAdmin != "" || ssh_key_used )) {
             
             if (usernameAdmin == "") { usernameAdmin = "root"; fillrootFiled()}
+            if (serverPort == "") { serverPort = "22"; fillportFiled()}
             
-            var json: String = "{\"host\": \"\(serverIp)\""
+            var json: String = "{\"host\": \"\(serverIp)\", \"port\":\(serverPort)"
             json += ", \"username\": \"\(usernameAdmin)\""
             
             if (passwordAdmin == "") {passwordAdmin = "null"}

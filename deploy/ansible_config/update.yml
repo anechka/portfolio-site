@@ -1,7 +1,11 @@
 ---
 - hosts: all
   become: yes
+
   tasks:
+  - name: Apt update to latest
+    apt: update_cache=yes upgrade=yes
+
   - name: Git checkout from remote repo
     git:
      repo={{ git_repo }}   
@@ -9,6 +13,7 @@
      force=yes
   - name: Gulp compilation
     shell: node_modules/.bin/gulp chdir={{ site_root_dir }}
+
   handlers:
    - name: Nginx restart
      service:
