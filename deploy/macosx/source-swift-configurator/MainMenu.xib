@@ -12,7 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="graphic_swift" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ansible_configurator" customModuleProvider="target">
             <connections>
                 <outlet property="passwordTextField" destination="716-zb-YmY" id="XJs-zm-DhK"/>
                 <outlet property="saveButton" destination="JYB-8a-DNl" id="p2l-cG-xjI"/>
@@ -683,25 +683,17 @@
                 <subviews>
                     <textField identifier="HostID" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-TB-zle">
                         <rect key="frame" x="20" y="179" width="256" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Target server IP or DNS name" drawsBackground="YES" id="lyZ-ZL-smA">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Target server IP or DNS name" id="lyZ-ZL-smA">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField identifier="Username" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhX-oj-56g">
                         <rect key="frame" x="20" y="125" width="256" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Username of admin (sudo user)" drawsBackground="YES" id="CcP-AH-okS">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Username of admin (sudo user)" id="CcP-AH-okS">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField identifier="Password" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="716-zb-YmY" customClass="NSSecureTextField">
-                        <rect key="frame" x="20" y="80" width="256" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Password for sudo user" drawsBackground="YES" id="QiD-lG-udl">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -777,13 +769,13 @@
                         <rect key="frame" x="287" y="179" width="41" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="22" drawsBackground="YES" id="nKX-Qg-3kC">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYB-8a-DNl">
                         <rect key="frame" x="88" y="32" width="172" height="32"/>
-                        <buttonCell key="cell" type="push" title="Save ansible config" alternateTitle="Saving and running Ansible in Terminal app" bezelStyle="rounded" image="5421E9AC-2618-470F-9111-181A15EDE3B4" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koy-fa-uCx">
+                        <buttonCell key="cell" type="push" title="Save ansible config" alternateTitle="Saving and running Ansible in Terminal app" bezelStyle="rounded" image="587323E8-934F-42AE-9343-AF786BD56ACD" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koy-fa-uCx">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -829,13 +821,21 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <textField identifier="Password" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="716-zb-YmY" customClass="NSSecureTextField">
+                        <rect key="frame" x="20" y="80" width="256" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Password for sudo user" id="QiD-lG-udl">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="430" y="384"/>
         </window>
     </objects>
     <resources>
-        <image name="5421E9AC-2618-470F-9111-181A15EDE3B4" width="1" height="1">
+        <image name="587323E8-934F-42AE-9343-AF786BD56ACD" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

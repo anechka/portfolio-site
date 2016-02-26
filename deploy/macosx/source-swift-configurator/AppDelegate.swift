@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         else {
             digitaloceanUse = false
             
-            if ( ((task) != nil) && task!) {
+            if ( ((task) != nil) && task! ) || ((task) == nil) {
                 usernameTextField.enabled = true
                 serverPortField.enabled = true
             }
@@ -154,7 +154,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     //println("Update process")
                     
                     let command =
-                    "ansible-playbook -i deploy/ansible_config/server /deploy/ansible_config/update.yml"
+                    "ansible-playbook -i ansible_config/server ansible_config/update.yml"
                     
                     NSAppleScript(source: "tell application \"Terminal\"\n" +
                         "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
