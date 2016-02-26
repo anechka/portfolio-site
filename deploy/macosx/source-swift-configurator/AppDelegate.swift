@@ -10,6 +10,15 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    //-------------------------  VAR  ---------------------------------------
+    
+    let python_script: String = "runme.py"
+    
+    var ssh_key_used: Bool = false
+    var digitaloceanUse: Bool = false
+    var task: Bool? = nil
+    
+    //----------------------  NS-Outlets  -----------------------------------
 
     @IBOutlet weak var window: NSWindow!
    
@@ -17,24 +26,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var serverPortField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSTextField!
-    var ssh_key_used: Bool = false
-    let python_script: String = "runme.py"
-    
+    @IBOutlet weak var saveButton: NSButton!
+    //----------------------  HANDLERS  -------------------------------------
+    @IBAction func taskisHandler(sender: NSMatrix) {
+        let nsmatrix:NSMatrix = sender
+        let selected: Int = nsmatrix.selectedColumn
+        
+        if (selected == 0) { setUpInstallTask() } else { setUpUpdateTask() }
+    }
     
     @IBAction func digitaloceanUse(sender: NSButton) {
         
         if (sender.state == 1) {
+            digitaloceanUse = true
+            
             fillrootFiled()
             fillportFiled()
         }
         else {
-            usernameTextField.enabled = true
-            serverPortField.enabled = true
+            digitaloceanUse = false
+            
+            if ( ((task) != nil) && task!) {
+                usernameTextField.enabled = true
+                serverPortField.enabled = true
+            }
         }
     }
     
     @IBAction func ssh_key_used(sender: NSButton) {
-        passwordTextField.enabled = sender.state == 1 ? false : true
         
         if (sender.state == 1) {
             ssh_key_used = true
@@ -43,8 +62,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else {
             ssh_key_used = false
-            passwordTextField.enabled = true
+            if ((task) == nil || task! == true) {
+                passwordTextField.enabled = true
+            }
         }
+    }
+    
+    func setUpUpdateTask() {
+        task = false
+        
+        serverIpTextField.enabled = false
+        serverPortField.enabled = false
+        usernameTextField.enabled = false
+        passwordTextField.enabled = false
+    }
+    
+    func setUpInstallTask() {
+        task = true
+        
+        serverIpTextField.enabled = true
+
+        serverPortField.enabled = digitaloceanUse ? false : true
+        
+        usernameTextField.enabled = digitaloceanUse ? false : true
+        passwordTextField.enabled = ssh_key_used ? false : true
+
     }
     
     func fillrootFiled() {
@@ -66,11 +108,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         passwordAdmin = passwordTextField.stringValue
         
         var mainBundlePath = NSBundle.mainBundle().bundlePath
-        //var pythonScriptPath = mainBundlePath.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
-        var pythonScriptPath = "/Users/menangen/WebStormProjects/portfolio-site-anya/deploy";
+        var pythonScriptPath = mainBundlePath.stringByDeletingLastPathComponent.stringByDeletingLastPathComponent;
+        //var pythonScriptPath = "/Users/menangen/WebStormProjects/portfolio-site-anya/deploy";
       
         
-        if (serverIp != "" && ( passwordAdmin != "" || ssh_key_used )) {
+        if ( ( ((task) != nil) && task! == false) || (serverIp != "" && ( passwordAdmin != "" || ssh_key_used ))) {
             
             if (usernameAdmin == "") { usernameAdmin = "root"; fillrootFiled()}
             if (serverPort == "") { serverPort = "22"; fillportFiled()}
@@ -88,16 +130,52 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             //print(base64)
             
 
-            let command = "python \(python_script) \(argumentBase64)"
 
-            NSAppleScript(source: "tell application \"Terminal\"\n" +
-                "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
-                "  activate\n" +
-                "end tell"
-                )?.executeAndReturnError(nil)
-
+            if ((task) != nil) {
+                
             
-            //NSApplication.sharedApplication().terminate(self)
+                if (task!) {
+                    // Installing
+                    println("Install process")
+                    
+                    let command = "python \(python_script) \(argumentBase64)"
+                    
+                    NSAppleScript(source: "tell application \"Terminal\"\n" +
+                    "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
+                    "  activate\n" +
+                    "end tell"
+                    )?.executeAndReturnError(nil)
+
+                }
+                else {
+                    // Updating
+                    println("Update process")
+                    
+                    let command =
+                    "ansible-playbook -i deploy/ansible_config/server /deploy/ansible_config/update.yml"
+                    
+                    NSAppleScript(source: "tell application \"Terminal\"\n" +
+                        "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
+                        "  activate\n" +
+                        "end tell"
+                        )?.executeAndReturnError(nil)
+                }
+                saveButton.enabled = false;
+            }
+            // Saving settings into ansible configuration
+            else {
+                
+                let command = "python \(python_script) \(argumentBase64)"
+                
+                NSAppleScript(source: "tell application \"Terminal\"\n" +
+                    "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
+                    "  activate\n" +
+                    "end tell"
+                    )?.executeAndReturnError(nil)
+                
+                NSApplication.sharedApplication().terminate(self)
+            }
+            
         }
         else {
             var alert:NSAlert = NSAlert()
