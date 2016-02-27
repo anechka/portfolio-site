@@ -59,6 +59,11 @@ gulp.task('jade', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("portfolio-content/redalgo"));
 
+    gulp.src('portfolio-content/sumati/sumati.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("portfolio-content/sumati"));
+
 });
 
 gulp.task('clean', function() {
