@@ -11,6 +11,10 @@ from jinja2 import Environment, FileSystemLoader
 current_path = path.dirname(path.abspath(__file__))
 env = Environment(loader=FileSystemLoader(current_path + '/ansible_config'))
 
+# For Python 3 fix
+try: ask_user = raw_input
+except NameError: ask_user = input
+
 
 def colored_grey_green(text):
         CSI="\x1B["
@@ -24,6 +28,13 @@ def colored_green(text):
         reset=CSI+"0m"
 
         return CSI+"32;1m" + text + reset
+
+
+def colored_mag(text):
+        CSI="\x1B["
+        reset=CSI+"0m"
+
+        return CSI+"35m" + text + reset
 
 # Give a arguments from swift application
 try:
@@ -43,15 +54,10 @@ try:
 
 except:  # Manual running
 
-    # For Python 3 fix
-    try: ask_user = raw_input
-    except NameError: ask_user = input
-
     host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" +": \n"))
     host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" +": \n"))
     username = ask_user("Enter username for sudo user " + colored_grey_green("(or press ENTER FOR root)" +": \n"))
-    password = ask_user("Enter SSH password for sudo " + username + colored_grey_green("(or press ENTER IF private key use)" +": \n"))
-    need_run_ansible = False
+    password = ask_user("Enter SSH password for sudo " + username + colored_grey_green(" (or press ENTER IF private key use)" +": \n"))
 
 # Loading Jinja 2 templates
 try:
@@ -102,6 +108,11 @@ try:
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
         fh.write(output_from_parsed_template)
 
+    print("\n\n" + colored_green("Saving settings completed"))
+
+    setup_answer = ask_user(colored_mag("Run ansible DEPLOY task? Y/n" + "(Y for YES or press ENTER for NO INSTALL)" +": \n")).strip()
+    need_run_ansible = True if setup_answer == "Y" else False
+
     if need_run_ansible:
         print(colored_green("Run ansible now..."))
 
@@ -110,11 +121,8 @@ try:
             [
                 "ansible-playbook", "-i", "{0}/ansible_config/server".format(current_path),
                 "{0}/ansible_config/deploy.yml".format(current_path)
-             ]
+            ]
         )
-
-    else:
-        print("\n\n" + colored_green("Saving settings completed"))
 
 except Exception, e:
     print(str(e))
