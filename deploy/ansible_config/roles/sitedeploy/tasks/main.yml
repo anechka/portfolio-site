@@ -1,6 +1,6 @@
 ---
 - name: Apt | Dist upgrade to latest
-  apt: update_cache=yes upgrade=dist
+  apt: update_cache=yes upgrade=yes
 
 - name: Nginx | Add apt-key
   apt_key:

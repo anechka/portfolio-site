@@ -51,8 +51,11 @@ try:
     need_run_ansible = settings.get("install")
 
     # print(settings)
+    manual = False
 
 except:  # Manual running
+    manual = True
+    need_run_ansible = False
 
     host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" +": \n"))
     host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" +": \n"))
@@ -110,8 +113,9 @@ try:
 
     print("\n\n" + colored_green("Saving settings completed"))
 
-    setup_answer = ask_user(colored_mag("Run ansible DEPLOY task? Y/n" + "(Y for YES or press ENTER for NO INSTALL)" +": \n")).strip()
-    need_run_ansible = True if setup_answer == "Y" else False
+    if manual:
+        setup_answer = ask_user(colored_mag("Run ansible DEPLOY task? Y/n" + "(Y for YES or press ENTER for NO INSTALL)" +": \n")).strip()
+        need_run_ansible = True if setup_answer == "Y" else False
 
     if need_run_ansible:
         print(colored_green("Run ansible now..."))
