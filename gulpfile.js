@@ -77,7 +77,8 @@ gulp.task('clean', function() {
             "portfolio-content/market/index.html",
             "portfolio-content/pp/index.html",
             "portfolio-content/imobo/index.html",
-            "portfolio-content/redalgo/index.html"
+            "portfolio-content/redalgo/index.html",
+            "portfolio-content/sumati/index.html"
         ],
         {read: false})
     .pipe(clean());

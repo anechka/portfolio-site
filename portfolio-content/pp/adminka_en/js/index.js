@@ -17,9 +17,6 @@ $(function() {
     $("#register_button").click(showRegisterForm);
 
 
-    //TODO: delete this
-    //showRegisterForm();
-
     if (window.premiumparts.user && window.premiumparts.error == undefined) {
         showCompleteRegistartion();
     }
