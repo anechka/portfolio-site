@@ -4,12 +4,12 @@ server {
 	# Make site accessible from http://anya.site/
 	server_name anya.site;
 
-	root /home/menangen/portfolio-site-anya;
+	root {{ site_root_dir }};
 	index index.html index.htm;
 
 	# deny access to .jade files
 	#
-	location ~ /jade {
+	location /jade {
 		deny all;
 	}
 

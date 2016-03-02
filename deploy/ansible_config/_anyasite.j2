@@ -1,0 +1,9 @@
+{% raw %}# Created by Punko <Punkoivan@yandex.ru> on 16.02.16
+---
+- name: installing Nginx and deploy site from git
+  hosts: all
+  roles:
+   - sitedeploy
+{% endraw %}{% if need_sudo %}
+# Comment next string if you ssh into host as root.
+  become: yes{% endif %}

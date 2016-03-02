@@ -1,0 +1,13 @@
+ansible_ssh_user: {{ server_user }}
+ansible_port: {{ server_port }}{% if password %}
+ansible_ssh_pass: {{ password }}
+ansible_become_pass: {{ password }}{% endif %}
+{% raw %}
+distrfamily: "{{ ansible_distribution | lower }}"
+releasename: "{{ ansible_distribution_release | lower }}"
+site_root_dir:  /usr/share/nginx/www
+nginx_user: www-data
+nginx_group: www-data
+nginx_config_dir: /etc/nginx
+git_repo: https://github.com/anechka/portfolio-site
+{% endraw %}

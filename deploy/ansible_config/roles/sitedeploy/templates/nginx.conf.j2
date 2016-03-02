@@ -1,4 +1,4 @@
-user www-data;
+user {{ nginx_user }};
 worker_processes 2;
 pid /run/nginx.pid;
 
@@ -33,12 +33,6 @@ http {
 
 	# server_names_hash_bucket_size 64;
 	# server_name_in_redirect off;
-
-	map $http_accept_language $lang {
-	        #default en;
-                ~*ru ru;
-                ~*ru-RU ru;
-        }
 
 	include /etc/nginx/mime.types;
 	default_type application/octet-stream;

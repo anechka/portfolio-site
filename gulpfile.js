@@ -12,6 +12,7 @@
  */
 var production = false; // False for pretty HTML output in "jade" template engine task
 
+var exec = require('child_process').execSync;
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var rename = require("gulp-rename");
@@ -83,4 +84,8 @@ gulp.task('clean', function() {
         {read: false})
     .pipe(clean());
 
+});
+
+gulp.task('server-update', function() {
+    exec('ansible-playbook -i deploy/ansible_config/server deploy/ansible_config/update.yml', {stdio:[0,1,2]})
 });
