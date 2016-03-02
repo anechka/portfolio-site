@@ -102,13 +102,13 @@ span.portfolio-header {
 
 .images-a-content a:focus {
     color: #97B5C6;
+    text-decoration: none;
 }
 
 .images-a-content a:focus > button.btn {
     background-color: #FFF;
     border-color: #E0EAF0;
-    color: #86A9D8;/* C0D3DA */
-    text-decoration: dotted;
+    color: #B0B7BF;
 }
 
 .thumbnail {
