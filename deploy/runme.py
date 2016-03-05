@@ -48,6 +48,7 @@ try:
     username = settings.get("username")
     password = settings.get("password")
     host_port = settings.get("port")
+    nginx_external_apt = settings.get("nginx")
     need_run_ansible = settings.get("install")
 
     # print(settings)
@@ -56,6 +57,7 @@ try:
 except:  # Manual running
     manual = True
     need_run_ansible = False
+    nginx_external_apt = True
 
     host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" +": \n"))
     host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" +": \n"))
@@ -109,6 +111,16 @@ try:
 
     # Saving result in /deploy/ansible_config/host_vars folder
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
+        fh.write(output_from_parsed_template)
+
+    print("\n\n" + colored_green("Saving settings completed"))
+
+    # Template for Apt + Nginx configuration
+    template = env.get_template('roles/sitedeploy/tasks/_main.j2')
+    output_from_parsed_template = template.render(nginx_external=nginx_external_apt)
+
+    # Saving Nginx repo configuration result in main.yml
+    with open(current_path + "/ansible_config/roles/sitedeploy/tasks/main.yml", "wb") as fh:
         fh.write(output_from_parsed_template)
 
     print("\n\n" + colored_green("Saving settings completed"))
