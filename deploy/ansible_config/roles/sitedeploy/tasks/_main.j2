@@ -1,7 +1,4 @@
----
-- name: Apt | Dist upgrade to latest
-  apt: update_cache=yes upgrade=yes
-{% if nginx_external %}
+---{% if nginx_external %}
 - name: Nginx | Add apt-key
   apt_key:
    url=http://nginx.org/keys/nginx_signing.key
@@ -11,10 +8,11 @@
    dest=/etc/apt/sources.list
    line="deb http://nginx.org/packages/mainline/{{ '{{' }} distrfamily {{ '}}' }} {{ '{{' }} releasename {{ '}}' }} nginx"
 {% endif %}{% raw %}
-- name: Nginx | apt update and Nginx install
+- name: Apt | Dist upgrade to latest
+  apt: update_cache=yes upgrade=dist
+- name: Nginx | install
   apt:
-   name=nginx 
-   update_cache=yes
+   name=nginx
 - name: Nginx | start
   service:
    name=nginx
@@ -22,4 +20,4 @@
 - include: gitclone.yml
 - include: nginx_conf.yml
 - include: npm.yml
-#Created by Punko <Punkoivan@yandex.ru> on 16.02.16{% endraw %}
+# Created by Punko <Punkoivan@yandex.ru> on 16.02.16{% endraw %}

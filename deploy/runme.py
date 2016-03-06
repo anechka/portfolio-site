@@ -55,15 +55,16 @@ try:
     manual = False
 
 except:  # Manual running
+
+    host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" + ": \n"))
+    host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" + ": \n"))
+    username = ask_user("Enter username for sudo user " + colored_grey_green("(or press ENTER FOR root)" + ": \n"))
+    password = ask_user("Enter SSH password for sudo " + username + colored_grey_green(" (or press ENTER IF private key use)" + ": \n"))
+    need_remove_nginx_repo = ask_user("Use " + colored_grey_green("external") + " nginx apt repo? Y/n or ENTER :\n").strip()
+
+    nginx_external_apt = True if need_remove_nginx_repo in ("Y", "") else False
     manual = True
     need_run_ansible = False
-    nginx_external_apt = True
-
-    host_name = ask_user("Enter hostname " + colored_grey_green("(DNS of host or Digitalocean ip)" +": \n"))
-    host_port = ask_user("Enter SSH port " + colored_grey_green("(or press ENTER FOR 22 default)" +": \n"))
-    username = ask_user("Enter username for sudo user " + colored_grey_green("(or press ENTER FOR root)" +": \n"))
-    password = ask_user("Enter SSH password for sudo " + username + colored_grey_green(" (or press ENTER IF private key use)" +": \n"))
-
 # Loading Jinja 2 templates
 try:
     print("Loading Jinja 2 settings")
@@ -113,8 +114,6 @@ try:
     with open(current_path + "/ansible_config/host_vars/{0}.yml".format(host_name), "wb") as fh:
         fh.write(output_from_parsed_template)
 
-    print("\n\n" + colored_green("Saving settings completed"))
-
     # Template for Apt + Nginx configuration
     template = env.get_template('roles/sitedeploy/tasks/_main.j2')
     output_from_parsed_template = template.render(nginx_external=nginx_external_apt)
@@ -126,7 +125,7 @@ try:
     print("\n\n" + colored_green("Saving settings completed"))
 
     if manual:
-        setup_answer = ask_user(colored_mag("Run ansible DEPLOY task? Y/n" + "(Y for YES or press ENTER for NO INSTALL)" +": \n")).strip()
+        setup_answer = ask_user(colored_mag("Run ansible DEPLOY task? Y/n ") + "(Y for YES or press ENTER for NO INSTALL)" +": \n").strip()
         need_run_ansible = True if setup_answer == "Y" else False
 
     if need_run_ansible:
