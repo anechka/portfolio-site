@@ -100,6 +100,17 @@ span.portfolio-header {
     vertical-align:top
 }
 
+.images-a-content a:focus {
+    color: #97B5C6;
+    text-decoration: none;
+}
+
+.images-a-content a:focus > button.btn {
+    background-color: #FFF;
+    border-color: #E0EAF0;
+    color: #B0B7BF;
+}
+
 .thumbnail {
     text-align: center;
     padding-top: 15px;
@@ -125,6 +136,12 @@ span.portfolio-header {
     width: 200px;
     -webkit-box-shadow: 2px 0px 16px rgba(0, 0, 0, 0.22);
     box-shadow: 2px 0px 16px rgba(0, 0, 0, 0.22);
+}
+
+.btn-default:hover {
+    color: #002C4D;
+    background-color: #FFF;
+    border-color: #00d2ff;
 }
 
 .btn-site-link {

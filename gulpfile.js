@@ -50,12 +50,38 @@ gulp.task('jade', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("portfolio-content/pp"));
 
+    gulp.src('portfolio-content/imobo/imobo.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("portfolio-content/imobo"));
+
+    gulp.src('portfolio-content/redalgo/redalgo.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("portfolio-content/redalgo"));
+
+    gulp.src('portfolio-content/sumati/sumati.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("portfolio-content/sumati"));
+
 });
 
 gulp.task('clean', function() {
     var clean = require('gulp-clean');
 
-    gulp.src(['index.html', "index-ru.html", "portfolio-content/conclave/index.html", "portfolio-content/market/index.html", "portfolio-content/pp/index.html"], {read: false})
+    gulp.src(
+        [
+            "index.html",
+            "index-ru.html",
+            "portfolio-content/conclave/index.html",
+            "portfolio-content/market/index.html",
+            "portfolio-content/pp/index.html",
+            "portfolio-content/imobo/index.html",
+            "portfolio-content/redalgo/index.html",
+            "portfolio-content/sumati/index.html"
+        ],
+        {read: false})
     .pipe(clean());
 
 });

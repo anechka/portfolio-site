@@ -21,19 +21,12 @@ onload = function() {
 
             $(document).on("mousemove", show_animated_button);
 
-            set_background_and_look();
-
-            var scene = document.getElementById('scene');
-            window.parallax_view = new Parallax(scene);
-
-            parallax_view.scalar(20, 50);
-            parallax_view.invert(true, false);
-            parallax_view.friction(0.2, 0.1);
-
             window.to_little_flag = false;
 
             window.speed_thunder = 0;
             window.animate_object = setInterval(interval_handler, 120);
+
+            set_background_and_look();
         };
 
 isrussian = function() {
