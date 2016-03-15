@@ -15,11 +15,6 @@ html(lang="en")
     body
         #parallax_container.container
             ul#scene.scene
-                li.layer(data-depth="0.00"): img#layer5.cloud_layer(src="images/clouds_layer_5.png")
-                li.layer(data-depth="0.10"): img.cloud_layer(src="images/clouds_layer_1.png")
-                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two(src="images/clouds_layer_2.png")
-                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three(src="images/clouds_layer_3.png")
-                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four(src="images/clouds_layer_4.png")
 
         .container.image_container
 
@@ -151,9 +146,3 @@ html(lang="en")
         script(type="text/javascript", src="js/handlers.js", async="async")
         script(type="text/javascript", src="js/controller.js", async="async")
         script(type="text/javascript", src="js/main.js", defer="defer")
-
-        div(style="display:none")
-            img(src="images/clouds_layer_5_storm1.png")
-            img(src="images/clouds_layer_5_storm2.png")
-            img(src="images/clouds_layer_5_storm2_extra.png")
-            img(src="images/upwork-profile-hover.svg")

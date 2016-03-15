@@ -11,6 +11,22 @@ show_animated_button = function() {
 };
 
 set_background_and_look = function() {
+    var bodyDOM = $( "body" );
+
+    $("#scene").html("<li data-depth='0.00' class='layer'><img id='layer5' src='images/clouds_layer_5.png' class='cloud_layer'></li>" +
+    "<li data-depth='0.10' class='layer'><img src='images/clouds_layer_1.png' class='cloud_layer'></li>" +
+    "<li data-depth='0.30' class='layer'><img src='images/clouds_layer_2.png' class='cloud_layer cloud_two'></li>" +
+    "<li data-depth='0.60' class='layer'><img src='images/clouds_layer_3.png' class='cloud_layer cloud_three'></li>" +
+    "<li data-depth='1.00' class='layer'><img src='images/clouds_layer_4.png' class='cloud_layer cloud_four'></li>");
+
+
+    var $hiddenDiv = $( "<div style='display:none'>" +
+        "<img src='images/clouds_layer_5_storm1.png'>" +
+        "<img src='images/clouds_layer_5_storm2.png'>" +
+        "<img src='images/clouds_layer_5_storm2_extra.png'>" +
+        "<img src='images/upwork-profile-hover.svg'></div>" );
+
+    bodyDOM.append($hiddenDiv);
 
 
     var platform = navigator.platform;
@@ -20,7 +36,7 @@ set_background_and_look = function() {
     switch (platform) {
 
         case "iPhone": {
-            $( "body" ).css( "background-size", "100%");
+            bodyDOM.css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
@@ -28,7 +44,7 @@ set_background_and_look = function() {
         }
 
         case "iPhone Simulator": {
-            $( "body" ).css( "background-size", "100%");
+            bodyDOM.css( "background-size", "100%");
             image = "background-iphone.jpg";
 
             show_animated_button();
@@ -50,5 +66,5 @@ set_background_and_look = function() {
     }
 
     //alert(platform);
-    $( document.body ).css( "background-image", "url(" + imagesFolder + image +")");
+    bodyDOM.css( "background-image", "url(" + imagesFolder + image +")");
 };
