@@ -54,13 +54,15 @@ html
                 block images-content
 
 
-        script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", defer="defer")
+        script(type="text/javascript", src="../../js/zepto.min.js", defer="defer")
+        script(type="text/javascript", src="../../js/parallax.min.js", defer="defer")
         // Animation JavaScript
         script(type="text/javascript", src="../../js/controller.js", async="async")
         script(type="text/javascript", src="../../js/portfolio/animation_controller.js", async="async")
         script(type="text/javascript", src="../../js/portfolio/main.js", defer="defer")
         script(type="text/javascript", src="../../js/portfolio/text_mouseover_handler.js", defer="defer")
-        //- Google Analytics script
+
+        // Google Analytics script
         script(type='text/javascript').
             window._gaq = window._gaq || [];
             window._gaq.push(['_setAccount', 'UA-50636137-1']);

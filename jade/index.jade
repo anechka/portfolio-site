@@ -8,18 +8,9 @@ html(lang="en")
         meta(name="description", content="Top rated 10% Upwork HTML5, CSS3, Jade, Javascript and Django templates web developer")
         meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, freelancer, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web")
 
-        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
-        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
-        link(rel="stylesheet", href="css/main.css")
-
     body
         #parallax_container.container
             ul#scene.scene
-                li.layer(data-depth="0.00"): img#layer5.cloud_layer(src="images/clouds_layer_5.png")
-                li.layer(data-depth="0.10"): img.cloud_layer(src="images/clouds_layer_1.png")
-                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two(src="images/clouds_layer_2.png")
-                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three(src="images/clouds_layer_3.png")
-                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four(src="images/clouds_layer_4.png")
 
         .container.image_container
 
@@ -69,7 +60,7 @@ html(lang="en")
                                 .caption
                                     h3.header Sumati
                                     p.description-en-center-block Django website for Lawers. Jade and LESS, Django templates, AngularJS REST
-                                    p: a.btn.btn-default(href="portfolio-content/sumati/index.html" target="_blank" role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/sumati/index.html" target="_blank" role="button") More info
 
 
                         //- premiumparts
@@ -79,7 +70,7 @@ html(lang="en")
                                 .caption
                                     h3.header Premium Parts
                                     p.description-en-center-block Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates
-                                    p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More info
 
                         //- conclave
                         .col-xs-12.col-sm-4.col-md-4
@@ -88,7 +79,7 @@ html(lang="en")
                                 .caption
                                     h3.header Conclave social
                                     p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app
-                                    p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More info
 
 
 
@@ -101,7 +92,7 @@ html(lang="en")
                                 .caption
                                     h3.header Imobo
                                     p.description-en-center-block Estate Sales in Brazil. CSS3 & Bootstrap 3, Jade templates
-                                    p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") More info
 
                         //- redalgo
                         .col-xs-12.col-sm-4.col-md-4
@@ -110,7 +101,7 @@ html(lang="en")
                                 .caption
                                     h3.header Redalgo
                                     p.description-en-center-block Jade templates + LESS stylesheet development for Children Education
-                                    p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") More info
 
                         //- chipmarket
                         .col-xs-12.col-sm-4.col-md-4
@@ -119,7 +110,7 @@ html(lang="en")
                                 .caption
                                     h3.header ChipMark shop
                                     p.description-en-center-block HTML templates + LESS stylesheet development for e-commerce PHP shop
-                                    p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More about
+                                    p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More info
 
             //- Skills
             .row
@@ -139,21 +130,20 @@ html(lang="en")
                         img(src="images/flag-russian.svg", alt="russian site", title="russian", width="48px")
                         span(data-hover="RUSSIAN") RUSSIAN
 
-        //- Google Analytics script
-        script(type='text/javascript').
-            window._gaq = window._gaq || [];
-            window._gaq.push(['_setAccount', 'UA-50636137-1']);
-            window._gaq.push(['_trackPageview']);
-        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
-        script(type="text/javascript", src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", defer="defer")
+        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="css/main.css")
+
+        script(type="text/javascript", src="js/zepto.min.js", defer="defer")
         script(type="text/javascript", src="js/parallax.min.js", defer="defer")
 
         script(type="text/javascript", src="js/handlers.js", async="async")
         script(type="text/javascript", src="js/controller.js", async="async")
         script(type="text/javascript", src="js/main.js", defer="defer")
 
-        div(style="display:none")
-            img(src="images/clouds_layer_5_storm1.png")
-            img(src="images/clouds_layer_5_storm2.png")
-            img(src="images/clouds_layer_5_storm2_extra.png")
-            img(src="images/upwork-profile-hover.svg")
+        // Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
