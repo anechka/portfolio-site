@@ -14,7 +14,8 @@ server {
 	}
 
 	# serve static files directly
-	location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt|svg)$ {
+	location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt|svg|otf|ttf)$ {
 		access_log	off;
+		expires		1w;
 	}
 }
