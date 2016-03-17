@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ansible_configurator" customModuleProvider="target">
             <connections>
+                <outlet property="externalAptRepo" destination="ChV-DU-1Mr" id="maf-Jh-9Kf"/>
                 <outlet property="passwordTextField" destination="716-zb-YmY" id="XJs-zm-DhK"/>
                 <outlet property="saveButton" destination="JYB-8a-DNl" id="p2l-cG-xjI"/>
                 <outlet property="serverIpTextField" destination="pdm-TB-zle" id="W9N-5T-Tm0"/>
@@ -675,14 +676,14 @@
         <window title="configure ansible" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" showsToolbarButton="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="348" height="290"/>
+            <rect key="contentRect" x="335" y="390" width="348" height="376"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="1002"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="348" height="290"/>
+                <rect key="frame" x="0.0" y="0.0" width="348" height="376"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField identifier="HostID" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-TB-zle">
-                        <rect key="frame" x="20" y="179" width="256" height="22"/>
+                        <rect key="frame" x="20" y="145" width="256" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Target server IP or DNS name" id="lyZ-ZL-smA">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,7 +691,7 @@
                         </textFieldCell>
                     </textField>
                     <textField identifier="Username" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhX-oj-56g">
-                        <rect key="frame" x="20" y="125" width="256" height="22"/>
+                        <rect key="frame" x="20" y="91" width="256" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Username of admin (sudo user)" id="CcP-AH-okS">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
@@ -698,7 +699,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cQ7-tN-KfO">
-                        <rect key="frame" x="18" y="150" width="258" height="17"/>
+                        <rect key="frame" x="18" y="116" width="258" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="USER" id="gFa-Go-nm3">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -706,7 +707,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19x-Dq-ChR">
-                        <rect key="frame" x="18" y="103" width="258" height="17"/>
+                        <rect key="frame" x="18" y="69" width="258" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" title="PASSWORD" id="mLh-G4-c2f">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -714,7 +715,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyj-be-3ng">
-                        <rect key="frame" x="18" y="163" width="259" height="17"/>
+                        <rect key="frame" x="18" y="129" width="259" height="17"/>
                         <textFieldCell key="cell" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="right" title="DNS anya.site или 123.34.56.78" id="fYy-62-2u5">
                             <font key="font" metaFont="system" size="10"/>
                             <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
@@ -722,7 +723,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RXd-YH-Qrd">
-                        <rect key="frame" x="18" y="209" width="258" height="17"/>
+                        <rect key="frame" x="18" y="175" width="258" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HOSTNAME" id="lh1-Hp-lQG">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -730,7 +731,7 @@
                         </textFieldCell>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ua7-tC-u3r">
-                        <rect key="frame" x="47" y="262" width="220" height="18"/>
+                        <rect key="frame" x="47" y="355" width="220" height="18"/>
                         <buttonCell key="cell" type="check" title="Я использую Digitalocean" bezelStyle="regularSquare" imagePosition="left" inset="2" id="0Kx-B0-Haj">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -740,7 +741,7 @@
                         </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJF-gu-2NP">
-                        <rect key="frame" x="47" y="241" width="220" height="18"/>
+                        <rect key="frame" x="47" y="324" width="220" height="18"/>
                         <buttonCell key="cell" type="check" title="Я добавила SSH ключ" bezelStyle="regularSquare" imagePosition="left" inset="2" id="OEh-wm-J7F">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -750,7 +751,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9NJ-Fm-hCq">
-                        <rect key="frame" x="160" y="225" width="218" height="17"/>
+                        <rect key="frame" x="175" y="313" width="140" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" title="ssh-add ~/.ssh/anna" id="g9E-av-FVO">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -758,7 +759,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eQm-4A-Hw6">
-                        <rect key="frame" x="267" y="209" width="68" height="17"/>
+                        <rect key="frame" x="267" y="175" width="68" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="SSH port" id="nrl-d7-oG4">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -766,7 +767,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dtm-ti-CgA">
-                        <rect key="frame" x="287" y="179" width="41" height="22"/>
+                        <rect key="frame" x="287" y="145" width="41" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="22" drawsBackground="YES" id="nKX-Qg-3kC">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
@@ -774,8 +775,8 @@
                         </textFieldCell>
                     </textField>
                     <button canDrawConcurrently="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYB-8a-DNl">
-                        <rect key="frame" x="88" y="32" width="172" height="32"/>
-                        <buttonCell key="cell" type="push" title="Save ansible config" alternateTitle="Saving and running Ansible in Terminal app" bezelStyle="rounded" image="587323E8-934F-42AE-9343-AF786BD56ACD" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koy-fa-uCx">
+                        <rect key="frame" x="88" y="6" width="172" height="32"/>
+                        <buttonCell key="cell" type="push" title="Save ansible config" alternateTitle="Saving and running Ansible in Terminal app" bezelStyle="rounded" image="A0E865C3-12A5-40BF-898A-B64C80FDBDC2" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koy-fa-uCx">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -783,16 +784,51 @@
                             <action selector="pressedButton:" target="Voe-Tx-rLC" id="3w1-2b-viR"/>
                         </connections>
                     </button>
-                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Задачи" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-gQ-iah">
-                        <rect key="frame" x="17" y="-2" width="314" height="53"/>
+                    <textField identifier="Password" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="716-zb-YmY" customClass="NSSecureTextField">
+                        <rect key="frame" x="20" y="46" width="256" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Password for sudo user" id="QiD-lG-udl">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ChV-DU-1Mr">
+                        <rect key="frame" x="47" y="290" width="276" height="18"/>
+                        <buttonCell key="cell" type="check" title="Use external Nginx apt repo" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="awe-TR-PX5">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="zPT-Wk-7UY">
+                        <rect key="frame" x="126" y="195" width="96" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <box autoresizesSubviews="NO" verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-Ad-byQ">
+                        <rect key="frame" x="126" y="262" width="96" height="5"/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIF-oX-Ga2">
+                        <rect key="frame" x="159" y="275" width="140" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" enabled="NO" allowsUndo="NO" sendsActionOnEndEditing="YES" title="remove for Ubuntu beta" id="DF9-Xz-yuL">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <box autoresizesSubviews="NO" fixedFrame="YES" title="Ansible TASKS" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="gxg-gQ-iah">
+                        <rect key="frame" x="17" y="208" width="314" height="53"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="312" height="37"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <matrix verticalHuggingPriority="750" fixedFrame="YES" selectionByRect="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQE-Ua-8rY">
-                                    <rect key="frame" x="45" y="11" width="538" height="18"/>
+                                    <rect key="frame" x="25" y="11" width="538" height="18"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="cellSize" width="140" height="18"/>
+                                    <size key="cellSize" width="141" height="18"/>
                                     <size key="intercellSpacing" width="4" height="2"/>
                                     <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="0bU-8N-jMR">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -800,13 +836,13 @@
                                     </buttonCell>
                                     <cells>
                                         <column>
-                                            <buttonCell type="radio" title="Установить новый" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="1" inset="2" id="bcu-H1-ckN">
+                                            <buttonCell type="radio" title="Setup a new server" bezelStyle="regularSquare" imagePosition="left" alignment="left" tag="1" inset="2" id="bcu-H1-ckN">
                                                 <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </column>
                                         <column>
-                                            <buttonCell type="radio" title="Обновить" imagePosition="left" alignment="left" inset="2" id="QWA-Eg-4w6">
+                                            <buttonCell type="radio" title="Update current" imagePosition="left" alignment="left" inset="2" id="QWA-Eg-4w6">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -821,21 +857,13 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
-                    <textField identifier="Password" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="716-zb-YmY" customClass="NSSecureTextField">
-                        <rect key="frame" x="20" y="80" width="256" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Password for sudo user" id="QiD-lG-udl">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" red="0.13634128306628215" green="0.57723998724773562" blue="0.60344827586206895" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="430" y="384"/>
+            <point key="canvasLocation" x="430" y="427"/>
         </window>
     </objects>
     <resources>
-        <image name="587323E8-934F-42AE-9343-AF786BD56ACD" width="1" height="1">
+        <image name="A0E865C3-12A5-40BF-898A-B64C80FDBDC2" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

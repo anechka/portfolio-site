@@ -23,6 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
    
+    @IBOutlet weak var externalAptRepo: NSButton!
     @IBOutlet weak var serverIpTextField: NSTextField!
     @IBOutlet weak var serverPortField: NSTextField!
     @IBOutlet weak var usernameTextField: NSTextField!
@@ -76,6 +77,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         serverPortField.enabled = false
         usernameTextField.enabled = false
         passwordTextField.enabled = false
+        
+        saveButton.title = "Run Update"
     }
     
     func setUpInstallTask() {
@@ -87,7 +90,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         usernameTextField.enabled = digitaloceanUse ? false : true
         passwordTextField.enabled = ssh_key_used ? false : true
-
+        
+        saveButton.title = "Run Install"
     }
     
     func fillrootFiled() {
@@ -125,9 +129,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else {passwordAdmin = "\"\(passwordAdmin)\""}
             
             json += ", \"password\": \(passwordAdmin)"
+            json += ", \"nginx\": \(externalAptRepo.state == 1 ? true: false)"
             
-
-
+            print(json)
             
             if ((task) != nil) {
                 
@@ -141,7 +145,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     let argumentBase64 = data!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
                     
                     let command = "python \(python_script) \(argumentBase64)"
-                    
+
                     NSAppleScript(source: "tell application \"Terminal\"\n" +
                     "  do script \"cd '\(pythonScriptPath)' && \(command)\"\n" +
                     "  activate\n" +
