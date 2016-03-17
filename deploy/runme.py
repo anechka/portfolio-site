@@ -77,7 +77,7 @@ try:
 
     if username == "": username = "root"
 
-    if host_port is None or host_port == "":
+    if host_port in (None, "", "22"):
         print("SSH port is 22 default")
         host_port = 22
     else:
