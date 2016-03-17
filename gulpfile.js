@@ -16,11 +16,14 @@ var exec = require('child_process').execSync;
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var rename = require("gulp-rename");
+var clean = require('gulp-clean');
+var concat = require('gulp-concat');
 
 gulp.task('default', function() {
     // Start point
     production = true;
     gulp.run('jade');
+    gulp.run('javascript');
 
 });
 
@@ -66,9 +69,20 @@ gulp.task('jade', function() {
         .pipe(gulp.dest("portfolio-content/sumati"));
 
 });
+// Concat: js/vendor/parallax.min.js and js/vendor/zepto.min.js
+gulp.task('vendor', function() {
+    return gulp.src('js/vendor/*.js')
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest('js/vendor'));
+});
+
+gulp.task('javascript', function() {
+    gulp.src(['js/vendor/vendor.js', 'js/main.js', 'js/controller.js', 'js/handlers.js'])
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('js'));
+});
 
 gulp.task('clean', function() {
-    var clean = require('gulp-clean');
 
     gulp.src(
         [
@@ -79,9 +93,11 @@ gulp.task('clean', function() {
             "portfolio-content/pp/index.html",
             "portfolio-content/imobo/index.html",
             "portfolio-content/redalgo/index.html",
-            "portfolio-content/sumati/index.html"
+            "portfolio-content/sumati/index.html",
+            "js/all.js"
         ],
-        {read: false})
+        {read: false}
+    )
     .pipe(clean());
 
 });

@@ -1,10 +1,16 @@
 {
   "name": "portfolio-site-ane4kin",
   "version": "1.0.0",
+  "repository": { "type": "git", "url": "https://github.com/anechka/portfolio-site.git" },
+  "description": "Freelancer parallax portfolio web-site",
+  "homepage": "http://anya.site",
   "dependencies": {
     "gulp": "^3.8.11",
     "gulp-clean": "^0.3.1",
     "gulp-jade": "^1.0.0",
     "gulp-rename": "*"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.0"
   }
 }
