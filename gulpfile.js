@@ -70,7 +70,7 @@ gulp.task('jade', function() {
 
 });
 // Concat: js/vendor/parallax.min.js and js/vendor/zepto.min.js
-gulp.task('vendor', function() {
+gulp.task('vendor-js', function() {
     return gulp.src('js/vendor/*.js')
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('js/vendor'));
