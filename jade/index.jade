@@ -29,101 +29,37 @@ html(lang="en")
                     span(alt="Skype login", title="My login in Skype").skype-header.center :
                     span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
 
-            .row#show_portfolio_row
-                .col-md-12.margined-top-div.text-center
-                    a(href="#github").btn.show_portfolio_button: strong SHOW PORTFOLIO
-
             .row
-                .col-md-6.col-md-offset-3.margined-top-div.text-center.profiles-content
-                    // Upwork profile
-                    .col-md-6
-                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
-                    // Github profile
-                    .col-md-6(style="margin-top: 25px")
-                        a.external-profile.github-profile(href="https://github.com/anechka")
-                            i(style="margin-right: 5px")#github.fa.fa-github-alt
-                            | Github
-
-            .row(style="display: none")#main_content
-                .col-sm-offset-2.col-md-offset-3.col-sm-8.col-md-6.col-xs-12.content
-                    //Main Site Content
-                    .row
-                        .col-md-12.portfolio-header-div
-                            h4.header Last projects i coded as HTML5/Javascript developer:
-
-                    .row
-
-                        //- sumati
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/sumati-page.jpg", alt="Sumati law firm")
-                                .caption
-                                    h3.header Sumati
-                                    p.description-en-center-block Django website for Lawers. Jade and LESS, Django templates, AngularJS REST
-                                    p: a.btn.btn-default(href="portfolio-content/sumati/index.html" target="_blank" role="button") More info
-
-
-                        //- premiumparts
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/premiumparts-adminka.png", alt="Premium Parts  shop")
-                                .caption
-                                    h3.header Premium Parts
-                                    p.description-en-center-block Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates
-                                    p: a.btn.btn-default(href="portfolio-content/pp/index.html", target="_blank", role="button") More info
-
-                        //- conclave
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/conclave-page.png", alt="Conclave social")
-                                .caption
-                                    h3.header Conclave social
-                                    p.description-en-center-block Jade templates + SASS and LESS under NodeJS Express app
-                                    p: a.btn.btn-default(href="portfolio-content/conclave/index.html" target="_blank" role="button") More info
+                .tags.col-md-12.text-center
+                    // Django tag
+                    a(href="#")
+                        img.sprite-django(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="django", title="django", width="96px", height="96px")
+                    // Twitter Bootstrap tag
+                    a(href="#")
+                        img.sprite-bootstrap(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="bootstrap", title="bootstrap", width="96px", height="96px")
+                    // Less framework tag
+                    a(href="#")
+                        img.sprite-less(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="less framework", title="less framework", width="96px", height="96px")
+                    // Sass / SCSS tag
+                    a(href="#")
+                        img.sprite-sass(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="sass", title="sass", width="96px", height="96px")
+                    // Node.js tag
+                    a(href="#")
+                        img.sprite-nodejs(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="node.js", title="node.js", width="96px", height="96px")
+                    // Python tag
+                    a(href="#")
+                        img.sprite-python(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="python", title="python", width="96px", height="96px")
+                    // Javascript ECMAScript 6 tag
+                    a(href="#")
+                        img.sprite-javascript(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="javascript", title="javascript", width="96px", height="96px")
+                    // jQuery tag
+                    a(href="#")
+                        img.sprite-jquery(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="jquery", title="jquery", width="96px", height="96px")
+                    // Angular tag
+                    a(href="#")
+                        img.sprite-angular(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="angular.js", title="angular.js", width="96px", height="96px")
 
 
-
-                    .row
-
-                        //- imobo
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/imobo-page.png", alt="Imobo real estate")
-                                .caption
-                                    h3.header Imobo
-                                    p.description-en-center-block Estate Sales in Brazil. CSS3 & Bootstrap 3, Jade templates
-                                    p: a.btn.btn-default(href="portfolio-content/imobo/index.html", target="_blank", role="button") More info
-
-                        //- redalgo
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo children education")
-                                .caption
-                                    h3.header Redalgo
-                                    p.description-en-center-block Jade templates + LESS stylesheet development for Children Education
-                                    p: a.btn.btn-default(href="portfolio-content/redalgo/index.html" target="_blank" role="button") More info
-
-                        //- chipmarket
-                        .col-xs-12.col-sm-4.col-md-4
-                            .thumbnail
-                                img(src="images/portfolio-thumb/market-page.png", alt="ChipMark shop")
-                                .caption
-                                    h3.header ChipMark shop
-                                    p.description-en-center-block HTML templates + LESS stylesheet development for e-commerce PHP shop
-                                    p: a.btn.btn-default(href="portfolio-content/market/index.html" target="_blank" role="button") More info
-
-            //- Skills
-            .row
-                .col-md-12.text-center
-
-                    img.html5_tech_logo_img(src="images/logo-html5.png", alt="HTML5 skill", title="HTML5", width="90px")
-                    img.html5_tech_logo_img(src="images/logo-css3.png", alt="CSS3 skill", title="CSS3", width="90px")
-                    img.html5_tech_logo_img(src="images/logo-js.png", alt="JS skill", title="JS", width="90px")
-
-                .col-md-12.text-center
-
-                    img.html5_tech_logo_img(src="images/logo-jquery.png", alt="jQuery skill", title="jQuery", width="245px", style="padding-top: 40px")
-                    img.html5_tech_logo_img(src="images/logo-nodejs.png", alt="nodeJS skill", title="nodeJS", width="282px")
             .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
@@ -141,4 +77,4 @@ html(lang="en")
             window._gaq = window._gaq || [];
             window._gaq.push(['_setAccount', 'UA-50636137-1']);
             window._gaq.push(['_trackPageview']);
-        script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
+        //- script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
