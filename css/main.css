@@ -110,11 +110,11 @@ BODY {
 .cloud_four {
     left: -45%;
 }
-
-.tags { margin-top: 64px }
+/* svg tags */
+.tags { margin-top: 48px }
 
 .tags > a { margin-right: 10px }
-
+/* default svg sprite on img background */
 .tags > a > img.sprite-django { background: url(../images/web-logos.svg) 0 0; }
 .tags > a > img.sprite-javascript { background: url(../images/web-logos.svg) -106px 0; }
 .tags > a > img.sprite-python { background: url(../images/web-logos.svg) -212px 0; }
@@ -124,6 +124,15 @@ BODY {
 .tags > a > img.sprite-jquery { background: url(../images/web-logos.svg) -636px 0; }
 .tags > a > img.sprite-angular { background: url(../images/web-logos.svg) -742px 0; }
 .tags > a > img.sprite-less { background: url(../images/web-logos.svg) -848px 0; }
+/* hover tags */
+.tags > a:hover > img.sprite-django { background: url(../images/web-logos-hover.svg) 0 0; }
+.tags > a:hover > img.sprite-javascript { background: url(../images/web-logos-hover.svg) -106px 0; }
+.tags > a:hover > img.sprite-python { background: url(../images/web-logos-hover.svg) -212px 0; }
+.tags > a:hover > img.sprite-nodejs { background: url(../images/web-logos-hover.svg) -318px 0; }
+.tags > a:hover > img.sprite-sass { background: url(../images/web-logos-hover.svg) -424px 0; }
+.tags > a:hover > img.sprite-bootstrap { background: url(../images/web-logos-hover.svg) -530px 0; }
+.tags > a:hover > img.sprite-jquery { background: url(../images/web-logos-hover.svg) -636px 0; }
+.tags > a:hover > img.sprite-angular { background: url(../images/web-logos-hover.svg) -742px 0; }
 .tags > a:hover > img.sprite-less { background: url(../images/web-logos-hover.svg) -848px 0; }
 
 .content {
