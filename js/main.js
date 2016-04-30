@@ -27,6 +27,20 @@ onload = function() {
             window.animate_object = setInterval(interval_handler, 120);
 
             set_background_and_look();
+
+            new Vue({
+                el: '#counter',
+                data: {
+                    count: Math.floor(Math.random() * (10 - 1 + 1)) + 1
+                },
+                // define methods under the `methods` object
+                methods: {
+                    hello: function () {
+                        // `this` inside methods point to the Vue instance
+                        this.count++;
+                    }
+                }
+            })
         };
 
 isrussian = function() {

@@ -60,15 +60,68 @@ html(lang="en")
 
 
             .row
+                - var attributes = {'v-on:click': 'hello'};
+                .col-md-12.margined-top-div.text-center.text-uppercase.counter#counter&attributes(attributes) {{ count }} projects
+
+            .row
+                .col-md-12.margined-top-div.content
+                    .row
+                        .col-md-6.col-sm-6
+                            .bordered-block
+                                span.header.text-center Sumati
+                                .col-md-4.col-sm-12.project-thumbnail
+                                    img(src="images/portfolio-thumb/sumati-page.jpg", width="100%", height="100%")
+                                .col-md-8.col-sm-12.remove-left-padding
+                                    p.
+                                        Django website for Lawers. Jade and LESS, Django templates, AngularJS REST.
+                                    p.
+                                        Our team included: I worked as Web Developer, 1 project
+                                        manager, 1 Web designer, 1 Angular js Developer,
+                                        1 Python/Django Developer.
+                                    p.
+                                        We communicated via Upwork and Skype, and also used
+                                        e-mail communication.
+                        .col-md-6.col-sm-6
+                            .bordered-block
+                                span.header.text-center Web site
+                                .col-md-4.col-sm-12.project-thumbnail
+                                    img(src="images/portfolio-thumb/sumati-contracts-page.png", width="100%", height="100%")
+                                .col-md-8.col-sm-12.remove-left-padding
+                                    p.
+                                        Django website for Lawers. Jade and LESS, Django templates, AngularJS REST.
+                                    p.
+                                        Our team included: I worked as Web Developer, 1 project
+                                        manager, 1 Web designer, 1 Angular js Developer,
+                                        1 Python/Django Developer.
+                    .row
+                        .col-md-6.col-sm-6
+                            .bordered-block
+                                span.header.text-center Imobo
+                                .col-md-4.col-sm-12.project-thumbnail
+                                    img(src="images/portfolio-thumb/imobo-page.png", width="100%", height="100%")
+                                .col-md-8.col-sm-12.remove-left-padding
+                                    p.
+                                        Django website for Lawers. Jade and LESS, Django templates, AngularJS REST.
+                                    p.
+                                        Our team included: I worked as Web Developer, 1 project
+                                        manager, 1 Web designer, 1 Angular js Developer,
+                                        1 Python/Django Developer.
+                                    p.
+                                        We communicated via Upwork and Skype, and also used
+                                        e-mail communication.
+
+            //-.row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
                         img(src="images/flag-russian.svg", alt="russian site", title="russian", width="48px")
                         span(data-hover="RUSSIAN") RUSSIAN
 
-        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
+        //- Vue.js rendering lib
+        script(type="text/javascript", src="https://vuejs.org/js/vue.js", async="async")
         //- Concatenated by gulp task Javascript
         script(type="text/javascript", src="js/all.js", async="async")
         //- Google Analytics script
