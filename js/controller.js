@@ -3,6 +3,7 @@
  * Date: 16.03.16
  * Time: 21:30
  */
+
 onload = function() {
     set_background_and_look();
     view_controller();

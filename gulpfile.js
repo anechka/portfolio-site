@@ -27,6 +27,15 @@ gulp.task('default', function() {
 
 });
 
+gulp.task('jade-portfolio-content', function() {
+    var jade_config = { client: true };
+    if (!production) { jade_config.pretty = true }
+
+    gulp.src('portfolio-content/sumati/description.jade')
+        .pipe(jade(jade_config))
+        .pipe(gulp.dest('portfolio-content/sumati'));
+
+});
 
 gulp.task('jade', function() {
     var jade_config = {};
@@ -69,7 +78,7 @@ gulp.task('jade', function() {
         .pipe(gulp.dest("portfolio-content/sumati"));
 
 });
-// Concat: js/vendor/parallax.min.js and js/vendor/zepto.min.js
+// Concat: vue.min.js, parallax.min.js, polyglot.min.js, zepto.min.js
 gulp.task('vendor-js', function() {
     return gulp.src('js/vendor/src/*.js')
         .pipe(concat('vendor.js'))
@@ -77,7 +86,13 @@ gulp.task('vendor-js', function() {
 });
 
 gulp.task('javascript', function() {
-    gulp.src(['js/vendor/dist/vendor.js', 'js/main.js', 'js/controller.js', "js/view_controller.js", 'js/handlers.js'])
+    gulp.src([
+        'js/vendor/dist/vendor.js',
+        'js/main.js',
+        'js/controller.js',
+        "js/view_controller.js",
+        'js/handlers.js'
+        ])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('js'));
 });
