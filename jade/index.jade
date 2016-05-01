@@ -28,40 +28,52 @@ html(lang="en")
                     span(alt="Skype login", title="My login in Skype").skype-header.center :
                     span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
 
+
             .row
-                .tags.col-md-12.text-center
+                .tags.col-md-12.text-center#tags
+
                     // Django tag
-                    a(href="#")
+
+                    - var attributes = {"v-on:mouseover": "update('django')"};
+                    a(href="#")&attributes(attributes)
                         img.sprite-django(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="django", title="django", width="96px", height="96px")
+
                     // Twitter Bootstrap tag
-                    a(href="#")
+                    - var attributes = {"v-on:mouseover": "update('bootstrap')"};
+                    a(href="#")&attributes(attributes)
                         img.sprite-bootstrap(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="bootstrap", title="bootstrap", width="96px", height="96px")
+
                     // Less framework tag
                     a(href="#")
                         img.sprite-less(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="less framework", title="less framework", width="96px", height="96px")
+
                     // Sass / SCSS tag
                     a(href="#")
                         img.sprite-sass(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="sass", title="sass", width="96px", height="96px")
+
                     // Node.js tag
                     a(href="#")
                         img.sprite-nodejs(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="node.js", title="node.js", width="96px", height="96px")
+
                     // Python tag
                     a(href="#")
                         img.sprite-python(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="python", title="python", width="96px", height="96px")
+
                     // Javascript ECMAScript 6 tag
                     a(href="#")
                         img.sprite-javascript(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="javascript", title="javascript", width="96px", height="96px")
+
                     // jQuery tag
                     a(href="#")
                         img.sprite-jquery(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="jquery", title="jquery", width="96px", height="96px")
+
                     // Angular tag
                     a(href="#")
                         img.sprite-angular(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="angular.js", title="angular.js", width="96px", height="96px")
 
 
             .row
-                - var attributes = {'v-on:click': 'hello'};
-                .col-md-12.margined-top-div.text-center.text-uppercase.counter#counter&attributes(attributes) {{ count }} projects
+                .col-md-12.margined-top-div.text-center.text-uppercase.counter#counter {{ count }} projects
 
             .row
                 .col-md-12.margined-top-div.content
@@ -120,9 +132,7 @@ html(lang="en")
         link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
-        //- Vue.js rendering lib
-        script(type="text/javascript", src="https://vuejs.org/js/vue.js", async="async")
-        //- Concatenated by gulp task Javascript
+        //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
         script(type="text/javascript", src="js/all.js", async="async")
         //- Google Analytics script
         script(type='text/javascript').

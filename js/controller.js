@@ -3,11 +3,13 @@
  * Date: 16.03.16
  * Time: 21:30
  */
-show_animated_button = function() {
-                // Показать div за * секунд
-                $(".show_portfolio_button").animate({'opacity': 1}, 3 * 1000);
+onload = function() {
+    set_background_and_look();
+    view_controller();
+};
 
-                $(document).off();
+isrussian = function() {
+    return $("html").attr("lang") == 'ru'
 };
 
 mobile_parallax_set = function(ismobile) {
@@ -31,6 +33,18 @@ mobile_parallax_set = function(ismobile) {
 
 set_background_and_look = function() {
     var bodyDOM = $( "body" );
+    // Creating e-mail link with JS (spamers prevent)
+    var email_content_string = isrussian() ? "pesik" + "@" + "ane4k" +".in": "anya" + "@" + "anya" +".site";
+    var mail_link = $("#mailto");
+
+    mail_link.attr("href", "mailto:" + email_content_string);
+    mail_link.find("span").text(email_content_string);
+
+
+    window.to_little_flag = false;
+
+    window.speed_thunder = 0;
+    window.animate_object = setInterval(interval_handler, 120);
 
     $("#scene").html("<li data-depth='0.00' class='layer'><img id='layer5' src='images/clouds_layer_5.png' class='cloud_layer'></li>" +
     "<li data-depth='0.10' class='layer'><img src='images/clouds_layer_1.png' class='cloud_layer'></li>" +
@@ -51,16 +65,12 @@ set_background_and_look = function() {
     switch (platform) {
 
         case "iPhone": {
-
-            show_animated_button();
             mobile_parallax_set(true);
 
             break;
         }
 
         case "iPhone Simulator": {
-
-            show_animated_button();
             mobile_parallax_set(true);
 
             break;
@@ -68,8 +78,6 @@ set_background_and_look = function() {
 
         case "Android":
         case "iPad": {
-
-            show_animated_button();
             mobile_parallax_set(true);
 
             break;

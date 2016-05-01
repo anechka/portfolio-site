@@ -71,13 +71,13 @@ gulp.task('jade', function() {
 });
 // Concat: js/vendor/parallax.min.js and js/vendor/zepto.min.js
 gulp.task('vendor-js', function() {
-    return gulp.src('js/vendor/*.js')
+    return gulp.src('js/vendor/src/*.js')
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('js/vendor'));
+        .pipe(gulp.dest('js/vendor/dist'));
 });
 
 gulp.task('javascript', function() {
-    gulp.src(['js/vendor/vendor.js', 'js/main.js', 'js/controller.js', 'js/handlers.js'])
+    gulp.src(['js/vendor/dist/vendor.js', 'js/main.js', 'js/controller.js', "js/view_controller.js", 'js/handlers.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('js'));
 });
