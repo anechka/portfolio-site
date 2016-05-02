@@ -101,16 +101,30 @@ html(lang="en")
 
             .row
                 .col-md-12.margined-top-div.content#projectsList
-                    - var attributes = {"v-for": "project in items"}
-                    //- Display filtered projects in loop
-                    .col-md-6.col-sm-6&attributes(attributes)
-                        .bordered-block
-                            span.header.text-center {{ project.name }}
-                            .col-md-4.col-sm-12.project-thumbnail
-                                img(src="images/portfolio-thumb/{{ project.image }}", width="100%", height="100%")
-                            .col-md-8.col-sm-12.remove-left-padding {{{ project.description }}}
+                    .row
+                        - var attributes = {"v-for": "project in items"}
+                        //- Display filtered projects in loop
+                        .col-md-6.col-sm-6&attributes(attributes)
+                            .bordered-block
+                                .row
+                                    .col-md-12
+                                        span.header.text-center {{ project.name }}
+                                .row
+                                    .col-md-4.col-sm-12.project-thumbnail
+                                        img(src="images/portfolio-thumb/{{ project.image }}", width="100%", height="100%")
+                                        .col-md-12.col-sm-12.col-xs-12.tags-container
+                                            .tag.text-center
+                                                span.label.label-tag django
+                                            .tag.text-center
+                                                span.label.label-tag python
+                                            .tag.text-center
+                                                span.label.label-tag angular
+                                            .tag.text-center
+                                                span.label.label-tag jquery
+                                            .tag.text-center
+                                                span.label.label-tag javascript
 
-
+                                    .col-md-8.col-sm-12.remove-left-padding {{{ project.description }}}
             .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")

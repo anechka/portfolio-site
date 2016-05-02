@@ -58,7 +58,7 @@ A:hover { color: #A090E4; text-decoration: none }
 }
 
 .container span.email:hover {
-    color: #CCB9FF;/* Skype color: #a8b4c6; */
+    color: #A090E4;/* Skype color: #a8b4c6; */
 
     transition: none;
 }
@@ -143,9 +143,9 @@ A:hover { color: #A090E4; text-decoration: none }
 .counter { color: #85D6FF; font-family: "Days", Helvetica, Arial, sans-serif; font-size: 18px }
 
 .content .bordered-block {
-    display: table;
     border: solid 1px #0085FF;
-    margin-bottom: 24px;
+    min-height: 100%;
+    padding: 0 8px;
 }
 
 .content .bordered-block span.header {
@@ -156,9 +156,42 @@ A:hover { color: #A090E4; text-decoration: none }
     font-size: 24px;
     font-family: "Days", Helvetica, Arial, sans-serif;
 }
-
+/* Image thumb */
 .content .bordered-block .project-thumbnail {
     padding-top: 6px;
+}
+
+.content .bordered-block .tags-container {
+    padding: 5px 0;
+}
+/* Container for tags */
+.content .bordered-block .tags-container .tag {
+    margin: 8px 0;
+}
+/* Tags under image */
+.content .bordered-block .tags-container .tag span.label {
+    font-size: 13px;/* TODO: replace by em */
+    display: block;
+}
+/* Tags design */
+.content .bordered-block .tags-container .tag span.label.label-default, span.label.label-tag {
+    background-color: #1386B8;
+    color: #BFEBFF;
+    border-radius: .3em;
+}
+
+.content .bordered-block .tags-container .tag span.label.label-default:hover {
+    cursor: default;
+    background-color: #FE7701;
+    color: #02535A;
+    box-shadow: 0 0 8px 2px rgba(0,43,47,0.9);
+}
+
+.content .bordered-block .tags-container .tag span.label.label-tag:hover {
+    cursor: default;
+    background-color: #56578F;
+    color: #CBEDFF;
+    box-shadow: 0 0 8px 0 rgba(0,8,47,0.9);
 }
 
 .content .bordered-block p {
@@ -232,6 +265,7 @@ A:hover { color: #A090E4; text-decoration: none }
 }
 
 .flag-language {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
@@ -309,32 +343,15 @@ A:hover { color: #A090E4; text-decoration: none }
     img.cloud_three {
         opacity: 0.9;
     }
-
-    .show_portfolio_button {
-        padding: 10px 35px;
+/* TODO: Fix it
+    .container span.name-header, .container span.email {
+        font-size: 3em;
     }
 
-
-    .content .thumbnail .caption .description-en-center-block {
-        min-height: 30px;
-
+    .container span.skype-header {
+        font-size: 2.5em;
     }
-
-    .content .thumbnail .caption .description-ru-center-block {
-        min-height: 30px;
-
-    }
-
-    .content .thumbnail .caption .header {
-        min-height: 0;
-    }
-
-    .content .btn-default {
-        height: 60px;
-        line-height: 46px;
-        font-size: 24px;
-    }
-
+*/
 }
 
 @media (max-width: 767px), (min-resolution: 192dpi) {
@@ -372,6 +389,11 @@ A:hover { color: #A090E4; text-decoration: none }
 }
 
 @media (min-width: 768px) {
+
+    .content > .row {
+        display: table;
+    }
+
     .content .bordered-block .remove-left-padding { min-height: 200px }
 }
 
@@ -380,5 +402,5 @@ A:hover { color: #A090E4; text-decoration: none }
 }
 
 @media (min-width: 1200px) {
-    .content { padding: 0 100px }
+    .content { padding: 0 75px }
 }

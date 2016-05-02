@@ -4,7 +4,7 @@
     "tags": ["django", "templates", "python", "bootstrap", "less", "wiki", "javascript", "angular"],
     "description": [
       "Django website for Lawers. Jade and LESS, Django templates, AngularJS REST.",
-      "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer.",
+      "Our team included: <a href>I worked as Web Developer</a>, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer.",
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ],
     "image": "sumati-page.jpg"
