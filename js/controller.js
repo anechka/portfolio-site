@@ -7,8 +7,28 @@
 ;
 
 onload = function() {
+    modelSetup();
     set_background_and_look();
     view_controller();
+};
+
+modelSetup = function () {
+    for (var project_item in projects) {
+        var project = projects[project_item];
+        var projectDescriptionsArray = project.description;
+
+        var resultHTMLDescription = "";
+
+        if (typeof projectDescriptionsArray === "object") {
+            for (var index = 0; index < projectDescriptionsArray.length; index++) {
+                var description = projectDescriptionsArray[index];
+
+                resultHTMLDescription += "<p>" + description + "</p>";
+            }
+        }
+
+        project.description = resultHTMLDescription;
+    }
 };
 
 isrussian = function() {

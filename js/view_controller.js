@@ -14,8 +14,12 @@ function view_controller () {
         },
         methods: {
             
-            update: function (number) {
-                this.projectsCounterText = number;
+            setCounterText: function (text) {
+                this.projectsCounterText = text;
+            },
+
+            getCounterText: function () {
+                return this.projectsCounterText;
             }
         }
     });
@@ -37,6 +41,22 @@ function view_controller () {
     new Vue({
         el: '#tags',
 
+        // Tag list, active is disabled
+        data: {
+            tags: {
+                django: false,
+                bootstrap: false,
+                less: false,
+                sass: false,
+                node: false,
+                python: false,
+                javascript: false,
+                jquery: false,
+                angular: false
+            },
+            counterText: ""
+        },
+
         methods: {
             
             mouseOver: function (incomeTag) {
@@ -55,12 +75,32 @@ function view_controller () {
                     }
                 }
 
-                counterView.update(polyglot.t("projects", {smart_count: projectsNumberWithTag}));
+                this.counterText = counterView.getCounterText();
+                counterView.setCounterText(polyglot.t("projects", {smart_count: projectsNumberWithTag}));
 
+            },
+
+            mouseOut: function () {
+                counterView.setCounterText(this.counterText)
             },
 
             click: function (incomeTag) {
                 var result = [];
+
+                if (this.tags.hasOwnProperty(incomeTag)) {
+                    // Disable all tags on loop
+
+                    for (var key in this.tags) {
+                        this.tags[key] = false; // Disable tag activity
+                    }
+
+                    this.tags[incomeTag] = true; // Enable one tag active
+
+                    var textAfterClick = counterView.getCounterText() + " on " + incomeTag;
+                    this.counterText = textAfterClick;
+
+                    counterView.setCounterText(textAfterClick)
+                }
 
                 for (var project_item in projects) {
                     var project = projects[project_item];
