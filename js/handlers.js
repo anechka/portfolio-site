@@ -42,12 +42,3 @@ make_thunder = function() {
         }
         , 100)
 };
-
-portfolio_click = function() {
-        make_thunder();
-
-        $("#main_content").show();
-        $(".show_portfolio_button").fadeOut(function() {
-            $("#show_portfolio_row").remove();
-        });
-};

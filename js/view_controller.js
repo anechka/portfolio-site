@@ -10,13 +10,11 @@ function view_controller () {
     var counterView = new Vue({
         el: '#counter',
         data: {
-            projectsCounterText: polyglot.t("projects", {smart_count: Math.floor(Math.random() * (3 - 1 + 1)) + 1})
+            projectsCounterText: polyglot.t("projects", {smart_count: projects.length}) + " total"
         },
-        // define methods under the `methods` object
         methods: {
             
             update: function (number) {
-                // `this` inside methods point to the Vue instance
                 this.projectsCounterText = number;
             }
         }
@@ -27,11 +25,9 @@ function view_controller () {
         data: {
             items: null
         },
-        // define methods under the `methods` object
         methods: {
 
             displayProjects: function (projects) {
-                // `this` inside methods point to the Vue instance
                 this.items = projects;
             }
         }
@@ -43,9 +39,8 @@ function view_controller () {
 
         methods: {
             
-            update: function (incomeTag) {
+            mouseOver: function (incomeTag) {
                 var projectsNumberWithTag = 0;
-                var result = [];
 
                 for (var project_item in projects) {
                     var project = projects[project_item];
@@ -56,16 +51,32 @@ function view_controller () {
 
                         if (incomeTag.toString().toLowerCase() == tag.toLowerCase()) {
                             projectsNumberWithTag++;
-
-                            result.push(project);
                         }
                     }
                 }
 
                 counterView.update(polyglot.t("projects", {smart_count: projectsNumberWithTag}));
-                projectsView.displayProjects(result);
 
+            },
+
+            click: function (incomeTag) {
+                var result = [];
+
+                for (var project_item in projects) {
+                    var project = projects[project_item];
+                    var projectTagsArray = project.tags;
+
+                    for (var index = 0; index < projectTagsArray.length; index++) {
+                        var tag = projectTagsArray[index];
+
+                        if (incomeTag.toString().toLowerCase() == tag.toLowerCase()) {
+                            result.push(project);
+                        }
+                    }
+                }
+                projectsView.displayProjects(result);
             }
+
         }
     });
 

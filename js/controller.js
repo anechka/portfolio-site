@@ -2,7 +2,9 @@
  * menangen@gmail.com
  * Date: 16.03.16
  * Time: 21:30
+ closing a JSON config
  */
+;
 
 onload = function() {
     set_background_and_look();

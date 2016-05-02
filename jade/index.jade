@@ -34,47 +34,47 @@ html(lang="en")
 
                     // Django tag
 
-                    - var attributes = {"v-on:mouseover": "update('django')"}
+                    - var attributes = {"@mouseover": "mouseOver('django')", "@click": "click('django')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-django(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="django", title="django", width="96px", height="96px")
 
                     // Twitter Bootstrap tag
-                    - var attributes = {"v-on:mouseover": "update('bootstrap')"}
+                    - var attributes = {"@mouseover": "mouseOver('bootstrap')", "@click": "click('bootstrap')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-bootstrap(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="bootstrap", title="bootstrap", width="96px", height="96px")
 
                     // Less framework tag
-                    - var attributes = {"v-on:mouseover": "update('less')"}
+                    - var attributes = {"@mouseover": "mouseOver('less')", "@click": "click('less')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-less(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="less framework", title="less framework", width="96px", height="96px")
 
                     // Sass / SCSS tag
-                    - var attributes = {"v-on:mouseover": "update('sass')"}
+                    - var attributes = {"@mouseover": "mouseOver('sass')", "@click": "click('sass')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-sass(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="sass", title="sass", width="96px", height="96px")
 
                     // Node.js tag
-                    - var attributes = {"v-on:mouseover": "update('node')"}
+                    - var attributes = {"@mouseover": "mouseOver('node')", "@click": "click('node')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-nodejs(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="node.js", title="node.js", width="96px", height="96px")
 
                     // Python tag
-                    - var attributes = {"v-on:mouseover": "update('python')"}
+                    - var attributes = {"@mouseover": "mouseOver('python')", "@click": "click('python')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-python(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="python", title="python", width="96px", height="96px")
 
                     // Javascript ECMAScript 6 tag
-                    - var attributes = {"v-on:mouseover": "update('javascript')"}
+                    - var attributes = {"@mouseover": "mouseOver('javascript')", "@click": "click('javascript')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-javascript(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="javascript", title="javascript", width="96px", height="96px")
 
                     // jQuery tag
-                    - var attributes = {"v-on:mouseover": "update('jquery')"}
+                    - var attributes = {"@mouseover": "mouseOver('jquery')", "@click": "click('jquery')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-jquery(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="jquery", title="jquery", width="96px", height="96px")
 
                     // Angular tag
-                    - var attributes = {"v-on:mouseover": "update('angular')"}
+                    - var attributes = {"@mouseover": "mouseOver('angular')", "@click": "click('angular')"}
                     a(href="#projectsList")&attributes(attributes)
                         img.sprite-angular(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="angular.js", title="angular.js", width="96px", height="96px")
 
@@ -85,7 +85,7 @@ html(lang="en")
             .row
                 .col-md-12.margined-top-div.content#projectsList
                     - var attributes = {"v-for": "project in items"}
-
+                    //- Display filtered projects in loop
                     .col-md-6.col-sm-6&attributes(attributes)
                         .bordered-block
                             span.header.text-center {{ project.name }}
@@ -94,7 +94,7 @@ html(lang="en")
                             .col-md-8.col-sm-12.remove-left-padding {{{ project.description }}}
 
 
-            //-.row
+            .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
                         img(src="images/flag-russian.svg", alt="russian site", title="russian", width="48px")

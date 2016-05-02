@@ -89,6 +89,7 @@ gulp.task('javascript', function() {
     gulp.src([
         'js/vendor/dist/vendor.js',
         'js/main.js',
+        'portfolio-content/projects.json',// JSON including
         'js/controller.js',
         "js/view_controller.js",
         'js/handlers.js'
