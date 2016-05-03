@@ -1,0 +1,82 @@
+.projects {
+    @media (min-width: 1200px) { padding: 0 75px }
+
+    > .row {
+        @media (min-width: 768px) { display: table; }
+    }
+
+    .bordered-block {
+        border: solid 1px #0085FF;
+        min-height: 100%;
+        padding: 0 8px;
+
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background: rgba(1, 31, 54, 0.24);
+
+        span.header {
+            display: block;
+            margin: 15px 0;
+
+            color: #B6A46F;
+            font-size: 24px;
+            font-family: "Days", Helvetica, Arial, sans-serif;
+        }
+        /* Image thumbnail */
+        .project-thumbnail {
+            padding-top: 6px;
+
+            .tags-container {/* Tags under image */
+                padding: 5px 0;
+
+
+                .tag {/* Div wrapper for tags */
+                    margin: 8px 0;
+
+                    span.label {/* Tag body */
+                        font-size: 13px;
+                        display: block;
+
+                        .blue-tag() {
+                            background-color: #1386B8;
+                            color: #BFEBFF;
+                            border-radius: .3em;
+                        }
+
+
+                        &.label-default {
+                            .blue-tag;
+
+                            &:hover {
+                                cursor: default;
+                                background-color: #FE7701;
+                                color: #02535A;
+                                box-shadow: 0 0 8px 2px rgba(0,43,47,0.9);
+                            }
+                        }
+
+                        &.label-tag {/* Tags design */
+                            .blue-tag;
+
+                            &:hover {
+                                cursor: default;
+                                background-color: #56578F;
+                                color: #CBEDFF;
+                                box-shadow: 0 0 8px 0 rgba(0,8,47,0.9);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .description {
+            @media (min-width: 768px) { min-height: 200px };
+            @media (min-width: 992px) { padding-left: 0 };
+
+            p {
+                color: #AFE1FF;
+            }
+        }
+    }
+}

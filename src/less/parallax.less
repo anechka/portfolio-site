@@ -5,6 +5,10 @@
     overflow-x: hidden;
     overflow-y: auto;
 
+    @media (max-width: 767px) {
+        max-width: 100%;
+    }
+
     .design-copy {
         position: absolute;
 
@@ -35,6 +39,10 @@
 
                 &.cloud_three {
                     left: -30%;
+
+                    @media (max-width: 767px) {
+                        opacity: 0.9;
+                    }
                 }
 
                 &.cloud_four {

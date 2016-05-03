@@ -2,8 +2,9 @@
     @import "parallax";
 
     &.image_container {
-        @import "tags";
         @import "headers";
+        @import "tags";
+        @import "projects";
 
         div.avatar {
             position: relative;
@@ -23,6 +24,55 @@
             @media (max-width: 480px) {
                 width: 100%;
             }
+        }
+
+        .counter {
+            color: #85D6FF;
+            font-family: "Days", Helvetica, Arial, sans-serif;
+            font-size: 18px
+        }
+
+        .flag-language {
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            > a {
+                font-family: "Days", sans-serif; font-size: larger;
+                color: #00132F;
+                text-decoration: none;
+
+                &:hover {
+                    color: #FFF;
+                }
+
+                > img { margin-right: 5px; }
+
+                > span {
+                    color: rgba(0,19,47,0.9);
+                    font-weight: 700;
+                    text-shadow: none;
+
+                    &:hover::before, &:focus::before {
+                        -webkit-transform: scale(0.9);
+                        -moz-transform: scale(0.9);
+                        transform: scale(0.9);
+                        opacity: 0;
+                    }
+
+                    &::before {
+                        position: absolute;
+                        top: 3px;
+
+                        color: #fff;
+
+                        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+                        -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+                        transition: transform 0.3s, opacity 0.3s;
+                        content: attr(data-hover);
+                    }
+                }
+            }
+
         }
     }
 }

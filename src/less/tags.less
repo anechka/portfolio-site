@@ -1,11 +1,11 @@
-/* svg tags */
+/* square svg tags */
 .tags {
     margin-top: 48px;
 
-    & > a {
+    > a {
         margin-right: 10px;
 
-        & > img {
+        > img {/* default svg sprite on img background */
 
             &.sprite-django { .count-tag-width(1, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0;};
             &.sprite-javascript { .count-tag-width(2, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0; };
@@ -34,25 +34,25 @@
             }
         }
 
-
+        /* hover and open square tags */
 
         &.open > img { border-bottom: medium solid }
         
         &:hover, &.open {
-            & > img.sprite-django { .count-tag-width(1, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-javascript { .count-tag-width(2, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-python { .count-tag-width(3, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-nodejs { .count-tag-width(4, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-sass { .count-tag-width(5, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-bootstrap { .count-tag-width(6, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-jquery { .count-tag-width(7, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-angular { .count-tag-width(8, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
-            & > img.sprite-less { .count-tag-width(9, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-django { .count-tag-width(1, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-javascript { .count-tag-width(2, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-python { .count-tag-width(3, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-nodejs { .count-tag-width(4, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-sass { .count-tag-width(5, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-bootstrap { .count-tag-width(6, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-jquery { .count-tag-width(7, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-angular { .count-tag-width(8, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
+            > img.sprite-less { .count-tag-width(9, @tag-width); background: url("@{images}/web-logos-hover.svg") @sprite-position 0; };
 
             @media (min-width: 768px) and (max-width: 1200px) {
                 /* hover tags */
-                & > img.sprite-django { background-position: -6px -6px; }
-                & > img.sprite-javascript { background-position: -120px -8px; }
+                > img.sprite-django { background-position: -6px -6px; }
+                > img.sprite-javascript { background-position: -120px -8px; }
                 & > img.sprite-python { background-position: -218px -6px; }
                 & > img.sprite-nodejs { background-position: -324px -6px; }
                 & > img.sprite-sass { background-position: -430px -6px; }

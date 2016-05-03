@@ -101,7 +101,7 @@ html(lang="en")
                 .col-md-12.margined-top-div.text-center.text-uppercase.counter#counter {{ projectsCounterText }}
 
             .row
-                .col-md-12.margined-top-div.content#projectsList
+                .col-md-12.margined-top-div.projects#projectsList
                     .row
                         - var attributes = {"v-for": "project in items"}
                         //- Display filtered projects in loop
@@ -125,7 +125,7 @@ html(lang="en")
                                             .tag.text-center
                                                 span.label.label-tag javascript
 
-                                    .col-md-8.col-sm-12.remove-left-padding {{{ project.description }}}
+                                    .col-md-8.col-sm-12.description {{{ project.description }}}
             .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
@@ -133,7 +133,7 @@ html(lang="en")
                         span(data-hover="RUSSIAN") RUSSIAN
 
         link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
-        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+        //-TODO:remove font awesomelink(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.css")
 
         //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
