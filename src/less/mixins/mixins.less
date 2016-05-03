@@ -1,0 +1,14 @@
+.header-and-email-480px() {
+    @media (max-width: 480px) {
+        font-size: 2.5em;
+    }
+}
+
+.count-tag-width(@tagNumber, @width) {
+    @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);
+}
+
+/*
+.count-tag-width-mobile(@tagNumber, @width) {
+    @sprite-mobile-position: (@tagNumber - 1) * -(@width + @tag-gutter) - 6px;
+}*/

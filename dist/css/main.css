@@ -1,3 +1,7 @@
+/*
+.count-tag-width-mobile(@tagNumber, @width) {
+    @sprite-mobile-position: (@tagNumber - 1) * -(@width + @tag-gutter) - 6px;
+}*/
 @font-face {
   font-family: "Days";
   src: url("../fonts/days.otf") format("opentype");
@@ -49,8 +53,10 @@ A:hover {
   top: 5em;
   padding: 10px;
   width: 9em;
-  color: #493c72;
-  opacity: 0.6;
+  color: #FFF;
+  opacity: 0.1;
+  font-family: "Days", Helvetica, Arial, sans-serif;
+  font-size: 1.0em;
 }
 .container#parallax_container ul.scene {
   margin-left: 25%;
@@ -68,16 +74,155 @@ A:hover {
 .container#parallax_container ul.scene li img.cloud_layer.cloud_four {
   left: -45%;
 }
-.container.image_container .margined-top-div {
-  margin-top: 25px;
+.container.image_container {
+  /* svg tags */
 }
-.container.image_container div.avatar {
-  position: relative;
+.container.image_container .tags {
+  margin-top: 48px;
 }
-.container.image_container div.avatar img.img-avatar {
-  border: 4px solid #e5e9ee;
-  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
-  margin-top: 30px;
+.container.image_container .tags > a {
+  margin-right: 10px;
+}
+.container.image_container .tags > a > img.sprite-django {
+  background: url("../images/web-logos.svg") 0px 0;
+}
+.container.image_container .tags > a > img.sprite-javascript {
+  background: url("../images/web-logos.svg") -106px 0;
+}
+.container.image_container .tags > a > img.sprite-python {
+  background: url("../images/web-logos.svg") -212px 0;
+}
+.container.image_container .tags > a > img.sprite-nodejs {
+  background: url("../images/web-logos.svg") -318px 0;
+}
+.container.image_container .tags > a > img.sprite-sass {
+  background: url("../images/web-logos.svg") -424px 0;
+}
+.container.image_container .tags > a > img.sprite-bootstrap {
+  background: url("../images/web-logos.svg") -530px 0;
+}
+.container.image_container .tags > a > img.sprite-jquery {
+  background: url("../images/web-logos.svg") -636px 0;
+}
+.container.image_container .tags > a > img.sprite-angular {
+  background: url("../images/web-logos.svg") -742px 0;
+}
+.container.image_container .tags > a > img.sprite-less {
+  background: url("../images/web-logos.svg") -848px 0;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container.image_container .tags > a > img {
+    height: 84px;
+    width: 84px;
+  }
+  .container.image_container .tags > a > img.sprite-django {
+    background-position: -6px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-javascript {
+    background-position: -120px -8px;
+  }
+  .container.image_container .tags > a > img.sprite-python {
+    background-position: -218px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-nodejs {
+    background-position: -324px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-sass {
+    background-position: -430px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-bootstrap {
+    background-position: -536px -8px;
+  }
+  .container.image_container .tags > a > img.sprite-jquery {
+    background-position: -642px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-angular {
+    background-position: -748px -6px;
+  }
+  .container.image_container .tags > a > img.sprite-less {
+    background-position: -852px -6px;
+  }
+}
+.container.image_container .tags > a.open > img {
+  border-bottom: medium solid;
+}
+.container.image_container .tags > a:hover > img.sprite-django,
+.container.image_container .tags > a.open > img.sprite-django {
+  background: url("../images/web-logos-hover.svg") 0px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-javascript,
+.container.image_container .tags > a.open > img.sprite-javascript {
+  background: url("../images/web-logos-hover.svg") -106px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-python,
+.container.image_container .tags > a.open > img.sprite-python {
+  background: url("../images/web-logos-hover.svg") -212px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-nodejs,
+.container.image_container .tags > a.open > img.sprite-nodejs {
+  background: url("../images/web-logos-hover.svg") -318px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-sass,
+.container.image_container .tags > a.open > img.sprite-sass {
+  background: url("../images/web-logos-hover.svg") -424px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-bootstrap,
+.container.image_container .tags > a.open > img.sprite-bootstrap {
+  background: url("../images/web-logos-hover.svg") -530px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-jquery,
+.container.image_container .tags > a.open > img.sprite-jquery {
+  background: url("../images/web-logos-hover.svg") -636px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-angular,
+.container.image_container .tags > a.open > img.sprite-angular {
+  background: url("../images/web-logos-hover.svg") -742px 0;
+}
+.container.image_container .tags > a:hover > img.sprite-less,
+.container.image_container .tags > a.open > img.sprite-less {
+  background: url("../images/web-logos-hover.svg") -848px 0;
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .container.image_container .tags > a:hover,
+  .container.image_container .tags > a.open {
+    /* hover tags */
+  }
+  .container.image_container .tags > a:hover > img.sprite-django,
+  .container.image_container .tags > a.open > img.sprite-django {
+    background-position: -6px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-javascript,
+  .container.image_container .tags > a.open > img.sprite-javascript {
+    background-position: -120px -8px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-python,
+  .container.image_container .tags > a.open > img.sprite-python {
+    background-position: -218px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-nodejs,
+  .container.image_container .tags > a.open > img.sprite-nodejs {
+    background-position: -324px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-sass,
+  .container.image_container .tags > a.open > img.sprite-sass {
+    background-position: -430px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-bootstrap,
+  .container.image_container .tags > a.open > img.sprite-bootstrap {
+    background-position: -536px -8px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-jquery,
+  .container.image_container .tags > a.open > img.sprite-jquery {
+    background-position: -642px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-angular,
+  .container.image_container .tags > a.open > img.sprite-angular {
+    background-position: -748px -6px;
+  }
+  .container.image_container .tags > a:hover > img.sprite-less,
+  .container.image_container .tags > a.open > img.sprite-less {
+    background-position: -852px -6px;
+  }
 }
 .container.image_container span.name-header {
   font-family: "Days", sans-serif;
@@ -126,6 +271,17 @@ A:hover {
 }
 .container.image_container span.skype-header.right {
   color: #57588C;
+}
+.container.image_container div.avatar {
+  position: relative;
+}
+.container.image_container div.avatar img.img-avatar {
+  border: 4px solid #e5e9ee;
+  box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+  margin-top: 30px;
+}
+.container.image_container .margined-top-div {
+  margin-top: 25px;
 }
 @media (max-width: 480px) {
   .container.image_container .centered-scale-element {
