@@ -15,6 +15,7 @@ var production = false; // False for pretty HTML output in "jade" template engin
 var exec = require('child_process').execSync;
 var gulp = require('gulp');
 var jade = require('gulp-jade');
+var less = require('gulp-less');
 var rename = require("gulp-rename");
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
@@ -22,95 +23,104 @@ var concat = require('gulp-concat');
 gulp.task('default', function() {
     // Start point
     production = true;
-    gulp.run('jade');
+    gulp.run('jade'); gulp.run('jade-portfolio');
+    gulp.run('less');
     gulp.run('javascript');
+});
+
+gulp.task('less', function() {
+    // less styles from src/less folder
+    // only one root file need compile
+    gulp.src('src/less/main.less')
+        .pipe(less())
+        .pipe(gulp.dest('dist/css'));
 
 });
 
-gulp.task('jade-portfolio-content', function() {
-    var jade_config = { client: true };
-    if (!production) { jade_config.pretty = true }
-
-    gulp.src('portfolio-content/sumati/description.jade')
-        .pipe(jade(jade_config))
-        .pipe(gulp.dest('portfolio-content/sumati'));
-
-});
-
+// Compile only 2 templates: index[-RU].jade
 gulp.task('jade', function() {
+
     var jade_config = {};
     if (!production) { jade_config.pretty = true }// Call jade({pretty: true}) for dev
 
-    // Jade templates from /jade folder
-    gulp.src(['jade/index.jade', 'jade/index-ru.jade'])
+    // Jade templates from src/jade folder
+    gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
     .pipe(jade(jade_config))
-    .pipe(gulp.dest('.'));
-
-    // Jade templates from /portfolio-content
-    gulp.src('portfolio-content/conclave/conclave.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/conclave"));
-
-    gulp.src('portfolio-content/market/chipmarket.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/market"));
-
-    gulp.src('portfolio-content/pp/premium_parts.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/pp"));
-
-    gulp.src('portfolio-content/imobo/imobo.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/imobo"));
-
-    gulp.src('portfolio-content/redalgo/redalgo.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/redalgo"));
-
-    gulp.src('portfolio-content/sumati/sumati.jade')
-        .pipe(jade(jade_config))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("portfolio-content/sumati"));
+    .pipe(gulp.dest('dist'));
 
 });
+
+// Compile portfolio jade files
+gulp.task('jade-portfolio', function() {
+    var jade_config = {};
+    if (!production) { jade_config.pretty = true }
+
+    // Jade templates from /portfolio
+    gulp.src('src/jade/portfolio/conclave/conclave.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/conclave"));
+
+    gulp.src('src/jade/portfolio/market/chipmarket.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/market"));
+
+    gulp.src('src/jade/portfolio/pp/premium_parts.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/pp"));
+
+    gulp.src('src/jade/portfolio/imobo/imobo.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/imobo"));
+
+    gulp.src('src/jade/portfolio/redalgo/redalgo.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/redalgo"));
+
+    gulp.src('src/jade/portfolio/sumati/sumati.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/sumati"));
+
+});
+
 // Concat: vue.min.js, parallax.min.js, polyglot.min.js, zepto.min.js
 gulp.task('vendor-js', function() {
-    return gulp.src('js/vendor/src/*.js')
+    return gulp.src('src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('js/vendor/dist'));
+        .pipe(gulp.dest('dist/js/vendor'));
 });
 
 gulp.task('javascript', function() {
     gulp.src([
-        'js/vendor/dist/vendor.js',
-        'js/main.js',
-        'portfolio-content/projects.json',// JSON including
-        'js/controller.js',
-        "js/view_controller.js",
-        'js/handlers.js'
+        'dist/js/vendor/vendor.js',
+        'src/js/main.js',
+        'projects.json',// JSON including
+        'src/js/controller.js',
+        "src/js/view_controller.js",
+        'src/js/handlers.js'
         ])
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('js'));
+        .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('clean', function() {
 
     gulp.src(
         [
-            "index.html",
-            "index-ru.html",
-            "portfolio-content/conclave/index.html",
-            "portfolio-content/market/index.html",
-            "portfolio-content/pp/index.html",
-            "portfolio-content/imobo/index.html",
-            "portfolio-content/redalgo/index.html",
-            "portfolio-content/sumati/index.html",
-            "js/all.js"
+            "dist/index.html",
+            "dist/index-ru.html",
+            "dist/portfolio-content/conclave/index.html",
+            "dist/portfolio-content/market/index.html",
+            "dist/portfolio-content/pp/index.html",
+            "dist/portfolio-content/imobo/index.html",
+            "dist/portfolio-content/redalgo/index.html",
+            "dist/portfolio-content/sumati/index.html",
+            "dist/js/all.js"
         ],
         {read: false}
     )

@@ -1,0 +1,72 @@
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+<style>
+    a {
+        color: #008000; /* Цвет обычной ссылки */
+        text-decoration: none; /* Убираем подчеркивание у ссылок */
+    }
+
+    a:visited {
+        color: green; /* Цвет посещённой ссылки */
+    }
+
+    a:hover {
+        color: #595959; /* Цвет ссылки при наведении на нее курсора мыши */
+        text-decoration: underline; /* Добавляем подчеркивание */
+    }
+</style>
+
+<p align="center">Premium Parts<br>Кабинет менеджера S0002<br>v.007</p>
+<table align="center" border="1px" cellspacing=0 cellpadding=15>
+    <tr>
+        <td align="center" valign="top" width="1100px">
+            <a href="/p/retr.php">Проверка по коду</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/p/pzak.php">Предварительные
+            заказы</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/p/index.php">Движение заказов</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                href="/p/priem.php">Прием товара</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/p/sklad.php">Склад</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                href="/p/cli.php">Клиенты</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/p/mystat.php">Мой счет</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                href="/p/stat.php">Статистика</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?logout">Выход</a>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <br>
+
+            <p align="center">Редактирование клиента автомагазина</p>
+
+            <form action="/p/editc2.php" method="post">
+                <table>
+                    <tr>
+                        <td>Введите имя клиента:</td>
+                        <td><input type="text" size="40" name="cname" id="cname" value="Володя Петрович"></td>
+                    </tr>
+                    <tr>
+                        <td>Введите телефон клиента:</td>
+                        <td><input type="text" size="40" name="ctel" id="ctel" value="89107824440"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="hidden" size="40" value="0" name="cskid" id="cskid"></td>
+                    </tr>
+                    <tr>
+                        <td>Комментарий:</td>
+                        <td><input type="text" size="40" name="ccom" id="ccom" value="ул. Индустриальная"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Данные по автомобилю клиента: <br> <textarea rows="10" cols="60" name="ccar"
+                                                                                     id="ccar">VW T4 2.5 TDI 102 лс
+                            1998г. Занимается ремонтом автомобилей
+                            санта фе vin km8sc73d22u176949</textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="hidden" name="cln" value="10"><input type="submit"
+                                                                                          value="Сохранить изменения">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+

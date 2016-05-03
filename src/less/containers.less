@@ -1,0 +1,76 @@
+.container {
+    @import "parallax";
+
+    &.image_container {
+        .margined-top-div {
+            margin-top: @top-margin-for-div;
+        }
+
+        div.avatar {
+            position: relative;
+
+            img.img-avatar {
+                border: 4px solid #e5e9ee;
+                box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+                margin-top: @top-margin-for-div + 5px;
+            }
+        }
+
+        span.name-header {
+            font-family: "Days", sans-serif;
+            font-size: 55px;
+
+            color: #FFF;
+
+            .header-and-email-480px
+        }
+
+        span.email {
+            font-family: "Days", sans-serif;
+            font-size: 48px;
+
+            color: #ff7700;
+
+            -webkit-transition: color 0.5s ease-in-out;
+            -moz-transition: color 0.5s ease-in-out;
+            -o-transition: color 0.5s ease-in-out;
+            -ms-transition: color 0.5s ease-in-out;
+            transition: color 0.5s ease-in-out;
+
+            &:hover {
+                color: #A090E4;
+                transition: none;
+            }
+
+            .header-and-email-480px
+        }
+
+        span.skype-header {
+            font-family: "Days", sans-serif;
+            font-size: 48px;
+
+            @media (max-width: 480px) {
+                font-size: 2.0em;
+            }
+
+            &.left {
+                color: #FFF;
+                opacity: 0.6;
+            }
+
+            &.center {
+                color: #FFF;
+            }
+
+            &.right {
+                color: #57588C;
+            }
+        }
+
+        .centered-scale-element {
+            @media (max-width: 480px) {
+                width: 100%;
+            }
+        }
+    }
+}
