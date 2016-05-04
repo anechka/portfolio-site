@@ -102,28 +102,33 @@ html(lang="en")
 
             .row
                 .col-md-12.margined-top-div.projects#projectsList
-                    .row
-                        - var attributes = {"v-for": "project in items"}
-                        //- Display filtered projects in loop
-                        .col-md-6.col-sm-6&attributes(attributes)
+                    //- Display filtered projects in loop
+                    - var groupsAttributes = {"v-for": "couple in group"}
+                    .row&attributes(groupsAttributes)
+
+                        - var coupleAttributes = {"v-for": "project in couple"}
+                        .col-md-6.col-sm-6&attributes(coupleAttributes)
                             .bordered-block
                                 .row
                                     .col-md-12
                                         span.header.text-center {{ project.name }}
                                 .row
                                     .col-md-4.col-sm-12.project-thumbnail
-                                        img(src="images/portfolio-thumb/{{ project.image }}", width="100%", height="100%")
-                                        .col-md-12.col-sm-12.col-xs-12.tags-container
-                                            .tag.text-center
-                                                span.label.label-tag django
-                                            .tag.text-center
-                                                span.label.label-tag python
-                                            .tag.text-center
-                                                span.label.label-tag angular
-                                            .tag.text-center
-                                                span.label.label-tag jquery
-                                            .tag.text-center
-                                                span.label.label-tag javascript
+                                        .row
+                                            .col-md-12
+                                                img.center-block.img-responsive(src="images/portfolio-thumb/{{ project.image }}")
+                                        .row
+                                            .col-md-12.col-sm-12.col-xs-12.tags-container
+                                                .tag.text-center
+                                                    span.label.label-tag django
+                                                .tag.text-center
+                                                    span.label.label-tag python
+                                                .tag.text-center
+                                                    span.label.label-tag angular
+                                                .tag.text-center
+                                                    span.label.label-tag jquery
+                                                .tag.text-center
+                                                    span.label.label-tag javascript
 
                                     .col-md-8.col-sm-12.description {{{ project.description }}}
             .row
@@ -134,7 +139,7 @@ html(lang="en")
 
         //-link(rel="stylesheet", href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
         //-TODO:remove font awesomelink(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
-        link(rel="stylesheet", href="css/main.css")
+        link(rel="stylesheet", href="css/main.min.css")
 
         //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
         script(type="text/javascript", src="js/all.js", async="async")

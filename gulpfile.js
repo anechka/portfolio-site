@@ -14,8 +14,11 @@ var production = false; // False for pretty HTML output in "jade" template engin
 
 var exec = require('child_process').execSync;
 var gulp = require('gulp');
+
 var jade = require('gulp-jade');
 var less = require('gulp-less');
+
+var cssmin = require('gulp-cssmin');
 var rename = require("gulp-rename");
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
@@ -33,6 +36,8 @@ gulp.task('less', function() {
     // only one root file need compile
     gulp.src('src/less/main.less')
         .pipe(less())
+        .pipe(cssmin())
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));
 
 });

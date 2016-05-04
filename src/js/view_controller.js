@@ -27,12 +27,15 @@ function view_controller () {
     var projectsView = new Vue({
         el: '#projectsList',
         data: {
-            items: null
+            group: null
         },
         methods: {
 
-            displayProjects: function (projects) {
-                this.items = projects;
+            displayProjects: function (group) {
+                this.group = group;
+
+                console.info("Group is:");
+                console.log(group);
             }
         }
     });
@@ -85,7 +88,7 @@ function view_controller () {
             },
 
             click: function (incomeTag) {
-                var result = [];
+                var group = [], couple = [];
 
                 if (this.tags.hasOwnProperty(incomeTag)) {
                     // Disable all tags on loop
@@ -110,11 +113,21 @@ function view_controller () {
                         var tag = projectTagsArray[index];
 
                         if (incomeTag.toString().toLowerCase() == tag.toLowerCase()) {
-                            result.push(project);
+                            couple.push(project);
                         }
                     }
+
+                    if (couple.length == 2) {
+                        group.push(couple);
+                        couple = [];
+                    }
                 }
-                projectsView.displayProjects(result);
+
+                if (couple.length == 1) {
+                    group.push(couple);
+                }
+
+                projectsView.displayProjects(group);
             }
 
         }

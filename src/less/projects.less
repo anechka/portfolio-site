@@ -2,7 +2,9 @@
     @media (min-width: 1200px) { padding: 0 75px }
 
     > .row {
-        @media (min-width: 768px) { display: table; }
+        display: block;
+
+        @media (min-width: @screen-sm-min) { display: flex; }
     }
 
     .bordered-block {
@@ -27,25 +29,23 @@
             padding-top: 6px;
 
             .tags-container {/* Tags under image */
-                padding: 5px 0;
-
 
                 .tag {/* Div wrapper for tags */
-                    margin: 8px 0;
 
                     span.label {/* Tag body */
                         font-size: 13px;
                         display: block;
+                        margin: 12px 12px 12px 0;
 
-                        .blue-tag() {
-                            background-color: #1386B8;
-                            color: #BFEBFF;
-                            border-radius: .3em;
+                        @media (max-width: (@screen-md-min + 1px)) {
+                            display: inline;
+                            float: left;
+
+                            margin: 12px 4px 0 0;
                         }
 
-
                         &.label-default {
-                            .blue-tag;
+                            .project-span-label-tag;
 
                             &:hover {
                                 cursor: default;
@@ -56,13 +56,13 @@
                         }
 
                         &.label-tag {/* Tags design */
-                            .blue-tag;
+                            .project-span-label-tag;
 
                             &:hover {
                                 cursor: default;
                                 background-color: #56578F;
                                 color: #CBEDFF;
-                                box-shadow: 0 0 8px 0 rgba(0,8,47,0.9);
+                                box-shadow: 0 0 8px 0 rgba(0,8,47,0.4);
                             }
                         }
                     }
