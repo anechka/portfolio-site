@@ -3,9 +3,14 @@
     margin-top: 48px;
 
     > a {
-        margin-right: 10px;
+        @media (min-width: @screen-lg) {
+            margin-top: 6px;
+            margin-right: 6px;
+        }
 
         > img {/* default svg sprite on img background */
+            height: @tag-width;
+            width: @tag-width;
 
             &.sprite-django { .count-tag-width(1, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0;};
             &.sprite-javascript { .count-tag-width(2, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0; };
@@ -17,7 +22,7 @@
             &.sprite-angular { .count-tag-width(8, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0; };
             &.sprite-less { .count-tag-width(9, @tag-width); background: url("@{images}/web-logos.svg") @sprite-position 0; };
 
-            @media (min-width: 768px) and (max-width: 1200px) {
+            @media (max-width: @screen-sm) {
                 height: @tag-width-mobile;
                 width: @tag-width-mobile;
 

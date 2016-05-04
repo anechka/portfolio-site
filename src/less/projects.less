@@ -1,81 +1,115 @@
-.projects {
+&#projectsList {
     @media (min-width: 1200px) { padding: 0 75px }
 
     > .row {
         display: block;
 
-        @media (min-width: @screen-sm-min) { display: flex; }
-    }
+        @media (min-width: @screen-xs-min) { display: flex; }
 
-    .bordered-block {
-        border: solid 1px #0085FF;
-        min-height: 100%;
-        padding: 0 8px;
+        .project {
+            //      top     right               bottom                  left
+            padding: 0 @projects-padding (@projects-padding * 2) @projects-padding;
 
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        background: rgba(1, 31, 54, 0.24);
+            @media (min-width: @screen-xs) {
+                max-width: 50%;
+            }
 
-        span.header {
-            display: block;
-            margin: 15px 0;
+            .bordered-block {
+                border: solid 1px #0085FF;
+                min-height: 100%;
+                padding: 0 8px;
 
-            color: #B6A46F;
-            font-size: 24px;
-            font-family: "Days", Helvetica, Arial, sans-serif;
-        }
-        /* Image thumbnail */
-        .project-thumbnail {
-            padding-top: 6px;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background: rgba(1, 31, 54, 0.24);
 
-            .tags-container {/* Tags under image */
+                span.header {
+                    display: block;
 
-                .tag {/* Div wrapper for tags */
+                    color: #B6A46F;
+                    font-size: 24px;
+                    font-family: "Days", Helvetica, Arial, sans-serif;
 
-                    span.label {/* Tag body */
-                        font-size: 13px;
-                        display: block;
-                        margin: 12px 12px 12px 0;
+                    @media (min-width: @screen-md-min) {
+                        margin: 15px 0;
+                    }
+                }
 
-                        @media (max-width: (@screen-md-min + 1px)) {
-                            display: inline;
-                            float: left;
+                .project-thumbnail {
+                    /* Image thumbnail */
+                    padding-top: 5px;
 
-                            margin: 12px 4px 0 0;
+                    @media (min-width: 992px) {
+
+                        padding-right: 0;
+                    }
+
+                    img.img-responsive {
+                        @media (min-width: 370px) and (max-width: 768px) {
+                            width: 200px;
+                            height: 150px;
                         }
+                    }
 
-                        &.label-default {
-                            .project-span-label-tag;
+                    .tags-container { /* Tags under image */
+                        padding: 0;
 
-                            &:hover {
-                                cursor: default;
-                                background-color: #FE7701;
-                                color: #02535A;
-                                box-shadow: 0 0 8px 2px rgba(0,43,47,0.9);
-                            }
-                        }
+                        .tag { /* Div wrapper for tags */
 
-                        &.label-tag {/* Tags design */
-                            .project-span-label-tag;
+                            span.label { /* Tag body */
+                                display: block;
+                                margin: 12px 12px 12px 0;
 
-                            &:hover {
-                                cursor: default;
-                                background-color: #56578F;
-                                color: #CBEDFF;
-                                box-shadow: 0 0 8px 0 rgba(0,8,47,0.4);
+                                @media (max-width: @screen-md) {
+                                    display: inline;
+                                    float: left;
+
+                                    margin: 12px 4px 0 0;
+                                }
+
+                                @media (min-width: @screen-md) {
+                                    width: 100%;
+                                    font-size: @project-tag-font-size;
+                                }
+
+                                &.label-default {
+                                    .project-span-label-tag;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #FE7701;
+                                        color: #02535A;
+                                        box-shadow: 0 0 8px 2px rgba(0, 43, 47, 0.9);
+                                    }
+                                }
+
+                                &.label-tag { /* Tags design */
+                                    .project-span-label-tag;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #56578F;
+                                        color: #CBEDFF;
+                                        box-shadow: 0 0 8px 0 rgba(0, 8, 47, 0.4);
+                                    }
+                                }
                             }
                         }
                     }
                 }
-            }
-        }
 
-        .description {
-            @media (min-width: 768px) { min-height: 200px };
-            @media (min-width: 992px) { padding-left: 0 };
+                .description {
+                    @media (min-width: 768px) { min-height: 200px };//TODO: Check it height!
+                    @media (min-width: 992px) { padding-left: 5px };
 
-            p {
-                color: #AFE1FF;
+                    p {
+                        margin-top: 5px;
+                        padding: 0 4px;
+
+                        color: @project-p-text-color;
+                        background: @project-p-bg-dark-color;
+                    }
+                }
             }
         }
     }

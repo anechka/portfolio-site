@@ -36,7 +36,7 @@ gulp.task('less', function() {
     // only one root file need compile
     gulp.src('src/less/main.less')
         .pipe(less())
-        .pipe(cssmin())
+        //.pipe(cssmin()) // Comment it for development
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));
 
@@ -125,6 +125,9 @@ gulp.task('clean', function() {
             "dist/portfolio-content/imobo/index.html",
             "dist/portfolio-content/redalgo/index.html",
             "dist/portfolio-content/sumati/index.html",
+
+            "dist/css/main.min.css",
+
             "dist/js/all.js"
         ],
         {read: false}

@@ -4,7 +4,6 @@
     &.image_container {
         @import "headers";
         @import "tags";
-        @import "projects";
 
         div.avatar {
             position: relative;
@@ -18,19 +17,23 @@
 
         .margined-top-div {
             margin-top: @top-margin-for-div;
-        }
 
-        .centered-scale-element {
-            @media (max-width: 480px) {
-                width: 100%;
+            &#counter {
+                color: #85D6FF;
+                font-family: "Days", Helvetica, Arial, sans-serif;
+                font-size: 18px
             }
+
+            .centered-scale-element {
+                @media (max-width: 480px) {
+                    width: 100%;
+                }
+            }
+
+            @import "projects";
         }
 
-        .counter {
-            color: #85D6FF;
-            font-family: "Days", Helvetica, Arial, sans-serif;
-            font-size: 18px
-        }
+
 
         .flag-language {
             margin-top: 15px;
