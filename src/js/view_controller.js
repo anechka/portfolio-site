@@ -13,6 +13,9 @@ function view_controller () {
             projectsCounterText: polyglot.t("projects", {smart_count: projects.length}) + " total"
         },
         methods: {
+            setCounter: function (int) {
+                this.projectsCounterText = polyglot.t("projects", {smart_count: int});
+            },
             
             setCounterText: function (text) {
                 this.projectsCounterText = text;
@@ -33,15 +36,12 @@ function view_controller () {
 
             displayProjects: function (group) {
                 this.group = group;
-
-                console.info("Group is:");
-                console.log(group);
             }
         }
     });
 
     // Tags ViewModel
-    new Vue({
+    var tagsView = new Vue({
         el: '#tags',
 
         // Tag list, active is disabled
@@ -79,7 +79,7 @@ function view_controller () {
                 }
 
                 this.counterText = counterView.getCounterText();
-                counterView.setCounterText(polyglot.t("projects", {smart_count: projectsNumberWithTag}));
+                counterView.setCounter(projectsNumberWithTag);
 
             },
 
@@ -133,4 +133,13 @@ function view_controller () {
         }
     });
 
+    return {
+        counterView: counterView,
+        projectsView: projectsView,
+        tagsView: tagsView
+    }
+}
+// Running in Node.js
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports.viewController = view_controller;
 }

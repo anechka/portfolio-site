@@ -16,5 +16,7 @@
     "gulp-less": "^3.0.5",
     "gulp-rename": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jsdom": "^8.5.0"
+  }
 }
