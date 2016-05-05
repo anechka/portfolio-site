@@ -17,6 +17,8 @@
     "gulp-rename": "*"
   },
   "devDependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0",
     "jsdom": "^8.5.0"
   }
 }
