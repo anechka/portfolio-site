@@ -8,6 +8,7 @@
   "description": "Freelancer parallax portfolio web-site",
   "homepage": "http://anya.site",
   "dependencies": {
+    "coffee-script": "^1.10.0",
     "gulp": "^3.8.11",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
