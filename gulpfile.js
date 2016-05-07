@@ -136,6 +136,20 @@ gulp.task('clean', function() {
 
 });
 
+gulp.task('testing-javascript', function() {
+    require('coffee-script').register();
+    const jasmine = require('gulp-jasmine');
+
+    var SpecReporter = require('jasmine-spec-reporter');
+
+    gulp.src('src/tests/spec/viewModelTest.coffee')
+        // gulp-jasmine works on filepaths so you can't have any plugins before it
+        .pipe(jasmine({
+            reporter: new SpecReporter()
+        }));
+
+});
+
 gulp.task('server-update', function() {
     exec('ansible-playbook -i deploy/ansible_config/server deploy/ansible_config/update.yml', {stdio:[0,1,2]})
 });

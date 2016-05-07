@@ -112,7 +112,3 @@ view_controller = ->
     projectsView: projectsView
     tagsView: tagsView
   }
-
-# Running in Node.js
-if typeof module != 'undefined' and module.exports
-  module.exports.viewController = view_controller

@@ -2,12 +2,14 @@
  * Created by menangen on 01.05.16.
  */
 function view_controller () {
+    var counterView, tagsView, projectsView;
+
     var polyglot = new Polyglot({locale: "en"}); //polyglot.locale("en");
     polyglot.extend({
         "projects": "%{smart_count} project |||| %{smart_count} projects"// Do not edit %{smart_count}!
     });
 
-    var counterView = new Vue({
+    counterView = new Vue({
         el: '#counter',
         data: {
             projectsCounterText: polyglot.t("projects", {smart_count: projects.length}) + " total"
@@ -16,7 +18,7 @@ function view_controller () {
             setCounter: function (int) {
                 this.projectsCounterText = polyglot.t("projects", {smart_count: int});
             },
-            
+
             setCounterText: function (text) {
                 this.projectsCounterText = text;
             },
@@ -27,7 +29,7 @@ function view_controller () {
         }
     });
 
-    var projectsView = new Vue({
+    projectsView = new Vue({
         el: '#projectsList',
         data: {
             group: null
@@ -41,7 +43,7 @@ function view_controller () {
     });
 
     // Tags ViewModel
-    var tagsView = new Vue({
+    tagsView = new Vue({
         el: '#tags',
 
         // Tag list, active is disabled
@@ -61,7 +63,7 @@ function view_controller () {
         },
 
         methods: {
-            
+
             mouseOver: function (incomeTag) {
                 var projectsNumberWithTag = 0;
 
@@ -138,8 +140,4 @@ function view_controller () {
         projectsView: projectsView,
         tagsView: tagsView
     }
-}
-// Running in Node.js
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports.viewController = view_controller;
 }

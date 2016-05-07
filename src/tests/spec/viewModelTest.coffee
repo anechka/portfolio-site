@@ -1,28 +1,39 @@
 # Created by menangen on 05.05.16.
+describe 'Testing Vue.js ViewModels', ->
+  root = ""
+  fs = require 'fs'
+  jsdom = require 'jsdom'
 
-fs = require 'fs'
-projectsJSON = fs.readFileSync '../../projects.json', 'utf-8'
-jsdom = require 'jsdom'
+  projectsJSON = fs.readFileSync "#{ root }projects.json", "utf-8"
+  indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
+  vendor = fs.readFileSync "#{ root }dist/js/vendor/vendor.js", "utf-8"
+  viewController = fs.readFileSync "#{ root }src/js/view_controller.js", "utf-8"
 
-polyglot = require '../../js/vendor/polyglot.min'
-vue = require '../../js/vendor/vue.min'
+  $ = null
+  viewModels = null
+  viewModelsArray = null
+  projects = eval(projectsJSON)
 
-viewModule = require '../../js/view_controller'
-#viewModule = require '../../coffee/view_controller'
+  beforeAll (done) ->
+    jsdom.env indexHTML, { src: [viewController, vendor] }, (err, window) ->
+      # console.log("contents of a.the-link:", window.Zepto("a.the-link").text());
+      # console.log(window.view_controller().counterView.getCounterText());
+        $ = window.$
+        window.projects = projects
 
-global.document = jsdom.jsdom '<body></body>'
-global.window = document.defaultView
-global.navigator = window.navigator
+        viewModels = window.view_controller()
+        #viewModelsArray = Object.keys viewModels
+        done()
+        return
+    return
 
-global.Polyglot = polyglot
-global.Vue = vue
-global.projects = eval projectsJSON
+  it 'Check ViewController return viewModels object', ->
+    expect(typeof viewModels).not.toBe 'undefined'
 
-viewModels = viewModule.viewController()
-
-# TESTS (Specs in Jasmine):
-describe 'viewController', ->
-  viewModelsArray = Object.keys viewModels
+  it 'Check viewModels object', ->
+    viewModelsArray = Object.keys(viewModels)
+    expect(viewModelsArray.length).not.toBe 0
+    return
 
   it 'has a counterView', ->
     expect(viewModelsArray.indexOf 'counterView' ).not.toBe -1
@@ -36,54 +47,50 @@ describe 'viewController', ->
     expect(viewModelsArray.indexOf 'tagsView' ).not.toBe -1
     return
 
-  return
+  describe 'counterView', ->
 
-describe 'counterView', ->
+    it 'in viewModels', ->
+      expect(viewModels.counterView).toBeDefined()
+      return
 
-  it 'in viewModels', ->
-    expect(viewModels.counterView).toBeDefined()
-    return
+    it 'counterView is Vue instance', ->
+      expect(viewModels.counterView._isVue).toBe true
+      return
 
-  it 'counterView is Vue instance', ->
-    expect(viewModels.counterView._isVue).toBe true
-    return
+    it 'has a projectsCounterText', ->
+      expect(viewModels.counterView.projectsCounterText).toBeDefined()
+      return
 
-  return
+    it 'has a setCounter method', ->
+      expect(viewModels.counterView.setCounter).toBeDefined()
+      return
 
-describe 'Projects counter have a text', ->
+    it 'Projects counter have proper default text', ->
+      expect(viewModels.counterView.getCounterText()).toBe projects.length + ' projects total'
+      return
 
-  it 'as projects number total', ->
-    expect(viewModels.counterView.getCounterText()).toBe projects.length + ' projects total'
-    return
+    it 'Projects counter can get text', ->
+      expect(viewModels.counterView.getCounterText).toBeDefined()
+      return
 
-  return
+    it 'Projects counter can set text', ->
+      expect(viewModels.counterView.setCounterText).toBeDefined()
+      return
 
-describe 'Projects counter', ->
+    it 'Projects counter can set number', ->
+      expect(viewModels.counterView.setCounter).toBeDefined()
+      return
 
-  it 'can get text', ->
-    expect(viewModels.counterView.getCounterText).toBeDefined()
-    return
+    it 'Have a text: "1 project" for setCounter(1)', ->
+      viewModels.counterView.setCounter 1
+      expect(viewModels.counterView.getCounterText()).toBe '1 project'
+      return
 
-  it 'can set text', ->
-    expect(viewModels.counterView.setCounterText).toBeDefined()
-    return
+    it 'Have a text: "Test-Text" for setCounterText(Test-Text)', ->
+      viewModels.counterView.setCounterText 'Test-Text'
+      expect(viewModels.counterView.getCounterText()).toBe 'Test-Text'
+      return
 
-  it 'can set number', ->
-    expect(viewModels.counterView.setCounter).toBeDefined()
-    return
-
-  return
-
-describe 'counterView have a text', ->
-
-  it '1 project for setCounter(1)', ->
-    viewModels.counterView.setCounter 1
-    expect(viewModels.counterView.getCounterText()).toBe '1 project'
-    return
-
-  it 'Test-Text for setCounterText(Test-Text)', ->
-    viewModels.counterView.setCounterText 'Test-Text'
-    expect(viewModels.counterView.getCounterText()).toBe 'Test-Text'
     return
 
   return
