@@ -104,7 +104,13 @@ gulp.task('vendor-js', function() {
 
 gulp.task('javascript', function() {
     gulp
-        .src(['projects.coffee','src/coffee/*.coffee'])
+        .src([// We can't use *.coffee because it is cause an error in jsdom testing engine with $(load) function
+            'projects.coffee',
+            'src/coffee/controller.coffee',
+            'src/coffee/view_controller.coffee',
+            'src/coffee/handlers.coffee',
+            'src/coffee/main.coffee'
+        ])
         .pipe(concat('all.coffee'))
         .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
         .pipe(addsrc('dist/js/vendor/vendor.js'))
@@ -135,7 +141,7 @@ gulp.task('clean', function() {
 
 });
 
-gulp.task('testing-javascript', function() {
+gulp.task('test', function() {
     require('coffee-script').register();
     const jasmine = require('gulp-jasmine');
 

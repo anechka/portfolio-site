@@ -1,37 +1,48 @@
 # Created by menangen on 05.05.16.
 describe 'Testing Vue.js ViewModels', ->
   root = ""
+  coffee = require('coffee-script')
   fs = require 'fs'
   jsdom = require 'jsdom'
 
-  projectsJSON = fs.readFileSync "#{ root }projects.json", "utf-8"
+  projectsCoffeeFile = fs.readFileSync "#{ root }projects.coffee", "utf-8"
   indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
-  #vendor = fs.readFileSync "#{ root }dist/js/vendor/vendor.js", "utf-8"
-  #viewController = fs.readFileSync "#{ root }src/js/view_controller.js", "utf-8"
   viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
 
-  $ = null
   viewModels = null
-  viewModelsArray = null
-  projects = eval(projectsJSON)
+  window = null
+  projects = coffee.eval(projectsCoffeeFile)
 
   beforeAll (done) ->
-    jsdom.env indexHTML, { src: [viewController] }, (err, window) ->
-      # console.log("contents of a.the-link:", window.Zepto("a.the-link").text());
-      # console.log(window.view_controller().counterView.getCounterText());
-      # $ = window.$
+    jsdom.env indexHTML, { src: [viewController] }, (err, browser_window) ->
+      console.log "error:" + err if err
 
-      viewModels = window.view_controller()
+      expect(window).toBeDefined()
+
+      window = browser_window
+      viewModels = browser_window.viewModels
+
       done()
       return
+
     return
+
+  # Vendors test
+  it 'Jquery/Zepto in module', ->
+    expect(window.$).toBeDefined()
+
+  it 'Vue in module', ->
+    expect(window.Vue).toBeDefined()
+
+  it 'Coffeescript file is not empty', ->
+    expect(projects).toBeDefined()
 
   it 'Check ViewController return viewModels object', ->
     expect(viewModels).toBeDefined()
+    expect(viewModels).not.toBeNull()
 
   it 'Check viewModels object', ->
-    viewModelsArray = Object.keys viewModels
-    expect(viewModelsArray.length).not.toBeNull()
+    expect(Object.keys(viewModels).length).not.toBeNull()
     return
 
 
@@ -222,6 +233,8 @@ describe 'Testing Vue.js ViewModels', ->
 
         keys = Object.keys viewModels.tagsView.tags
         viewModels.tagsView.click keys[0]
+
+        expect(viewModels.projectsView.group).not.toBeNull()
 
         projectKeys = Object.keys viewModels.projectsView.group[0][0]
         expect(projectKeys.length).toBe 4
