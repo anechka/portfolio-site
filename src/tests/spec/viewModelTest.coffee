@@ -6,8 +6,9 @@ describe 'Testing Vue.js ViewModels', ->
 
   projectsJSON = fs.readFileSync "#{ root }projects.json", "utf-8"
   indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
-  vendor = fs.readFileSync "#{ root }dist/js/vendor/vendor.js", "utf-8"
-  viewController = fs.readFileSync "#{ root }src/js/view_controller.js", "utf-8"
+  #vendor = fs.readFileSync "#{ root }dist/js/vendor/vendor.js", "utf-8"
+  #viewController = fs.readFileSync "#{ root }src/js/view_controller.js", "utf-8"
+  viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
 
   $ = null
   viewModels = null
@@ -15,37 +16,24 @@ describe 'Testing Vue.js ViewModels', ->
   projects = eval(projectsJSON)
 
   beforeAll (done) ->
-    jsdom.env indexHTML, { src: [viewController, vendor] }, (err, window) ->
+    jsdom.env indexHTML, { src: [viewController] }, (err, window) ->
       # console.log("contents of a.the-link:", window.Zepto("a.the-link").text());
       # console.log(window.view_controller().counterView.getCounterText());
-        $ = window.$
-        window.projects = projects
+      # $ = window.$
 
-        viewModels = window.view_controller()
-        #viewModelsArray = Object.keys viewModels
-        done()
-        return
+      viewModels = window.view_controller()
+      done()
+      return
     return
 
   it 'Check ViewController return viewModels object', ->
-    expect(typeof viewModels).not.toBe 'undefined'
+    expect(viewModels).toBeDefined()
 
   it 'Check viewModels object', ->
     viewModelsArray = Object.keys viewModels
-    expect(viewModelsArray.length).not.toBe 0
+    expect(viewModelsArray.length).not.toBeNull()
     return
 
-  it 'has a counterView', ->
-    expect(viewModels.counterView).toBeDefined()
-    return
-
-  it 'has a projectsView', ->
-    expect(viewModels.projectsView).toBeDefined()
-    return
-
-  it 'has a tagsView', ->
-    expect(viewModels.tagsView).toBeDefined()
-    return
 
   describe 'counterView', ->
 
@@ -54,7 +42,7 @@ describe 'Testing Vue.js ViewModels', ->
       return
 
     it 'counterView is Vue instance', ->
-      expect(viewModels.counterView._isVue).toBe true
+      expect(viewModels.counterView._isVue).toBeTruthy()
       return
 
     it 'has a projectsCounterText', ->
@@ -226,7 +214,7 @@ describe 'Testing Vue.js ViewModels', ->
           # has a tag in end
           expect(counterText.indexOf("on " + key)).not.toBe -1
           # tag is true
-          expect(data).toBe true
+          expect(data).toBeTruthy()
         return
 
       it 'can change projectsView', ->
