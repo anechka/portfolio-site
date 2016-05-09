@@ -17,11 +17,13 @@ var gulp = require('gulp');
 
 var jade = require('gulp-jade');
 var less = require('gulp-less');
+var coffee = require('gulp-coffee');
 
 var cssmin = require('gulp-cssmin');
 var rename = require("gulp-rename");
-var clean = require('gulp-clean');
 var concat = require('gulp-concat');
+var addsrc = require('gulp-add-src');
+var clean = require('gulp-clean');
 
 gulp.task('default', function() {
     // Start point
@@ -101,14 +103,17 @@ gulp.task('vendor-js', function() {
 });
 
 gulp.task('javascript', function() {
-    gulp.src([
-        'dist/js/vendor/vendor.js',
-        'src/js/main.js',
-        'projects.json',// JSON including
-        'src/js/controller.js',
-        "src/js/view_controller.js",
-        'src/js/handlers.js'
+    gulp
+        .src([// We can't use *.coffee because it is cause an error in jsdom testing engine with $(load) function
+            'projects.coffee',
+            'src/coffee/controller.coffee',
+            'src/coffee/view_controller.coffee',
+            'src/coffee/handlers.coffee',
+            'src/coffee/main.coffee'
         ])
+        .pipe(concat('all.coffee'))
+        .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
+        .pipe(addsrc('dist/js/vendor/vendor.js'))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
 });
@@ -136,7 +141,7 @@ gulp.task('clean', function() {
 
 });
 
-gulp.task('testing-javascript', function() {
+gulp.task('test', function() {
     require('coffee-script').register();
     const jasmine = require('gulp-jasmine');
 

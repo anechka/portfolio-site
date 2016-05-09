@@ -56,15 +56,13 @@ view_controller = ->
 
         projectsNumberWithTag = 0
 
-        for project_item of projects
-          project = projects[project_item]
+        for project_index of projects
+          project = projects[project_index]
           projectTagsArray = project.tags
 
-          for tag in projectTagsArray
-            if incomeTag.toString().toLowerCase == tag.toLowerCase
-              projectsNumberWithTag++
+          projectsNumberWithTag++ if incomeTag in projectTagsArray
 
-        @counterText = counterView.getCounterText
+        @counterText = counterView.getCounterText()
         counterView.setCounter projectsNumberWithTag
         return
       
@@ -76,15 +74,14 @@ view_controller = ->
         group = []
         couple = []
         
-        if @tags.hasOwnProperty(incomeTag)
+        if @tags.hasOwnProperty incomeTag
           # Disable all tags on loop
-          for key of @tags
-            @tags[key] = false
+          data = false for key, data of @tags
           # Disable tag activity
           @tags[incomeTag] = true
 
           # Enable one tag active
-          textAfterClick = counterView.getCounterText + ' on ' + incomeTag
+          textAfterClick = counterView.getCounterText() + ' on ' + incomeTag
 
           @counterText = textAfterClick
           counterView.setCounterText textAfterClick
@@ -94,15 +91,13 @@ view_controller = ->
           projectTagsArray = project.tags
 
           for tag in projectTagsArray
-            if incomeTag.toString().toLowerCase == tag.toLowerCase
-              couple.push project
+            couple.push project if incomeTag.toString().toLowerCase() == tag.toLowerCase()
 
           if couple.length == 2
             group.push couple
             couple = []
 
-        if couple.length == 1
-          group.push couple
+        group.push couple if couple.length == 1
 
         projectsView.displayProjects group
         return
