@@ -27,6 +27,10 @@ describe 'Testing Vue.js ViewModels', ->
 
     return
 
+  afterAll () ->
+    window.close()
+    return
+
   # Vendors test
   it 'Jquery/Zepto in module', ->
     expect(window.$).toBeDefined()
