@@ -2,20 +2,20 @@ interval_handler = ->
   luke_const = Math.random()
 
   if parallax_view.ix <= -8
-    window.to_little_flag = false
+    window.clouds_move_to_right = false
 
-  if parallax_view.ix >= 10 or window.to_little_flag
+  if parallax_view.ix >= 10 or window.clouds_move_to_right
     parallax_view.ix -= 0.003
-    window.to_little_flag = true
+    window.clouds_move_to_right = true
   else
     parallax_view.ix += 0.002
 
-  if luke_const > 0.965 and window.speed_thunder < 5 or luke_const > 0.97
+  if luke_const > 0.965 and window.thunders < 5 or luke_const > 0.97
     make_thunder()
-    speed_thunder++
+    thunders++
 
-    if window.speed_thunder > 10
-      window.speed_thunder = 0
+    if window.thunders > 10
+      window.thunders = 0
 
   return
 

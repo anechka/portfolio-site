@@ -56,8 +56,7 @@ view_controller = ->
 
         projectsNumberWithTag = 0
 
-        for project_index of projects
-          project = projects[project_index]
+        for project_index, project of projects
           projectTagsArray = project.tags
 
           projectsNumberWithTag++ if incomeTag in projectTagsArray
@@ -86,8 +85,7 @@ view_controller = ->
           @counterText = textAfterClick
           counterView.setCounterText textAfterClick
 
-        for project_item of projects
-          project = projects[project_item]
+        for project_item, project of projects
           projectTagsArray = project.tags
 
           for tag in projectTagsArray

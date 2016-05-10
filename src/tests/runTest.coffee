@@ -8,6 +8,6 @@ jasmine.getEnv().addReporter new SpecReporter
 
 jrunner.loadConfig
   spec_dir: 'spec'
-  spec_files: ['globalTest.coffee', 'viewModelTest.coffee' ]
+  spec_files: ['globalTest.coffee', 'modelsTest.coffee', 'viewModelTest.coffee' ]
 
 jrunner.execute()

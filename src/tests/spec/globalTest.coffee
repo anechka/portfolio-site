@@ -27,6 +27,7 @@ describe 'Testing global objects', ->
     return
 
   describe 'Vendors javascript in module', ->
+
     it 'Jquery or Zepto.js', ->
       expect(window.$).toBeDefined()
 
@@ -35,14 +36,57 @@ describe 'Testing global objects', ->
 
     return
 
+  describe 'model setup', ->
+
+    it 'in module', ->
+      expect(window.modelSetup).toBeDefined()
+
+    it 'as Function', ->
+      expect(window.modelSetup).toBeFunction()
+    return
+
+  describe 'set background and look setup', ->
+
+    it 'in module', ->
+      expect(window.set_background_and_look).toBeDefined()
+
+    it 'as Function', ->
+      expect(window.set_background_and_look).toBeFunction()
+    return
+
   describe 'view controller', ->
+
     it 'in module', ->
       expect(window.view_controller).toBeDefined()
 
     it 'as Function', ->
       expect(window.view_controller).toBeFunction()
 
-  return
+    return
+
+  describe 'global variables', ->
+
+    it 'clouds_move_to_right in module', ->
+      expect(window.clouds_move_to_right).toBeDefined()
+
+    it 'clouds_move_to_right is false', ->
+      expect(window.clouds_move_to_right).not.toBeTruthy()
+
+    it 'thunders in module', ->
+      expect(window.thunders).toBeDefined()
+
+    it 'thunders is 0', ->
+      expect(window.thunders).toBe 0
+
+    it 'parallax_view in module', ->
+      expect(window.parallax_view).toBeDefined()
+      expect(window.parallax_view.onMouseMove).toBeFunction()
+
+    it 'clouds animate_object setInterval ID returned', ->
+      expect(window.animate_object).toBeDefined()
+      expect(window.animate_object).not.toBeNull()
+
+    return
 
 
   return

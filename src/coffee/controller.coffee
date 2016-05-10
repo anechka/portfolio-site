@@ -1,6 +1,5 @@
 modelSetup = ->
-  for index of projects
-    project = projects[index]
+  for index, project of projects
     projectDescriptionsArray = project.description
 
     resultHTMLDescription = ""
@@ -29,8 +28,8 @@ mobile_parallax_set = (ismobile) ->
   return
 
 set_background_and_look = ->
-  window.to_little_flag = false
-  window.speed_thunder = 0
+  window.clouds_move_to_right = false
+  window.thunders = 0
 
   window.animate_object = setInterval(interval_handler, 120)
 
