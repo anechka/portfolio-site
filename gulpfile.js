@@ -147,7 +147,7 @@ gulp.task('test', function() {
 
     var SpecReporter = require('jasmine-spec-reporter');
 
-    gulp.src('src/tests/spec/viewModelTest.coffee')
+    gulp.src(['src/tests/spec/globalTest.coffee', 'src/tests/spec/viewModelTest.coffee'])
         // gulp-jasmine works on filepaths so you can't have any plugins before it
         .pipe(jasmine({
             reporter: new SpecReporter()

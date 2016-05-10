@@ -9,18 +9,18 @@ describe 'Testing Vue.js ViewModels', ->
   indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
   viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
 
-  viewModels = null
-  window = null
   projects = coffee.eval(projectsCoffeeFile)
 
   beforeAll (done) ->
+    require('jasmine-expect');
+
     jsdom.env indexHTML, { src: [viewController] }, (err, browser_window) ->
       console.log "error:" + err if err
 
-      expect(window).toBeDefined()
+      expect(browser_window).toBeDefined()
 
-      window = browser_window
-      viewModels = browser_window.viewModels
+      global.window = browser_window
+      global.viewModels = browser_window.viewModels
 
       done()
       return
@@ -31,13 +31,6 @@ describe 'Testing Vue.js ViewModels', ->
     window.close()
     return
 
-  # Vendors test
-  it 'Jquery/Zepto in module', ->
-    expect(window.$).toBeDefined()
-
-  it 'Vue in module', ->
-    expect(window.Vue).toBeDefined()
-
   it 'Coffeescript file is not empty', ->
     expect(projects).toBeDefined()
 
@@ -46,7 +39,7 @@ describe 'Testing Vue.js ViewModels', ->
     expect(viewModels).not.toBeNull()
 
   it 'Check viewModels object', ->
-    expect(Object.keys(viewModels).length).not.toBeNull()
+    expect(Object.keys(viewModels)).toBeArrayOfSize(3);
     return
 
 
@@ -62,6 +55,10 @@ describe 'Testing Vue.js ViewModels', ->
 
     it 'has a projectsCounterText', ->
       expect(viewModels.counterView.projectsCounterText).toBeDefined()
+      return
+
+    it 'and projectsCounterText is string', ->
+      expect(viewModels.counterView.projectsCounterText).toBeString();
       return
 
     it 'has a setCounter method', ->
@@ -118,7 +115,7 @@ describe 'Testing Vue.js ViewModels', ->
 
       expect(viewGroup).toBe testGroup
 
-      return viewModels.projectsView.group = null
+      return
 
 
     return
@@ -131,16 +128,16 @@ describe 'Testing Vue.js ViewModels', ->
     # data
     it 'has a counterText string', ->
       expect(viewModels.tagsView.counterText).toBeDefined()
-      expect(viewModels.tagsView.counterText).toBe ""
+      expect(viewModels.tagsView.counterText).toBeEmptyString();
       return
     # tags
     it 'has a tags object', ->
       expect(viewModels.tagsView.tags).toBeDefined()
-      expect(typeof viewModels.tagsView.tags).toBe(typeof {})
+      expect(viewModels.tagsView.tags).toBeObject();
       return
 
     it 'tags not empty', ->
-      expect((Object.keys viewModels.tagsView.tags).length).not.toBe 0
+      expect(viewModels.tagsView.tags).toBeNonEmptyObject()
       return
 
     it 'has a django tag', ->
@@ -195,9 +192,9 @@ describe 'Testing Vue.js ViewModels', ->
           counterText = viewModels.counterView.getCounterText()
 
           expect(parseInt(counterText, 10)).not.toBe 0
-          expect(counterText.indexOf('project')).not.toBe -1
+          expect(counterText).toContain('project')
 
-          expect(viewModels.tagsView.counterText).not.toBe ""
+          expect(viewModels.tagsView.counterText).not.toBeEmptyString();
 
         return
 
@@ -208,7 +205,7 @@ describe 'Testing Vue.js ViewModels', ->
         counterText = viewModels.counterView.getCounterText()
 
         expect(parseInt(counterText, 10)).not.toBe 0
-        expect(counterText.indexOf('project')).not.toBe -1
+        expect(counterText).toContain('project')
 
         return
       return
