@@ -33,17 +33,6 @@ set_background_and_look = ->
 
   window.animate_object = setInterval(interval_handler, 120)
 
-  mail_link = $ "#mailto"
-  # Creating e-mail link with JS (spamers prevent)
-  email_content_string = if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
-
-  mail_link.attr "href", "mailto:" + email_content_string
-  mail_link.find("span").text email_content_string
-
-  switch navigator.platform
-    when "iPhone", "iPhone Simulator", "Android", "iPad" then mobile_parallax_set yes;
-    else mobile_parallax_set no;
-
   return
 
 isrussian = ->
