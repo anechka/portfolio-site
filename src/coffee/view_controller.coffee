@@ -1,6 +1,9 @@
 # Created by menangen on 01.05.16.
 
 view_controller = ->
+  polyglot = new Polyglot(locale: 'en')
+  polyglot.extend 'projects': '%{smart_count} project |||| %{smart_count} projects'
+
   cloudsView = new Vue(
     el: '#scene'
     data:
@@ -11,10 +14,6 @@ view_controller = ->
       layer5Src: "images/clouds_layer_5.png"
   )
 
-  switch navigator.platform
-    when "iPhone", "iPhone Simulator", "Android", "iPad" then mobile_parallax_set yes;
-    else mobile_parallax_set no;
-
   mailView = new Vue(
     el: '#mail'
     data:
@@ -22,9 +21,6 @@ view_controller = ->
       email: if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
   )
 
-  polyglot = new Polyglot(locale: 'en')
-  polyglot.extend 'projects': '%{smart_count} project |||| %{smart_count} projects'
-  
   counterView = new Vue(
     el: '#counter'
     

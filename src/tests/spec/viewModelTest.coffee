@@ -1,15 +1,11 @@
 # Created by menangen on 05.05.16.
 describe 'Testing Vue.js ViewModels', ->
   root = ""
-  coffee = require('coffee-script')
   fs = require 'fs'
   jsdom = require 'jsdom'
 
-  projectsCoffeeFile = fs.readFileSync "#{ root }projects.coffee", "utf-8"
   indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
   viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
-
-  projects = coffee.eval(projectsCoffeeFile)
 
   beforeAll (done) ->
     require('jasmine-expect');
@@ -21,6 +17,7 @@ describe 'Testing Vue.js ViewModels', ->
 
       global.window = browser_window
       global.viewModels = browser_window.viewModels
+      global.projects = browser_window.projects
 
       done()
       return
@@ -31,15 +28,18 @@ describe 'Testing Vue.js ViewModels', ->
     window.close()
     return
 
-  it 'Coffeescript file is not empty', ->
+  it 'Coffeescript projects object is defined', ->
     expect(projects).toBeDefined()
+
+  it 'full of {objects} inside', ->
+    expect(projects).toBeArrayOfObjects()
 
   it 'Check ViewController return viewModels object', ->
     expect(viewModels).toBeDefined()
     expect(viewModels).not.toBeNull()
 
   it 'Check viewModels object', ->
-    expect(Object.keys(viewModels)).toBeArrayOfSize(3);
+    expect(Object.keys(viewModels)).toBeArrayOfSize(5);
     return
 
 
@@ -121,88 +121,109 @@ describe 'Testing Vue.js ViewModels', ->
     return
 
   describe 'tagsView', ->
+    tags = null
+    methods = null
+    componentsArray = null
 
     it 'in viewModels', ->
       expect(viewModels.tagsView).toBeDefined()
       return
-    # data
+
+    it 'has a <tag> Vue component', ->
+
+      componentsArray = window.viewModels.tagsView.$children
+      expect(componentsArray).toBeDefined()
+      return
+
+
     it 'has a counterText string', ->
-      expect(viewModels.tagsView.counterText).toBeDefined()
-      expect(viewModels.tagsView.counterText).toBeEmptyString();
+      expect(componentsArray[0].$data.counterText).toBeDefined()
+      expect(componentsArray[0].$data.counterText).toBeEmptyString();
       return
     # tags
     it 'has a tags object', ->
-      expect(viewModels.tagsView.tags).toBeDefined()
-      expect(viewModels.tagsView.tags).toBeObject();
+      tags = componentsArray[0].$data.tags
+      expect(tags).toBeObject();
+      return
+
+    it 'has a methods object', ->
+      methods = componentsArray[0].$options.methods
+      expect(methods).toBeObject();
       return
 
     it 'tags not empty', ->
-      expect(viewModels.tagsView.tags).toBeNonEmptyObject()
+      expect(tags).toBeNonEmptyObject()
       return
 
     it 'has a django tag', ->
-      expect(viewModels.tagsView.tags.django).toBeDefined()
+      expect(tags.django).toBeDefined()
       return
 
     it 'has a bootstrap tag', ->
-      expect(viewModels.tagsView.tags.bootstrap).toBeDefined()
+      expect(tags.bootstrap).toBeDefined()
       return
 
     it 'has a less tag', ->
-      expect(viewModels.tagsView.tags.less).toBeDefined()
+      expect(tags.less).toBeDefined()
       return
 
     it 'has a sass tag', ->
-      expect(viewModels.tagsView.tags.sass).toBeDefined()
+      expect(tags.sass).toBeDefined()
       return
 
-    it 'has a node tag', ->
-      expect(viewModels.tagsView.tags.node).toBeDefined()
+    it 'has a nodejs tag', ->
+      expect(tags.nodejs).toBeDefined()
       return
 
     it 'has a python tag', ->
-      expect(viewModels.tagsView.tags.python).toBeDefined()
+      expect(tags.python).toBeDefined()
       return
 
     it 'has a javascript tag', ->
-      expect(viewModels.tagsView.tags.javascript).toBeDefined()
+      expect(tags.javascript).toBeDefined()
       return
 
     it 'has a jquery tag', ->
-      expect(viewModels.tagsView.tags.jquery).toBeDefined()
+      expect(tags.jquery).toBeDefined()
       return
 
-    it 'has a angular tag', ->
-      expect(viewModels.tagsView.tags.angular).toBeDefined()
+    it 'has an angular tag', ->
+      expect(tags.angular).toBeDefined()
       return
     # methods
     describe 'mouseOver()', ->
 
       it 'in tagsView', ->
-        expect(viewModels.tagsView.mouseOver).toBeDefined()
+        expect(methods.mouseOver).toBeDefined()
+        return
+
+      it 'on default all tags is off', ->
+        for key, data of tags
+          expect(data).not.toBeTruthy()
         return
 
       it 'mouseOver had changed counterView projectsCounterText', ->
+        childrensArray = window.viewModels.tagsView.$children
 
-        for key, data of viewModels.tagsView.tags
-          # default tag is off
-          expect(data).toBe false
-
-          viewModels.tagsView.mouseOver key
+        for childrenComponent in childrensArray
+          childrenComponent.mouseOver()
           counterText = viewModels.counterView.getCounterText()
 
           expect(parseInt(counterText, 10)).not.toBe 0
           expect(counterText).toContain('project')
 
-          expect(viewModels.tagsView.counterText).not.toBeEmptyString();
+          expect(childrenComponent.counterText).not.toBeEmptyString();
 
         return
 
     describe 'mouseOut()', ->
       it 'can setCounterText', ->
-        viewModels.tagsView.mouseOut()
 
-        counterText = viewModels.counterView.getCounterText()
+        for childrenComponent in componentsArray
+          childrenComponent.mouseOut()
+
+          counterText = viewModels.counterView.getCounterText()
+          expect(counterText).not.toBeEmptyString()
 
         expect(parseInt(counterText, 10)).not.toBe 0
         expect(counterText).toContain('project')
@@ -214,28 +235,31 @@ describe 'Testing Vue.js ViewModels', ->
 
       it 'can change counterView and counterText', ->
 
-        for key of viewModels.tagsView.tags
-          viewModels.tagsView.mouseOver key
-          viewModels.tagsView.click key
+
+        for childrenComponent in componentsArray
+          tag = childrenComponent.tagname
+          childrenComponent.mouseOver()
+          childrenComponent.click()
 
           counterText = viewModels.counterView.getCounterText()
-          data = viewModels.tagsView.tags[key]
-
+          flag = tags[tag]
           # has a number
           expect(parseInt(counterText, 10)).not.toBe 0
           # has a tag in end
-          expect(counterText.indexOf("on " + key)).not.toBe -1
+          expect(counterText).toContain("on " + tag)
           # tag is true
-          expect(data).toBeTruthy()
+          expect(flag).toBeTruthy()
         return
 
       it 'can change projectsView', ->
         viewModels.projectsView.group = null
 
-        keys = Object.keys viewModels.tagsView.tags
-        viewModels.tagsView.click keys[0]
 
-        expect(viewModels.projectsView.group).not.toBeNull()
+        childrenComponent = componentsArray[0]
+
+        childrenComponent.click()
+
+        expect(viewModels.projectsView.group).not.toBeEmptyArray()
 
         projectKeys = Object.keys viewModels.projectsView.group[0][0]
         expect(projectKeys.length).toBe 4

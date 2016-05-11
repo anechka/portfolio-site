@@ -30,8 +30,11 @@ mobile_parallax_set = (ismobile) ->
 set_background_and_look = ->
   window.clouds_move_to_right = false
   window.thunders = 0
-
   window.animate_object = setInterval(interval_handler, 120)
+
+  switch navigator.platform
+    when "iPhone", "iPhone Simulator", "Android", "iPad" then mobile_parallax_set yes;
+    else mobile_parallax_set no;
 
   return
 
