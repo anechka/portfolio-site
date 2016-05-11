@@ -9,10 +9,20 @@ html(lang="en")
         meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, freelancer, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web")
 
     body
-        #parallax_container.container
+        .container.parallax_container
             .design-copy Menangen design
-            ul#scene.scene
-                clouds
+            ul.#scene
+                -
+                    var layer1 = {":src": "layer1Src"}
+                    var layer2 = {":src": "layer2Src"}
+                    var layer3 = {":src": "layer3Src"}
+                    var layer4 = {":src": "layer4Src"}
+                    var layer5 = {":src": "layer5Src"}
+                li.layer(data-depth="0.00"): img.cloud_layer&attributes(layer5)
+                li.layer(data-depth="0.10"): img.cloud_layer&attributes(layer1)
+                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two&attributes(layer2)
+                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three&attributes(layer3)
+                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four&attributes(layer4)
 
         .container.image_container
 
@@ -24,7 +34,7 @@ html(lang="en")
                     span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
             .row
                 .col-md-6.margined-top-div.text-center
-                    a#mailto: span(title="Send me email").email.centered-scale-element enable javascript please
+                    a#mail: span(title="Send me email").email.centered-scale-element {{* email }}
                 .col-md-6.margined-top-div.text-center
                     span(alt="Skype login", title="My login in Skype").skype-header.left skype
                     span(alt="Skype login", title="My login in Skype").skype-header.center :
