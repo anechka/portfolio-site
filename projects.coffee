@@ -22,7 +22,7 @@ projects = [
   {
     "name": "Conclave"
     "tags": [
-      "node"
+      "nodejs"
       "jade"
       "sass"
       "bootstrap"
@@ -66,7 +66,7 @@ projects = [
   {
     "name": "Redalgo"
     "tags": [
-      "node"
+      "nodejs"
       "jade"
       "php"
       "bootstrap"
@@ -81,3 +81,14 @@ projects = [
   }
 
 ]
+
+tags =
+  django: off
+  bootstrap: off
+  less: off
+  sass: off
+  nodejs: off
+  python: off
+  javascript: off
+  jquery: off
+  angular: off

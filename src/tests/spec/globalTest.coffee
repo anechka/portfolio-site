@@ -34,6 +34,9 @@ describe 'Testing global objects', ->
     it 'Vue.js', ->
       expect(window.Vue).toBeDefined()
 
+    it 'Parallax.js', ->
+      expect(window.Parallax).toBeDefined()
+
     return
 
   describe 'model setup', ->

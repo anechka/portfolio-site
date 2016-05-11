@@ -11,7 +11,7 @@ html(lang="en")
     body
         .container.parallax_container
             .design-copy Menangen design
-            ul.#scene
+            ul#scene
                 -
                     var layer1 = {":src": "layer1Src"}
                     var layer2 = {":src": "layer2Src"}
@@ -34,7 +34,8 @@ html(lang="en")
                     span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
             .row
                 .col-md-6.margined-top-div.text-center
-                    a#mail: span(title="Send me email").email.centered-scale-element {{* email }}
+                    - var mailView = {"v-text": "email"}
+                    a#mail: span(title="Send me email").email.centered-scale-element&attributes(mailView)
                 .col-md-6.margined-top-div.text-center
                     span(alt="Skype login", title="My login in Skype").skype-header.left skype
                     span(alt="Skype login", title="My login in Skype").skype-header.center :
@@ -43,70 +44,36 @@ html(lang="en")
 
             .row
                 .tags.col-md-12.text-center#tags
+                    template#child-template
+                        - var vueTagComponent = {"@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click", ":class": "{ 'open': tags[tagname]}"}
+                        a(href="#counter")&attributes(vueTagComponent)
+
+                            - var size = 96
+                            - var vueImage = {":class": "lessClass", "alt": "{{* tagname}}", "title": "{{* tagname}}"}
+
+                            img(
+                            src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+                            width="#{size}px", height="#{size}px"
+                            )&attributes(vueImage)
 
                     // Django tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('django')", "@mouseout": "mouseOut",
-                        "@click": "click('django')", "v-bind:class": "{ 'open': tags.django}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-django(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="django", title="django", width="96px", height="96px")
-
+                    tag(tagname="django")
                     // Twitter Bootstrap tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('bootstrap')", "@mouseout": "mouseOut",
-                        "@click": "click('bootstrap')", "v-bind:class": "{ 'open': tags.bootstrap}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-bootstrap(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="bootstrap", title="bootstrap", width="96px", height="96px")
-
+                    tag(tagname="bootstrap")
                     // Less framework tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('less')", "@mouseout": "mouseOut",
-                        "@click": "click('less')", "v-bind:class": "{ 'open': tags.less}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-less(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="less framework", title="less framework", width="96px", height="96px")
-
+                    tag(tagname="less")
                     // Sass / SCSS tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('sass')", "@mouseout": "mouseOut",
-                        "@click": "click('sass')", "v-bind:class": "{ 'open': tags.sass}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-sass(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="sass", title="sass", width="96px", height="96px")
-
+                    tag(tagname="sass")
                     // Node.js tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('node')", "@mouseout": "mouseOut",
-                        "@click": "click('node')", "v-bind:class": "{ 'open': tags.node}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-nodejs(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="node.js", title="node.js", width="96px", height="96px")
-
+                    tag(tagname="nodejs")
                     // Python tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('python')", "@mouseout": "mouseOut",
-                        "@click": "click('python')", "v-bind:class": "{ 'open': tags.python}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-python(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="python", title="python", width="96px", height="96px")
-
+                    tag(tagname="python")
                     // Javascript ECMAScript 6 tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('javascript')", "@mouseout": "mouseOut",
-                        "@click": "click('javascript')", "v-bind:class": "{ 'open': tags.javascript}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-javascript(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="javascript", title="javascript", width="96px", height="96px")
-
+                    tag(tagname="javascript")
                     // jQuery tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('jquery')", "@mouseout": "mouseOut",
-                        "@click": "click('jquery')", "v-bind:class": "{ 'open': tags.jquery}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-jquery(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="jquery", title="jquery", width="96px", height="96px")
-
+                    tag(tagname="jquery")
                     // Angular tag
-                    -
-                        var attributes = {"@mouseover": "mouseOver('angular')", "@mouseout": "mouseOut",
-                        "@click": "click('angular')", "v-bind:class": "{ 'open': tags.angular}"}
-                    a(href="#counter")&attributes(attributes)
-                        img.sprite-angular(src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif", alt="angular.js", title="angular.js", width="96px", height="96px")
-
+                    tag(tagname="angular")
 
             .row
                 .col-md-12.margined-top-div.text-center.text-uppercase#counter {{ projectsCounterText }}

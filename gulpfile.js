@@ -33,6 +33,9 @@ gulp.task('default', function() {
     gulp.run('javascript');
 });
 
+gulp.task('dev', ['jade', 'javascript']
+);
+
 gulp.task('less', function() {
     // less styles from src/less folder
     // only one root file need compile
