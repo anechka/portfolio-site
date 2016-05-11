@@ -3,7 +3,24 @@
 view_controller = ->
   polyglot = new Polyglot(locale: 'en')
   polyglot.extend 'projects': '%{smart_count} project |||| %{smart_count} projects'
-  
+
+  cloudsView = new Vue(
+    el: '#scene'
+    data:
+      layer1Src: "images/clouds_layer_1.png"
+      layer2Src: "images/clouds_layer_2.png"
+      layer3Src: "images/clouds_layer_3.png"
+      layer4Src: "images/clouds_layer_4.png"
+      layer5Src: "images/clouds_layer_5.png"
+  )
+
+  mailView = new Vue(
+    el: '#mail'
+    data:
+      # Creating e-mail link with JS (spamers prevent)
+      email: if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
+  )
+
   counterView = new Vue(
     el: '#counter'
     
@@ -32,66 +49,68 @@ view_controller = ->
       @group = group
       return
   )
-  
-  # Tags ViewModel
-  tagsView = new Vue(
-    el: '#tags'
-    
-    data:
-      tags:
-        django: false
-        bootstrap: false
-        less: false
-        sass: false
-        node: false
-        python: false
-        javascript: false
-        jquery: false
-        angular: false
+  # Tags component
+  Vue.component 'tag',
+    data: ->
+      tags: tags
+      lessClass: {
+        'sprite-django': false,
+        'sprite-javascript': false,
+        'sprite-python': false,
+        'sprite-nodejs': false,
+        'sprite-less': false,
+        'sprite-sass': false,
+        'sprite-bootstrap': false,
+        'sprite-jquery': false,
+        'sprite-angular': false
+      }
       counterText: ''
-    
-    methods:
-      
-      mouseOver: (incomeTag) ->
 
+    props: ['tagname'],
+
+    template: '#child-template',
+
+    created: ->
+      @lessClass['sprite-' + @tagname] = true
+      return
+
+    methods:
+
+      mouseOver: ->
         projectsNumberWithTag = 0
 
-        for project_index of projects
-          project = projects[project_index]
+        for project_index, project of projects
           projectTagsArray = project.tags
 
-          projectsNumberWithTag++ if incomeTag in projectTagsArray
+          projectsNumberWithTag++ if @tagname in projectTagsArray
 
         @counterText = counterView.getCounterText()
         counterView.setCounter projectsNumberWithTag
         return
-      
+
       mouseOut: ->
         counterView.setCounterText @counterText
         return
-      
-      click: (incomeTag) ->
+
+      click: ->
         group = []
         couple = []
-        
-        if @tags.hasOwnProperty incomeTag
+        if @tags.hasOwnProperty @tagname
           # Disable all tags on loop
-          data = false for key, data of @tags
-          # Disable tag activity
-          @tags[incomeTag] = true
-
+          @tags[key] = off for key of @tags #TODO: Create test for this action
           # Enable one tag active
-          textAfterClick = counterView.getCounterText() + ' on ' + incomeTag
+          @tags[@tagname] = on
+
+          textAfterClick = counterView.getCounterText() + ' on ' + @tagname
 
           @counterText = textAfterClick
           counterView.setCounterText textAfterClick
 
-        for project_item of projects
-          project = projects[project_item]
+        for project_item, project of projects
           projectTagsArray = project.tags
 
           for tag in projectTagsArray
-            couple.push project if incomeTag.toString().toLowerCase() == tag.toLowerCase()
+            couple.push project if @tagname.toString().toLowerCase() == tag.toLowerCase()
 
           if couple.length == 2
             group.push couple
@@ -101,8 +120,13 @@ view_controller = ->
 
         projectsView.displayProjects group
         return
+  # Tags ViewModel
+  tagsView = new Vue(
+    el: '#tags'
   )
   {
+    cloudsView: cloudsView
+    mailView: mailView
     counterView: counterView
     projectsView: projectsView
     tagsView: tagsView

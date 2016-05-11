@@ -33,6 +33,9 @@ gulp.task('default', function() {
     gulp.run('javascript');
 });
 
+gulp.task('dev', ['jade', 'javascript']
+);
+
 gulp.task('less', function() {
     // less styles from src/less folder
     // only one root file need compile
@@ -147,7 +150,7 @@ gulp.task('test', function() {
 
     var SpecReporter = require('jasmine-spec-reporter');
 
-    gulp.src('src/tests/spec/viewModelTest.coffee')
+    gulp.src(['src/tests/spec/globalTest.coffee', 'src/tests/spec/modelsTest.coffee', 'src/tests/spec/viewModelTest.coffee'])
         // gulp-jasmine works on filepaths so you can't have any plugins before it
         .pipe(jasmine({
             reporter: new SpecReporter()

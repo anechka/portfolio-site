@@ -2,26 +2,26 @@ interval_handler = ->
   luke_const = Math.random()
 
   if parallax_view.ix <= -8
-    window.to_little_flag = false
+    window.clouds_move_to_right = false
 
-  if parallax_view.ix >= 10 or window.to_little_flag
+  if parallax_view.ix >= 10 or window.clouds_move_to_right
     parallax_view.ix -= 0.003
-    window.to_little_flag = true
+    window.clouds_move_to_right = true
   else
     parallax_view.ix += 0.002
 
-  if luke_const > 0.965 and window.speed_thunder < 5 or luke_const > 0.97
+  if luke_const > 0.965 and window.thunders < 5 or luke_const > 0.97
     make_thunder()
-    speed_thunder++
+    thunders++
 
-    if window.speed_thunder > 10
-      window.speed_thunder = 0
+    if window.thunders > 10
+      window.thunders = 0
 
   return
 
 make_thunder = ->
-  cloud_five_image = $("#layer5")
-  cloud_five_primaryimage_source = cloud_five_image.attr "src"
+  cloudsView = window.viewModels.cloudsView
+  cloud_five_default_source = cloudsView.layer5Src
 
   new_images_src_arr = [
     "clouds_layer_5_storm1.png"
@@ -37,10 +37,10 @@ make_thunder = ->
     if luke_const > 0.77
       src = new_images_src_arr[2]
 
-  cloud_five_image.attr "src", "images/" + src
+  cloudsView.layer5Src = "images/" + src
 
   setTimeout (->
-    cloud_five_image.attr "src", cloud_five_primaryimage_source
+    cloudsView.layer5Src = cloud_five_default_source
     return
   ), 100
   return

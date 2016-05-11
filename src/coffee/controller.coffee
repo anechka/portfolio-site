@@ -1,6 +1,5 @@
 modelSetup = ->
-  for index of projects
-    project = projects[index]
+  for index, project of projects
     projectDescriptionsArray = project.description
 
     resultHTMLDescription = ""
@@ -29,17 +28,9 @@ mobile_parallax_set = (ismobile) ->
   return
 
 set_background_and_look = ->
-  window.to_little_flag = false
-  window.speed_thunder = 0
-
+  window.clouds_move_to_right = false
+  window.thunders = 0
   window.animate_object = setInterval(interval_handler, 120)
-
-  mail_link = $ "#mailto"
-  # Creating e-mail link with JS (spamers prevent)
-  email_content_string = if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
-
-  mail_link.attr "href", "mailto:" + email_content_string
-  mail_link.find("span").text email_content_string
 
   switch navigator.platform
     when "iPhone", "iPhone Simulator", "Android", "iPad" then mobile_parallax_set yes;
