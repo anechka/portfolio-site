@@ -58,7 +58,7 @@
 
                             span.label { /* Tag body */
                                 display: block;
-                                margin: 12px 12px 12px 0;
+                                margin: 7px 7px 7px 0;
 
                                 @media (max-width: @screen-md) {
                                     display: inline;
@@ -83,12 +83,24 @@
                                     }
                                 }
 
-                                &.label-tag { /* Tags design */
+                                &.label-tag-purple { /* Tags design */
                                     .project-span-label-tag;
 
                                     &:hover {
                                         cursor: default;
                                         background-color: #56578F;
+                                        color: #CBEDFF;
+                                        box-shadow: 0 0 8px 0 rgba(0, 8, 47, 0.4);
+                                    }
+                                }
+
+                                &.label-tag { /* Tags design */
+                                    .project-span-label-tag;
+                                    background-color: #45809B;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #20607E;
                                         color: #CBEDFF;
                                         box-shadow: 0 0 8px 0 rgba(0, 8, 47, 0.4);
                                     }

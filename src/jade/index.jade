@@ -13,16 +13,16 @@ html(lang="en")
             .design-copy Menangen design
             ul#scene
                 -
-                    var layer1 = {":src": "layer1Src"}
-                    var layer2 = {":src": "layer2Src"}
-                    var layer3 = {":src": "layer3Src"}
-                    var layer4 = {":src": "layer4Src"}
-                    var layer5 = {":src": "layer5Src"}
-                li.layer(data-depth="0.00"): img.cloud_layer&attributes(layer5)
-                li.layer(data-depth="0.10"): img.cloud_layer&attributes(layer1)
-                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two&attributes(layer2)
-                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three&attributes(layer3)
-                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four&attributes(layer4)
+                    var VueLayer1 = {":src": "layer1Src"}
+                    var VueLayer2 = {":src": "layer2Src"}
+                    var VueLayer3 = {":src": "layer3Src"}
+                    var VueLayer4 = {":src": "layer4Src"}
+                    var VueLayer5 = {":src": "layer5Src"}
+                li.layer(data-depth="0.00"): img.cloud_layer&attributes(VueLayer5)
+                li.layer(data-depth="0.10"): img.cloud_layer&attributes(VueLayer1)
+                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two&attributes(VueLayer2)
+                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three&attributes(VueLayer3)
+                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four&attributes(VueLayer4)
 
         .container.image_container
 
@@ -97,16 +97,10 @@ html(lang="en")
                                                 img.center-block.img-responsive(src="images/portfolio-thumb/{{ project.image }}")
                                         .row.center-block
                                             .col-md-12.col-sm-12.col-xs-12.tags-container
-                                                .tag.text-center
-                                                    span.label.label-tag django
-                                                .tag.text-center
-                                                    span.label.label-tag python
-                                                .tag.text-center
-                                                    span.label.label-tag angular
-                                                .tag.text-center
-                                                    span.label.label-tag jquery
-                                                .tag.text-center
-                                                    span.label.label-tag javascript
+
+                                                - var tagsAttributes = {"v-for": "tag in project.tags"}
+                                                .tag.text-center&attributes(tagsAttributes)
+                                                    span.label.label-tag {{* tag }}
 
                                     .col-md-8.col-sm-12.description {{{ project.description }}}
             .row

@@ -10,10 +10,13 @@ projects = [
       "wiki"
       "javascript"
       "angular"
+      "git"
+      "gitlab"
+      "sphinx"
     ]
     "description": [
       "Django website for Lawers. Jade and LESS, Django templates, AngularJS REST."
-      "Our team included: <a href>I worked as Web Developer</a>, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer."
+      "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer."
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ]
     "image": "sumati-page.jpg"
@@ -29,8 +32,14 @@ projects = [
       "less"
       "javascript"
       "jquery"
+      "git"
     ]
-    "description": [ "This is a social network project for American schools and teachers." ]
+    "description": [
+      "This is a social network project for American schools and teachers."
+      "Jade templates + SASS and LESS under NodeJS Express app."
+      "The team consisted of me and NodeJS developer Alex."
+      "We used oDesk and e-mail communication with Skype."
+    ]
     "image": "conclave-page.png"
   }
 
@@ -44,8 +53,13 @@ projects = [
       "twig"
       "javascript"
       "jquery"
+      "git"
     ]
-    "description": [ "This is a shop for sale office and home equipment, home media, smartphones, Apple computers." ]
+    "description": [
+      "This is a shop for sale office and home equipment, home media, smartphones, Apple computers."
+      "HTML templates + LESS stylesheet development for e-commerce PHP shop"
+      "Our team: project manager, Photoshop-designer, i am as HTML developer and PHP developer. We used the remote job system with Skype communication."
+    ]
     "image": "market-page.png"
   }
 
@@ -58,8 +72,12 @@ projects = [
       "bootstrap"
       "javascript"
       "jquery"
+      "hg"
     ]
-    "description": [ "This is a e-commerce Marketplace Online project for selling auto-motors, tools and equipment." ]
+    "description": [
+      "Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates."
+      "Our team consisted of: i am as Web-developer, 1 project manager, Web-designer and Python developer."
+    ]
     "image": "premiumparts-adminka.png"
   }
 
@@ -71,6 +89,8 @@ projects = [
       "php"
       "bootstrap"
       "less"
+      "git"
+      "github"
     ]
     "description": [
       "This is site of educational games for children."
@@ -78,6 +98,25 @@ projects = [
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ]
     "image": "redalgo-page.jpg"
+  }
+
+  {
+    "name": "Imobo"
+    "tags": [
+      "nodejs"
+      "jade"
+      "bootstrap"
+      "less"
+      "git"
+      "github"
+    ]
+    "description": [
+      "This is site for buying and selling real estate."
+      " CSS3 & Bootstrap 3, Jade templates."
+      "The team: i am as Web Developer, 1 project manager, 1 Javascript developer."
+      "We used Odesk and e-mail communication, Skype."
+    ]
+    "image": "imobo-page.png"
   }
 
 ]

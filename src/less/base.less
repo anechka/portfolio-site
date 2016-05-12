@@ -18,10 +18,16 @@ BODY {
         background-image: url("@{images}/background-iphone.jpg")
     }
 
-/*    @media (max-width: 320px) and (min-resolution: 192dpi) {
+    @media (max-width: 320px) and (min-resolution: 192dpi) {
         background-image: url("@{images}/background-hd.jpg");
-    }*/
+    }
 
+    ::selection {
+        background: #191A4D; /* WebKit/Blink Browsers */
+    }
+    ::-moz-selection {
+        background: #191A4D; /* Gecko Browsers */
+    }
 
 }
 
