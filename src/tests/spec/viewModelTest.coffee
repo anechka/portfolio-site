@@ -199,18 +199,16 @@ describe 'Testing Vue.js ViewModels', ->
 
       it 'on default all tags is off', ->
         for key, data of tags
-          expect(data).not.toBeTruthy()
+          expect(data).toBeFalsy()
         return
 
       it 'mouseOver had changed counterView projectsCounterText', ->
-        childrensArray = window.viewModels.tagsView.$children
 
-        for childrenComponent in childrensArray
+        for childrenComponent in componentsArray
           childrenComponent.mouseOver()
           counterText = viewModels.counterView.getCounterText()
 
-          expect(parseInt(counterText, 10)).not.toBe 0
-          expect(counterText).toContain('project')
+          expect(counterText).toMatch(/\d project/);
 
           expect(childrenComponent.counterText).not.toBeEmptyString();
 
@@ -225,16 +223,36 @@ describe 'Testing Vue.js ViewModels', ->
           counterText = viewModels.counterView.getCounterText()
           expect(counterText).not.toBeEmptyString()
 
-        expect(parseInt(counterText, 10)).not.toBe 0
-        expect(counterText).toContain('project')
+        expect(counterText).toMatch(/\d project/);
 
         return
       return
 
     describe 'click()', ->
+      it 'disabled all tags Except one current clicked tag', ->
+        expect(flag).toBeFalsy() for tag, flag of tags
+
+        for childrenComponent in componentsArray
+          # all tags is disabled
+
+
+          childrenComponent.click()
+          # But only one tag is on
+          tagsBooleanArray = (flag for tag, flag of tags)
+
+          counterTrues = 0
+          counterFalses = 0
+
+          trueCounter = (flag) ->
+            if flag then counterTrues++ else counterFalses++
+
+          trueCounter(item) for item in tagsBooleanArray
+
+          expect(counterTrues == 1 and counterFalses == tagsBooleanArray.length - 1).toBeTrue()
+
+        return
 
       it 'can change counterView and counterText', ->
-
 
         for childrenComponent in componentsArray
           tag = childrenComponent.tagname
@@ -243,26 +261,27 @@ describe 'Testing Vue.js ViewModels', ->
 
           counterText = viewModels.counterView.getCounterText()
           flag = tags[tag]
-          # has a number
-          expect(parseInt(counterText, 10)).not.toBe 0
+          # has a number with project text
+          expect(counterText).toMatch(/\d project(s)? on /);
           # has a tag in end
-          expect(counterText).toContain("on " + tag)
+          expect(counterText).toContain(tag)
           # tag is true
           expect(flag).toBeTruthy()
+
         return
 
       it 'can change projectsView', ->
+
         viewModels.projectsView.group = null
 
-
         childrenComponent = componentsArray[0]
-
         childrenComponent.click()
 
         expect(viewModels.projectsView.group).not.toBeEmptyArray()
 
         projectKeys = Object.keys viewModels.projectsView.group[0][0]
         expect(projectKeys.length).toBe 4
+
         return
 
       return

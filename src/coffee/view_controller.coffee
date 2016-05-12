@@ -97,7 +97,7 @@ view_controller = ->
         couple = []
         if @tags.hasOwnProperty @tagname
           # Disable all tags on loop
-          @tags[key] = off for key of @tags #TODO: Create test for this action
+          @tags[key] = off for key of @tags
           # Enable one tag active
           @tags[@tagname] = on
 
