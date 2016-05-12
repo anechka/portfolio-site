@@ -1,0 +1,11 @@
+template#tag-template
+    - var vueTagComponent = {"@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click", ":class": "{ 'open': tags[tagname]}"}
+    a(href="#counter")&attributes(vueTagComponent)
+
+        - var size = 96
+        - var vueImage = {":class": "lessClass", "alt": "{{* tagname}}", "title": "{{* tagname}}"}
+
+        img(
+        src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
+        width="#{size}px", height="#{size}px"
+        )&attributes(vueImage)

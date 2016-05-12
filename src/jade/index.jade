@@ -41,21 +41,8 @@ html(lang="en")
                     span(alt="Skype login", title="My login in Skype").skype-header.center :
                     span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
 
-
             .row
                 .tags.col-md-12.text-center#tags
-                    template#child-template
-                        - var vueTagComponent = {"@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click", ":class": "{ 'open': tags[tagname]}"}
-                        a(href="#counter")&attributes(vueTagComponent)
-
-                            - var size = 96
-                            - var vueImage = {":class": "lessClass", "alt": "{{* tagname}}", "title": "{{* tagname}}"}
-
-                            img(
-                            src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif",
-                            width="#{size}px", height="#{size}px"
-                            )&attributes(vueImage)
-
                     // Django tag
                     tag(tagname="django")
                     // Twitter Bootstrap tag
@@ -120,3 +107,4 @@ html(lang="en")
             window._gaq.push(['_setAccount', 'UA-50636137-1']);
             window._gaq.push(['_trackPageview']);
         //- script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
+include components/tag.jade

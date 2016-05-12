@@ -68,7 +68,7 @@ view_controller = ->
 
     props: ['tagname'],
 
-    template: '#child-template',
+    template: '#tag-template',
 
     created: ->
       @lessClass['sprite-' + @tagname] = true
