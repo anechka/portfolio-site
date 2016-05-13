@@ -28,7 +28,7 @@ describe 'Testing global objects', ->
 
   describe 'Vendors javascript in module', ->
 
-    it 'Jquery or Zepto.js', ->
+    it 'Zepto.js or Cash.js', ->
       expect(window.$).toBeDefined()
 
     it 'Vue.js', ->
@@ -73,7 +73,7 @@ describe 'Testing global objects', ->
       expect(window.clouds_move_to_right).toBeDefined()
 
     it 'clouds_move_to_right is false', ->
-      expect(window.clouds_move_to_right).not.toBeTruthy()
+      expect(window.clouds_move_to_right).toBeFalsy()
 
     it 'thunders in module', ->
       expect(window.thunders).toBeDefined()

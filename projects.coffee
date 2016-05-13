@@ -10,6 +10,7 @@ projects = [
       "wiki"
       "javascript"
       "angular"
+      "git"
       "gitlab"
       "sphinx"
     ]

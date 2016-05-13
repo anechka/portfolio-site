@@ -6,6 +6,8 @@ block title
 block portfolio-thumb
     .row.text-center
         span.portfolio-header Conclave
+        a(href="../../index.html")
+            span.site-link #{www}
 
 block about-project
     ul
@@ -17,14 +19,14 @@ block about-project
             a(href="http://nodejs.org", target="_blank") NodeJS with many modules such as Compass
         li
             a#jade(href="http://jade-lang.com/", target="_blank") Jade template engine
-                span.glyphicon.glyphicon-export
+                i.icon-link-ext-alter
         li
             a#less(href="http://lesscss.org/features/", target="_blank") LESS
-                span.glyphicon.glyphicon-export
+                i.icon-link-ext-alter
                 |&nbsp;|&nbsp;
 
             a#sass(href="http://sass-lang.com/guide", target="_blank") SASS
-                span.glyphicon.glyphicon-export
+                i.icon-link-ext-alter
         li
             a(href="http://getbootstrap.com/css/", target="_blank") Bootstrap | 2
 
@@ -97,28 +99,28 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/conclave-page.png", alt="main page of conclave")
                 br
                 button.btn.btn-default.btn-block(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     | Main page screenshot
         .col-md-6
             a.thumbnail(href="images/less_code_optimized.png", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="...")
                 br
                 button.btn.btn-default.btn-block(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     |Show LESS screenshot
         .col-md-6
             a.thumbnail(href="images/js_code_optimized.png", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/js-code.png", alt="...")
                 br
                 button.btn.btn-default.btn-block(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     |Show JS screenshot
         .col-md-6
             a.thumbnail(href="images/sass_1_code_optimized.png", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/sass-code.png", alt="Admin panel")
                 br
                 button.btn.btn-default.btn-block.sass-button(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     | Show&nbsp;
                     b 1&nbsp;
                     | SASS screenshot
@@ -127,7 +129,7 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/sass-code.png", alt="Admin panel")
                 br
                 button.btn.btn-default.btn-block.sass-button(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     | Show&nbsp;
                     b 2&nbsp;
                     | SASS screenshot
@@ -136,7 +138,7 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Admin panel")
                 br
                 button.btn.btn-default.btn-block.jade-button(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     | Show&nbsp;
                     b 1&nbsp;
                     | Jade screenshot
@@ -145,7 +147,7 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Admin panel")
                 br
                 button.btn.btn-default.btn-block.jade-button(type="button")
-                    i.fa.fa-link
+                    i.icon-chrome
                     | Show&nbsp;
                     b 2&nbsp;
                     | Jade screenshot
