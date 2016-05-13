@@ -28,7 +28,7 @@ describe 'Testing global objects', ->
 
   describe 'Vendors javascript in module', ->
 
-    it 'Jquery or Zepto.js', ->
+    it 'Zepto.js or Cash.js', ->
       expect(window.$).toBeDefined()
 
     it 'Vue.js', ->

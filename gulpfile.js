@@ -112,6 +112,9 @@ gulp.task('javascript', function() {
             'src/coffee/controller.coffee',
             'src/coffee/view_controller.coffee',
             'src/coffee/handlers.coffee',
+            // portfolio modules
+            'src/coffee/portfolio/portfolio_controller.coffee',
+            'src/coffee/portfolio/portfolio_view_controller.coffee',
             'src/coffee/main.coffee'
         ])
         .pipe(concat('all.coffee'))
