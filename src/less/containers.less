@@ -16,6 +16,12 @@
         .margined-top-div {
             margin-top: @top-margin-for-div;
 
+            @media (max-width: @screen-xs) {
+                margin-top: 10px;
+
+                line-height: 2em;
+            }
+
             &#counter {
                 color: #85D6FF;
                 font-family: "Days", Helvetica, Arial, sans-serif;

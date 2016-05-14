@@ -33,16 +33,22 @@ html(lang="en", data-type="index")
                 .col-md-12.margined-top-div.text-center
                     span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
             .row
-                .col-md-6.margined-top-div.text-center
-                    - var mailView = {"v-text": "email"}
-                    a#mail: span(title="Send me email").email.centered-scale-element&attributes(mailView)
-                .col-md-6.margined-top-div.text-center
-                    span(alt="Skype login", title="My login in Skype").skype-header.left skype
-                    span(alt="Skype login", title="My login in Skype").skype-header.center :
-                    span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
+                .col-md-6.margined-top-div.text-center#mail
 
+                    - var mailView = {":href": "link"}
+                    a&attributes(mailView)
+                        span.email
+                            i.icon-mail-alter
+
+                        - mailView = {"v-text": "email"}
+                        span(title="Send me email").email.centered-scale-element&attributes(mailView)
+
+                .col-md-6.margined-top-div.text-center
+                    span(alt="Skype login", title="My login in Skype").skype-header.left
+                        i.icon-skype
+                    span(alt="Skype login", title="My login in Skype").skype-header.center ane4kanoka
             .row
-                .tags.col-md-12.text-center#tags
+                .tags.col-md-12.margined-top-div.text-center#tags
                     // Django tag
                     tag(tagname="django")
                     // Twitter Bootstrap tag
