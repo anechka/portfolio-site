@@ -18,9 +18,62 @@
 
             @media (max-width: @screen-xs) {
                 margin-top: 10px;
-
                 line-height: 2em;
             }
+
+            /* Link to External resources (buttons) */
+            &.profiles-content {
+                margin-bottom: (@top-margin-for-div * 2); margin-top: (@top-margin-for-div * 2);
+
+                a.external-profile {
+                    font-size: 150%;
+                    font-weight: bold;
+
+                    border-radius: 8px;
+                    padding: 10px;
+
+                    margin-left: 4px;
+                    margin-right: 4px;
+
+                    @media (max-width: @screen-xs) {
+                        font-size: 80%;
+                    }
+
+                    /* oDesk / Upwork */
+                    &.odesk-profile {
+                        background: url("../images/upwork-profile-link.svg");
+
+                        display: inline-block;
+                        vertical-align: middle;
+
+                        width: 254px;
+                        height: 81px;
+
+                        &:hover {
+                            background: url("../images/upwork-profile-hover.svg");
+                        }
+                    }
+
+                    /* Github */
+                    &.github-profile {
+                        color: #bfcdda;
+                        background: #00132F;
+                        border: 1px solid #00132F;
+                        transition: color 2s ease-in, background 0.5s ease-in-out;
+
+                        &:hover {
+                            color: #6fda44;
+                            text-decoration: none;
+
+                            background: none;
+                            border: 1px solid #6fda44;
+
+                            transition: none;
+                        }
+                    }
+                }
+            }
+
 
             &#counter {
                 color: #85D6FF;
