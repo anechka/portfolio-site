@@ -4,6 +4,8 @@ block title
 block portfolio-thumb
     .row.text-center
         span.portfolio-header Redalgo
+        a(href="../../index.html")
+            span.site-link #{www}
 
 block about-project
     ul
@@ -74,18 +76,20 @@ block images-content
             a.thumbnail(href="redalgo-page.html", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo page example")
                 br
-                button.btn.btn-site-link.btn-block(type="button") Browse Redalgo page
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.icon-logout
+                    |Browse Redalgo page
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/redalgo-project/blob/master/less/main.less", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="Less code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show LESS code
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/redalgo-project/blob/master/jade/redalgo-page.jade", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Jade code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show Jade code

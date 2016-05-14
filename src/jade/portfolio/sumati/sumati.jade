@@ -4,6 +4,8 @@ block title
 block portfolio-thumb
     .row.text-center
         span.portfolio-header Sumati Contracts
+        a(href="../../index.html")
+            span.site-link #{www}
 block about-project
     ul
 
@@ -81,27 +83,31 @@ block images-content
             a.thumbnail(href="http://sumatigroup.com", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/sumati-page.jpg", alt="Sumati site")
                 br
-                button.btn.btn-site-link.btn-block(type="button") Browse Sumati site
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.icon-logout
+                    |Browse Sumati site
 
         .col-md-6
             a.thumbnail(href="images/sumati-contracts.png", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/sumati-contracts-page.png", alt="Django app")
                 br
-                button.btn.btn-default.btn-block(type="button") Screenshot Django app
+                button.btn.btn-default.btn-block(type="button")
+                    i.icon-chrome
+                    |Screenshot Django app
 
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/sumati-project/tree/master/less/components", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/less-code.png", alt="Less code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show LESS code
         .col-md-6
             a.thumbnail(href="https://github.com/anechka/sumati-project/tree/master/jade", target="_blank")
                 img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Jade code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show Jade code
 
         .col-md-6
@@ -109,7 +115,7 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/django-code.png", alt="Django code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show Django templates
 
         .col-md-6
@@ -117,5 +123,5 @@ block images-content
                 img.img-thumbnail(src="../../images/portfolio-thumb/angular-code.png", alt="Angular code")
                 br
                 button.btn.btn-primary.btn-block(type="button")
-                    i.fa.fa-github-alt
+                    i.icon-github-alter
                     | Show Javascript code
