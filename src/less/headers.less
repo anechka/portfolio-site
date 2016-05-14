@@ -2,7 +2,7 @@ span.name-header {
     font-family: "Days", sans-serif;
     font-size: 55px;
 
-    color: #FFF;
+    color: @header-white-color;
 
     .header-and-email-768px;
     .header-and-email-480px;
@@ -30,11 +30,11 @@ span.name-header {
     }
 
     &:hover, &:focus {
-        color: #A090E4;
+        color: @light-purple-color;
         text-decoration: none;
 
         > span.email, > span.email i.icon-mail-alter {
-            color: #A090E4;
+            color: @light-purple-color;
             transition: none;
         }
 
@@ -62,6 +62,6 @@ span.skype-header {
     }
 
     &.center {
-        color: #57588C;
+        color: @fade-purple-color;
     }
 }

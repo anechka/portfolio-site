@@ -90,7 +90,8 @@ html(lang="en", data-type="index")
 
                         - var coupleAttributes = {"v-for": "project in couple"}
                         .col-md-6.col-sm-6.project&attributes(coupleAttributes)
-                            .bordered-block
+                            - var projectLink = {":href": "project.href"}
+                            a&attributes(projectLink).bordered-block
                                 .row
                                     .col-md-12
                                         span.header.text-center {{ project.name }}

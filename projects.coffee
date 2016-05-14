@@ -20,6 +20,7 @@ projects = [
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ]
     "image": "sumati-page.jpg"
+    "dir": "sumati"
   }
 
   {
@@ -41,6 +42,7 @@ projects = [
       "We used oDesk and e-mail communication with Skype."
     ]
     "image": "conclave-page.png"
+    "dir": "conclave"
   }
 
   {
@@ -61,6 +63,7 @@ projects = [
       "Our team: project manager, Photoshop-designer, i am as HTML developer and PHP developer. We used the remote job system with Skype communication."
     ]
     "image": "market-page.png"
+    "dir": "market"
   }
 
   {
@@ -79,6 +82,7 @@ projects = [
       "Our team consisted of: i am as Web-developer, 1 project manager, Web-designer and Python developer."
     ]
     "image": "premiumparts-adminka.png"
+    "dir": "pp"
   }
 
   {
@@ -98,6 +102,7 @@ projects = [
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ]
     "image": "redalgo-page.jpg"
+    "dir": "redalgo"
   }
 
   {
@@ -117,6 +122,7 @@ projects = [
       "We used Odesk and e-mail communication, Skype."
     ]
     "image": "imobo-page.png"
+    "dir": "imobo"
   }
 
 ]
