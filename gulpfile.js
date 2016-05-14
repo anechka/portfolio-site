@@ -19,6 +19,7 @@ var jade = require('gulp-jade');
 var less = require('gulp-less');
 var coffee = require('gulp-coffee');
 
+var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
@@ -54,7 +55,8 @@ gulp.task('jade', function() {
     if (!production) { jade_config.pretty = true }// Call jade({pretty: true}) for dev
 
     // Jade templates from src/jade folder
-    gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
+    // gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade']) Uncomment it for RU version
+    gulp.src('src/jade/index.jade')
     .pipe(jade(jade_config))
     .pipe(gulp.dest('dist'));
 
@@ -98,7 +100,7 @@ gulp.task('jade-portfolio', function() {
 
 });
 
-// Concat: vue.min.js, parallax.min.js, polyglot.min.js, zepto.min.js
+// Concat: vue.min.js, parallax.min.js, polyglot.min.js, cash.min.js
 gulp.task('vendor-js', function() {
     return gulp.src('src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
@@ -115,10 +117,12 @@ gulp.task('javascript', function() {
             // portfolio modules
             'src/coffee/portfolio/portfolio_controller.coffee',
             'src/coffee/portfolio/portfolio_view_controller.coffee',
+            // all compiled in one all.js and in the end wrapped by $() onload event
             'src/coffee/main.coffee'
         ])
         .pipe(concat('all.coffee'))
         .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
+        .pipe(uglify())
         .pipe(addsrc('dist/js/vendor/vendor.js'))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
