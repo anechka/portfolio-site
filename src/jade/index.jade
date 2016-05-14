@@ -8,6 +8,8 @@ html(lang="en", data-type="index")
         meta(name="description", content="Top rated 10% Upwork HTML5, CSS3, Jade, Javascript and Django templates web developer")
         meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, freelancer, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web")
 
+        style(rel='stylesheet').
+            A.external-profile { color: #6fda44 }
     body
         .container.parallax_container
             .design-copy Menangen design
@@ -33,16 +35,33 @@ html(lang="en", data-type="index")
                 .col-md-12.margined-top-div.text-center
                     span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
             .row
+                .col-md-6.margined-top-div.text-center#mail
+
+                    - var mailView = {":href": "link"}
+                    a&attributes(mailView)
+                        span.email
+                            i.icon-mail-alter
+
+                        - mailView = {"v-text": "email"}
+                        span(title="Send me email").email.centered-scale-element&attributes(mailView)
+
                 .col-md-6.margined-top-div.text-center
-                    - var mailView = {"v-text": "email"}
-                    a#mail: span(title="Send me email").email.centered-scale-element&attributes(mailView)
-                .col-md-6.margined-top-div.text-center
-                    span(alt="Skype login", title="My login in Skype").skype-header.left skype
-                    span(alt="Skype login", title="My login in Skype").skype-header.center :
-                    span(alt="Skype login", title="My login in Skype").skype-header.right ane4kanoka
+                    span(alt="Skype login", title="My login in Skype").skype-header.left
+                        i.icon-skype
+                    span(alt="Skype login", title="My login in Skype").skype-header.center ane4kanoka
+            .row
+                .col-md-12.margined-top-div.text-center.profiles-content
+                    // Upwork profile
+                    .col-md-6
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                    // Github profile
+                    .col-md-6.margined-top-div
+                        a.external-profile.github-profile(href="https://github.com/anechka")
+                            i.icon-github-alter
+                            | github.com/anechka
 
             .row
-                .tags.col-md-12.text-center#tags
+                .tags.col-md-12.margined-top-div.text-center#tags
                     // Django tag
                     tag(tagname="django")
                     // Twitter Bootstrap tag
@@ -63,8 +82,9 @@ html(lang="en", data-type="index")
                     tag(tagname="angular")
 
             .row
-                .col-md-12.margined-top-div.text-center.text-uppercase#counter {{ projectsCounterText }}
 
+                - var VueAttributes = {"v-text": "projectsCounterText"}
+                .col-md-12&attributes(VueAttributes).margined-top-div.text-center.text-uppercase#counter
             .row
                 .col-md-10.col-md-offset-1.margined-top-div#projectsList
                     //- Display filtered projects in loop
@@ -73,32 +93,40 @@ html(lang="en", data-type="index")
 
                         - var coupleAttributes = {"v-for": "project in couple"}
                         .col-md-6.col-sm-6.project&attributes(coupleAttributes)
-                            .bordered-block
+
+                            - var projectLink = {":href": "project.href"}
+                            a&attributes(projectLink).bordered-block
                                 .row
                                     .col-md-12
-                                        span.header.text-center {{ project.name }}
+
+                                        - VueAttributes = {"v-text": "project.name"}
+                                        span.header.text-center&attributes(VueAttributes)
                                 .row
                                     .col-md-4.col-sm-12.project-thumbnail
                                         .row
                                             .col-md-12
-                                                img.center-block.img-responsive(src="images/portfolio-thumb/{{ project.image }}")
+
+                                                - VueAttributes = {":src": "project.image"}
+                                                img.center-block.img-responsive&attributes(VueAttributes)
+
                                         .row.center-block
                                             .col-md-12.col-sm-12.col-xs-12.tags-container
 
-                                                - var tagsAttributes = {"v-for": "tag in project.tags"}
-                                                .tag.text-center&attributes(tagsAttributes)
-                                                    span.label.label-tag {{* tag }}
+                                                - VueAttributes = {"v-for": "tag in project.tags"}
+                                                .tag.text-center&attributes(VueAttributes)
 
-                                    .col-md-8.col-sm-12.description {{{ project.description }}}
+                                                    - VueAttributes = {"v-text": "tag"}
+                                                    span.label.label-tag&attributes(VueAttributes)
+
+                                    - VueAttributes = {"v-html": "project.description"}
+                                    .col-md-8.col-sm-12.description&attributes(VueAttributes)
             .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
                         img(src="images/flag-russian.svg", alt="russian site", title="russian", width="48px")
                         span(data-hover="RUSSIAN") RUSSIAN
 
-        //-TODO:remove font awesomelink(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
         link(rel="stylesheet", href="css/main.min.css")
-
         //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
         script(type="text/javascript", src="js/all.js", async="async")
         //- Google Analytics script

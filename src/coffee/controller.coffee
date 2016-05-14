@@ -8,6 +8,12 @@ modelSetup = ->
       resultHTMLDescription += "<p>" + description + "</p>" for description in projectDescriptionsArray
       project.description = resultHTMLDescription
 
+      project.image = "images/portfolio-thumb/#{project.image}"
+
+      if project.dir
+        project.href = "portfolio-content/#{project.dir}"
+      else project.href = "http://www.anya.site"
+
   return
 
 mobile_parallax_set = (ismobile) ->

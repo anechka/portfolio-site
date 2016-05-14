@@ -14,7 +14,8 @@
                 max-width: 50%;
             }
 
-            .bordered-block {
+            a.bordered-block {
+                display: block;
                 border: solid 1px #0085FF;
                 min-height: 100%;
                 padding: 0 8px;
@@ -22,11 +23,24 @@
                 -webkit-backdrop-filter: blur(10px);
                 backdrop-filter: blur(10px);
                 background: rgba(1, 31, 54, 0.24);
+                
+                &:hover {
+                    border-color: @sky-blue-color;
+                    background: none;
+
+                    span.header {
+                        color: @orange-color;
+                    }
+
+                    .description p {
+                        background: @project-p-bg-light-color;
+                    }
+                }
 
                 span.header {
                     display: block;
 
-                    color: #B6A46F;
+                    color: @gold-color;
                     font-size: 24px;
                     font-family: "Days", Helvetica, Arial, sans-serif;
 
@@ -96,7 +110,6 @@
 
                                 &.label-tag { /* Tags design */
                                     .project-span-label-tag;
-                                    background-color: #45809B;
 
                                     &:hover {
                                         cursor: default;

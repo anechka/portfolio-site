@@ -2,31 +2,43 @@ span.name-header {
     font-family: "Days", sans-serif;
     font-size: 55px;
 
-    color: #FFF;
+    color: @white-color;
 
     .header-and-email-768px;
     .header-and-email-480px;
 }
 
-span.email {
-    font-family: "Days", sans-serif;
-    font-size: 48px;
+#mail > a {
+    span.email {
+        font-family: "Days", sans-serif;
+        font-size: 48px;
 
-    color: @orange-color;
+        color: @orange-color;
 
-    -webkit-transition: color 0.5s ease-in-out;
-    -moz-transition: color 0.5s ease-in-out;
-    -o-transition: color 0.5s ease-in-out;
-    -ms-transition: color 0.5s ease-in-out;
-    transition: color 0.5s ease-in-out;
+        .header-transition;
+        .header-and-email-768px;
+        .header-and-email-480px;
 
-    &:hover {
-        color: #A090E4;
-        transition: none;
+        i.icon-mail-alter {
+            .header-icon;
+            .header-transition;
+
+            @media (max-width: @screen-lg) {
+                font-size: 80%;
+            }
+        }
     }
 
-    .header-and-email-768px;
-    .header-and-email-480px;
+    &:hover, &:focus {
+        color: @light-purple-color;
+        text-decoration: none;
+
+        > span.email, > span.email i.icon-mail-alter {
+            color: @light-purple-color;
+            transition: none;
+        }
+
+    }
 }
 
 span.skype-header {
@@ -36,16 +48,20 @@ span.skype-header {
     .skype-768px;
     .skype-480px;
 
-    &.left {
-        color: #FFF;
-        opacity: 0.6;
+    &.left > i.icon-skype {
+        .header-icon;
+        position: relative;
+
+        top: 4px;
+        left: 0.1em;
+
+        @media (max-width: @screen-sm) {
+            left: 0;
+            top: 2px;
+        }
     }
 
     &.center {
-        color: #FFF;
-    }
-
-    &.right {
-        color: #57588C;
+        color: @fade-purple-color;
     }
 }

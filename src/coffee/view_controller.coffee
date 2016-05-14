@@ -19,6 +19,10 @@ view_controller = ->
     data:
       # Creating e-mail link with JS (spamers prevent)
       email: if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
+
+    created: ->
+      @link = "mailto:" + @email
+      return
   )
 
   counterView = new Vue(
