@@ -91,38 +91,7 @@ html(lang="en", data-type="index")
             .row
                 .col-md-10.col-md-offset-1.margined-top-div#projectsList
                     //- Display filtered projects in loop
-                    - var groupsAttributes = {"v-for": "couple in group"}
-                    .row&attributes(groupsAttributes)
-
-                        - var coupleAttributes = {"v-for": "project in couple"}
-                        .col-md-6.col-sm-6.project&attributes(coupleAttributes)
-
-                            - var projectLink = {":href": "project.href"}
-                            a&attributes(projectLink).bordered-block
-                                .row
-                                    .col-md-12
-
-                                        - VueAttributes = {"v-text": "project.name"}
-                                        span.header.text-center&attributes(VueAttributes)
-                                .row
-                                    .col-md-4.col-sm-12.project-thumbnail
-                                        .row
-                                            .col-md-12
-
-                                                - VueAttributes = {":src": "project.image"}
-                                                img.center-block.img-responsive&attributes(VueAttributes)
-
-                                        .row.center-block
-                                            .col-md-12.col-sm-12.col-xs-12.tags-container
-
-                                                - VueAttributes = {"v-for": "tag in project.tags"}
-                                                .tag.text-center&attributes(VueAttributes)
-
-                                                    - VueAttributes = {"v-text": "tag"}
-                                                    span.label.label-tag&attributes(VueAttributes)
-
-                                    - VueAttributes = {"v-html": "project.description"}
-                                    .col-md-8.col-sm-12.description&attributes(VueAttributes)
+                    include components/projects
             .row
                 nav.col-md-4.col-md-offset-4.text-center.flag-language
                     a(href="http://ane4k.in")
