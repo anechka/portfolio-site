@@ -41,7 +41,7 @@
     }
 }
 // tag sprite position in .svg image
-.count-tag-width(@tagNumber, @width) {
+.process-sprite-position(@tagNumber, @width, @tag-gutter) {
     @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);
 }
 
