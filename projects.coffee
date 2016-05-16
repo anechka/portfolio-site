@@ -60,7 +60,7 @@ projects = [
     "description": [
       "This is a shop for sale office and home equipment, home media, smartphones, Apple computers."
       "HTML templates + LESS stylesheet development for e-commerce PHP shop"
-      "Our team: project manager, Photoshop-designer, i am as HTML developer and PHP developer. We used the remote job system with Skype communication."
+      "Our team: project manager, Photoshop-designer, I'm as HTML developer and PHP developer. We used the remote job system with Skype communication."
     ]
     "image": "market-page.png"
     "dir": "market"
@@ -79,7 +79,7 @@ projects = [
     ]
     "description": [
       "Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates."
-      "Our team consisted of: i am as Web-developer, 1 project manager, Web-designer and Python developer."
+      "Our team consisted of: I'm as Web-developer, 1 project manager, Web-designer and Python developer."
     ]
     "image": "premiumparts-adminka.png"
     "dir": "pp"
@@ -98,7 +98,7 @@ projects = [
     ]
     "description": [
       "This is site of educational games for children."
-      "Our team consisted of: i am as Web Developer, 1 project manager, 1 Web designer. Also i worked with Javascript developer."
+      "Our team consisted of: I'm as Web Developer, 1 project manager, 1 Web designer. Also i worked with Javascript developer."
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ]
     "image": "redalgo-page.jpg"
@@ -118,7 +118,7 @@ projects = [
     "description": [
       "This is site for buying and selling real estate."
       " CSS3 & Bootstrap 3, Jade templates."
-      "The team: i am as Web Developer, 1 project manager, 1 Javascript developer."
+      "The team: I'm as Web Developer, 1 project manager, 1 Javascript developer."
       "We used Odesk and e-mail communication, Skype."
     ]
     "image": "imobo-page.png"

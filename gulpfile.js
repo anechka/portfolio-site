@@ -34,7 +34,7 @@ gulp.task('default', function() {
     gulp.run('javascript');
 });
 
-gulp.task('dev', ['jade', 'javascript']
+gulp.task('dev', ['jade', 'less']
 );
 
 gulp.task('less', function() {

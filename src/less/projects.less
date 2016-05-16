@@ -20,6 +20,8 @@
                 min-height: 100%;
                 padding: 0 8px;
 
+                font-family: "Gotham Medium", "Arial", "Helvetica", sans-serif;
+
                 -webkit-backdrop-filter: blur(10px);
                 backdrop-filter: blur(10px);
                 background: rgba(1, 31, 54, 0.24);
@@ -28,8 +30,24 @@
                     border-color: @sky-blue-color;
                     background: none;
 
-                    span.header {
-                        color: @orange-color;
+                    .project-header-container {
+
+                        .header-top {
+
+                            span.link, span.text {
+                                color: @orange-color;
+                            }
+
+                        }
+
+                        .project-info, i.icon {
+                            color: @cloud-white-color;
+                        }
+
+                        .project-info > span.value {
+                            color: @green-grass-color;
+                        }
+
                     }
 
                     .description p {
@@ -37,18 +55,42 @@
                     }
                 }
 
-                span.header {
-                    display: block;
-
-                    color: @gold-color;
-                    font-size: 24px;
-                    font-family: "Days", Helvetica, Arial, sans-serif;
+                .project-header-container {
+                    margin: 10px 0;
 
                     @media (min-width: @screen-md-min) {
                         margin: 15px 0;
                     }
-                }
 
+                    .header-top {
+                        color: @gold-color;
+                        font-size: 24px;
+                        font-family: "Days", Helvetica, Arial, sans-serif;
+
+                        span.link {
+                            color: @dark-blue-color;
+                            font-size: 150%;
+                            position: relative;
+                            vertical-align: -2px;
+                        }
+                    }
+
+                    span {
+                        padding: 0 6px;
+
+                        &.project-info {
+                            color: saturate(darken(@sky-blue-color, 10%), 100%);
+
+                            span.value {
+                                color: @gold-color;
+                            }
+                        }
+                    }
+
+                    i.icon {
+                        color: saturate(darken(@sky-blue-color, 30%), 100%);;
+                    }
+                }
                 .project-thumbnail {
                     /* Image thumbnail */
                     padding-top: 5px;
@@ -73,6 +115,7 @@
                             span.label { /* Tag body */
                                 display: block;
                                 margin: 7px 7px 7px 0;
+                                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
                                 @media (max-width: @screen-md) {
                                     display: inline;
