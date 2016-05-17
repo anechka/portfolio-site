@@ -1,19 +1,18 @@
 /**
  * Created by menangen on 18.03.15.
  *
- *  [default] task compile production HTMLs
- *  [jade] task compile pretty htmls
- *  [clean] task remove all HTMLs
- *
- * Run Jade compilation from 2 folders: /jade and /portfolio-content in current folder
- * index.html for anya.site = "english" version
- * index-ru.html for ane4k.in = "russian" version
- * and into /portfolio-content/id-portfolio/index.html
- */
-var production = false; // False for pretty HTML output in "jade" template engine task
-
+ *  [default: `gulp --production`] task compile production Jade, ugly Coffee and min Less to /dist dir.
+ *  [default: `gulp`] task compile development version of HTML, Javascript and CSS.
+ *  [jade] task compile pretty htmls to /dist/index[-ru].html
+ *  [jade-portfolio] individual task for compile portfolio jade to dist/portfolio-content/id-portfolio/index.html
+ *  [javascript] task compile coffeescript from src/coffee to /dist/js/all.js
+ *  [test] task for testing (compiled from coffee) javascript: dist/all.js, should run [jade] task before!
+ *  [less] task compile src/less/main.less to /dist/main.min.css
+ *  [clean] task remove all HTMLs, Javascript and CSS files compiled by gulp.
+Please use [watch] task for development process with jade and less files. */
 var exec = require('child_process').execSync;
 var gulp = require('gulp');
+var util = require('gulp-util');
 
 var jade = require('gulp-jade');
 var less = require('gulp-less');
@@ -26,15 +25,15 @@ var concat = require('gulp-concat');
 var addsrc = require('gulp-add-src');
 var clean = require('gulp-clean');
 
-gulp.task('default', function() {
-    // Start point
-    production = true;
-    gulp.run('jade'); gulp.run('jade-portfolio');
-    gulp.run('less');
-    gulp.run('javascript');
-});
+var production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
 
-gulp.task('dev', ['jade', 'less']
+gulp.task('default', ['jade','jade-portfolio','less','javascript']);
+
+gulp.task('watch', function () {
+        gulp.watch(['src/jade/index.jade'], ['jade']);
+        gulp.watch(['src/jade/portfolio/**/*'], ['jade-portfolio']);
+        gulp.watch(['src/less/**/*'], ['less']);
+    }
 );
 
 gulp.task('less', function() {
@@ -42,30 +41,24 @@ gulp.task('less', function() {
     // only one root file need compile
     gulp.src('src/less/main.less')
         .pipe(less())
-        //.pipe(cssmin()) // Comment it for development
+        .pipe(production ? cssmin() : util.noop())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/css'));
-
 });
 
 // Compile only 2 templates: index[-RU].jade
 gulp.task('jade', function() {
-
-    var jade_config = {};
-    if (!production) { jade_config.pretty = true }// Call jade({pretty: true}) for dev
-
     // Jade templates from src/jade folder
     // gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade']) Uncomment it for RU version
     gulp.src('src/jade/index.jade')
-    .pipe(jade(jade_config))
+    .pipe(jade(production ? {} : {pretty: true})) // Call jade({pretty: true}) for dev
     .pipe(gulp.dest('dist'));
 
 });
 
 // Compile portfolio jade files
 gulp.task('jade-portfolio', function() {
-    var jade_config = {};
-    if (!production) { jade_config.pretty = true }
+    var jade_config = production ? {} : {pretty: true};
 
     // Jade templates from /portfolio
     gulp.src('src/jade/portfolio/conclave/conclave.jade')
@@ -122,7 +115,7 @@ gulp.task('javascript', function() {
         ])
         .pipe(concat('all.coffee'))
         .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
-        .pipe(uglify())
+        .pipe(production ? uglify() : util.noop())
         .pipe(addsrc('dist/js/vendor/vendor.js'))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
