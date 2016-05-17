@@ -4,7 +4,17 @@
     > .row {
         display: block;
 
-        @media (min-width: @screen-xs-min) { display: flex; }
+        @media (min-width: @screen-xs-min) {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+
+            .project {
+                display: -webkit-flex;
+                flex-direction: row;
+            }
+        }
 
         .project {
             //      top     right               bottom                  left
