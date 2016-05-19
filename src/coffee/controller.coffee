@@ -42,6 +42,10 @@ set_background_and_look = ->
   window.thunders = 0
   window.animate_object = setInterval(interval_handler, 120)
 
+  $hiddenDiv = $("<div style='display:none'><img src='images/clouds_layer_5_storm1.png'><img src='images/clouds_layer_5_storm2.png'><img src='images/clouds_layer_5_storm2_extra.png'><img src='images/web-logos-hover.svg'></div>")
+
+  $('body').append $hiddenDiv
+
   switch navigator.platform
     when "iPhone", "iPhone Simulator", "Android", "iPad" then mobile_parallax_set yes;
     else mobile_parallax_set no;

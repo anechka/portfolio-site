@@ -43,11 +43,17 @@
         font-family: "Days", sans-serif;
     }
 
-    span.site-link {
+    a.site-link {
         font-size: 26px;
         font-family: "Days", sans-serif;
 
         color: @porfolio-site-link-color;
+        .header-transition;
+
+        &:hover, &:focus {
+            color: @light-purple-color;
+            transition: none;
+        }
     }
 
     .description-content {

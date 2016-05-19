@@ -20,8 +20,7 @@ interval_handler = ->
   return
 
 make_thunder = ->
-  cloudsView = window.viewModels.cloudsView
-  cloud_five_default_source = cloudsView.layer5Src
+  cloud_five_default_source = window.viewModels.cloudsView.layer5Src
 
   new_images_src_arr = [
     "clouds_layer_5_storm1.png"
@@ -37,10 +36,10 @@ make_thunder = ->
     if luke_const > 0.77
       src = new_images_src_arr[2]
 
-  cloudsView.layer5Src = "images/" + src
+  window.viewModels.cloudsView.layer5Src = "images/" + src
 
   setTimeout (->
-    cloudsView.layer5Src = cloud_five_default_source
+    window.viewModels.cloudsView.layer5Src = cloud_five_default_source
     return
   ), 100
   return
