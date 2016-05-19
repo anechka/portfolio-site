@@ -66,13 +66,15 @@
                 }
 
                 .project-header-container {
-                    margin: 10px 0;
-
-                    @media (min-width: @screen-md-min) {
-                        margin: 15px 0;
-                    }
+                    min-height: 100px;
 
                     .header-top {
+                        margin: 2px 0;
+
+                        @media (min-width: @screen-md-min) {
+                            margin: 4px 0;
+                        }
+
                         color: @gold-color;
                         font-size: 24px;
                         font-family: "Days", Helvetica, Arial, sans-serif;

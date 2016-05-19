@@ -29,7 +29,7 @@ var production = !!util.env.production; // False for pretty HTML output in "jade
 
 gulp.task('default', ['jade','jade-portfolio','less','javascript']);
 
-gulp.task('watch', function () {
+gulp.task('watch', ['jade', 'less'], function () {
         gulp.watch(['src/jade/index.jade'], ['jade']);
         gulp.watch(['src/jade/portfolio/**/*'], ['jade-portfolio']);
         gulp.watch(['src/less/**/*'], ['less']);

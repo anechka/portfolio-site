@@ -12,7 +12,7 @@
      dest={{ site_root_dir }}
      force=yes
   - name: Gulp compilation
-    shell: node_modules/.bin/gulp chdir={{ site_root_dir }}
+    shell: node_modules/.bin/gulp --production chdir={{ site_root_dir }}
 
   handlers:
    - name: Nginx restart

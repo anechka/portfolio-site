@@ -5,7 +5,7 @@
     .col-md-6.col-sm-6.project&attributes(coupleAttributes)
 
         - var projectLink = {":href": "project.href"}
-        a&attributes(projectLink).bordered-block
+        a.bordered-block&attributes(projectLink)
             .row
                 .col-md-12.project-header-container.text-center
 
@@ -18,11 +18,14 @@
 
                     i.icon.icon-calendar-empty
                     span.project-info Duration:
-                        span.value 6 months
+                        - var VueAttributes = {"v-text": "project.time"}
+                        span.value&attributes(VueAttributes)
 
                     i.icon.icon-flag
                     span.project-info Task:
-                        span.value PSD to HTML
+                        - var VueAttributes = {"v-text": "project.task"}
+                        span.value&attributes(VueAttributes)
+
             .row
                 .col-md-4.col-sm-12.project-thumbnail
                     .row
