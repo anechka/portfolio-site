@@ -1,6 +1,8 @@
 projects = [
   {
     "name": "Sumati"
+    "time": 8
+    "task": "AI/PSD to HTML, Django routing and templates"
     "tags": [
       "django"
       "templates"
@@ -25,6 +27,8 @@ projects = [
 
   {
     "name": "Conclave"
+    "time": 2
+    "task": "jQuery plugins, responsive Bootsrap jade templates"
     "tags": [
       "nodejs"
       "jade"
@@ -47,6 +51,8 @@ projects = [
 
   {
     "name": "Chipmarket"
+    "time": 1
+    "task": "PSD to Bootsrap"
     "tags": [
       "php"
       "yii"
@@ -68,6 +74,8 @@ projects = [
 
   {
     "name": "Premium Parts"
+    "time": 4
+    "task": "Django templates, Bootstrap design"
     "tags": [
       "django"
       "templates"
@@ -87,6 +95,7 @@ projects = [
 
   {
     "name": "Redalgo"
+    "time": 1
     "tags": [
       "nodejs"
       "jade"
@@ -107,6 +116,7 @@ projects = [
 
   {
     "name": "Imobo"
+    "time": 1
     "tags": [
       "nodejs"
       "jade"

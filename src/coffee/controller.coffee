@@ -1,4 +1,7 @@
 modelSetup = ->
+  polyglot = new Polyglot(locale: 'en')
+  polyglot.extend 'moths': '%{smart_count} month |||| %{smart_count} months'
+
   for index, project of projects
     projectDescriptionsArray = project.description
 
@@ -8,11 +11,12 @@ modelSetup = ->
       resultHTMLDescription += "<p>" + description + "</p>" for description in projectDescriptionsArray
       project.description = resultHTMLDescription
 
-      project.image = "images/portfolio-thumb/#{project.image}"
-
-      if project.dir
-        project.href = "portfolio-content/#{project.dir}"
-      else project.href = "http://www.anya.site"
+    # Image src updates
+    project.image = "images/portfolio-thumb/#{project.image}"
+    # Project location in dir for <a> tag
+    project.href = if project.dir then "portfolio-content/#{project.dir}" else "http://www.anya.site"
+    project.time = if project.time then polyglot.t('moths', smart_count: project.time) else "1 week"
+    project.task = if project.task then project.task else "PSD to HTML"
 
   return
 
