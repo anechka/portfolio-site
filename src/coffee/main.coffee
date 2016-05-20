@@ -4,6 +4,7 @@ $ ->
     modelSetup()
     set_background_and_look()
     window.viewModels = view_controller()
+    routeController()
   else
     portfolio_set_background_and_look()
     portfolio_view_controller()

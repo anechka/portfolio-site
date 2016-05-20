@@ -1,4 +1,48 @@
 # Created by menangen on 01.05.16.
+# mouseOver action
+showCounterTextForTag = (tagName) ->
+  projectsNumberWithTag = 0
+
+  for project_index, project of projects
+    projectTagsArray = project.tags
+
+    projectsNumberWithTag++ if tagName in projectTagsArray
+
+  prevText = window.viewModels.counterView.getCounterText()
+  window.viewModels.counterView.setCounter projectsNumberWithTag
+
+  return prevText
+
+# onClick action
+displayTaggedProjects = (tagName) ->
+  group = []
+  couple = []
+  textAfter = window.viewModels.counterView.getCounterText()
+
+  if tags.hasOwnProperty tagName
+    # Disable all tags on loop
+    tags[key] = off for key of tags
+    # Enable one tag active
+    tags[tagName] = on
+
+    textAfter = textAfter + ' on ' + tagName
+    window.viewModels.counterView.setCounterText textAfter
+
+
+    for project_item, project of projects
+      projectTagsArray = project.tags
+
+      for tag in projectTagsArray
+        couple.push project if tagName.toString().toLowerCase() == tag.toLowerCase()
+
+      if couple.length == 2
+        group.push couple
+        couple = []
+
+    group.push couple if couple.length == 1
+    window.viewModels.projectsView.displayProjects group
+
+  return textAfter
 
 view_controller = ->
   polyglot = new Polyglot(locale: 'en')
@@ -81,15 +125,7 @@ view_controller = ->
     methods:
 
       mouseOver: ->
-        projectsNumberWithTag = 0
-
-        for project_index, project of projects
-          projectTagsArray = project.tags
-
-          projectsNumberWithTag++ if @tagname in projectTagsArray
-
-        @counterText = counterView.getCounterText()
-        counterView.setCounter projectsNumberWithTag
+        @counterText = showCounterTextForTag @tagname
         return
 
       mouseOut: ->
@@ -97,32 +133,7 @@ view_controller = ->
         return
 
       click: ->
-        group = []
-        couple = []
-        if @tags.hasOwnProperty @tagname
-          # Disable all tags on loop
-          @tags[key] = off for key of @tags
-          # Enable one tag active
-          @tags[@tagname] = on
-
-          textAfterClick = counterView.getCounterText() + ' on ' + @tagname
-
-          @counterText = textAfterClick
-          counterView.setCounterText textAfterClick
-
-        for project_item, project of projects
-          projectTagsArray = project.tags
-
-          for tag in projectTagsArray
-            couple.push project if @tagname.toString().toLowerCase() == tag.toLowerCase()
-
-          if couple.length == 2
-            group.push couple
-            couple = []
-
-        group.push couple if couple.length == 1
-
-        projectsView.displayProjects group
+        @counterText = displayTaggedProjects @tagname
         return
   # Tags ViewModel
   tagsView = new Vue(
