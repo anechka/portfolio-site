@@ -279,9 +279,6 @@ describe 'Testing Vue.js ViewModels', ->
 
         expect(viewModels.projectsView.group).not.toBeEmptyArray()
 
-        projectKeys = Object.keys viewModels.projectsView.group[0][0]
-        expect(projectKeys.length).toBe 4
-
         return
 
       return

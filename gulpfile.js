@@ -92,7 +92,13 @@ gulp.task('jade-portfolio', function() {
 
 });
 
-// Concat: vue.min.js, parallax.min.js, polyglot.min.js, cash.min.js
+/* Concat this JS libs:
+* vue.min.js for reactive UI [http://vuejs.org/]
+* parallax.min.js for cloudsView [http://matthew.wagerfield.com/parallax/]
+* polyglot.min.js for language features (Plural of Nouns) [https://github.com/airbnb/polyglot.js]
+* cash.min.js for jQuery like attr manipulation, domready [https://github.com/kenwheeler/cash]
+* director.min.js for routing /#/tagName [https://github.com/flatiron/director]
+*/
 gulp.task('vendor-js', function() {
     return gulp.src('src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
@@ -104,6 +110,7 @@ gulp.task('javascript', function() {
         .src([// We can't use *.coffee because it is cause an error in jsdom testing engine with $(load) function
             'projects.coffee',
             'src/coffee/controller.coffee',
+            'src/coffee/router.coffee',
             'src/coffee/view_controller.coffee',
             'src/coffee/handlers.coffee',
             // portfolio modules
@@ -119,6 +126,11 @@ gulp.task('javascript', function() {
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/js'));
 });
+
+gulp.task('coffee', ['javascript', 'test'], function () {
+        gulp.watch(['projects.coffee', 'src/coffee/**/*'], ['javascript', 'test']);
+    }
+);
 
 gulp.task('clean', function() {
 

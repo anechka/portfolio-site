@@ -34,4 +34,14 @@ describe 'Testing models', ->
 
         expect(projectDescriptionsHTML).toBeHtmlString();
 
+    it 'has a minimum 5 keys in project', ->
+      for index, project of window.projects
+        projectKeys = Object.keys project
+        expect(projectKeys).toContain 'name'
+        expect(projectKeys).toContain 'tags'
+        expect(projectKeys).toContain 'description'
+        expect(projectKeys).toContain 'image'
+        expect(projectKeys).toContain 'dir'
+      return
+
     return
