@@ -30,7 +30,7 @@ var production = !!util.env.production; // False for pretty HTML output in "jade
 gulp.task('default', ['jade','jade-portfolio','less','javascript']);
 
 gulp.task('watch', ['jade', 'less'], function () {
-        gulp.watch(['src/jade/index.jade'], ['jade']);
+        gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade'], ['jade']);
         gulp.watch(['src/jade/portfolio/**/*'], ['jade-portfolio']);
         gulp.watch(['src/less/**/*'], ['less']);
     }
@@ -49,8 +49,7 @@ gulp.task('less', function() {
 // Compile only 2 templates: index[-RU].jade
 gulp.task('jade', function() {
     // Jade templates from src/jade folder
-    // gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade']) Uncomment it for RU version
-    gulp.src('src/jade/index.jade')
+    gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
     .pipe(jade(production ? {} : {pretty: true})) // Call jade({pretty: true}) for dev
     .pipe(gulp.dest('dist'));
 
