@@ -3,8 +3,8 @@
 @tag-width-mobile: 84px;
 @tag-gutter: 10px;
 
-@tag-margin-right-lg: 6px;
-@tag-margin-right-md: 0;
+@tag-margin-right-lg: 10px;
+@tag-margin-right-md: 4px;
 
 .position-sprite(@imageSrc) {
     &.sprite-django { .process-sprite-position(1, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0;};
@@ -34,6 +34,8 @@
     padding-right: 0;
     padding-left: 0;
 
+    padding-top: 0.8em;
+
     @media (max-width: @screen-md) {
         width: 320px;
 
@@ -47,7 +49,7 @@
         > img {/* default svg sprite on img background */
             height: @tag-width;
             width: @tag-width;
-            margin-top: 4px;
+            margin-top: @tag-margin-right-md;
             margin-right: @tag-margin-right-lg;
 
             .position-sprite('web-logos.svg');
