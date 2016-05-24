@@ -85,9 +85,12 @@ html(lang="en", data-type="index")
                     tag(tagname="angular")
 
             .row
+                .col-md-12.margined-top-div.text-center.text-uppercase#counter
+                    - var VueAttributes = {"v-for": "name in tagsNames"}
+                    a(id="{{* name }}")&attributes(VueAttributes)
 
-                - var VueAttributes = {"v-text": "projectsCounterText"}
-                .col-md-12&attributes(VueAttributes).margined-top-div.text-center.text-uppercase#counter
+                    - VueAttributes = {"v-text": "projectsCounterText"}
+                    span&attributes(VueAttributes)
             .row
                 .col-md-10.col-md-offset-1.margined-top-div#projectsList
                     //- Display filtered projects in loop

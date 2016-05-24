@@ -72,7 +72,9 @@ view_controller = ->
   counterView = new Vue(
     el: '#counter'
     
-    data: projectsCounterText: polyglot.t('projects', smart_count: projects.length) + ' total'
+    data:
+      projectsCounterText: polyglot.t('projects', smart_count: projects.length) + ' total'
+      tagsNames: Object.keys tags
     
     methods:
       

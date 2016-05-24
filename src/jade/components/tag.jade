@@ -1,6 +1,6 @@
 template#tag-template
-    - var vueTagComponent = {"@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click", ":class": "{ 'open': tags[tagname]}"}
-    a(href="#counter")&attributes(vueTagComponent)
+    - var vueTagComponent = {":class": "{ 'open': tags[tagname]}", ":href": "'#'+tagname", "@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click"}
+    a&attributes(vueTagComponent)
 
         - var size = 96
         - var vueImage = {":class": "lessClass", "alt": "{{* tagname}}", "title": "{{* tagname}}"}
