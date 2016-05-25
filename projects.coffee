@@ -1,31 +1,5 @@
 projects = [
   {
-    "name": "Sumati"
-    "time": 8
-    "task": "AI/PSD to HTML, Django routing and templates"
-    "tags": [
-      "django"
-      "templates"
-      "python"
-      "bootstrap"
-      "less"
-      "wiki"
-      "javascript"
-      "angular"
-      "git"
-      "gitlab"
-      "sphinx"
-    ]
-    "description": [
-      "Django website for Lawers. Jade and LESS, Django templates, AngularJS REST."
-      "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer."
-      "We communicated via Upwork and Skype, and also used e-mail communication."
-    ]
-    "image": "sumati-page.jpg"
-    "dir": "sumati"
-  }
-
-  {
     "name": "Conclave"
     "time": 2
     "task": "jQuery plugins, responsive Bootsrap jade templates"
@@ -50,6 +24,27 @@ projects = [
   }
 
   {
+    "name": "Premium Parts"
+    "time": 4
+    "task": "Django templates, Bootstrap design"
+    "tags": [
+      "django"
+      "templates"
+      "python"
+      "bootstrap"
+      "javascript"
+      "jquery"
+      "hg"
+    ]
+    "description": [
+      "Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates."
+      "Our team consisted of: I'm as Web-developer, 1 project manager, Web-designer and Python developer."
+    ]
+    "image": "premiumparts-adminka.png"
+    "dir": "pp"
+  }
+
+  {
     "name": "Chipmarket"
     "time": 1
     "task": "PSD to Bootsrap"
@@ -70,27 +65,6 @@ projects = [
     ]
     "image": "market-page.png"
     "dir": "market"
-  }
-
-  {
-    "name": "Premium Parts"
-    "time": 4
-    "task": "Django templates, Bootstrap design"
-    "tags": [
-      "django"
-      "templates"
-      "python"
-      "bootstrap"
-      "javascript"
-      "jquery"
-      "hg"
-    ]
-    "description": [
-      "Auto parts, accessories Django store. CSS3 & Bootstrap 3, HTML5 under Django templates."
-      "Our team consisted of: I'm as Web-developer, 1 project manager, Web-designer and Python developer."
-    ]
-    "image": "premiumparts-adminka.png"
-    "dir": "pp"
   }
 
   {
@@ -133,6 +107,32 @@ projects = [
     ]
     "image": "imobo-page.png"
     "dir": "imobo"
+  }
+
+  {
+    "name": "Sumati"
+    "time": 8
+    "task": "AI/PSD to HTML, Django routing and templates"
+    "tags": [
+      "django"
+      "templates"
+      "python"
+      "bootstrap"
+      "less"
+      "wiki"
+      "javascript"
+      "angular"
+      "git"
+      "gitlab"
+      "sphinx"
+    ]
+    "description": [
+      "Django website for Lawers. Jade and LESS, Django templates, AngularJS REST."
+      "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer."
+      "We communicated via Upwork and Skype, and also used e-mail communication."
+    ]
+    "image": "sumati-page.jpg"
+    "dir": "sumati"
   }
 
 ]

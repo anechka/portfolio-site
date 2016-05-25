@@ -113,8 +113,7 @@ gulp.task('javascript', function() {
             'src/coffee/router.coffee',
             'src/coffee/view_controller.coffee',
             'src/coffee/handlers.coffee',
-            // portfolio modules
-            'src/coffee/portfolio/portfolio_controller.coffee',
+            // portfolio module
             'src/coffee/portfolio/portfolio_view_controller.coffee',
             // all compiled in one all.js and in the end wrapped by $() onload event
             'src/coffee/main.coffee'
