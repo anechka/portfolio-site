@@ -53,6 +53,14 @@ describe 'Testing Vue.js ViewModels', ->
       expect(viewModels.counterView._isVue).toBeTruthy()
       return
 
+    it 'has a tagsNames', ->
+      expect(viewModels.counterView.tagsNames).toBeDefined()
+      return
+
+    it 'and tagsNames is array', ->
+      expect(viewModels.counterView.tagsNames).toBeArrayOfStrings();
+      return
+
     it 'has a projectsCounterText', ->
       expect(viewModels.counterView.projectsCounterText).toBeDefined()
       return
