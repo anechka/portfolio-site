@@ -22,16 +22,3 @@ portfolio_clouds_animation = ->
   $('.header_clouds')[0].style.transform = 'translate3d(' + -result + '%, 0.0%, 0px)'
 
   return
-
-portfolio_view_controller = ->
-
-  mailView = new Vue(
-    el: '#mail'
-    data:
-# Creating e-mail link with JS (spamers prevent)
-      email: "text"
-  )
-
-  {
-    mailView: mailView
-  }
