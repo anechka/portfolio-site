@@ -135,6 +135,24 @@ projects = [
     "dir": "sumati"
   }
 
+  {
+    "name": "Catapult"
+    "tags": [
+      "bootstrap"
+      "sass"
+      "javascript"
+      "git"
+      "github"
+    ]
+    "description": [
+      "This is application site."
+      "Our team consisted of: I'm as Web Developer, 1 project manager."
+      "We used Upwork and Skype, and also e-mail for communication."
+    ]
+    "image": "sumati-page.jpg"
+    "dir": "catapult"
+  }
+
 ]
 
 tags =

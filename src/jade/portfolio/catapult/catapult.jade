@@ -1,0 +1,93 @@
+extends ../base.jade
+block title
+    title Catapult | Anya Novikova
+block portfolio-thumb
+    .row.text-center
+        span.portfolio-header Catapult
+        a.site-link(href="../../index.html")
+            span #{www}
+
+block about-project
+    ul
+
+        li
+            a(href="https://github.com/anechka", target="_blank") Github
+        li
+            a(href="http://nodejs.org", target="_blank") NodeJS
+        li
+            a(href="http://jade-lang.com/", target="_blank") Jade template engine
+        li
+            a(href="http://sass-lang.com/guide", target="_blank") Sass
+        li
+            a(href="http://getbootstrap.com/css/", target="_blank") Bootstrap | 3
+
+    p.col-md-12 This is application site.
+
+block about-team
+    p
+        | Our team consisted of: I am as Web Developer, 1 project manager.
+
+        br
+        | We used&nbsp
+        a(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/", target="_blank") Upwork
+        | &nbspand Skype, and also e-mail for communication.
+
+block my-role
+
+    p.col-md-12
+        | The site based on NodeJS and Jade template engine, Twitter Bootstrap as grid based CSS framework
+        | and Sass as main CSS preprocessor.
+        br
+        | I&nbsp
+        a(href="http://www.jetbrains.com/webstorm/", target="_blank") programmed Jade(HTML) / SASS(CSS) with Webstorm tool
+        | .&nbspWhen i worked with project's repo i used&nbsp
+        a(href="http://git-scm.com/about", target="_blank") GIT version control system
+
+        | .&nbspI used&nbsp
+        a(href="https://www.sourcetreeapp.com", target="_blank") SourceTree
+        | &nbspfor pushing and pulling code to created private repo on&nbsp
+        a(href="https://github.com/anechka", target="_blank") Github
+        | .&nbspI worked near 1 week with this project and developed Jade pages with SASS code.
+
+    ul(style="display: inline-block")
+        li Near 3 Jade files
+        li Near 4 SASS files
+        li
+            a(href="catapult-home-page.html", target="_blank") Catapult Home page
+
+block result
+
+    p.col-md-12
+        | After 1 week i completed project and main goal was&nbsp
+        strong coding Jade pages with SASS&nbsp
+        | under Twitter Bootstrap.
+        br
+        | My project manager quote:
+    blockquote
+        | "Well structured, good quality code, very happy with Anya's work!".
+    p.col-md-12
+        | During this project i increased my Jade and SASS skills.
+
+block images-content
+    .col-md-6.images-a-content
+        .col-md-6
+            a.thumbnail(href="catapult-home-page.html", target="_blank")
+                img.img-thumbnail(src="../../images/portfolio-thumb/redalgo-page.jpg", alt="Redalgo page example")
+                br
+                button.btn.btn-site-link.btn-block(type="button")
+                    i.icon-logout
+                    |Browse Catapult Home page
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/catapult-project/tree/master/scss", target="_blank")
+                img.img-thumbnail(src="../../images/portfolio-thumb/sass-code.png", alt="Sass code")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.icon-github-alter
+                    | Show SASS code
+        .col-md-6
+            a.thumbnail(href="https://github.com/anechka/catapult-project/tree/master/jade", target="_blank")
+                img.img-thumbnail(src="../../images/portfolio-thumb/jade-code.png", alt="Jade code")
+                br
+                button.btn.btn-primary.btn-block(type="button")
+                    i.icon-github-alter
+                    | Show Jade code

@@ -90,6 +90,11 @@ gulp.task('jade-portfolio', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("dist/portfolio-content/sumati"));
 
+    gulp.src('src/jade/portfolio/catapult/catapult.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("dist/portfolio-content/catapult"));
+
 });
 
 /* Concat this JS libs:
@@ -143,6 +148,7 @@ gulp.task('clean', function() {
             "dist/portfolio-content/imobo/index.html",
             "dist/portfolio-content/redalgo/index.html",
             "dist/portfolio-content/sumati/index.html",
+            "dist/portfolio-content/catapult/index.html",
 
             "dist/css/main.min.css",
 
