@@ -60,7 +60,7 @@ projects = [
     ]
     "description": [
       "This is a shop for sale office and home equipment, home media, smartphones, Apple computers."
-      "HTML templates + LESS stylesheet development for e-commerce PHP shop"
+      "HTML templates + LESS stylesheet development for e-commerce PHP shop."
       "Our team: project manager, Photoshop-designer, I'm as HTML developer and PHP developer. We used the remote job system with Skype communication."
     ]
     "image": "market-page.png"
@@ -140,16 +140,17 @@ projects = [
     "tags": [
       "bootstrap"
       "sass"
-      "javascript"
+      "jade"
       "git"
       "github"
     ]
     "description": [
-      "This is application site."
-      "Our team consisted of: I'm as Web Developer, 1 project manager."
-      "We used Upwork and Skype, and also e-mail for communication."
+      "Catapult site is a platform to find and offer short term jobs."
+      " SASS & Bootstrap 3, Jade templates."
+      "I worked as Web Developer."
+      "My client and i used Upwork and Skype, and also e-mail for communication."
     ]
-    "image": "sumati-page.jpg"
+    "image": "catapult-page.png"
     "dir": "catapult"
   }
 
