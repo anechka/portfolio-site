@@ -1,0 +1,277 @@
+@cowberry_color: #f9006b;
+@light_cowberry_color: #f94394;
+
+@light_green: #43d17d;
+
+@white_color: #fff;
+
+@black_color: #000;
+
+@base_font: Arial, Verdana, Helvetica, sans-serif;
+
+@font_weight_bolder:  bolder;
+
+
+
+.margin_top(@top_pixels: 25px) {
+  margin-top: @top_pixels ;
+}
+
+
+
+
+a {
+  color: @black_color;
+  &:hover{color: @white_color; background-color: @cowberry_color; text-decoration: none;}
+
+  &.link {
+    color: @cowberry_color; font-weight: bold;
+
+    &:hover{color: @white_color;}
+  }
+
+}
+
+
+
+h4 {
+
+  font-family: @base_font;
+  color: #444;
+  font-weight: @font_weight_bolder;
+
+  a {font-family: @base_font;
+    color: #555;
+    font-weight: @font_weight_bolder;
+    text-decoration: none;
+   }
+
+}
+
+.header_content {
+  background-color: #221b42;
+  min-height: 120px;
+  position: relative;
+  padding: 10px 30px 0 20px;
+}
+
+
+.header_products_group
+  a {
+  padding: 2px 6px;
+  color: @white_color;
+  background-color: @black_color;
+  &:hover {
+    background-color: @light_cowberry_color; text-decoration: none
+  }
+}
+
+
+
+.header_nav
+  li {
+  display: inline;
+  float: right;
+  font-family: @base_font;
+  font-size: 14px;
+  font-weight: @font_weight_bolder;
+      a {
+        color: #5e5890;
+        &:hover {
+          color: @light_green;background: none;
+        }
+      }
+}
+
+
+.container_logo {
+
+  padding-left: 30px;
+  padding-bottom: 10px;
+  margin-top: -15px;
+
+}
+
+
+.search_form {
+  .form_container {
+    padding: 0;
+    margin-top: 20px;
+    .form_button_position {
+      .dropdown-menu {
+        background-color: rgba(34, 27, 66, 0.95);
+          li
+            a {
+            color: @light_cowberry_color;
+            &:hover{
+             /* Меню сверху, выпадающее в поисковой форме */
+              background: #DEDEFF;
+              color: #270d2f;}
+        }
+          .divider {
+          /* Разделитель в списке menu search */
+          background-color: #342b3d;
+        }
+      }
+    }
+  }
+}
+
+.form_button_position {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.button_dropdown {
+  border-right: 0;
+  border-radius: 0;
+
+}
+
+
+.sidebar {
+
+  font-family: @base_font;
+    ul {
+      &.parent {
+        position: relative;
+        list-style: none;
+        width: 200px;
+      }
+      li {
+        margin-bottom: 10px;
+        display: block;
+        a {
+          font-family: @base_font;
+          color: #555 ;
+          font-weight: @font_weight_bolder;
+          text-decoration: none;
+          &:hover {
+            color: @light_cowberry_color;
+            background: none;
+          }
+        }
+        ul {
+        /* background of square */
+          background-color: rgba(34, 27, 66, 0.95);
+          border-radius: 4px;
+          padding: 12px 18px;
+          position: absolute;
+          left: 200px;
+          top: 0;
+          display: none;
+          z-index: 1;
+          width: 200px;
+          li
+            a {
+            color: @light_cowberry_color;
+          }
+        }
+      }
+
+
+    }
+
+
+}
+
+
+.horizontal_line {
+
+  border: 1px solid #532e80;
+
+}
+
+.col-md-12.banner {
+  list-style: none;
+  padding: 0;
+  .img_banner {
+    display:inline-block;
+    margin-left: 15px;
+  }
+
+}
+
+.navigation_menu
+  li {
+  list-style: none;
+  display: inline;
+  margin-left: 45px;
+  a {
+   /* top links */
+    font-family: @base_font;
+    color: #382865;
+    font-weight: @font_weight_bolder;
+    text-decoration: none;
+    &:hover {
+      color: #4f3cb6;
+      background: none;
+    }
+  }
+}
+
+.middle-panel {
+  h4 {
+    color: @light_green;
+  }
+  p {color: #f9046f;}
+
+  .row {
+    p {color: #444;
+    font-size: small;
+    text-align: right;}
+  }
+
+}
+
+.btn_registration {
+  margin-top: 5px;
+  background-color: #f9046f;
+  color: #270d2f;
+  border: none;
+  &:hover {
+    background-color: #DEDEFF;
+    color: #270d2f;
+  }
+}
+
+
+.form_button2_position {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+.glyphicon_style {
+  color: @light_green;
+  top: 3px;
+  padding: 5px;
+}
+
+.product1 {
+
+  width:140px ;
+  height: 140px;
+}
+
+.icons_partner {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  margin-left: 10px;
+
+}
+
+.div_margin_top {
+  .margin_top;
+}
+
+
+
+
+
+
+
+

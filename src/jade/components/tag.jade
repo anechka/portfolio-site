@@ -1,0 +1,11 @@
+template#tag-template
+    - var vueTagComponent = {":class": "{ 'open': tags[tagname]}", ":href": "'#'+tagname", "@mouseover": "mouseOver", "@mouseout": "mouseOut", "@click": "click"}
+    a&attributes(vueTagComponent)
+
+        - var size = 96
+        - var vueImage = {":class": "lessClass", "alt": "{{* tagname}}", "title": "{{* tagname}}"}
+
+        img(
+        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+        width="#{size}px", height="#{size}px"
+        )&attributes(vueImage)

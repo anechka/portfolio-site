@@ -1,0 +1,55 @@
+.avatar() {
+    max-width: @max-avatar-size;
+    max-height: @max-avatar-size;
+    border: 4px solid #e5e9ee;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+    margin-top: @top-margin-for-div + 5px;
+}
+// Header icon design
+.header-icon() {
+    color: #FFF;
+    opacity: 0.6;
+}
+// Transition effect in Headers
+.header-transition() {
+    -webkit-transition: color 0.5s ease-in-out;
+    -moz-transition: color 0.5s ease-in-out;
+    -o-transition: color 0.5s ease-in-out;
+    -ms-transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+// Header decrease on mobile
+.header-and-email-480px() {
+    @media (max-width: @screen-xs) {
+        font-size: 2.5em;
+    }
+}
+// Header decrease on mobile
+.header-and-email-768px() {
+    @media (max-width: @screen-sm) {
+        font-size: 3em;
+    }
+}
+// Header decrease on mobile
+.skype-480px() {
+    @media (max-width: @screen-xs) {
+        font-size: 2.0em;
+    }
+}
+// Header decrease on mobile
+.skype-768px() {
+    @media (max-width: @screen-sm) {
+        font-size: 2.5em;
+    }
+}
+// tag sprite position in .svg image
+.process-sprite-position(@tagNumber, @width, @tag-gutter) {
+    @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);
+}
+
+// tag design inside project description
+.project-span-label-tag() {
+    background-color: @project-tag-bg-color;
+    color: @project-tag-text-color;
+    border-radius: @project-tag-radius;
+}

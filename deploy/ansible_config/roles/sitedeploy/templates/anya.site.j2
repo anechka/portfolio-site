@@ -4,17 +4,27 @@ server {
 	# Make site accessible from http://anya.site/
 	server_name anya.site;
 
-	root {{ site_root_dir }};
+	root {{ site_root_dir }}/dist;
 	index index.html index.htm;
 
+	# javascript routing
+	rewrite ^/django$ /#django permanent;
+	rewrite ^/bootstrap$ /#bootstrap permanent;
+	rewrite ^/less$ /#less permanent;
+	rewrite ^/sass$ /#sass permanent;
+	rewrite ^/nodejs$ /#nodejs permanent;
+	rewrite ^/python$ /#python permanent;
+	rewrite ^/jquery$ /#jquery permanent;
+	rewrite ^/angular$ /#angular permanent;
+
 	# deny access to .jade files
-	#
-	location /jade {
+	location /src {
 		deny all;
 	}
 
 	# serve static files directly
-	location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt|svg)$ {
+	location ~* ^.+.(jpg|jpeg|gif|css|png|js|ico|html|xml|txt|svg|otf|ttf|woff|woff2|eot)$ {
 		access_log	off;
+		expires		1w;
 	}
 }

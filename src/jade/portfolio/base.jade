@@ -1,0 +1,62 @@
+doctype html
+html(lang="en", data-type="portfolio")
+    head
+        block title
+
+        meta(charset="UTF-8")
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+          script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+          script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+        link(rel="stylesheet", href="../../css/main.min.css")
+
+    body.portfolio(style="background-color: #1c456f; color: white;")
+        .header_clouds
+        .header_container
+            a(href="http://anya.site")
+                img.img-circle.img-avatar(src="../../images/avatar.jpg", width="33%", height="33%", alt="Anya Novikova photo", title="Anya Novikova")
+
+        .container
+
+            - var www = "www.anya.site"
+            block portfolio-thumb
+
+            .row.description-content
+                .col-md-6.description-project
+                    .row
+                        h3
+                            i.icon-briefcase
+                            | About project
+
+                        block about-project
+
+                        h4 A little bit about the team.
+
+                        block about-team
+
+                    .row
+                        h3 My role
+
+                        block my-role
+
+                    .row
+                        h3 Result
+
+                        block result
+
+                block images-content
+
+
+        //- Concatenated by gulp task Javascript
+        script(type="text/javascript", src="../../js/all.js", defer="defer")
+
+        // Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        //-script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
+
