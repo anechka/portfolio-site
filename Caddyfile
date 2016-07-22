@@ -17,3 +17,14 @@ mime {
 	.ttf application/x-font-ttf
 	.eot application/vnd.ms-fontobject
 }
+
+redir {
+    /django     "/#/django"
+    /bootstrap     "/#/bootstrap"
+    /less     "/#/less"
+    /sass     "/#/sass"
+    /nodejs     "/#/nodejs"
+    /python     "/#/python"
+    /jquery     "/#/jquery"
+    /angular     "/#/angular"
+}
