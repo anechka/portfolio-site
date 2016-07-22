@@ -1,13 +1,13 @@
 /**
  * Created by menangen on 18.03.15.
  *
- *  [default: `gulp --production`] task compile production Jade, ugly Coffee and min Less to /dist dir.
+ *  [default: `gulp --production`] task compile production Jade, ugly Coffee and min Less to deploy/dist dir.
  *  [default: `gulp`] task compile development version of HTML, Javascript and CSS.
- *  [jade] task compile pretty htmls to /dist/index[-ru].html
- *  [jade-portfolio] individual task for compile portfolio jade to dist/portfolio-content/id-portfolio/index.html
- *  [javascript] task compile coffeescript from src/coffee to /dist/js/all.js
- *  [test] task for testing (compiled from coffee) javascript: dist/all.js, should run [jade] task before!
- *  [less] task compile src/less/main.less to /dist/main.min.css
+ *  [jade] task compile pretty htmls to deploy/dist/index[-ru].html
+ *  [jade-portfolio] individual task for compile portfolio jade to deploy/dist/portfolio-content/id-portfolio/index.html
+ *  [javascript] task compile coffeescript from src/coffee to deploy/dist/js/all.js
+ *  [test] task for testing (compiled from coffee) javascript: deploy/dist/all.js, should run [jade] task before!
+ *  [less] task compile src/less/main.less to deploy/dist/main.min.css
  *  [clean] task remove all HTMLs, Javascript and CSS files compiled by gulp.
 Please use [watch] task for development process with jade and less files. */
 var exec = require('child_process').execSync;
@@ -43,7 +43,7 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(production ? cssmin() : util.noop())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('deploy/dist/css'));
 });
 
 // Compile only 2 templates: index[-RU].jade
@@ -51,7 +51,7 @@ gulp.task('jade', function() {
     // Jade templates from src/jade folder
     gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
     .pipe(jade(production ? {} : {pretty: true})) // Call jade({pretty: true}) for dev
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('deploy/dist'));
 
 });
 
@@ -63,37 +63,37 @@ gulp.task('jade-portfolio', function() {
     gulp.src('src/jade/portfolio/conclave/conclave.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/conclave"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/conclave"));
 
     gulp.src('src/jade/portfolio/market/chipmarket.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/market"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/market"));
 
     gulp.src('src/jade/portfolio/pp/premium_parts.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/pp"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/pp"));
 
     gulp.src('src/jade/portfolio/imobo/imobo.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/imobo"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/imobo"));
 
     gulp.src('src/jade/portfolio/redalgo/redalgo.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/redalgo"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/redalgo"));
 
     gulp.src('src/jade/portfolio/sumati/sumati.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/sumati"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/sumati"));
 
     gulp.src('src/jade/portfolio/catapult/catapult.jade')
         .pipe(jade(jade_config))
         .pipe(rename("index.html"))
-        .pipe(gulp.dest("dist/portfolio-content/catapult"));
+        .pipe(gulp.dest("deploy/dist/portfolio-content/catapult"));
 
 });
 
@@ -107,7 +107,7 @@ gulp.task('jade-portfolio', function() {
 gulp.task('vendor-js', function() {
     return gulp.src('src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('dist/js/vendor'));
+        .pipe(gulp.dest('deploy/dist/js/vendor'));
 });
 
 gulp.task('javascript', function() {
@@ -126,9 +126,9 @@ gulp.task('javascript', function() {
         .pipe(concat('all.coffee'))
         .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
         .pipe(production ? uglify() : util.noop())
-        .pipe(addsrc('dist/js/vendor/vendor.js'))
+        .pipe(addsrc('deploy/dist/js/vendor/vendor.js'))
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('deploy/dist/js'));
 });
 
 gulp.task('coffee', ['javascript', 'test'], function () {
@@ -140,19 +140,19 @@ gulp.task('clean', function() {
 
     gulp.src(
         [
-            "dist/index.html",
-            "dist/index-ru.html",
-            "dist/portfolio-content/conclave/index.html",
-            "dist/portfolio-content/market/index.html",
-            "dist/portfolio-content/pp/index.html",
-            "dist/portfolio-content/imobo/index.html",
-            "dist/portfolio-content/redalgo/index.html",
-            "dist/portfolio-content/sumati/index.html",
-            "dist/portfolio-content/catapult/index.html",
+            "deploy/dist/index.html",
+            "deploy/dist/index-ru.html",
+            "deploy/dist/portfolio-content/conclave/index.html",
+            "deploy/dist/portfolio-content/market/index.html",
+            "deploy/dist/portfolio-content/pp/index.html",
+            "deploy/dist/portfolio-content/imobo/index.html",
+            "deploy/dist/portfolio-content/redalgo/index.html",
+            "deploy/dist/portfolio-content/sumati/index.html",
+            "deploy/dist/portfolio-content/catapult/index.html",
 
-            "dist/css/main.min.css",
+            "deploy/dist/css/main.min.css",
 
-            "dist/js/all.js"
+            "deploy/dist/js/all.js"
         ],
         {read: false}
     )
@@ -176,4 +176,9 @@ gulp.task('test', function() {
 
 gulp.task('server-update', function() {
     exec('ansible-playbook -i deploy/ansible_config/server deploy/ansible_config/update.yml', {stdio:[0,1,2]})
+});
+
+gulp.task('docker', function() {
+    exec("find deploy/dist -type f -name '*.DS_Store' -delete", {stdio:[0,1,2]});
+    exec('docker build -t "site.anya" deploy/', {stdio:[0,1,2]})
 });

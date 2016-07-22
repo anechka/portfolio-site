@@ -11,7 +11,7 @@ RUN curl "https://caddyserver.com/download/build?os=linux&arch=amd64" \
 COPY ./Caddyfile /etc/Caddyfile
 COPY dist/ /var/www/html
 
-EXPOSE 80
+EXPOSE 8080
 WORKDIR /var/www/html
 
-CMD ["/usr/bin/caddy"]
+CMD ["/usr/bin/caddy", "-conf=/etc/Caddyfile"]
