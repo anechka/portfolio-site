@@ -154,6 +154,22 @@ projects = [
     "dir": "catapult"
   }
 
+  {
+    "name": "Hammer"
+    "tags": [
+      "bootstrap"
+      "less"
+      "jade"
+      "javascript"
+      "jquery"
+    ]
+    "description": [
+      "ConversionHammer is a contact form for lead-generation businesses to instantly convert more sales leads through your website."
+    ]
+    "image": "hammer-page.png"
+    "dir": "hammer"
+  }
+
 ]
 
 tags =
