@@ -4,8 +4,8 @@ describe 'Testing Vue.js ViewModels', ->
   fs = require 'fs'
   jsdom = require 'jsdom'
 
-  indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
-  viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
+  indexHTML = fs.readFileSync "#{ root }deploy/docker/dist/index.html", "utf-8"
+  viewController = fs.readFileSync "#{ root }deploy/docker/dist/js/all.js", "utf-8"
 
   beforeAll (done) ->
     require('jasmine-expect');

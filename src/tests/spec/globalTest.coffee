@@ -4,8 +4,8 @@ describe 'Testing global objects', ->
   fs = require 'fs'
   jsdom = require 'jsdom'
 
-  indexHTML = fs.readFileSync "#{ root }dist/index.html", "utf-8"
-  viewController = fs.readFileSync "#{ root }dist/js/all.js", "utf-8"
+  indexHTML = fs.readFileSync "#{ root }deploy/docker/distindex.html", "utf-8"
+  viewController = fs.readFileSync "#{ root }deploy/docker/distjs/all.js", "utf-8"
 
   beforeAll (done) ->
     require('jasmine-expect');
