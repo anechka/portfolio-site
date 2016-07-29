@@ -96,6 +96,11 @@ gulp.task('jade-portfolio', function() {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/catapult"));
 
+    gulp.src('src/jade/portfolio/hammer/hammer.jade')
+        .pipe(jade(jade_config))
+        .pipe(rename("index.html"))
+        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/hammer"));
+
 });
 
 /* Concat this JS libs:
@@ -150,6 +155,7 @@ gulp.task('clean', function() {
             "deploy/docker/dist/portfolio-content/redalgo/index.html",
             "deploy/docker/dist/portfolio-content/sumati/index.html",
             "deploy/docker/dist/portfolio-content/catapult/index.html",
+            "deploy/docker/dist/portfolio-content/hammer/index.html",
 
             "deploy/docker/dist/css/main.min.css",
 

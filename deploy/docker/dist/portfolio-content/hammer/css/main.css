@@ -1,0 +1,392 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+.gutter-0 {
+  padding-right: 0;
+  padding-left: 0;
+}
+.bg-blue {
+  background: #006AFF;
+}
+.bg-white {
+  background: white;
+}
+.bg-grey {
+  background: #F4F4F4;
+}
+h1 {
+  font-size: 55px;
+}
+h3 {
+  font-size: 33px;
+  color: #006AFF;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.form-input {
+  background-color: #4C97FF;
+  color: #FFFFFF;
+  border-radius: 8px;
+  border-color: #4C97FF;
+  height: 60px;
+  margin-bottom: 30px;
+  line-height: 0;
+}
+.form-input::-moz-placeholder {
+  color: #FFFFFF;
+  font-size: 20px;
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.form-input:-ms-input-placeholder {
+  color: #FFFFFF;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.form-input::-webkit-input-placeholder {
+  color: #FFFFFF;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.diagonal {
+  -moz-transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.diagonal:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  overflow: visible;
+  width: 100%;
+  height: 1250px;
+  z-index: -1;
+  background: #FFFFFF;
+  -webkit-transform: skewY(3deg);
+  -moz-transform: skewY(3deg);
+  -ms-transform: skewY(3deg);
+  -o-transform: skewY(3deg);
+  /* transform: skewY(3deg); */
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .diagonal:after {
+    bottom: -10px;
+  }
+}
+@media (min-width: 491px) and (max-width: 991px) {
+  .diagonal:after {
+    bottom: -70px;
+  }
+}
+@media (min-width: 401px) and (max-width: 490px) {
+  .diagonal:after {
+    bottom: 10px;
+  }
+}
+@media (min-width: 360px) and (max-width: 400px) {
+  .diagonal:after {
+    bottom: 30px;
+  }
+}
+@media (min-width: 320px) and (max-width: 359px) {
+  .diagonal:after {
+    bottom: 80px;
+  }
+}
+/*Header Begin*/
+.collapse.in {
+  background: #FFFFFF;
+  border: none;
+}
+/*NAVIGATION*/
+header .navigation {
+  padding-top: 40px;
+  padding-bottom: 140px;
+  background: transparent;
+  border: none;
+}
+@media (max-width: 767px) {
+  header .navigation {
+    padding-top: 0;
+  }
+}
+header .navigation .logo-brand {
+  height: 60px;
+  border: 1px solid #006AFF;
+  border-bottom-right-radius: 20px;
+  padding: 15px 50px 15px 15px;
+}
+@media (min-width: 361px) and (max-width: 767px) {
+  header .navigation .logo-brand {
+    padding: 40px 50px 60px 15px;
+  }
+}
+@media (max-width: 360px) {
+  header .navigation .logo-brand {
+    padding: 15px 5px 0 5px;
+  }
+}
+header .navigation .logo-brand img.logo-hammer {
+  padding-right: 8px;
+  margin-top: -10px;
+}
+header .navigation .logo-brand span.logo-text {
+  font-size: 29px;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  header .navigation .logo-brand span.logo-text {
+    font-size: 35px;
+  }
+}
+@media (max-width: 440px) {
+  header .navigation .logo-brand span.logo-text {
+    font-size: 25px;
+  }
+}
+header .navigation .btn-toggle {
+  border: none;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  padding: 12px 20px 12px 20px;
+  color: #FFFFFF;
+  font-size: 25px;
+}
+header .navigation .btn-toggle:hover,
+header .navigation .btn-toggle:active {
+  background-color: #FFFFFF;
+  border-radius: 0;
+  color: #006AFF;
+}
+@media (max-width: 767px) {
+  header .navigation .btn-toggle {
+    padding: 30px 15px 5px 5px;
+  }
+}
+header .navigation .btn-toggle .icon-bars {
+  padding-left: 5px;
+}
+@media (min-width: 441px) and (max-width: 767px) {
+  header .navigation .btn-toggle {
+    font-size: 35px;
+  }
+}
+@media (max-width: 440px) {
+  header .navigation .btn-toggle {
+    font-size: 25px;
+  }
+}
+header .navigation .main-navbar {
+  float: right;
+}
+header .navigation .main-navbar > li > a {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+header .navigation .main-navbar > li > a:hover,
+header .navigation .main-navbar > li > a:active {
+  text-decoration: underline;
+  color: #FFFFFF;
+}
+@media (max-width: 767px) {
+  header .navigation .main-navbar > li > a {
+    color: #006AFF;
+    padding-bottom: 65px;
+  }
+  header .navigation .main-navbar > li > a:first-child {
+    padding-top: 30px;
+  }
+  header .navigation .main-navbar > li > a:hover,
+  header .navigation .main-navbar > li > a:active {
+    text-decoration: underline;
+    color: #006AFF;
+  }
+}
+@media (min-width: 361px) and (max-width: 767px) {
+  header .navigation .main-navbar > li > a {
+    font-size: 50px;
+  }
+}
+@media (max-width: 360px) {
+  header .navigation .main-navbar > li > a {
+    font-size: 35px;
+  }
+}
+header .navigation .main-navbar > li:last-child > a {
+  color: #006AFF;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+}
+header .navigation .main-navbar > li:last-child > a:hover,
+header .navigation .main-navbar > li:last-child > a:active {
+  text-decoration: none;
+  color: #006AFF;
+}
+@media (min-width: 421px) and (max-width: 767px) {
+  header .navigation .main-navbar {
+    float: left;
+    margin-left: 50px;
+  }
+}
+@media (max-width: 420px) {
+  header .navigation .main-navbar {
+    float: left;
+    margin-left: 35px;
+  }
+}
+/*Header End*/
+/*HammerUp Section Begin*/
+#Hammerup {
+  color: #FFFFFF;
+}
+#Hammerup p.lead-generation {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+#Hammerup figcaption {
+  font-size: 11px;
+  margin-top: 10px;
+}
+#Hammerup .label-site-address {
+  font-size: 20px;
+  margin-top: 60px;
+}
+#Hammerup .see-it-btn {
+  color: #006AFF;
+  border-color: #FFFFFF;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-bottom: 140px;
+  width: 166px;
+}
+#Hammerup .see-it-btn:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(76, 151, 255, 0.21);
+  color: #FFFFFF;
+}
+/*HammerUp Section End*/
+/*Installation Section Begin*/
+section#Installation {
+  color: #383838;
+  font-size: 16px;
+}
+section#Installation a {
+  color: #006AFF;
+  text-decoration: none;
+}
+section#Installation img.hammer-blue {
+  padding-right: 20px;
+  margin-top: -10px;
+}
+section#Installation .btn-icon-group {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+section#Installation .btn-icon-group .btn-with-icon {
+  background: #00357F;
+  color: #FFFFFF;
+  font-size: 18px;
+  border-color: #00357F;
+}
+section#Installation .btn-icon-group .create-btn {
+  font-size: 18px;
+  color: #FFFFFF;
+  background: #006AFF;
+  border-color: #006AFF;
+}
+section#Installation span.your-install-code {
+  font-size: 20px;
+}
+section#Installation .form-textarea {
+  background-color: #00357F;
+  border: 1px solid #00357F;
+  color: #FFFFFF;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  min-height: 300px;
+}
+section#Installation .form-textarea::-moz-placeholder {
+  color: #FFFFFF;
+  font-size: 13px;
+  background: #00357F;
+}
+section#Installation .form-textarea:-ms-input-placeholder {
+  color: #FFFFFF;
+  font-size: 13px;
+  background: #00357F;
+}
+section#Installation .form-textarea::-webkit-input-placeholder {
+  color: #FFFFFF;
+  font-size: 13px;
+  background: #00357F;
+}
+section#Installation span.tag-head {
+  color: #006AFF;
+}
+section#Installation .click-here-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+section#Installation .tech-support-box {
+  margin-bottom: 90px;
+}
+/*Installation Section End*/
+footer .footer-nav {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+footer .footer-nav > li > a {
+  color: #FFFFFF;
+  font-size: 16px;
+  border-right: 1px solid #FFFFFF;
+  padding-right: 15px;
+}
+footer .footer-nav .icon-heart {
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+/*TESTIMONIALS PAGE BEGIN*/
+header .navigation.testimonials-nav {
+  padding-top: 24px;
+  padding-bottom: 34px;
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  header .navigation.testimonials-nav {
+    padding-top: 0;
+  }
+}
+.main-content {
+  background: linear-gradient(to right, #F4F4F4 50%, white 50%);
+}
+#testimonials h1 {
+  color: #006AFF;
+  margin-top: 120px;
+  margin-bottom: 60px;
+}
+#testimonials p.lead-generation {
+  color: #373737;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+#testimonials .testimonials-content {
+  background: #FFFFFF;
+}
+#testimonials .description p {
+  font-size: 16px;
+  margin-top: 30px;
+}
+#testimonials .description p:last-child {
+  margin-bottom: 230px;
+}
+/*TESTIMONIALS PAGE END*/

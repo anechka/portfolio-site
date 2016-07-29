@@ -156,6 +156,7 @@ projects = [
 
   {
     "name": "Hammer"
+    "task": "Sketch to HTML"
     "tags": [
       "bootstrap"
       "less"
@@ -165,8 +166,11 @@ projects = [
     ]
     "description": [
       "ConversionHammer is a contact form for lead-generation businesses to instantly convert more sales leads through your website."
+      "LESS & Bootstrap 3, Jade templates."
+      "I worked as Web Developer."
+      "My client and i used Upwork and Skype, and also e-mail for communication."
     ]
-    "image": "hammer-page.png"
+    "image": "hammer-page@2x.png"
     "dir": "hammer"
   }
 
