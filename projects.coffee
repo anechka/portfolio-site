@@ -176,6 +176,8 @@ projects = [
 
 ]
 
+www = "ane4k.in"
+
 tags =
   django: off
   bootstrap: off

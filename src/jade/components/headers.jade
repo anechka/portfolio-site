@@ -1,0 +1,33 @@
+.row
+    .col-md-12.avatar.text-center
+        img.img-circle.img-avatar(src="images/avatar.jpg", width="120px", height="120px", alt="Anya Novikova photo", title="Anya Novikova")
+.row
+    .col-md-12.margined-top-div.text-center
+        span(title="TOP 10 Upwork HTML5 Developer").name-header.centered-scale-element HTML5 Jade Javascript developer Anya Novikova
+.row
+    .col-md-6.margined-top-div.text-center#mail
+
+        - var mailView = {":href": "link"}
+        a&attributes(mailView)
+            span.email
+                i.icon-mail-alter
+
+            - mailView = {"v-text": "email"}
+            span(title="Send me email").email.centered-scale-element&attributes(mailView)
+
+    .col-md-6.margined-top-div.text-center
+        span(alt="Skype login", title="My login in Skype").skype-header.left
+            i.icon-skype
+        span(alt="Skype login", title="My login in Skype").skype-header.center ane4kanoka
+.row
+    .col-md-12.margined-top-div.text-center.profiles-content
+        // Upwork profile
+        .col-md-6
+            a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                //- SVG include as inline <svg> element
+                include ../../../deploy/docker/dist/images/upwork-profile-link.svg
+        // Github profile
+        .col-md-6.margined-top-div
+            a.external-profile.github-profile(href="https://github.com/anechka")
+                i.icon-github-alter
+                | github.com/anechka

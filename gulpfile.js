@@ -32,7 +32,7 @@ gulp.task('default', ['jade','jade-portfolio','less','javascript']);
 
 gulp.task('watch', ['jade', 'less'], function () {
         gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade', 'src/jade/components/*.jade'], ['jade']);
-        gulp.watch(['src/jade/portfolio/**/*'], ['jade-portfolio']);
+        gulp.watch(['src/jade/portfolio/projects/**/*'], ['jade-portfolio']);
         gulp.watch(['src/less/**/*'], ['less']);
     }
 );
@@ -58,46 +58,47 @@ gulp.task('jade', function() {
 
 // Compile portfolio jade files
 gulp.task('jade-portfolio', function() {
-    var jade_config = production ? {} : {pretty: true};
+    var jadeVariables = {www: "www.ane4k.in"};
+    var jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
 
-    // Jade templates from /portfolio
-    gulp.src('src/jade/portfolio/conclave/conclave.jade')
-        .pipe(jade(jade_config))
+    // Jade templates from /portfolio/projects
+    gulp.src('src/jade/portfolio/projects/conclave/conclave.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/conclave"));
 
-    gulp.src('src/jade/portfolio/market/chipmarket.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/market/chipmarket.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/market"));
 
-    gulp.src('src/jade/portfolio/pp/premium_parts.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/pp/premium_parts.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/pp"));
 
-    gulp.src('src/jade/portfolio/imobo/imobo.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/imobo/imobo.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/imobo"));
 
-    gulp.src('src/jade/portfolio/redalgo/redalgo.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/redalgo/redalgo.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/redalgo"));
 
-    gulp.src('src/jade/portfolio/sumati/sumati.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/sumati/sumati.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/sumati"));
 
-    gulp.src('src/jade/portfolio/catapult/catapult.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/catapult/catapult.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/catapult"));
 
-    gulp.src('src/jade/portfolio/hammer/hammer.jade')
-        .pipe(jade(jade_config))
+    gulp.src('src/jade/portfolio/projects/hammer/hammer.jade')
+        .pipe(jade(jadeConfig))
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/hammer"));
 
@@ -148,14 +149,7 @@ gulp.task('clean', function() {
         [
             "deploy/docker/dist/index.html",
             "deploy/docker/dist/index-ru.html",
-            "deploy/docker/dist/portfolio-content/conclave/index.html",
-            "deploy/docker/dist/portfolio-content/market/index.html",
-            "deploy/docker/dist/portfolio-content/pp/index.html",
-            "deploy/docker/dist/portfolio-content/imobo/index.html",
-            "deploy/docker/dist/portfolio-content/redalgo/index.html",
-            "deploy/docker/dist/portfolio-content/sumati/index.html",
-            "deploy/docker/dist/portfolio-content/catapult/index.html",
-            "deploy/docker/dist/portfolio-content/hammer/index.html",
+            "deploy/docker/dist/portfolio-content/**/index.html",
 
             "deploy/docker/dist/css/main.min.css",
 
@@ -187,5 +181,5 @@ gulp.task('server-update', function() {
 
 gulp.task('docker', function() {
     exec("find deploy/docker/dist -type f -name '*.DS_Store' -delete", {stdio:[0,1,2]});
-    exec('docker build -t '+ DockerContainerName + ' deploy/', {stdio:[0,1,2]})
+    exec('docker build -t '+ DockerContainerName + ' deploy/docker', {stdio:[0,1,2]})
 });

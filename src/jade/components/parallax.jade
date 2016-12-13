@@ -1,0 +1,14 @@
+.container.parallax_container
+    .design-copy Menangen design
+    ul#scene
+        -
+            var VueLayer1 = {":src": "layer1Src"}
+            var VueLayer2 = {":src": "layer2Src"}
+            var VueLayer3 = {":src": "layer3Src"}
+            var VueLayer4 = {":src": "layer4Src"}
+            var VueLayer5 = {":src": "layer5Src"}
+        li.layer(data-depth="0.00"): img.cloud_layer&attributes(VueLayer5)
+        li.layer(data-depth="0.10"): img.cloud_layer&attributes(VueLayer1)
+        li.layer(data-depth="0.30"): img.cloud_layer.cloud_two&attributes(VueLayer2)
+        li.layer(data-depth="0.60"): img.cloud_layer.cloud_three&attributes(VueLayer3)
+        li.layer(data-depth="1.00"): img.cloud_layer.cloud_four&attributes(VueLayer4)

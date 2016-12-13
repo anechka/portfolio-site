@@ -97,7 +97,7 @@ view_controller = ->
     el: '#mail'
     data:
       # Creating e-mail link with JS (spamers prevent)
-      email: if isrussian() then "pesik" + "@" + "ane4k" + ".in" else "anya" + "@" + "anya" + ".site"
+      email: "pesik" + "@" + window.www
 
     created: ->
       @link = "mailto:" + @email

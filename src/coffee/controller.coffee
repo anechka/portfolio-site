@@ -16,7 +16,7 @@ modelSetup = ->
     # Image src updates
     project.image = "images/portfolio-thumb/#{project.image}"
     # Project location in dir for <a> tag
-    project.href = if project.dir then "portfolio-content/#{project.dir}" else "http://www.anya.site"
+    project.href = if project.dir then "portfolio-content/#{project.dir}" else "http://www." + window.www
     project.time = if project.time then polyglot.t('months', smart_count: project.time) else "1 week"
     project.task = if project.task then project.task else "PSD to HTML"
 
