@@ -1,6 +1,6 @@
 $ ->
   # Selecting index or portfolio controllers in module
-  if $("html").attr("data-type") is "index"
+  if $("meta[name=application-name]")[0].content is "index"
 
     window.projects = modelSetup()
     

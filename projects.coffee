@@ -175,16 +175,3 @@ projects = [
   }
 
 ]
-
-www = "ane4k.in"
-
-tags =
-  django: off
-  bootstrap: off
-  less: off
-  sass: off
-  nodejs: off
-  python: off
-  javascript: off
-  jquery: off
-  angular: off

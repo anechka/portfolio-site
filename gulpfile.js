@@ -25,8 +25,10 @@ var concat = require('gulp-concat');
 var addsrc = require('gulp-add-src');
 var clean = require('gulp-clean');
 
+var DockerContainerRepository = "menangen/site.anya";
+var siteDomain = "ane4k.in";
+
 var production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
-var DockerContainerName = "site.anya";
 
 gulp.task('default', ['jade','jade-portfolio','less','javascript']);
 
@@ -49,16 +51,17 @@ gulp.task('less', function() {
 
 // Compile only 2 templates: index[-RU].jade
 gulp.task('jade', function() {
+    var jadeVariables = {www: siteDomain};
     // Jade templates from src/jade folder
     gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
-    .pipe(jade(production ? {} : {pretty: true})) // Call jade({pretty: true}) for dev
-    .pipe(gulp.dest('deploy/docker/dist'));
-
+    // Set jade({pretty: true}) for dev HTML output
+        .pipe(jade(production ? {data: jadeVariables} : {pretty: true, data: jadeVariables}))
+        .pipe(gulp.dest('deploy/docker/dist'));
 });
 
 // Compile portfolio jade files
 gulp.task('jade-portfolio', function() {
-    var jadeVariables = {www: "www.ane4k.in"};
+    var jadeVariables = {www: siteDomain};
     var jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
 
     // Jade templates from /portfolio/projects
@@ -181,5 +184,5 @@ gulp.task('server-update', function() {
 
 gulp.task('docker', function() {
     exec("find deploy/docker/dist -type f -name '*.DS_Store' -delete", {stdio:[0,1,2]});
-    exec('docker build -t '+ DockerContainerName + ' deploy/docker', {stdio:[0,1,2]})
+    exec('docker build -t '+ DockerContainerRepository + ' deploy/docker', {stdio:[0,1,2]})
 });

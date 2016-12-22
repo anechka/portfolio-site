@@ -17,14 +17,7 @@
 
             i {
                 position: relative;
-
-                &.icon-briefcase {
-                    top: -3px;
-                }
-
-                &.icon-link {
-                    top: -2px;
-                }
+                top: -2px;
             }
 
             @media (max-width: 480px) {
@@ -33,8 +26,9 @@
                 vertical-align:top;
             }
 
-            h1, h2, h3, h4 {
-                color: #333;
+            h1, h2, h3,
+            h4, h5, h6 {
+                color: @portfolio-site-header-color;
                 margin-left: 12px;
             }
 
@@ -131,13 +125,13 @@
     }
 
     .btn-default {
-        color: #333;
-        background-color: #FFF;
-        border-color: #CCC;
+        color: #505050;
+        background-color: #FFF4B4;
+        border-color: #FFF4B4;
         &:hover {
-            color: #002C4D;
-            background-color: #FFF;
-            border-color: #00d2ff;
+            color: #17566B;
+            background-color: #FCD634;
+            border-color: #FCD634;
         }
     }
 
@@ -171,7 +165,7 @@
             color: #372d7a;
 
             background-color: #aca9e0;
-            border-color: #8c7df2;
+            border-color: #aca9e0;
         }
     }
 
