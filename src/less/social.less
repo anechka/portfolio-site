@@ -1,0 +1,107 @@
+#mail > a {
+    span.email {
+        font-family: "Days", sans-serif;
+        font-size: 48px;
+
+        color: @cloud-rain-color;
+
+        .header-transition;
+        .header-and-email-768px;
+        .header-and-email-480px;
+
+        i.icon-mail-alter {
+            .header-icon;
+            .header-transition;
+
+            @media (max-width: @screen-lg) {
+                font-size: 80%;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        color: @green-grass-color;
+        text-decoration: none;
+
+        > span.email {
+            color: @green-grass-color;
+            transition: none;
+        }
+
+    }
+}
+
+span.skype-header {
+    font-family: "Days", sans-serif;
+    font-size: 48px;
+
+    .skype-768px;
+    .skype-480px;
+
+    &.left > i.icon-skype {
+        .header-icon;
+        position: relative;
+
+        top: 4px;
+        left: 0.1em;
+
+        @media (max-width: @screen-sm) {
+            left: 0;
+            top: 2px;
+        }
+    }
+
+    &.center {
+        color: @cloud-rain-color;
+        .header-transition;
+
+        &:hover {
+            color: @green-grass-color;
+            transition: none;
+        }
+    }
+}
+
+/* Link to External resources (buttons) */
+.profiles-content {
+
+    a.external-profile {
+        font-size: 150%;
+        font-weight: bold;
+
+        border-radius: 8px;
+        padding: 8px 12px 8px 8px;
+
+        margin-left: 4px;
+        margin-right: 4px;
+
+        @media (max-width: @screen-xs) {
+            font-size: 100%;
+        }
+
+        /* oDesk / Upwork */
+        &.odesk-profile svg:hover {
+
+            #GO-TO-PROFILE, #ShapeUP { fill: #6fda44 }
+
+        }
+
+        /* Github */
+        &.github-profile {
+            color: @sky-light-color-saturated;
+            background: @dark-blue-color;
+            border: 1px solid @dark-blue-color;
+            transition: color 2s ease-in, background 0.5s ease-in-out;
+
+            &:hover {
+                color: @green-grass-color;
+                text-decoration: none;
+
+                background: none;
+                border: 1px solid @green-grass-color;
+
+                transition: none;
+            }
+        }
+    }
+}

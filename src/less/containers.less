@@ -23,51 +23,6 @@
                 line-height: 2em;
             }
 
-            /* Link to External resources (buttons) */
-            &.profiles-content {
-
-                a.external-profile {
-                    font-size: 150%;
-                    font-weight: bold;
-
-                    border-radius: 8px;
-                    padding: 10px;
-
-                    margin-left: 4px;
-                    margin-right: 4px;
-
-                    @media (max-width: @screen-xs) {
-                        font-size: 100%;
-                    }
-
-                    /* oDesk / Upwork */
-                    &.odesk-profile svg:hover {
-
-                        #GO-TO-PROFILE, #ShapeUP { fill: #6fda44 }
-
-                    }
-
-                    /* Github */
-                    &.github-profile {
-                        color: @cloud-white-color;
-                        background: @dark-blue-color;
-                        border: 1px solid @dark-blue-color;
-                        transition: color 2s ease-in, background 0.5s ease-in-out;
-
-                        &:hover {
-                            color: @green-grass-color;
-                            text-decoration: none;
-
-                            background: none;
-                            border: 1px solid @green-grass-color;
-
-                            transition: none;
-                        }
-                    }
-                }
-            }
-
-
             &#counter {
                 color: @sky-blue-color;
                 font-family: "Days", Helvetica, Arial, sans-serif;

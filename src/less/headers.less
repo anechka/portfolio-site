@@ -7,65 +7,6 @@ span.name-header {
     .header-and-email-768px;
     .header-and-email-480px;
 }
-
-#mail > a {
-    span.email {
-        font-family: "Days", sans-serif;
-        font-size: 48px;
-
-        color: @orange-color;
-
-        .header-transition;
-        .header-and-email-768px;
-        .header-and-email-480px;
-
-        i.icon-mail-alter {
-            .header-icon;
-            .header-transition;
-
-            @media (max-width: @screen-lg) {
-                font-size: 80%;
-            }
-        }
-    }
-
-    &:hover, &:focus {
-        color: @light-purple-color;
-        text-decoration: none;
-
-        > span.email, > span.email i.icon-mail-alter {
-            color: @light-purple-color;
-            transition: none;
-        }
-
-    }
-}
-
-span.skype-header {
-    font-family: "Days", sans-serif;
-    font-size: 48px;
-
-    .skype-768px;
-    .skype-480px;
-
-    &.left > i.icon-skype {
-        .header-icon;
-        position: relative;
-
-        top: 4px;
-        left: 0.1em;
-
-        @media (max-width: @screen-sm) {
-            left: 0;
-            top: 2px;
-        }
-    }
-
-    &.center {
-        color: @fade-purple-color;
-    }
-}
-
 // Portfolio Headers:
 .portfolio {
     .header_clouds {

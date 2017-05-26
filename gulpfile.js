@@ -26,7 +26,7 @@ var addsrc = require('gulp-add-src');
 var clean = require('gulp-clean');
 
 var DockerContainerRepository = "menangen/site.anya";
-var siteDomain = "ane4k.in";
+var siteDomain = "novikova.us";
 
 var production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
 
