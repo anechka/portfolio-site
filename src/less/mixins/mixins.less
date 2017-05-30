@@ -42,6 +42,9 @@
         font-size: 2.5em;
     }
 }
+
+.padding-inline() { display: inline; padding-right: @about-developer-padding }
+
 // tag sprite position in .svg image
 .process-sprite-position(@tagNumber, @width, @tag-gutter) {
     @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);

@@ -74,7 +74,7 @@ describe 'Testing Vue.js ViewModels', ->
       return
 
     it 'Projects counter have proper default text', ->
-      expect(viewModels.counterView.getCounterText()).toBe projects.length + ' projects total'
+      expect(viewModels.counterView.getCounterText()).toBe projects.length + ' projects released'
       return
 
     it 'Projects counter can get text', ->
@@ -89,9 +89,9 @@ describe 'Testing Vue.js ViewModels', ->
       expect(viewModels.counterView.setCounter).toBeDefined()
       return
 
-    it 'Have a text: "1 project" for setCounter(1)', ->
+    it 'Have a text: "Show 1 project" for setCounter(1)', ->
       viewModels.counterView.setCounter 1
-      expect(viewModels.counterView.getCounterText()).toBe '1 project'
+      expect(viewModels.counterView.getCounterText()).toBe 'Show 1 project'
       return
 
     it 'Have a text: "Test-Text" for setCounterText(Test-Text)', ->

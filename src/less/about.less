@@ -1,0 +1,39 @@
+#developer-info-row {
+    // Fix vertical position for centering between header and tags
+    position: relative;
+    top: 12px;
+
+    .col-md-12 {
+        // .text-center fix on mobile < 480px
+        @media (max-width: @screen-xs) {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        h4, h5, h6 {
+            .padding-inline;
+            font-family: "Days", sans-serif;
+
+            color: @sky-alpha-color;
+            transition: color @transition-time ease-in;
+        }
+
+        summary {
+            display: inline;
+
+            strong {
+                .padding-inline;
+                color: @sky-light-color-saturated;
+            }
+            span {
+                .padding-inline;
+                color: @sky-blue-color;
+            }
+        }
+
+
+        &:hover {
+            h4, h5, h6 { color: @green-grass-color; transition: none; }
+        }
+    }
+}

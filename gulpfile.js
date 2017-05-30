@@ -53,7 +53,9 @@ gulp.task('less', function() {
 gulp.task('jade', function() {
     var jadeVariables = {www: siteDomain};
     // Jade templates from src/jade folder
-    gulp.src(['src/jade/index.jade', 'src/jade/index-ru.jade'])
+    gulp.src([
+        'src/jade/index.jade'// ,'src/jade/index-ru.jade'
+    ])
     // Set jade({pretty: true}) for dev HTML output
         .pipe(jade(production ? {data: jadeVariables} : {pretty: true, data: jadeVariables}))
         .pipe(gulp.dest('deploy/docker/dist'));
@@ -122,8 +124,11 @@ gulp.task('vendor-js', function() {
 
 gulp.task('javascript', function() {
     gulp
-        .src([// We can't use *.coffee because it is cause an error in jsdom testing engine with $(load) function
-            'projects.coffee',
+        .src([
+            // We can't use [*.coffee] because it is cause an error in jsdom testing engine with $(load) function
+            'src/coffee/settings/projects.coffee',
+            'src/coffee/settings/about.coffee',
+
             'src/coffee/controller.coffee',
             'src/coffee/router.coffee',
             'src/coffee/view_controller.coffee',

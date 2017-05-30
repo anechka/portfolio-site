@@ -60,7 +60,7 @@ displayTaggedProjects = (tagName) ->
     # Enable one tag active
     tags[tagName] = on
 
-    textAfter = textAfter + ' on ' + tagName
+    textAfter = textAfter.substr(5) + ' on ' + tagName
     window.viewModels.counterView.setCounterText textAfter
 
 
@@ -93,11 +93,20 @@ view_controller = ->
       layer5Src: "images/clouds_layer_5.png"
   )
 
+  developerInfoView = new Vue(
+    el: '#developer-info-row'
+    data:
+      model: window.about
+  )
+
+  # Alphabet for email encoder
+  a = 'na'
+
   mailView = new Vue(
     el: '#mail'
     data:
       # Creating e-mail link with JS (spamers prevent)
-      email: "pesik" + "@" + window.www
+      email: a.charAt(1)+a.charAt(0)+a.charAt(0)+a.charAt(1) + "@" + window.www
 
     created: ->
       @link = "mailto:" + @email
@@ -108,13 +117,14 @@ view_controller = ->
     el: '#counter'
     
     data:
-      projectsCounterText: polyglot.t('projects', smart_count: projects.length) + ' total'
+      projectsCounterText:
+        "More than " + polyglot.t('projects', smart_count: projects.length) + ' released'
       tagsNames: Object.keys tags
     
     methods:
       
       setCounter: (int) ->
-        @projectsCounterText = polyglot.t('projects', smart_count: int)
+        @projectsCounterText = "Show " + polyglot.t('projects', smart_count: int)
         return
       
       setCounterText: (text) ->
@@ -178,6 +188,7 @@ view_controller = ->
   )
   {
     cloudsView: cloudsView
+    developerInfoView: developerInfoView
     mailView: mailView
     counterView: counterView
     projectsView: projectsView
