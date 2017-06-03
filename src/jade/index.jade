@@ -1,13 +1,9 @@
 doctype html
 html(lang="en")
     head
-        title Anya Novikova | Top Upwork Developer, responsive HTML5, Jade, Javascript, Django
-
         include components/meta
 
-        style(rel='stylesheet').
-            BODY { color: rgba(179, 233, 255, 0.6) }
-            A.external-profile { color: #AFE1FF }
+        title Anya Novikova | Top Upwork Developer, responsive HTML5, Jade, Javascript, Django
 
     body
         include components/parallax
@@ -28,16 +24,7 @@ html(lang="en")
 
             include components/social
 
-            //- Russian website link hidden now
-            //-include components/flag
+        include styles
+        include scripts
 
-        link(rel="stylesheet", href="css/main.min.css")
-        //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
-        script(type="text/javascript", src="js/all.js", async="async")
-        //- Google Analytics script
-        script(type='text/javascript').
-            window._gaq = window._gaq || [];
-            window._gaq.push(['_setAccount', 'UA-50636137-1']);
-            window._gaq.push(['_trackPageview']);
-        //- script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
 include components/tag.jade

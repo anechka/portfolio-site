@@ -42,10 +42,10 @@ describe 'Testing global objects', ->
   describe 'model setup', ->
 
     it 'in module', ->
-      expect(window.modelSetup).toBeDefined()
+      expect(window.getProjectsModel).toBeDefined()
 
     it 'as Function', ->
-      expect(window.modelSetup).toBeFunction()
+      expect(window.getProjectsModel).toBeFunction()
     return
 
   describe 'set background and look setup', ->

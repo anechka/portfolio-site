@@ -10,36 +10,44 @@
  *  [less] task compile src/less/main.less to deploy/docker/dist/main.min.css
  *  [clean] task remove all HTMLs, Javascript and CSS files compiled by gulp.
 Please use [watch] task for development process with jade and less files. */
-var exec = require('child_process').execSync;
-var gulp = require('gulp');
-var util = require('gulp-util');
+const exec = require('child_process').execSync;
+const gulp = require('gulp');
+const util = require('gulp-util');
 
-var jade = require('gulp-jade');
-var less = require('gulp-less');
-var coffee = require('gulp-coffee');
+const rollup = require('rollup-stream');
+const babel = require("rollup-plugin-babel");
+const nodeResolve = require("rollup-plugin-node-resolve");
+const json = require("rollup-plugin-json");
+const buffer = require("vinyl-buffer");
+const source = require("vinyl-source-stream");
 
-var uglify = require('gulp-uglify');
-var cssmin = require('gulp-cssmin');
-var rename = require("gulp-rename");
-var concat = require('gulp-concat');
-var addsrc = require('gulp-add-src');
-var clean = require('gulp-clean');
+const jade = require('gulp-jade');
+const less = require('gulp-less');
+const coffee = require('gulp-coffee');
 
-var DockerContainerRepository = "menangen/site.anya";
-var siteDomain = "novikova.us";
+const uglify = require('gulp-uglify');
+const cssmin = require('gulp-cssmin');
+const rename = require("gulp-rename");
+const concat = require('gulp-concat');
+const addsrc = require('gulp-add-src');
+const clean = require('gulp-clean');
 
-var production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
+const DockerContainerRepository = "menangen/site.anya";
+const siteDomain = "novikova.us";
+
+const production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
 
 gulp.task('default', ['jade','jade-portfolio','less','javascript']);
 
-gulp.task('watch', ['jade', 'less'], function () {
-        gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade', 'src/jade/components/*.jade'], ['jade']);
-        gulp.watch(['src/jade/portfolio/projects/**/*'], ['jade-portfolio']);
-        gulp.watch(['src/less/**/*'], ['less']);
+gulp.task('watch', () => {
+        //gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade', 'src/jade/components/*.jade'], ['jade']);
+        //gulp.watch(['src/jade/portfolio/projects/**/*'], ['jade-portfolio']);
+        //gulp.watch(['src/less/**/*'], ['less']);
+        gulp.watch(['src/js/*.js'], ['javascript']);
     }
 );
 
-gulp.task('less', function() {
+gulp.task('less', () => {
     // less styles from src/less folder
     // only one root file need compile
     gulp.src('src/less/main.less')
@@ -50,7 +58,7 @@ gulp.task('less', function() {
 });
 
 // Compile only 2 templates: index[-RU].jade
-gulp.task('jade', function() {
+gulp.task('jade', () => {
     var jadeVariables = {www: siteDomain};
     // Jade templates from src/jade folder
     gulp.src([
@@ -62,7 +70,7 @@ gulp.task('jade', function() {
 });
 
 // Compile portfolio jade files
-gulp.task('jade-portfolio', function() {
+gulp.task('jade-portfolio', () => {
     var jadeVariables = {www: siteDomain};
     var jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
 
@@ -110,19 +118,37 @@ gulp.task('jade-portfolio', function() {
 });
 
 /* Concat this JS libs:
-* vue.min.js for reactive UI [http://vuejs.org/]
 * parallax.min.js for cloudsView [http://matthew.wagerfield.com/parallax/]
 * polyglot.min.js for language features (Plural of Nouns) [https://github.com/airbnb/polyglot.js]
-* cash.min.js for jQuery like attr manipulation, domready [https://github.com/kenwheeler/cash]
 * director.min.js for routing /#/tagName [https://github.com/flatiron/director]
 */
-gulp.task('vendor-js', function() {
+gulp.task('vendor-js', () => {
     return gulp.src('src/js/vendor/*.js')
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('deploy/docker/dist/js/vendor'));
 });
 
-gulp.task('javascript', function() {
+gulp.task('javascript', () => {
+    return rollup({
+        format: "iife",
+        moduleName: "website",
+        useStrict: false,
+        sourceMap: true,
+        entry: "src/js/main.js",
+        plugins: [
+            json(),
+            babel({
+                presets: ["es2015-rollup"]
+            })
+            //nodeResolve({ browser: true, jsnext: true, main: true }),
+        ]
+    })
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest('deploy/docker/dist/js'));
+});
+
+gulp.task('coffee', () => {
     gulp
         .src([
             // We can't use [*.coffee] because it is cause an error in jsdom testing engine with $(load) function
@@ -146,12 +172,7 @@ gulp.task('javascript', function() {
         .pipe(gulp.dest('deploy/docker/dist/js'));
 });
 
-gulp.task('coffee', ['javascript', 'test'], function () {
-        gulp.watch(['projects.coffee', 'src/coffee/**/*'], ['javascript', 'test']);
-    }
-);
-
-gulp.task('clean', function() {
+gulp.task('clean', () => {
 
     gulp.src(
         [
@@ -161,7 +182,7 @@ gulp.task('clean', function() {
 
             "deploy/docker/dist/css/main.min.css",
 
-            "deploy/docker/dist/js/all.js"
+            "deploy/docker/dist/js/"
         ],
         {read: false}
     )
@@ -169,7 +190,7 @@ gulp.task('clean', function() {
 
 });
 
-gulp.task('test', function() {
+gulp.task('test', () => {
     require('coffee-script').register();
     const jasmine = require('gulp-jasmine');
 
@@ -179,15 +200,18 @@ gulp.task('test', function() {
         // gulp-jasmine works on filepaths so you can't have any plugins before it
         .pipe(jasmine({
             reporter: new SpecReporter()
-        }));
+        }))
+        .on('error', function () {
+            process.exit(1)
+        });
 
 });
 
-gulp.task('server-update', function() {
+gulp.task('server-update', () => {
     exec('ansible-playbook -i deploy/ansible/ansible_config/server deploy/ansible/ansible_config/update.yml', {stdio:[0,1,2]})
 });
 
-gulp.task('docker', function() {
+gulp.task('docker', () => {
     exec("find deploy/docker/dist -type f -name '*.DS_Store' -delete", {stdio:[0,1,2]});
     exec('docker build -t '+ DockerContainerRepository + ' deploy/docker', {stdio:[0,1,2]})
 });
