@@ -1,5 +1,4 @@
-import about from "./about.json"
-import projects from "./projects.json"
+import model from "./models"
 
 const polyglot = new Polyglot({locale: 'en'});
 
@@ -17,10 +16,10 @@ function setupTags() {
     };
 }
 
-function getProjectsModel() {
+function processProjects() {
     polyglot.extend({'months': '%{smart_count} month |||| %{smart_count} months'});
 
-    const result = projects.reverse();
+    const result = model.state.projects.reverse();
 
     for (let index in result) {
         let project = result[index];
@@ -41,13 +40,12 @@ function getProjectsModel() {
         project.task = project.task ? project.task : "PSD to HTML";
     }
 
-    return result;
 }
 
 function setupAbout() {
     polyglot.extend({'years': '%{smart_count} year |||| %{smart_count} years'});
 
-    const exp = about.experience;
+    const exp = model.state.about.experience;
     for (let stackName in exp) {
         const years = exp[stackName];
         exp[stackName] = polyglot.t('years', {smart_count: years});
@@ -55,10 +53,10 @@ function setupAbout() {
 }
 
 export default function setupModels() {
-    window.www = document.querySelector("meta[name=author]").content;
-    window.projects = getProjectsModel();
+    model.state.www = document.querySelector("meta[name=author]").content;
+    processProjects();
     setupTags();
     setupAbout();
 
-    console.log("Complete setup Models");
+    console.info("Complete setup Models");
 }

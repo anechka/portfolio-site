@@ -1,3 +1,3 @@
 import { loadComplete } from './handlers'
 
-$(loadComplete);
+window.addEventListener("load", loadComplete, false);

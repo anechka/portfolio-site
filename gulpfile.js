@@ -194,12 +194,12 @@ gulp.task('test', () => {
     require('coffee-script').register();
     const jasmine = require('gulp-jasmine');
 
-    var SpecReporter = require('jasmine-spec-reporter');
+    const specReporter = require('jasmine-spec-reporter');
 
     gulp.src(['src/tests/spec/globalTest.coffee', 'src/tests/spec/modelsTest.coffee', 'src/tests/spec/viewModelTest.coffee'])
         // gulp-jasmine works on filepaths so you can't have any plugins before it
         .pipe(jasmine({
-            reporter: new SpecReporter()
+            reporter: new specReporter()
         }))
         .on('error', function () {
             process.exit(1)

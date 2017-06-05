@@ -1,6 +1,7 @@
 import setupModels from "./controller"
 import { setBackgroundAndLook } from "./viewController"
 import { setupViews, viewModels } from "./views"
+import router from "./router"
 
 let thunders = 0;
 let clouds_move_to_right = false;
@@ -20,7 +21,7 @@ export const loadComplete = function() {
                 setBackgroundAndLook();
                 setupViews();
                 //window.viewModels = view_controller();
-                //routeController();
+                router();
                 break;
             default:
                 //portfolio_set_background_and_look();
