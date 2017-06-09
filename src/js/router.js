@@ -11,12 +11,15 @@ export default function() {
 
     if (location.hasOwnProperty("hash")) {
         const hash = location.hash || '';
-        console.info(`hash is ${hash}`);
 
-        const word = hash.replace(trailingSlashRE, '').toLowerCase();
-        console.log(`replaced = ${word}`);
+        if (hash) {
+            console.info(`hash is ${hash}`);
 
-        showCounterTextForTag(word);
-        displayTaggedProjects(word);
+            const word = hash.replace(trailingSlashRE, '').toLowerCase();
+            console.log(`replaced = ${word}`);
+
+            showCounterTextForTag(word);
+            displayTaggedProjects(word);
+        }
     }
 }

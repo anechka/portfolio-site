@@ -1,5 +1,4 @@
 import setupModels from "./controller"
-import { setBackgroundAndLook } from "./viewController"
 import { setupView } from "./viewController"
 import router from "./router"
 
@@ -18,7 +17,7 @@ export const loadComplete = function() {
         switch (moduleName) {
             case "index":
                 setupModels();
-                const app = setupView();
+                setupView();
                 //window.viewModels = view_controller();
                 router();
                 break;
@@ -32,7 +31,7 @@ export const loadComplete = function() {
 
 export const interval_handler = function() {
     const make_thunder = () => {
-        const cloud_five_default_source = app.components.clouds.layer5Src;
+        const cloud_five_default_source = app.components.clouds.cloud5;
 
         const new_images_src_arr = [
             "clouds_layer_5_storm1.png",
@@ -51,10 +50,10 @@ export const interval_handler = function() {
             }
         }
 
-        app.components.clouds.layer5Src = `images/${src}`;
+        app.components.clouds.cloud5 = `images/${src}`;
 
         setTimeout(() => {
-            app.components.clouds.layer5Src = cloud_five_default_source;
+            app.components.clouds.cloud5 = cloud_five_default_source;
         }, 100);
     };
 

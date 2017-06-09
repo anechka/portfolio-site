@@ -20,7 +20,7 @@ interval_handler = ->
   return
 
 make_thunder = ->
-  cloud_five_default_source = window.viewModels.cloudsView.layer5Src
+  cloud_five_default_source = window.viewModels.cloudsView.cloud5
 
   new_images_src_arr = [
     "clouds_layer_5_storm1.png"

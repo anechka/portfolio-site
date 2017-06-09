@@ -1,6 +1,8 @@
 import PluralizeJS from "./vendor/pluralize"
 import model from "./models"
 
+const pluralize = PluralizeJS();
+
 function setupTags() {
     window.tags = {
         django: false,
@@ -18,8 +20,7 @@ function setupTags() {
 function processProjects() {
     const result = model.state.projects.reverse();
 
-    for (let index in result) {
-        let project = result[index];
+    for (let project of result) {
         let projectDescriptionsArray = project.description;
 
         let resultHTMLDescription = "";
@@ -33,7 +34,7 @@ function processProjects() {
         project.image = `images/portfolio-thumb/${project.image}`;
         // Project location in dir for <a> tag
         project.href = project.dir ? `portfolio-content/${project.dir}` : `http://${window.www}`;
-        //TODO: Fix project.time = project.time ? polyglot.t('months', {smart_count: project.time}) : "1 week";
+        project.time = project.time ? pluralize("month", project.time, true) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
     }
 
@@ -42,8 +43,8 @@ function processProjects() {
 function setupAbout() {
     const exp = model.state.about.experience;
     for (let stackName in exp) {
-        const years = exp[stackName];
-        //TODO:fix  exp[stackName] = polyglot.t('years', {smart_count: years});
+        const yearsNumber = exp[stackName];
+        exp[stackName] = pluralize("year", yearsNumber);
     }
 }
 

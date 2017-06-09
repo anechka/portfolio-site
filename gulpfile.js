@@ -19,17 +19,15 @@ const nodeResolve = require("rollup-plugin-node-resolve");
 const json = require("rollup-plugin-json");
 const vue = require("rollup-plugin-vue");
 const replace = require('rollup-plugin-replace');
+const butternut = require('rollup-plugin-butternut');
 const source = require("vinyl-source-stream");
 
 const jade = require('gulp-jade');
 const less = require('gulp-less');
-const coffee = require('gulp-coffee');
 
-const uglify = require('gulp-uglify');
 const cssmin = require('gulp-cssmin');
 const rename = require("gulp-rename");
 const concat = require('gulp-concat');
-const addsrc = require('gulp-add-src');
 const clean = require('gulp-clean');
 
 const DockerContainerRepository = "menangen/site.anya";
@@ -37,13 +35,13 @@ const siteDomain = "novikova.us";
 
 const production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
 
-gulp.task('default', ['jade','jade-portfolio','less','javascript']);
+gulp.task('default', ['jade', 'jade-portfolio', 'less', 'javascript']);
 
 gulp.task('watch', () => {
         //gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade', 'src/jade/components/*.jade'], ['jade']);
         //gulp.watch(['src/jade/portfolio/projects/**/*'], ['jade-portfolio']);
         //gulp.watch(['src/less/**/*'], ['less']);
-        gulp.watch(['src/js/*.js'], ['javascript']);
+        gulp.watch(['src/js/*.js', 'src/js/components/*.vue'], ['javascript']);
     }
 );
 
@@ -117,23 +115,12 @@ gulp.task('jade-portfolio', () => {
 
 });
 
-/* Concat this JS libs:
-* parallax.min.js for cloudsView [http://matthew.wagerfield.com/parallax/]
-* polyglot.min.js for language features (Plural of Nouns) [https://github.com/airbnb/polyglot.js]
-* director.min.js for routing /#/tagName [https://github.com/flatiron/director]
-*/
-gulp.task('vendor-js', () => {
-    return gulp.src('src/js/vendor/*.js')
-        .pipe(concat('vendor.js'))
-        .pipe(gulp.dest('deploy/docker/dist/js/vendor'));
-});
-
 gulp.task('javascript', () => {
     return rollup({
         format: "iife",
         moduleName: "website",
         useStrict: false,
-        sourceMap: !production,
+        sourceMap: false,
         entry: "src/js/main.js",
         plugins: [
             vue({compileTemplate: true}),
@@ -141,36 +128,14 @@ gulp.task('javascript', () => {
                 'process.env.NODE_ENV': JSON.stringify(production ? "production" : "development")
             }),
             json(),
-            nodeResolve({ browser: true, jsnext: true, main: true })
+            nodeResolve({ browser: true, jsnext: true, main: true }),
+            butternut({ sourceMap: false })
         ]
     })
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('deploy/docker/dist/js'));
 });
 
-gulp.task('coffee', () => {
-    gulp
-        .src([
-            // We can't use [*.coffee] because it is cause an error in jsdom testing engine with $(load) function
-            'src/coffee/settings/projects.coffee',
-            'src/coffee/settings/about.coffee',
-
-            'src/coffee/controller.coffee',
-            'src/coffee/router.coffee',
-            'src/coffee/view_controller.coffee',
-            'src/coffee/handlers.coffee',
-            // portfolio module
-            'src/coffee/portfolio/portfolio_view_controller.coffee',
-            // all compiled in one all.js and in the end wrapped by $() onload event
-            'src/coffee/main.coffee'
-        ])
-        .pipe(concat('all.coffee'))
-        .pipe(coffee({bare: true}).on('error', function(err) {console.log("Coffeescript compilation error!")}))
-        .pipe(production ? uglify() : util.noop())
-        .pipe(addsrc('deploy/docker/dist/js/vendor/vendor.js'))
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('deploy/docker/dist/js'));
-});
 
 gulp.task('clean', () => {
 
