@@ -15,10 +15,10 @@ const gulp = require('gulp');
 const util = require('gulp-util');
 
 const rollup = require('rollup-stream');
-const babel = require("rollup-plugin-babel");
 const nodeResolve = require("rollup-plugin-node-resolve");
 const json = require("rollup-plugin-json");
-const buffer = require("vinyl-buffer");
+const vue = require("rollup-plugin-vue");
+const replace = require('rollup-plugin-replace');
 const source = require("vinyl-source-stream");
 
 const jade = require('gulp-jade');
@@ -133,18 +133,18 @@ gulp.task('javascript', () => {
         format: "iife",
         moduleName: "website",
         useStrict: false,
-        sourceMap: true,
+        sourceMap: !production,
         entry: "src/js/main.js",
         plugins: [
+            vue({compileTemplate: true}),
+            replace({
+                'process.env.NODE_ENV': JSON.stringify(production ? "production" : "development")
+            }),
             json(),
-            babel({
-                presets: ["es2015-rollup"]
-            })
-            //nodeResolve({ browser: true, jsnext: true, main: true }),
+            nodeResolve({ browser: true, jsnext: true, main: true })
         ]
     })
     .pipe(source('bundle.js'))
-    .pipe(buffer())
     .pipe(gulp.dest('deploy/docker/dist/js'));
 });
 

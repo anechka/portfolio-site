@@ -1,6 +1,5 @@
+import PluralizeJS from "./vendor/pluralize"
 import model from "./models"
-
-const polyglot = new Polyglot({locale: 'en'});
 
 function setupTags() {
     window.tags = {
@@ -17,8 +16,6 @@ function setupTags() {
 }
 
 function processProjects() {
-    polyglot.extend({'months': '%{smart_count} month |||| %{smart_count} months'});
-
     const result = model.state.projects.reverse();
 
     for (let index in result) {
@@ -36,19 +33,17 @@ function processProjects() {
         project.image = `images/portfolio-thumb/${project.image}`;
         // Project location in dir for <a> tag
         project.href = project.dir ? `portfolio-content/${project.dir}` : `http://${window.www}`;
-        project.time = project.time ? polyglot.t('months', {smart_count: project.time}) : "1 week";
+        //TODO: Fix project.time = project.time ? polyglot.t('months', {smart_count: project.time}) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
     }
 
 }
 
 function setupAbout() {
-    polyglot.extend({'years': '%{smart_count} year |||| %{smart_count} years'});
-
     const exp = model.state.about.experience;
     for (let stackName in exp) {
         const years = exp[stackName];
-        exp[stackName] = polyglot.t('years', {smart_count: years});
+        //TODO:fix  exp[stackName] = polyglot.t('years', {smart_count: years});
     }
 }
 
