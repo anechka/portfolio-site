@@ -9,9 +9,12 @@ ul#scene
 </template>
 
 <script>
-    import { interval_handler } from "../handlers"
     import Parallax from '../vendor/parallax'
-
+    
+    let thunders = 0;
+    let clouds_move_to_right = false;
+    let parallaxView;
+    
     export default {
         data() {
             return {
@@ -30,33 +33,80 @@ ul#scene
             }
         },
         methods: {
-            mobile_parallax_set(ismobile) {
-                const parallax_view = new Parallax(this.$el);
-
+            mobileParallaxSetUp(ismobile) {
                 if (ismobile) {
-                    parallax_view.scalar(10, 10);
-                    parallax_view.invert(true, false);
-                    parallax_view.friction(0.1, 0.1);
-                    parallax_view.calibrate(true, false);
-                    parallax_view.limit(true, 50);
+                    parallaxView.scalar(10, 10);
+                    parallaxView.invert(true, false);
+                    parallaxView.friction(0.1, 0.1);
+                    parallaxView.calibrate(true, false);
+                    parallaxView.limit(true, 50);
                 } else {
-                    parallax_view.scalar(20, 50);
-                    parallax_view.invert(true, false);
-                    parallax_view.friction(0.2, 0.1);
+                    parallaxView.scalar(20, 50);
+                    parallaxView.invert(true, false);
+                    parallaxView.friction(0.2, 0.1);
+                }
+            },
+            intervalHandler() {
+                const makeThunder = () => {
+                    const cloudDefaultSource = this.cloudsImages.cloud5;
+
+                    const luke_const = Math.random();
+                    let src = this.hiddenImages.storm1;
+
+                    if (luke_const > 0.5) {
+                        src = this.hiddenImages.storm2;
+
+                        if (luke_const > 0.77) {
+                            src = this.hiddenImages.storm3
+                        }
+                    }
+
+                    this.cloudsImages.cloud5 = src;
+
+                    setTimeout(() => {
+                        this.cloudsImages.cloud5 = cloudDefaultSource;
+                    }, 100);
+                };
+
+                const luke_const = Math.random();
+
+                if (parallaxView.inputX <= -8) {
+                    clouds_move_to_right = false
+                }
+
+                if (parallaxView.inputX >= 10 || clouds_move_to_right) {
+
+                    parallaxView.inputX -= 0.003;
+                    clouds_move_to_right = true;
+
+                } else {
+                    parallaxView.inputX += 0.002
+                }
+
+                if ((luke_const > 0.77 && thunders < 5) || luke_const > 0.97) {
+                    makeThunder();
+                    thunders++;
+
+                    if (thunders > 10) {
+                        console.info("Reset thunders");
+                        thunders = 0
+                    }
                 }
             }
         },
         mounted() {
-            //setInterval(interval_handler, 120);
+            parallaxView = new Parallax(this.$el);
 
             switch (navigator.platform) {
                 case "iPhone":
                 case "iPhone Simulator":
                 case "Android":
                 case "iPad":
-                    this.mobile_parallax_set(true); break;
-                default: this.mobile_parallax_set(false);
+                    this.mobileParallaxSetUp(true); break;
+                default: this.mobileParallaxSetUp(false);
             }
+
+            setInterval(this.intervalHandler, 120);
         }
     }
 </script>

@@ -120,7 +120,7 @@ gulp.task('javascript', () => {
         format: "iife",
         moduleName: "website",
         useStrict: false,
-        sourceMap: false,
+        sourceMap: !production,
         entry: "src/js/main.js",
         plugins: [
             vue({compileTemplate: true}),
@@ -129,7 +129,7 @@ gulp.task('javascript', () => {
             }),
             json(),
             nodeResolve({ browser: true, jsnext: true, main: true }),
-            butternut({ sourceMap: false })
+            production ? butternut({ sourceMap: false }) : {}
         ]
     })
     .pipe(source('bundle.js'))

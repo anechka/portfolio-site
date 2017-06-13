@@ -44,7 +44,7 @@ function setupAbout() {
     const exp = model.state.about.experience;
     for (let stackName in exp) {
         const yearsNumber = exp[stackName];
-        exp[stackName] = pluralize("year", yearsNumber);
+        exp[stackName] = pluralize("year", yearsNumber, true);
     }
 }
 
