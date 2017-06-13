@@ -3,20 +3,6 @@ import model from "./models"
 
 const pluralize = PluralizeJS();
 
-function setupTags() {
-    window.tags = {
-        django: false,
-        bootstrap: false,
-        less: false,
-        sass: false,
-        nodejs: false,
-        python: false,
-        javascript: false,
-        jquery: false,
-        angular: false
-    };
-}
-
 function processProjects() {
     const result = model.state.projects.reverse();
 
@@ -38,6 +24,7 @@ function processProjects() {
         project.task = project.task ? project.task : "PSD to HTML";
     }
 
+    model.state.counter.text = `More than ${pluralize("project", model.state.projects.length, true)} released`
 }
 
 function setupAbout() {
@@ -51,7 +38,6 @@ function setupAbout() {
 export default function setupModels() {
     model.state.www = document.querySelector("meta[name=author]").content;
     processProjects();
-    setupTags();
     setupAbout();
 
     console.info("Complete setup Models");

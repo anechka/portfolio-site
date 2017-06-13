@@ -1,5 +1,6 @@
+<template lang="jade">
 .row
-    .tags.col-md-12.margined-top-div.text-center#tags
+    .tags.col-md-12.margined-top-div.text-center
         // Django tag
         tag(tagname="django")
         // Twitter Bootstrap tag
@@ -18,3 +19,12 @@
         tag(tagname="jquery")
         // Angular tag
         tag(tagname="angular")
+</template>
+
+<script>
+    import tag from "./oneTag.vue"
+
+    export default {
+        components: { tag }
+    }
+</script>
