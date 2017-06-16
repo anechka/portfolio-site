@@ -9,11 +9,11 @@
 
     .col-md-12.text-center
         h4.text-uppercase Preferred Environment
-        span {{ model.environment }}
+        span.environment {{ model.environment }}
 
     .col-md-12.text-center
         h4.text-uppercase Availability
-        span {{ model.availability }}
+        span.availability {{ model.availability }}
 </template>
 
 <script>

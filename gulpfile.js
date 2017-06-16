@@ -57,7 +57,7 @@ gulp.task('less', () => {
 
 // Compile only 2 templates: index[-RU].jade
 gulp.task('jade', () => {
-    var jadeVariables = {www: siteDomain};
+    let jadeVariables = {www: siteDomain};
     // Jade templates from src/jade folder
     gulp.src([
         'src/jade/index.jade'// ,'src/jade/index-ru.jade'
@@ -69,8 +69,8 @@ gulp.task('jade', () => {
 
 // Compile portfolio jade files
 gulp.task('jade-portfolio', () => {
-    var jadeVariables = {www: siteDomain};
-    var jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
+    let jadeVariables = {www: siteDomain};
+    let jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
 
     // Jade templates from /portfolio/projects
     gulp.src('src/jade/portfolio/projects/conclave/conclave.jade')
