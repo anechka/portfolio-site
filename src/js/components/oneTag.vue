@@ -1,5 +1,4 @@
-<template lang="jade">
-    - var size = 96
+<template lang="pug">
     a(
     :class="{'open': tags[tagname]}",
     :href="'#'+tagname",
@@ -7,6 +6,7 @@
     @mouseout="mouseOut",
     @click="click")
 
+        - var size = 96
         img(
         :class="lessClass", alt="{{* tagname}}", title="{{* tagname}}"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",

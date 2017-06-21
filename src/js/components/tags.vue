@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .row
     .tags.col-md-12.margined-top-div.text-center
         // Django tag

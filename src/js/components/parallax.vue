@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 ul#scene
     li.layer(data-depth="0.00"): img.cloud_layer(:src="cloudsImages.cloud5")
     li.layer(data-depth="0.10"): img.cloud_layer(:src="cloudsImages.cloud1")

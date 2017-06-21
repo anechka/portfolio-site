@@ -1,6 +1,6 @@
-<template lang="jade">
+<template lang="pug">
 .row
-    .col-md-12.margined-top-div.text-center.text-uppercase
+    .counter.col-md-12.margined-top-div.text-center.text-uppercase
         a(id="{{* name }}", v-for="name in tagsNames")
         span(v-text="model.text")
 </template>

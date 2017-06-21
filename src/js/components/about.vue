@@ -1,4 +1,4 @@
-<template lang="jade">
+<template lang="pug">
 .row#developer-info-row
     .col-md-12.text-center
         h4.text-uppercase Experience

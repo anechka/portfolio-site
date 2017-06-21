@@ -63,7 +63,7 @@ gulp.task('jade', () => {
         'src/jade/index.jade'// ,'src/jade/index-ru.jade'
     ])
     // Set jade({pretty: true}) for dev HTML output
-        .pipe(jade(production ? {data: jadeVariables} : {pretty: true, data: jadeVariables}))
+        .pipe(jade(production ? { data: jadeVariables } : { pretty: true, data: jadeVariables }))
         .pipe(gulp.dest('deploy/docker/dist'));
 });
 
