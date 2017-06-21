@@ -7,6 +7,7 @@
         about
         tags
         counter
+        include templates/feedback
 </template>
 
 <script>

@@ -1,3 +1,6 @@
+@import "mobile";
+@import "transition";
+
 .avatar() {
     max-width: @max-avatar-size;
     max-height: @max-avatar-size;
@@ -10,49 +13,7 @@
     color: @cloud-rain-color;
     opacity: 0.6;
 }
-// Transition effect in Headers
-.header-transition() {
-    -webkit-transition: color @transition-time ease-in-out;
-    -moz-transition: color @transition-time ease-in-out;
-    -o-transition: color @transition-time ease-in-out;
-    -ms-transition: color @transition-time ease-in-out;
-    transition: color @transition-time ease-in-out;
-}
-// Header decrease on mobile
-.header-and-email-480px() {
-    @media (max-width: @screen-xs) {
-        font-size: 2.5em;
-    }
-}
-// Header decrease on mobile
-.header-and-email-768px() {
-    @media (max-width: @screen-sm) {
-        font-size: 3em;
-    }
-}
-// Header decrease on mobile
-.skype-480px() {
-    @media (max-width: @screen-xs) {
-        font-size: 2.0em;
-    }
-}
-// Header decrease on mobile
-.skype-768px() {
-    @media (max-width: @screen-sm) {
-        font-size: 2.5em;
-    }
-}
-
-.padding-inline() { display: inline; padding-right: @about-developer-padding }
-
 // tag sprite position in .svg image
 .process-sprite-position(@tagNumber, @width, @tag-gutter) {
     @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);
-}
-
-// tag design inside project description
-.project-span-label-tag() {
-    background-color: @project-tag-bg-color;
-    color: @project-tag-text-color;
-    border-radius: @project-tag-radius;
 }

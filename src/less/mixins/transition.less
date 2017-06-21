@@ -1,0 +1,24 @@
+// Transition effect in Headers
+.header-transition() {
+  -webkit-transition: color @transition-time ease-in-out;
+  -moz-transition: color @transition-time ease-in-out;
+  -o-transition: color @transition-time ease-in-out;
+  -ms-transition: color @transition-time ease-in-out;
+  transition: color @transition-time ease-in-out;
+}
+// Transition effect in Feedback blockquote
+.background-transition() {
+  -webkit-transition: background-color @transition-background-time ease;
+  -moz-transition: background-color @transition-background-time ease;
+  -o-transition: background-color @transition-background-time ease;
+  -ms-transition: background-color @transition-background-time ease;
+  transition: background-color @transition-background-time ease;
+}
+
+.reset-transition() {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}

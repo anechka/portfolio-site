@@ -1,3 +1,8 @@
+.padding-inline() {
+    padding-right: @about-developer-padding;
+    display: inline;
+}
+
 #developer-info-row {
     // Fix vertical position for centering between header and tags
     position: relative;
@@ -33,7 +38,7 @@
 
 
         &:hover {
-            h4, h5, h6 { color: @green-grass-color; transition: none; }
+            h4, h5, h6 { color: @green-grass-color; .reset-transition() }
         }
     }
 }

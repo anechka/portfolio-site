@@ -6,7 +6,7 @@ export const loadComplete = function() {
     console.info("Processing");
 
     const $applicationMeta = document.querySelector("meta[name=application-name]");
-    if (typeof $applicationMeta !== 'undefined' && "content" in $applicationMeta) {
+    if (typeof $applicationMeta !== "undefined" && "content" in $applicationMeta) {
         const moduleName = $applicationMeta.content || "NONAME";
 
         console.info(`Loaded ${ moduleName } module`);

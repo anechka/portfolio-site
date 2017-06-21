@@ -25,7 +25,7 @@
 
         > span.email {
             color: @green-grass-color;
-            transition: none;
+            .reset-transition();
         }
 
     }
@@ -57,7 +57,7 @@ span.skype-header {
 
         &:hover {
             color: @green-grass-color;
-            transition: none;
+            .reset-transition();
         }
     }
 }
@@ -100,7 +100,7 @@ span.skype-header {
                 background: none;
                 border: 1px solid @green-grass-color;
 
-                transition: none;
+                .reset-transition();
             }
         }
     }
@@ -130,11 +130,13 @@ span.skype-header {
         border-color: @feedback-highlight-color;
         background-color: @feedback-bg-color;
         color: @feedback-color;
+        .background-transition();
 
         &:hover {
             /*color: @dark-blue-color;*/
             border-color: @feedback-bg-color;
             background-color: @feedback-highlight-color;
+            .reset-transition();
         }
     }
 }
