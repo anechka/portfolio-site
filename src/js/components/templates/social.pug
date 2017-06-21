@@ -1,13 +1,6 @@
 .row
-    .col-md-6.margined-top-div.text-center#mail
-
-        - var mailView = {":href": "link"}
-        a&attributes(mailView)
-            span.email
-                i.icon-mail-alter
-
-            - mailView = {"v-text": "email"}
-            span(title="Send me email").email.centered-scale-element&attributes(mailView)
+    .col-md-6.margined-top-div.text-center
+        email
 
     .col-md-6.margined-top-div.text-center
         span(alt="Skype login", title="My login in Skype").skype-header.left
@@ -17,9 +10,9 @@
     .col-md-12.margined-top-div.text-center.profiles-content
         // Upwork profile
         .col-md-6
-            a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+            a.external-profile.upwork-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
                 //- SVG include as inline <svg> element
-                include ../../../deploy/docker/dist/images/upwork-profile-link.svg
+                include ../../../../deploy/docker/dist/images/upwork-profile-link.svg
         // Github profile
         .col-md-6.margined-top-div
             a.external-profile.github-profile(href="https://github.com/anechka")

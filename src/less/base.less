@@ -8,17 +8,18 @@ BODY {
 
 
     @media (max-width: 768px) {
-        background-size: auto auto;
+        background-size: 100% auto;
         background-image: url("@{images}/background-ipad.jpg");
     }
 
-    @media (max-width: 320px) {
-        background-size: auto auto;
+    @media (max-width: 480px) {
+        background-size: 100% auto;
         background-image: url("@{images}/background-iphone.jpg")
     }
 
     @media (max-width: 320px) and (min-resolution: 192dpi) {
-        background-image: url("@{images}/background-hd.jpg");
+        background-size: cover;
+        background-image: url("@{images}/background-ipad.jpg");
     }
 
     ::selection {
