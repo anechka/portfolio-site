@@ -26,7 +26,11 @@
             &.counter {
                 color: @sky-blue-color;
                 font-family: "Days", Helvetica, Arial, sans-serif;
-                font-size: 18px
+                font-size: 18px;
+
+                @media (max-width: 480px) {
+                    line-height: 1.0em;
+                }
             }
 
             .centered-scale-element {

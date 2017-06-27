@@ -1,7 +1,8 @@
 BODY {
     background: url("@{images}/background-hd.jpg");
     background-size: cover;
-    background-color: #031b43;
+    color: rgba(179, 233, 255, 0.6);
+    background-color: #0c3157;
 
     overflow-x: hidden;
     overflow-y: auto;
@@ -12,13 +13,13 @@ BODY {
         background-image: url("@{images}/background-ipad.jpg");
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 320px) {
         background-size: 100% auto;
         background-image: url("@{images}/background-iphone.jpg")
     }
 
     @media (max-width: 320px) and (min-resolution: 192dpi) {
-        background-size: cover;
+        background-size: 100% auto;
         background-image: url("@{images}/background-ipad.jpg");
     }
 
