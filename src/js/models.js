@@ -7,7 +7,13 @@ const pluralize = PluralizeJS();
 const model = {
     state: {
         about,
-        projects,
+        projects: {
+            source: projects,
+            visibleProjectsGroup: null,
+            displayProjects(group) {
+                this.visibleProjectsGroup = group
+            }
+        },
         tags: {
             django: false,
             bootstrap: false,
@@ -28,7 +34,7 @@ const model = {
             showCounterTextForTag(tagName) {
                 let projectsNumberWithTag = 0;
 
-                for (let project of model.state.projects) {
+                for (let project of model.state.projects.source) {
                     const projectTagsArray = project.tags;
 
                     if (projectTagsArray.indexOf(tagName) !== -1) {

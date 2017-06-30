@@ -4,10 +4,10 @@ import model from "./models"
 const pluralize = PluralizeJS();
 
 function processProjects() {
-    const result = model.state.projects.reverse();
+    const result = model.state.projects.source.reverse();
 
     for (let project of result) {
-        let projectDescriptionsArray = project.description;
+        const projectDescriptionsArray = project.description;
 
         let resultHTMLDescription = "";
 
@@ -24,7 +24,7 @@ function processProjects() {
         project.task = project.task ? project.task : "PSD to HTML";
     }
 
-    model.state.counter.text = `More than ${pluralize("project", model.state.projects.length, true)} released`
+    model.state.counter.text = `More than ${pluralize("project", model.state.projects.source.length, true)} released`
 }
 
 function setupAbout() {
