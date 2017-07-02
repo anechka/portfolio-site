@@ -1,6 +1,6 @@
 <template lang="pug">
    .row
-        .col-md-10.col-md-offset-1.margined-top-div#projectsList
+        .col-md-10.col-md-offset-1.margined-top-div.projectsList
             //- Display filtered projects in loop
             .row(v-for="couple in group")
                 .col-md-6.col-sm-6.project(v-for="project in couple")

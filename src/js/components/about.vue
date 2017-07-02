@@ -1,5 +1,5 @@
 <template lang="pug">
-.row#developer-info-row
+.row.about-developer
     .col-md-12.text-center
         h4.text-uppercase Experience
 

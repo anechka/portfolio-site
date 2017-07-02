@@ -3,12 +3,13 @@
     display: inline;
 }
 
-#developer-info-row {
+.about-developer {
     // Fix vertical position for centering between header and tags
     position: relative;
     top: 12px;
 
     .col-md-12 {
+        padding: 3px 15px;
         // .text-center fix on mobile < 480px
         @media (max-width: @screen-xs) {
             text-align: left;
@@ -28,7 +29,7 @@
 
             strong {
                 .padding-inline;
-                color: @sky-light-color-saturated;
+                color: @cloud-color;
             }
             span {
                 .padding-inline;

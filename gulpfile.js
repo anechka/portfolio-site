@@ -136,7 +136,6 @@ gulp.task('javascript', () => {
     .pipe(gulp.dest('deploy/docker/dist/js'));
 });
 
-
 gulp.task('clean', () => {
 
     gulp.src(

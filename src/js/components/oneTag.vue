@@ -49,7 +49,7 @@
                 model.state.counter.setCounter(this.counterText);
             },
             click() {
-                //this.counterText = displayTaggedProjects(this.tagname);
+                this.counterText = model.state.projects.displayProjectsByTag(this.tagname);
             }
         }
     }

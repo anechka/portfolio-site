@@ -10,8 +10,28 @@ const model = {
         projects: {
             source: projects,
             visibleProjectsGroup: null,
-            displayProjects(group) {
-                this.visibleProjectsGroup = group
+            displayProjectsByTag(tagName) {
+                const group = [];
+                const couple = [];
+
+                let counterText = model.state.counter.text;
+                let tags = model.state.tags;
+
+                if (tags.hasOwnProperty(tagName)) {
+                    // Disable all tags on loop
+                    for (let key in tags) {
+                        tags[key] = false
+                    }
+
+                    // Enable one tag active
+                    tags[tagName] = true;
+
+                    counterText = counterText.substr(5) + ' on ' + tagName;
+
+
+                    this.visibleProjectsGroup = group;
+                }
+                return counterText
             }
         },
         tags: {
