@@ -1,13 +1,25 @@
 // Header decrease on mobile
-.header-and-email-480px() {
+.header-480px() {
+  @media (max-width: @screen-xs) {
+    font-size: 2.5em;
+  }
+}
+// Header decrease on mobile
+.header-768px() {
+  @media (max-width: @screen-sm) {
+    font-size: 3em;
+  }
+}
+// Email decrease on mobile
+.email-480px() {
   @media (max-width: @screen-xs) {
     font-size: 2.0em;
   }
 }
-// Header decrease on mobile
-.header-and-email-768px() {
+
+.email-768px() {
   @media (max-width: @screen-sm) {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 // Header decrease on mobile

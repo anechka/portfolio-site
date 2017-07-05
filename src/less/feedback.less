@@ -1,12 +1,38 @@
 .feedback {
-    .col-md-6 {
-        padding: 12px 0;
-        font-size: @blockquote-font-size;
 
-        @media (max-width: 480px) {
-            padding: 3px 0;
+    table {
+        margin: auto;
+
+        tr {
+            span {
+                display: inline-block;
+                max-width: 15em;
+
+                // Bootstrap's blockquote margin clone
+                margin-bottom: 20px;
+                //padding-left: 32px;
+
+                font-size: 1.5em;
+                font-weight: bold;
+
+                color: @white-color;
+                .header-transition(0.1s)
+            }
+
+            &:hover {
+                span { color: @green-grass-color; .reset-transition(); }
+
+                blockquote {
+                    color: @feedback-hover-color;
+                    border-color: @feedback-bg-color;
+                    background-color: @feedback-highlight-color;
+                    .reset-transition();
+                }
+            }
         }
+
     }
+
 
     h1 {
         color: @green-light-color;
@@ -14,29 +40,19 @@
         &:hover { color: @green-grass-color }
     }
 
-    .job {
-        font-weight: bold;
-
-        color: @white-color;
-        &:hover { color: @green-grass-color }
-    }
-
     blockquote {
         border-left: 5px solid;
-        border-color: @feedback-highlight-color;
+        border-color: @feedback-left-border-color;
+        //border-radius: 2px;
+
         background-color: @feedback-bg-color;
         color: @feedback-color;
-        .background-transition();
+        .background-transition(@transition-background-time);
 
-        &:hover {
-            /*color: @dark-blue-color;*/
-            border-color: @feedback-bg-color;
-            background-color: @feedback-highlight-color;
-            .reset-transition();
-        }
+        max-width: 15.0em;
     }
 
     @media (max-width: 480px) {
-        line-height: 1.2em;
+        line-height: 1.5em;
     }
 }

@@ -5,13 +5,13 @@
 
         color: fadeout(@cloud-color, 40%);
 
-        .header-transition;
-        .header-and-email-768px;
-        .header-and-email-480px;
+        .header-transition(@transition-header-time);
+        .email-768px;
+        .email-480px;
 
         i.icon-mail-alter {
             .header-icon;
-            .header-transition;
+            .header-transition(@transition-header-time);
 
             @media (max-width: @screen-lg) {
                 font-size: 80%;
@@ -53,7 +53,7 @@ span.skype-header {
 
     &.center {
         color: fadeout(@cloud-color, 40%);
-        .header-transition;
+        .header-transition(@transition-header-time);
 
         &:hover {
             color: @green-grass-color;
@@ -83,12 +83,12 @@ span.skype-header {
         /* Github */
         &.github-profile {
             border-radius: 8px;
-            padding: 10px 19.4px 10px 15px;
+            padding: 10px 19.4px 12px 15px;
 
             color: fadeout(@cloud-color, 10%);
             background: @dark-blue-color;
             border: none;
-            transition: color @transition-time ease-in;
+            transition: color @transition-header-time ease-in;
 
             &:hover {
                 color: @green-grass-color;
@@ -98,6 +98,10 @@ span.skype-header {
                 border: 1px solid @green-grass-color;
 
                 .reset-transition();
+            }
+
+            @media (max-width: @screen-xs) {
+                padding: 10px 15px;
             }
         }
     }

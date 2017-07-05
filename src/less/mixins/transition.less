@@ -1,5 +1,5 @@
 // Transition effect in Headers
-.header-transition() {
+.header-transition(@transition-time) {
   -webkit-transition: color @transition-time ease-in-out;
   -moz-transition: color @transition-time ease-in-out;
   -o-transition: color @transition-time ease-in-out;
@@ -7,7 +7,7 @@
   transition: color @transition-time ease-in-out;
 }
 // Transition effect in Feedback blockquote
-.background-transition() {
+.background-transition(@transition-background-time) {
   -webkit-transition: background-color @transition-background-time ease;
   -moz-transition: background-color @transition-background-time ease;
   -o-transition: background-color @transition-background-time ease;
