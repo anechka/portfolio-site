@@ -44,7 +44,7 @@
     export default {
         data() {
             return {
-                group: model.state.visibleProjectsGroup
+                group: model.state.projects.visibleProjectsGroup
             }
         }
     }

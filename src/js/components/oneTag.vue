@@ -8,7 +8,7 @@
 
         - var size = 96
         img(
-        :class="lessClass", alt="{{* tagname}}", title="{{* tagname}}"
+        :class="lessClass", :alt="tagname", :title="tagname"
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
         width="#{size}px", height="#{size}px"
         )
@@ -32,7 +32,7 @@
                     'sprite-jquery': false,
                     'sprite-angular': false
                 },
-                counterText: ""
+                counterText: model.state.counter.text
             };
         },
         props: ['tagname'],
@@ -43,7 +43,7 @@
 
         methods: {
             mouseOver() {
-                this.counterText = model.state.counter.showCounterTextForTag(this.tagname);
+                model.state.counter.showCounterTextForTag(this.tagname);
             },
             mouseOut() {
                 model.state.counter.setCounter(this.counterText);

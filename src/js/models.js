@@ -9,10 +9,12 @@ const model = {
         about,
         projects: {
             source: projects,
-            visibleProjectsGroup: null,
+            visibleProjectsGroup: [],
             displayProjectsByTag(tagName) {
-                const group = [];
-                const couple = [];
+                let couple = [];
+                const group = this.visibleProjectsGroup;
+                // Clear group:[ Couple[ {project}, {project} ], Couple[ {project}, {project} ] ]
+                group.splice(0, group.length);
 
                 let counterText = model.state.counter.text;
                 let tags = model.state.tags;
@@ -28,8 +30,20 @@ const model = {
 
                     counterText = counterText.substr(5) + ' on ' + tagName;
 
+                    for (let project of model.state.projects.source) {
+                        const projectTagsArray = project.tags;
 
-                    this.visibleProjectsGroup = group;
+                        if (projectTagsArray.indexOf(tagName) !== -1) {
+                            couple.push(project)
+                        }
+
+                        if (couple.length === 2) {
+                            group.push(couple);
+                            couple = []
+                        }
+                    }
+
+                    if (couple.length === 1) group.push(couple);
                 }
                 return counterText
             }

@@ -83,12 +83,12 @@ ul#scene
                     parallaxView.inputX += 0.002
                 }
 
-                if ((luke_const > 0.77 && thunders < 5) || luke_const > 0.97) {
+                if ((luke_const > 0.85 && thunders < 5) || luke_const > 0.97) {
                     makeThunder();
                     thunders++;
 
                     if (thunders > 10) {
-                        console.info("Reset thunders");
+                        //console.log("Reset thunders");
                         thunders = 0
                     }
                 }
