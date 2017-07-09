@@ -45,7 +45,7 @@
 
     > a {
         display: inline-block;
-
+        color: @gold-color;
         margin-top: @tag-margin-right-md;
         margin-right: @tag-margin-right-lg;
         @media (max-width: @screen-md) {
@@ -53,9 +53,12 @@
         }
 
         /* hover and open square tags */
-        &.open > img { border-bottom: medium solid }
+        &.open {
+            &:hover { color: @green-grass-color }
+            > img { border-bottom: medium solid }
+        }
         &:focus {
-            color: @orange-color;
+            color: @gold-color;
         }
         &:hover, &.open {
             > img {
@@ -65,8 +68,6 @@
                     .position-sprite-hover;
                 }
             }
-
-
         }
         
         > img {/* default svg sprite on img background */
