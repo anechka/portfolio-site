@@ -2,8 +2,10 @@
 @gold-color: #C2B196;
 @green-grass-color: #6fda44;
 @green-light-color: lighten(@green-grass-color, 20%);
+@green-dark-color: darken(saturate(@green-grass-color, 25%), 40%);
 @aquamarine-color: #31D4C2;
 @aqua-blue-color: #00f1ff;
+@aqua-dark-color: darken(@aqua-blue-color, 20%);
 @blue-color: #0085FF;
 @navy-grey-opaque-color: fadeout(#28C2FF, 95%);
 @water-light-blue-color: #45809B;
@@ -13,6 +15,7 @@
 @light-grey-purple-color: #c8c8de;
 @light-purple-color: #A090E4;
 @fade-purple-color: #57588C;
+@fade-purple-opaque-color: fadeout(lighten(@fade-purple-color, 10%), 5%);
 @body-background-color: saturate(#445566, 25%);
 @water-blue-color: #1A3D65;
 @dark-navy-bg-color: #0e3256;
