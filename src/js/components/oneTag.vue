@@ -1,7 +1,7 @@
 <template lang="pug">
     a(
     :class="{'open': tags[tagname]}",
-    :href="'#'+tagname",
+    :href="`#${tagname}`",
     @mouseover="mouseOver",
     @mouseout="mouseOut",
     @click="click")
@@ -32,7 +32,7 @@
                     'sprite-jquery': false,
                     'sprite-angular': false
                 },
-                counterText: model.state.counter.text
+                counterText: ""
             };
         },
         props: ['tagname'],
@@ -43,10 +43,10 @@
 
         methods: {
             mouseOver() {
-                model.state.counter.showCounterTextForTag(this.tagname);
+                this.counterText = model.state.counter.showCounterTextForTag(this.tagname);
             },
             mouseOut() {
-                model.state.counter.setCounter(this.counterText);
+                this.counterText = model.state.counter.setCounter(this.counterText);
             },
             click() {
                 this.counterText = model.state.projects.displayProjectsByTag(this.tagname);

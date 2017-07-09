@@ -63,7 +63,9 @@ const model = {
             text: "",
             setCounter(value) {
                 if (typeof value === "string") this.text = value;
-                else this.text = `Show ${pluralize("project", value, true)}`
+                else this.text = `Show ${pluralize("project", value, true)}`;
+
+                return this.text
             },
             showCounterTextForTag(tagName) {
                 let projectsNumberWithTag = 0;

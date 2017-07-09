@@ -31,14 +31,21 @@
     }
 }
 
-span.skype-header {
+.skype {
     font-family: "Days", sans-serif;
     font-size: 48px;
 
     .skype-768px;
     .skype-480px;
 
-    &.left > i.icon-skype {
+    &:hover {
+        .center{
+            color: @green-grass-color;
+            .reset-transition();
+        }
+    }
+
+    .left > i.icon-skype {
         .header-icon;
         position: relative;
 
@@ -51,14 +58,9 @@ span.skype-header {
         }
     }
 
-    &.center {
+    .center {
         color: fadeout(@cloud-color, 40%);
         .header-transition(@transition-header-time);
-
-        &:hover {
-            color: @green-grass-color;
-            .reset-transition();
-        }
     }
 }
 
