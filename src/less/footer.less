@@ -1,5 +1,5 @@
 .footer-bg-gradient() {
-    background-image: linear-gradient(
+    background: transparent linear-gradient(
             to right,
             fadeout(darken(saturate(@water-blue-color, 25%), 5%), 25%) 0%,
             fadeout(@water-blue-color, 25%) 50%,
@@ -17,6 +17,7 @@ footer {
 
     a {
         display: block;
+        padding: 0;
 
         color: fadeout(@cloud-color, 85%);
         .footer-bg-gradient();
@@ -31,8 +32,13 @@ footer {
         }
 
         &:focus {
-            background-color: @dark-blue-color;
+            background-color: fadeout(@light-purple-color, 25%);
             color: @green-grass-color;
+        }
+
+        &:visited {
+            background-color: fadeout(@light-purple-color, 25%);
+            color: fadeout(@blue-color, 50%);
         }
 
         span {
