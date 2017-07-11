@@ -24,8 +24,8 @@
         }
 
         .project {
-            //      top     right               bottom                  left
-            padding: 0 @projects-padding (@projects-padding * 2) @projects-padding;
+            //      top     right               bottom                     left
+            margin: 0 @projects-margin (@projects-margin * 2) @projects-margin;
 
             @media (min-width: @screen-xs) {
                 max-width: 50%;
@@ -33,21 +33,22 @@
 
             a.bordered-block {
                 display: block;
-                border: solid 1px @blue-color;
+                border: @projects-border;
                 min-height: 100%;
-                padding: 0 8px;
+                padding: @project-padding;
 
                 font-family: "Gotham Medium", "Arial", "Helvetica", sans-serif;
 
                 -webkit-backdrop-filter: blur(10px);
                 backdrop-filter: blur(10px);
-                background: rgba(1, 31, 54, 0.24);
+                background: @projects-background;
                 
                 &:hover {
-                    border-color: @sky-blue-color;
+                    border-color: @sky-cloudly-color;
                     background: none;
 
                     .project-header-container {
+                        background: @projects-header-hover-background;
 
                         .header-top {
 
@@ -58,7 +59,7 @@
                         }
 
                         .project-info, i.icon {
-                            color: @aquamarine-color;
+                            color: @projects-header-hover-color;
                         }
 
                         .project-info > span.value {
@@ -68,12 +69,15 @@
                     }
 
                     .description p {
+                        color: @project-p-text-color-hover;
                         background: @project-p-bg-light-color;
                     }
                 }
 
                 .project-header-container {
-                    min-height: 100px;
+                    min-height: 120px;
+                    background: @projects-header-background;
+                    padding: 10px 0;
                     line-height: 1.2;
 
                     .header-top {
@@ -100,7 +104,7 @@
                         padding: 0 6px;
 
                         &.project-info {
-                            color: saturate(darken(@sky-blue-color, 10%), 100%);
+                            color: saturate(darken(@sky-cloudly-color, 10%), 100%);
 
                             span.value {
                                 color: @gold-color;
@@ -109,7 +113,7 @@
                     }
 
                     i.icon {
-                        color: saturate(darken(@sky-blue-color, 30%), 100%);;
+                        color: saturate(darken(@sky-cloudly-color, 30%), 100%);;
                     }
                 }
                 .project-thumbnail {
@@ -193,10 +197,12 @@
 
                     p {
                         margin-top: 5px;
-                        padding: 0 4px;
+                        padding: 15px;
 
                         color: @project-p-text-color;
                         background: @project-p-bg-dark-color;
+
+                        border-radius: @project-p-border-radius;
                     }
                 }
             }

@@ -9,23 +9,34 @@
 @about-developer-padding: 8px;
 @about-developer-header-color: @aqua-dark-color;
 
-@projects-padding: 4px;
+@projects-margin: 4px;
+@project-padding: 0 15px;
+
+@projects-border: solid 1px @dark-navy-color;
+@projects-background: fadeout(darken(@water-blue-color, 5%), 50%);
+
+@projects-header-background: @sky-opaque-color;
+@projects-header-hover-background: fadeout(@dark-navy-bg-color, 20%);
+@projects-header-hover-color: fadeout(@sky-cloudly-color, 60%);
+
 @project-tag-font-size: 92.85%;
 @project-tag-text-color: @cloud-color;
-@project-tag-bg-color: @water-light-blue-color;
+@project-tag-bg-color: @water-light-green-color;
 @project-tag-radius: .3em;
 
-@project-p-text-color: @cloud-color;
-@project-p-bg-light-color: @navy-grey-opaque-color;
+@project-p-text-color: darken(saturate(@sky-color, 20%), 20%);
+@project-p-text-color-hover: lighten(@cloud-color, 5%);
+@project-p-bg-light-color: @sky-opaque-color;
 @project-p-bg-light-color2: @grey-opaque-color;
-@project-p-bg-dark-color: @black-opaque-color;
+@project-p-bg-dark-color: fadeout(darken(@water-blue-color, 5%), 50%);
+@project-p-border-radius: 4px;
 
 @porfolio-site-link-color: @orange-color;
 @portfolio-site-header-color: @water-blue-color;
 
 @feedback-highlight-color: @green-grass-color;
 @feedback-left-border-color: @light-grey-purple-color;
-@feedback-color: @white-color;
+@feedback-color: white;
 @feedback-text-hover-color: @green-dark-color;
 @feedback-bg-color: @fade-purple-color;
 
