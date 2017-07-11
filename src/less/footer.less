@@ -1,7 +1,7 @@
 .footer-bg-gradient() {
     background: transparent linear-gradient(
             to right,
-            fadeout(darken(saturate(@water-blue-color, 25%), 5%), 25%) 0%,
+            fadeout(darken(saturate(@water-blue-color, 25%), 10%), 25%) 0%,
             fadeout(@water-blue-color, 25%) 50%,
             fadeout(@dark-blue-color, 70%) 100%
     );
@@ -19,7 +19,7 @@ footer {
         display: block;
         padding: 0;
 
-        color: fadeout(@cloud-color, 85%);
+        color: fadeout(@dark-blue-color, 50%);
         .footer-bg-gradient();
 
         font-size: 0.75em;
