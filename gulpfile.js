@@ -14,14 +14,6 @@ const exec = require('child_process').execSync;
 const gulp = require('gulp');
 const util = require('gulp-util');
 
-const rollup = require('rollup-stream');
-const nodeResolve = require("rollup-plugin-node-resolve");
-const json = require("rollup-plugin-json");
-const vue = require("rollup-plugin-vue");
-const replace = require('rollup-plugin-replace');
-const butternut = require('rollup-plugin-butternut');
-const source = require("vinyl-source-stream");
-
 const jade = require('gulp-jade');
 const less = require('gulp-less');
 
@@ -113,27 +105,6 @@ gulp.task('jade-portfolio', () => {
         .pipe(rename("index.html"))
         .pipe(gulp.dest("deploy/docker/dist/portfolio-content/hammer"));
 
-});
-
-gulp.task('javascript', () => {
-    return rollup({
-        format: "iife",
-        moduleName: "website",
-        useStrict: false,
-        sourceMap: !production,
-        entry: "src/js/main.js",
-        plugins: [
-            vue({compileTemplate: true}),
-            replace({
-                'process.env.NODE_ENV': JSON.stringify(production ? "production" : "development")
-            }),
-            json(),
-            nodeResolve({ browser: true, jsnext: true, main: true }),
-            production ? butternut({ sourceMap: false }) : {}
-        ]
-    })
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest('deploy/docker/dist/js'));
 });
 
 gulp.task('clean', () => {
