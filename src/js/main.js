@@ -1,3 +1,9 @@
-import { loadComplete } from './core/handlers'
+import setupModels from "./core/controller"
+import { setupView } from "./core/viewController"
+import router from "./core/router"
 
-window.addEventListener("load", loadComplete, false);
+window.addEventListener("load", () => {
+    setupModels();
+    setupView();
+    router();
+}, false);
