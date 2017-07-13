@@ -1,3 +1,3 @@
-import { loadComplete } from './handlers'
+import { loadComplete } from './core/handlers'
 
 window.addEventListener("load", loadComplete, false);

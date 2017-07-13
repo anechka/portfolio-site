@@ -1,9 +1,12 @@
 BODY {
-    background-image: url("@{images}/background.jpg");
+    background: @blur-bg-color @bg-gradient;
     background-size: 100% auto;
     color: fadeout(@cloud-color, 40%);
     overflow-x: hidden;
 
+    @media only screen and (max-width: 1365px) {
+        background-image: url("@{images}/background.jpg");
+    }
     // FullHD
     @media only screen and (min-width: 1366px) {
         background-image: url("@{images}/background-fhd.jpg");

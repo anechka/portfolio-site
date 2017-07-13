@@ -12,13 +12,10 @@
         display: block;
 
         @media (min-width: @screen-xs-min) {
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
+            .flex();
 
             .project {
-                display: -webkit-flex;
+                .flex();
                 flex-direction: row;
             }
         }

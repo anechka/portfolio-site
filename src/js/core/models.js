@@ -1,7 +1,7 @@
-import about from "./about.json"
-import projects from "./projects.json"
+import about from "../../json/about.json"
+import projects from "../../json/projects.json"
 
-import PluralizeJS from "./vendor/pluralize"
+import PluralizeJS from "../vendor/pluralize"
 const pluralize = PluralizeJS();
 
 const model = {

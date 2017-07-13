@@ -10,6 +10,9 @@
         projects
         include templates/feedback
         include templates/social
+
+    link(rel="stylesheet", href="css/main.min.css")
+    link(rel="icon", href="favicon.ico")
 </template>
 
 <script>

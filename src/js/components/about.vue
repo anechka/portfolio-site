@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import model from "../models"
+    import model from "../core/models"
 
     export default {
         data() {

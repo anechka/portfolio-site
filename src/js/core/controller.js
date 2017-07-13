@@ -1,4 +1,4 @@
-import PluralizeJS from "./vendor/pluralize"
+import PluralizeJS from "../vendor/pluralize"
 import model from "./models"
 
 const pluralize = PluralizeJS();
