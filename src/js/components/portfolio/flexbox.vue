@@ -34,7 +34,7 @@
                                     .tag.text-center(v-for="tag in project.tags")
                                         span.label.label-tag(v-text="tag")
 
-                        .col-md-8.col-sm-12.description(v-html="project.description")
+                        .col-md-8.col-sm-12.description(v-html="project.descriptionHTML")
 </template>
 
 <script>

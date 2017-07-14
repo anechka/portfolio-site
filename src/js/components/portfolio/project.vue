@@ -1,6 +1,6 @@
 <template lang="pug">
-    .col-md-10.col-md-offset-1.margined-top-div.description-content(style="background: white")
-        descriptionComponent
+    .col-md-10.col-md-offset-1.margined-top-div.description-content(style="background: white; color: grey")
+        descriptionComponent(:project="project")
         linksComponent
 </template>
 
@@ -8,10 +8,14 @@
     import descriptionComponent from "./description.vue"
     import linksComponent from "./links.vue"
 
+    import model from "../../core/models"
+
+    const project = model.state.projects.getByName("Conclave");
+
     export default {
         data() {
             return {
-                currentView: ""
+                project: project
             }
         },
         components: {

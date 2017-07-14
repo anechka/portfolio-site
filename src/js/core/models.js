@@ -46,6 +46,11 @@ const model = {
                     if (couple.length === 1) group.push(couple);
                 }
                 return counterText
+            },
+            getByName(name) {
+                for (let project of model.state.projects.source) {
+                    if (project.name === name) return project
+                }
             }
         },
         tags: {
