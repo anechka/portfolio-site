@@ -19,19 +19,21 @@
       "The team consisted of me and NodeJS developer Alex.",
       "We used oDesk and e-mail communication with Skype."
     ],
-    "image": "conclave-page.png",
     "markdown": {
       "aboutProject": [
         "* !This is NDA project!",
-        "* [Google](http://google.ru)",
-        "* **TEST BOLD**"
+        "* [My project Link](http://google.ru)",
+        "* *TEST BOLD*"
       ],
       "aboutTeam": [
-        "On this work i contacted with my main manager from **San Diego Calif.**",
-        "The team consisted of me and NodeJS developer Alex. We worked in series:",
-        "I received a design in"
+        "On this work i contacted with my main manager from San Diego Calif.",
+        ">>## Header",
+        ">>The **team** consisted of me and NodeJS developer Alex.",
+        "^We worked in series: ^I received a design in"
       ]
-    }
+    },
+    "image": "conclave-page.png",
+    "dir": "conclave"
   },
 
   {

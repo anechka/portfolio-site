@@ -3,16 +3,13 @@
  */
 export default function (src)
 {
-    let h='';
+    let str='';
 
-    function escape(t)
+    function inlineReplace(s)
     {
-        return new Option(t).innerHTML;
-    }
-    function inlineEscape(s)
-    {
-        return escape(s)
-            .replace(/!\[([^\]]*)]\(([^(]+)\)/g, '<img alt="$1" src="$2">')
+        return s
+            .replace(/\^/g, '<br/>')// Break line tag
+            .replace(/!\[([^\]]*)]\(([^(]+)\)/g, '<img alt="$1" title="$1" src="$2">')
             .replace(/\[([^\]]+)]\(([^(]+)\)/g, `<a target="_blank" href="${'$2'}">${'$1'}</a>`)
             .replace(/`([^`]+)`/g, '<code>$1</code>')
             .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
@@ -21,29 +18,34 @@ export default function (src)
     }
 
     src
+        .replace(/>>/g, '\n')// New Paragraph
         .replace(/^\s+|\r|\s+$/g, '')
         .replace(/\t/g, '    ')
         .replace(/=/g, '<br />')
         .split(/\n\n+/)
-        .forEach(function(b, f, R)
+        .forEach(function(value, index, splittedArrayLines)
         {
-            f=b[0];
-            R=
+            let firstSymbol=value[0];
+            splittedArrayLines=
                 {
                     '*':[/\n\* /,'<ul><li>','</li></ul>'],
                     '1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
                     ' ':[/\n    /,'<pre><code>','</pre></code>','\n'],
                     '>':[/\n> /,'<blockquote>','</blockquote>','\n']
-                }[f];
-            h+=
-                R?R[1]+('\n'+b)
-                        .split(R[0])
+                }[firstSymbol];
+            str+=
+                splittedArrayLines
+                    ?
+                    splittedArrayLines[1]+('\n'+value)
+                        .split(splittedArrayLines[0])
                         .slice(1)
-                        .map(R[3]?escape:inlineEscape)
-                        .join(R[3]||'</li>\n<li>')+R[2]:
-                        f==='#'?'<h'+(f=b.indexOf(' '))+'>'+inlineEscape(b.slice(f+1))+'</h'+f+'>':
-                        f==='<'?b:
-                            '<p>'+inlineEscape(b)+'</p>';
+                        .map(inlineReplace)
+                        .join(splittedArrayLines[3]||'</li>\n<li>')+splittedArrayLines[2]
+                    :
+                        firstSymbol === '#' ?
+                            `<h${firstSymbol=value.indexOf(' ')}>${inlineReplace(value.slice(firstSymbol+1))}</h${firstSymbol}>`
+                            :
+                        firstSymbol === '<' ? value : `<p>${inlineReplace(value)}</p>`;
         });
-    return h;
+    return str;
 };
