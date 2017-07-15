@@ -33,6 +33,32 @@
       ]
     },
     "image": "conclave-page.png",
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      },
+      {
+        "href": "less_code_optimized.png",
+        "img": "less-code.png",
+        "txt": "Github PNG image",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "js_code_optimized.png",
+        "img": "js-code.png",
+        "txt": "Catapult Home page example",
+        "class": "btn-primary"
+      },
+      {
+        "href": "sass_1_code_optimized.png",
+        "img": "sass-code.png",
+        "txt": "Admin panel",
+        "class": "btn-default sass-button"
+      }
+    ],
     "dir": "conclave"
   },
 

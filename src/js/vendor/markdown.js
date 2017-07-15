@@ -21,7 +21,6 @@ export default function (src)
         .replace(/>>/g, '\n')// New Paragraph
         .replace(/^\s+|\r|\s+$/g, '')
         .replace(/\t/g, '    ')
-        .replace(/=/g, '<br />')
         .split(/\n\n+/)
         .forEach(function(value, index, splittedArrayLines)
         {

@@ -1,7 +1,7 @@
 <template lang="pug">
     .col-md-10.col-md-offset-1.margined-top-div.description-content(style="background: white; color: grey")
         descriptionComponent(:project="project")
-        linksComponent
+        linksComponent(:project="project")
 </template>
 
 <script>

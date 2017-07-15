@@ -5,9 +5,13 @@ import model from "./models"
 const pluralize = PluralizeJS();
 
 function processProjects() {
-    const result = model.state.projects.source.reverse();
+    const path = {
+        portfolioFolder: "portfolio-content",
+        portfolioThumbnails: "images/portfolio-thumb"
+    };
+    const projectsReversed = model.state.projects.source.reverse();
 
-    for (let project of result) {
+    for (let project of projectsReversed) {
         const projectDescriptionsArray = project.description;
 
         let resultHTMLDescription = "";
@@ -18,12 +22,33 @@ function processProjects() {
         }
 
         // Image src updates
-        project.image = `images/portfolio-thumb/${project.image}`;
-        // Project location in dir for <a> tag
-        project.href = project.dir ? `portfolio-content/${project.dir}` : `http://${window.www}`;
+        project.image = `${path.portfolioThumbnails}/${project.image}`;
+
+        // TODO: Remove .href
+        project.href = project.dir ? `${path.portfolioFolder}/${project.dir}` : `http://${window.www}`;
         project.time = project.time ? pluralize("month", project.time, true) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
 
+        // Processing links like buttons on external or internal resources
+        if (project.hasOwnProperty("links")) {
+            console.log(`Processing links for ${project.dir} project`);
+            const linksArray = project.links;
+
+            for (let button of linksArray) {
+                console.log(`Before: ${button.href}`);
+
+                let src = button.href
+                                        // Local Images replace path
+                                        .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
+                                        // Local Pages replace path
+                                        .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
+
+                console.log(`After: ${src}`);
+                button.href = src;
+            }
+        }
+
+        // MArkdown for project
         if (project.hasOwnProperty("markdown")) {
             const markdownObject = project.markdown;
 
