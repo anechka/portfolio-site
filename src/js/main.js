@@ -6,4 +6,6 @@ window.addEventListener("load", () => {
     setupModels();
     setupView();
     router();
+
+    window.addEventListener("hashchange", router, false);
 }, false);

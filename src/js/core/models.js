@@ -10,6 +10,18 @@ const model = {
         projects: {
             source: projects,
             visibleProjectsGroup: [],
+            howManyProjectsOn(tagName) {
+                let projectsNumberWithTag = 0;
+
+                for (let project of model.state.projects.source) {
+                    const projectTagsArray = project.tags;
+
+                    if (projectTagsArray.indexOf(tagName) !== -1) {
+                        projectsNumberWithTag++;
+                    }
+                }
+                return projectsNumberWithTag
+            },
             displayProjectsByTag(tagName) {
                 let couple = [];
                 const group = this.visibleProjectsGroup;
@@ -28,7 +40,8 @@ const model = {
                     // Enable one tag active
                     tags[tagName] = true;
 
-                    counterText = counterText.substr(5) + ' on ' + tagName;
+                    const counterProjects = model.state.projects.howManyProjectsOn(tagName);
+                    counterText = `${pluralize("project", counterProjects, true)} on ${tagName}`;
 
                     for (let project of model.state.projects.source) {
                         const projectTagsArray = project.tags;
@@ -45,7 +58,9 @@ const model = {
 
                     if (couple.length === 1) group.push(couple);
                 }
-                return counterText
+
+                model.state.counter.text = counterText;
+                model.state.counter.prevText = model.state.counter.text;
             }
         },
         tags: {
@@ -60,28 +75,19 @@ const model = {
             angular: false
         },
         counter: {
+            prevText: "",
             text: "",
             setCounter(value) {
-                if (typeof value === "string") this.text = value;
-                else this.text = `Show ${pluralize("project", value, true)}`;
-
-                return this.text
+                this.text = `Show ${pluralize("project", value, true)}`;
+            },
+            setDefaultCounter() {
+                this.text = this.prevText;
             },
             showCounterTextForTag(tagName) {
-                let projectsNumberWithTag = 0;
+                this.prevText = this.text;
+                const counterProjects = model.state.projects.howManyProjectsOn(tagName);
 
-                for (let project of model.state.projects.source) {
-                    const projectTagsArray = project.tags;
-
-                    if (projectTagsArray.indexOf(tagName) !== -1) {
-                        projectsNumberWithTag++;
-                    }
-                }
-
-                const prevText = this.text;
-                this.setCounter(projectsNumberWithTag);
-
-                return prevText;
+                this.setCounter(counterProjects);
             }
         },
         www: null
