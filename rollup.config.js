@@ -7,15 +7,16 @@ const butternut = require('rollup-plugin-butternut');
 const production = process.env.NODE_ENV === "production";
 
 export default {
-    entry: 'src/js/main.js',
-    format: 'iife',
+    entry: "src/js/main.js",
+    format: "iife",
+    moduleName: "website",
     useStrict: false,
     sourceMap: !production,
-    dest: 'deploy/docker/dist/js/bundle.js',
+    dest: "deploy/docker/dist/js/bundle.js",
     plugins: [
         vue({compileTemplate: true}),
         replace({
-            'process.env.NODE_ENV': JSON.stringify(production ? "production" : "development")
+            "process.env.NODE_ENV": JSON.stringify(production ? "production" : "development")
         }),
         json(),
         nodeResolve({ browser: true, jsnext: true, main: true }),

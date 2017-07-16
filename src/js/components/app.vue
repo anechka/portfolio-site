@@ -7,7 +7,7 @@
         about
         tags
         counter
-        projects
+        projects(ref="projects")
         include templates/feedback
         include templates/social
 

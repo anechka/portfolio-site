@@ -4,12 +4,15 @@ import projects from "../../json/projects.json"
 import PluralizeJS from "../vendor/pluralize"
 const pluralize = PluralizeJS();
 
-const model = {
+import viewsTypes from "./viewController"
+
+window.model = {
     state: {
         about,
         projects: {
             source: projects,
             visibleProjectsGroup: [],
+            currentView: viewsTypes.one,
             howManyProjectsOn(tagName) {
                 let projectsNumberWithTag = 0;
 
