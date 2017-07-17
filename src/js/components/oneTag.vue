@@ -3,8 +3,7 @@
     :class="{'open': tags[tagname]}",
     :href="`#${tagname}`",
     @mouseover="mouseOver",
-    @mouseout="mouseOut",
-    @click="click")
+    @mouseout="mouseOut")
 
         - var size = 96
         img(
@@ -31,8 +30,7 @@
                     'sprite-bootstrap': false,
                     'sprite-jquery': false,
                     'sprite-angular': false
-                },
-                counterText: ""
+                }
             };
         },
         props: ['tagname'],
@@ -43,13 +41,10 @@
 
         methods: {
             mouseOver() {
-                this.counterText = model.state.counter.showCounterTextForTag(this.tagname);
+                model.state.counter.showCounterTextForTag(this.tagname);
             },
             mouseOut() {
-                this.counterText = model.state.counter.setCounter(this.counterText);
-            },
-            click() {
-                this.counterText = model.state.projects.displayProjectsByTag(this.tagname);
+                model.state.counter.setDefaultCounter();
             }
         }
     }

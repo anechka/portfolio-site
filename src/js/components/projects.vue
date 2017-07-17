@@ -10,12 +10,17 @@
     export default {
         data() {
             return {
-                currentView: "projectComponent"
+                currentView: "flex"
             }
         },
         components: {
-            flexBoxComponent,
-            projectComponent
+            "flex": flexBoxComponent,
+            "project": projectComponent
+        },
+        methods: {
+            changeView(name) {
+                this.currentView = name;
+            }
         }
     }
 </script>

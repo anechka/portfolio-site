@@ -1,5 +1,10 @@
-import Vue from "vue"
-import App from "../components/app.vue"
+import Vue from "vue";
+import App from "../components/app.vue";
+
+export default viewsTypes = {
+    flex: "flex",
+    one: "project"
+};
 
 export function setupView() {
     console.log("creating Vue app instance");
