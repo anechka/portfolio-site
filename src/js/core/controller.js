@@ -24,26 +24,25 @@ function processProjects() {
         // Image src updates
         project.image = `${path.portfolioThumbnails}/${project.image}`;
 
-        // TODO: Remove .href
-        project.href = project.dir ? `${path.portfolioFolder}/${project.dir}` : `http://${window.www}`;
+        project.href = `#project/${project.name}`;
         project.time = project.time ? pluralize("month", project.time, true) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
 
         // Processing links like buttons on external or internal resources
         if (project.hasOwnProperty("links")) {
-            console.log(`Processing links for ${project.dir} project`);
+            //console.log(`Processing links for ${project.dir} project`);
             const linksArray = project.links;
 
             for (let button of linksArray) {
-                console.log(`Before: ${button.href}`);
+                //console.log(`Before: ${button.href}`);
 
                 let src = button.href
-                                        // Local Images replace path
-                                        .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
-                                        // Local Pages replace path
-                                        .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
+                // Local Images replace path
+                .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
+                // Local Pages replace path
+                .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
 
-                console.log(`After: ${src}`);
+                //console.log(`After: ${src}`);
                 button.href = src;
             }
         }

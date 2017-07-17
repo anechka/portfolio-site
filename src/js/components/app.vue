@@ -7,7 +7,7 @@
         about
         tags
         counter
-        projects(ref="projects")
+        portfolio(:currentView="view")
         include templates/feedback
         include templates/social
 
@@ -20,10 +20,34 @@
     import about from "./about.vue"
     import tags from "./tags.vue"
     import counter from "./counter.vue"
-    import projects from "./projects.vue"
+    import portfolio from "./portfolio.vue"
     import email from "./email.vue"
 
+    import model from "../core/models"
+    import viewsTypes from "../core/viewController"
+
     export default {
-        components: { clouds, about, tags, counter, projects, email }
+        el: "#container",
+        components: { clouds, about, tags, counter, portfolio, email },
+        data() {
+            return {
+                view: viewsTypes.flex
+            }
+        },
+        methods: {
+            setView(name) {
+
+                if (this.view !== name) {
+                    console.log(`setting view to ${name}`);
+
+                    this.view = name;
+                }
+                else {console.log(`dn't change view to ${name}`);}
+            }
+        },
+        created() {
+            console.log("Created app");
+            model.state.projects.displayCurrent();
+        }
     }
 </script>

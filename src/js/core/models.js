@@ -10,6 +10,12 @@ const model = {
         projects: {
             source: projects,
             visibleProjectsGroup: [],
+            selectedProject: null,
+            getByName(name) {
+                for (let project of model.state.projects.source) {
+                    if (project.name === name) return project
+                }
+            },
             howManyProjectsOn(tagName) {
                 let projectsNumberWithTag = 0;
 
@@ -62,10 +68,25 @@ const model = {
                 model.state.counter.text = counterText;
                 model.state.counter.prevText = model.state.counter.text;
             },
-            getByName(name) {
-                for (let project of model.state.projects.source) {
-                    if (project.name === name) return project
+            displayByName(name) {
+                console.log(`displayByName: ${name}`);
+
+                const project = model.state.projects.getByName(name);
+                const projectName = project.name;
+
+                if (projectName.toLowerCase() === name.toLowerCase()) {
+                    model.state.selectedProject = project;
+                    model.state.counter.setCounter(projectName);
                 }
+
+
+            },
+            displayCurrent() {
+                if (!model.state.selectedProject) {
+                    model.state.selectedProject = model.state.projects.getByName("Conclave")
+                }
+
+                return model.state.selectedProject
             }
         },
         tags: {

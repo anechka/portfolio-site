@@ -7,7 +7,7 @@ let application = {
 
 window.addEventListener("load", () => {
     setupModels();
-    application.view = setupView();
+    setupView();
     router();
 
     window.addEventListener("hashchange", router, false);

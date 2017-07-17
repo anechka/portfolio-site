@@ -14,18 +14,20 @@ export default function() {
 
             if (urlArray.length === 1) {
                 // Processing tag
-                const tagName = decodeURI(urlArray[0]).toLowerCase();// Second el = projectName like "Project%20Name"
-                //console.log(`Tag is ${tagName}`);
-                model.state.projects.displayProjectsByTag(tagName);
+                const tagName = decodeURI(urlArray[0]).toLowerCase();
+                console.log(`Tag is ${tagName}`);
 
-                application.view.$children[0].$refs.projects.changeView(viewsTypes.flex);
+                application.view.setView(viewsTypes.flex);
+                model.state.projects.displayProjectsByTag(tagName);
             }
             else if (urlArray.length === 2) {
                 // Processing project
+                // Second el in urlArray will be projectName like "Project%20Name"
                 const projectName = decodeURI(urlArray[1]);// Second el = projectName like "Project%20Name"
-                //console.log(`Project is ${projectName}`);
+                console.log(`Project is ${projectName}`);
 
-                application.view.$children[0].$refs.projects.changeView(viewsTypes.one)
+                model.state.projects.displayByName(projectName);
+                application.view.setView(viewsTypes.project)
             }
         }
     }

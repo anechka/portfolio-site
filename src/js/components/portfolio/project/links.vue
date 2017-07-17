@@ -10,7 +10,13 @@
 </template>
 
 <script>
+    import model from "../../../core/models"
+
     export default {
-        props: ["project"]
+        data() {
+            return {
+                project: model.state.projects.displayCurrent()//Default project
+            }
+        }
     }
 </script>

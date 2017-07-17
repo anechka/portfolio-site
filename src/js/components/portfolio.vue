@@ -1,26 +1,19 @@
 <template lang="pug">
-   .row
-       component(v-bind:is="currentView")
+    .row
+        component(v-bind:is="currentView", ref="view")
 </template>
 
 <script>
     import flexBoxComponent from "./portfolio/flexbox.vue"
     import projectComponent from "./portfolio/project.vue"
 
+    import model from "../core/models"
+
     export default {
-        data() {
-            return {
-                currentView: "flex"
-            }
-        },
+        props: ["currentView"],
         components: {
             "flex": flexBoxComponent,
             "project": projectComponent
-        },
-        methods: {
-            changeView(name) {
-                this.currentView = name;
-            }
         }
     }
 </script>

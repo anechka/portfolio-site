@@ -80,6 +80,22 @@
       "Our team consisted of: I'm as Web-developer, 1 project manager, Web-designer and Python developer."
     ],
     "image": "premiumparts-adminka.png",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "pp"
   },
 
@@ -103,6 +119,22 @@
       "Our team: project manager, Photoshop-designer, I'm as HTML developer and PHP developer. We used the remote job system with Skype communication."
     ],
     "image": "market-page.png",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "market"
   },
 
@@ -124,6 +156,22 @@
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ],
     "image": "redalgo-page.jpg",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "redalgo"
   },
 
@@ -145,6 +193,22 @@
       "We used Odesk and e-mail communication, Skype."
     ],
     "image": "imobo-page.png",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "imobo"
   },
 
@@ -171,6 +235,22 @@
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ],
     "image": "sumati-page.jpg",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "sumati"
   },
 
@@ -190,6 +270,22 @@
       "My client and i used Upwork and Skype, and also e-mail for communication."
     ],
     "image": "catapult-page.png",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "catapult"
   },
 
@@ -210,6 +306,22 @@
       "My client and i used Upwork and Skype, and also e-mail for communication."
     ],
     "image": "hammer-page@2x.png",
+    "markdown": {
+      "aboutProject": [
+        "* Replace with Text"
+      ],
+      "aboutTeam": [
+        "Replace with Text"
+      ]
+    },
+    "links": [
+      {
+        "href": "compose-page.jpg",
+        "img": "conclave-page.png",
+        "txt": "main page of conclave",
+        "class": "btn-default"
+      }
+    ],
     "dir": "hammer"
   }
 
