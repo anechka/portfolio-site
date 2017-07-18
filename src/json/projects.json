@@ -30,6 +30,14 @@
         ">>## Header",
         ">>The **team** consisted of me and NodeJS developer Alex.",
         "^We worked in series: ^I received a design in"
+      ],
+      "myRole": [
+        "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code."
+      ],
+      "result": [
+        "After 5 weeks i completed project and main goal was **converting inline CSS styles to SASS** under Twitter Bootstrap and completing JavaScript code.",
+        "^My American manager's quote:>>",
+        "> I would like to keep working with her as much as possible for future projects too."
       ]
     },
     "image": "conclave-page.png",

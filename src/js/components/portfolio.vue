@@ -1,5 +1,5 @@
 <template lang="pug">
-    .row
+    .row.portfolio
         component(v-bind:is="currentView", ref="view")
 </template>
 

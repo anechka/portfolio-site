@@ -14,15 +14,15 @@
 
             section(v-html="this.project.markdown.aboutTeam")
 
-        .row
+        .row(v-if="this.project.markdown.myRole")
             h3 My role
 
-            block my-role
+            section(v-html="this.project.markdown.myRole")
 
-        .row
+        .row(v-if="this.project.markdown.result")
             h3 Result
 
-            block result
+            section(v-html="this.project.markdown.result")
 </template>
 
 <script>
