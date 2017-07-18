@@ -1,5 +1,5 @@
 <template lang="pug">
-    .col-md-10.col-md-offset-1.margined-top-div.description-content(style="background: white; color: grey")
+    .col-md-10.col-md-offset-1.margined-top-div.description-content
         descriptionComponent
         linksComponent
 </template>

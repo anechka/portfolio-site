@@ -17,34 +17,36 @@ export default function (src)
             .replace(/!([^*]+)!/g, '<kbd>$1</kbd>');
     }
 
+    function splitter(value, index, splittedArrayLines)
+    {
+        let firstSymbol=value[0];
+        splittedArrayLines=
+            {
+                '*':[/\n\* /,'<ul><li>','</li></ul>'],
+                '1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
+                ' ':[/\n    /,'<pre><code>','</pre></code>','\n'],
+                '>':[/\n> /,'<blockquote>','</blockquote>','\n']
+            }[firstSymbol];
+        str+=
+            splittedArrayLines
+                ?
+                splittedArrayLines[1]+('\n'+value)
+                    .split(splittedArrayLines[0])
+                    .slice(1)
+                    .map(inlineReplace)
+                    .join(splittedArrayLines[3]||'</li>\n<li>')+splittedArrayLines[2]
+                :
+                firstSymbol === '#' ?
+                    `<h${firstSymbol=value.indexOf(' ')}>${inlineReplace(value.slice(firstSymbol+1))}</h${firstSymbol}>`
+                    :
+                    firstSymbol === '<' ? value : `<p>${inlineReplace(value)}</p>`;
+    }
+
     src
         .replace(/>>/g, '\n')// New Paragraph
         .replace(/^\s+|\r|\s+$/g, '')
         .replace(/\t/g, '    ')
         .split(/\n\n+/)
-        .forEach(function(value, index, splittedArrayLines)
-        {
-            let firstSymbol=value[0];
-            splittedArrayLines=
-                {
-                    '*':[/\n\* /,'<ul><li>','</li></ul>'],
-                    '1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
-                    ' ':[/\n    /,'<pre><code>','</pre></code>','\n'],
-                    '>':[/\n> /,'<blockquote>','</blockquote>','\n']
-                }[firstSymbol];
-            str+=
-                splittedArrayLines
-                    ?
-                    splittedArrayLines[1]+('\n'+value)
-                        .split(splittedArrayLines[0])
-                        .slice(1)
-                        .map(inlineReplace)
-                        .join(splittedArrayLines[3]||'</li>\n<li>')+splittedArrayLines[2]
-                    :
-                        firstSymbol === '#' ?
-                            `<h${firstSymbol=value.indexOf(' ')}>${inlineReplace(value.slice(firstSymbol+1))}</h${firstSymbol}>`
-                            :
-                        firstSymbol === '<' ? value : `<p>${inlineReplace(value)}</p>`;
-        });
+        .forEach(splitter);
     return str;
 };
