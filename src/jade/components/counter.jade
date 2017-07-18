@@ -1,7 +1,0 @@
-.row
-    .col-md-12.margined-top-div.text-center.text-uppercase#counter
-        - var VueAttributes = {"v-for": "name in tagsNames"}
-        a(id="{{* name }}")&attributes(VueAttributes)
-
-        - VueAttributes = {"v-text": "projectsCounterText"}
-        span&attributes(VueAttributes)

@@ -1,0 +1,59 @@
+BODY {
+    background: @blur-bg-color @bg-gradient;
+    background-size: 100% auto;
+    color: fadeout(@cloud-color, 40%);
+    overflow-x: hidden;
+
+    @media only screen and (max-width: 1365px) {
+        background-image: url("@{images}/background.jpg");
+    }
+    // FullHD
+    @media only screen and (min-width: 1366px) {
+        background-image: url("@{images}/background-fhd.jpg");
+    }
+    // Retina iPad
+    @media only screen and (min-width: 768px) and (max-width: 1024px) and (min-resolution: 192dpi) {
+        background-image: url("@{images}/background-ipad@2x.jpg");
+    }
+    // Retina x3 iPhone
+    @media only screen and (max-width: 480px) and (min-resolution: 192dpi) and (min-resolution: 3dppx) {
+        background-image: url("@{images}/background-iphone@3x.jpg");
+    }
+    // Retina x2 iPhone
+    @media only screen and (max-width: 375px) and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+        background-image: url("@{images}/background-iphone@2x.jpg");
+    }
+
+    // Default Mobile
+    @media only screen and (max-width: 360px) {
+        background-image: url("@{images}/background-mobile.jpg")
+    }
+
+    // Samsung x3 and x4
+    @media only screen
+    and (min-device-width: 360px)
+    and (max-device-height: 640px)
+    and (min-resolution: 3dppx) {
+        background-image: url("@{images}/background-iphone@3x.jpg")
+    }
+    // Retina x2 iPhone
+    @media only screen and (max-width: 320px) and (min-resolution: 192dpi) {
+        background-image: url("@{images}/background-iphone@2x.jpg");
+    }
+
+    ::selection {
+        background: #191A4D; /* WebKit/Blink Browsers */
+    }
+    ::-moz-selection {
+        background: #191A4D; /* Gecko Browsers */
+    }
+
+}
+
+A {
+    color: @orange-color;
+
+    &:hover {
+        color: @green-grass-color; text-decoration: none
+    }
+}

@@ -1,0 +1,208 @@
+// tag design inside project description
+.project-span-label-tag() {
+    background-color: @project-tag-bg-color;
+    color: @project-tag-text-color;
+    border-radius: @project-tag-radius;
+}
+
+&.projectsList {
+    @media (min-width: 1200px) { padding: 0 75px }
+
+    > .row {
+        display: block;
+
+        @media (min-width: @screen-xs-min) {
+            .flex();
+
+            .project {
+                .flex();
+                flex-direction: row;
+            }
+        }
+
+        .project {
+            //      top     right               bottom                     left
+            padding: 0 @projects-padding (@projects-padding * 2) @projects-padding;
+
+            @media (min-width: @screen-xs) {
+                max-width: 50%;
+            }
+
+            a.bordered-block {
+                display: block;
+                border: @projects-border;
+                min-height: 100%;
+                padding: @project-padding;
+
+                font-family: "Gotham Medium", "Arial", "Helvetica", sans-serif;
+
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background: @projects-background;
+                
+                &:hover {
+                    border-color: @sky-cloudly-color;
+                    background: none;
+
+                    .project-header-container {
+                        background: @projects-header-hover-background;
+
+                        .header-top {
+
+                            span.link, span.text {
+                                color: @green-grass-color;
+                            }
+
+                        }
+
+                        .project-info, i.icon {
+                            color: @projects-header-hover-color;
+                        }
+
+                        .project-info > span.value {
+                            color: @green-grass-color;
+                        }
+
+                    }
+
+                    .description p {
+                        color: @project-p-text-color-hover;
+                        background: @project-p-bg-light-color;
+                    }
+                }
+
+                .project-header-container {
+                    min-height: 120px;
+                    background: @projects-header-background;
+                    padding: 10px 0;
+                    line-height: 1.2;
+
+                    .header-top {
+                        margin: 0.6em 0;
+
+                        @media (min-width: @screen-md-min) {
+                            margin: 0.4em 0;
+                        }
+
+                        color: @gold-color;
+                        font-size: 24px;
+                        font-family: "Days", Helvetica, Arial, sans-serif;
+                        line-height: 0.7;
+
+                        span.link {
+                            color: @dark-blue-color;
+                            font-size: 150%;
+                            position: relative;
+                            vertical-align: -2px;
+                        }
+                    }
+
+                    span {
+                        padding: 0 6px;
+
+                        &.project-info {
+                            color: saturate(darken(@sky-cloudly-color, 10%), 100%);
+
+                            span.value {
+                                color: @gold-color;
+                            }
+                        }
+                    }
+
+                    i.icon {
+                        color: saturate(darken(@sky-cloudly-color, 30%), 100%);;
+                    }
+                }
+                .project-thumbnail {
+                    /* Image thumbnail */
+                    padding-top: 5px;
+
+                    @media (min-width: 992px) {
+
+                        padding-right: 0;
+                    }
+
+                    img.img-responsive {
+                        @media (min-width: 370px) and (max-width: 768px) {
+                            width: 200px;
+                            height: 150px;
+                        }
+                    }
+
+                    .tags-container { /* Tags under image */
+                        padding: 0;
+
+                        .tag { /* Div wrapper for tags */
+
+                            span.label { /* Tag body */
+                                display: block;
+                                margin: 7px 7px 7px 0;
+                                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+                                @media (max-width: @screen-md) {
+                                    display: inline;
+                                    float: left;
+
+                                    margin: 12px 4px 0 0;
+                                }
+
+                                @media (min-width: @screen-md) {
+                                    width: 100%;
+                                    font-size: @project-tag-font-size;
+                                }
+
+                                &.label-default {
+                                    .project-span-label-tag;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #FE7701;
+                                        color: #02535A;
+                                        box-shadow: 0 0 8px 2px rgba(0, 43, 47, 0.9);
+                                    }
+                                }
+
+                                &.label-tag-purple { /* Tags design */
+                                    .project-span-label-tag;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #56578F;
+                                        color: #CBEDFF;
+                                        box-shadow: 0 0 8px 0 rgba(0, 8, 47, 0.4);
+                                    }
+                                }
+
+                                &.label-tag { /* Tags design */
+                                    .project-span-label-tag;
+
+                                    &:hover {
+                                        cursor: default;
+                                        background-color: #20607E;
+                                        color: #CBEDFF;
+                                        box-shadow: 0 0 8px 0 rgba(0, 8, 47, 0.4);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .description {
+                    @media (min-width: 768px) { min-height: 200px };//TODO: Check it height!
+                    @media (min-width: 992px) { padding-left: 5px };
+
+                    p {
+                        margin-top: 5px;
+                        padding: 15px;
+
+                        color: @project-p-text-color;
+                        background: @project-p-bg-dark-color;
+
+                        border-radius: @project-p-border-radius;
+                    }
+                }
+            }
+        }
+    }
+}

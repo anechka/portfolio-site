@@ -1,0 +1,110 @@
+.mail {
+    span.email {
+        font-family: "Days", sans-serif;
+        font-size: 48px;
+
+        color: fadeout(@cloud-color, 40%);
+
+        .header-transition(@transition-header-time);
+        .email-768px;
+        .email-480px;
+
+        i.icon-mail-alter {
+            .header-icon;
+            .header-transition(@transition-header-time);
+
+            @media (max-width: @screen-lg) {
+                font-size: 80%;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+        color: @green-grass-color;
+        text-decoration: none;
+
+        > span.email {
+            color: @green-grass-color;
+            .reset-transition();
+        }
+
+    }
+}
+
+.skype {
+    font-family: "Days", sans-serif;
+    font-size: 48px;
+
+    .skype-768px;
+    .skype-480px;
+
+    &:hover {
+        .center{
+            color: @green-grass-color;
+            .reset-transition();
+        }
+    }
+
+    .left > i.icon-skype {
+        .header-icon;
+        position: relative;
+
+        top: 4px;
+        left: 0.1em;
+
+        @media (max-width: @screen-sm) {
+            left: 0;
+            top: 2px;
+        }
+    }
+
+    .center {
+        color: fadeout(@cloud-color, 40%);
+        .header-transition(@transition-header-time);
+    }
+}
+
+/* Link to External resources (buttons) */
+.profiles-content {
+
+    a.external-profile {
+        font-size: 150%;
+        font-weight: bold;
+
+        @media (max-width: @screen-xs) {
+            font-size: 100%;
+        }
+
+        /* oDesk / Upwork */
+        &.upwork-profile svg:hover {
+
+            #GO-TO-PROFILE, #ShapeUP { fill: #6fda44 }
+
+        }
+
+        /* Github */
+        &.github-profile {
+            border-radius: 8px;
+            padding: 10px 19.4px 12px 15px;
+
+            color: fadeout(@cloud-color, 10%);
+            background: @dark-blue-color;
+            border: none;
+            transition: color @transition-header-time ease-in;
+
+            &:hover {
+                color: @green-grass-color;
+                text-decoration: none;
+
+                background: none;
+                border: 1px solid @green-grass-color;
+
+                .reset-transition();
+            }
+
+            @media (max-width: @screen-xs) {
+                padding: 10px 15px;
+            }
+        }
+    }
+}

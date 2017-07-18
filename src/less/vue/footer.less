@@ -1,0 +1,48 @@
+.footer-bg-gradient() {
+    background: transparent linear-gradient(
+            to right,
+            fadeout(darken(saturate(@water-blue-color, 25%), 10%), 25%) 0%,
+            fadeout(@water-blue-color, 25%) 50%,
+            fadeout(@dark-blue-color, 70%) 100%
+    );
+}
+
+footer {
+    margin-top: @top-margin-for-div;
+
+    @media (max-width: @screen-xs) {
+        margin-top: @top-margin-for-div / @decrease-margin-koeff-for-mobile;
+        line-height: 2em;
+    }
+
+    a {
+        display: block;
+        padding: 0;
+
+        color: fadeout(@dark-blue-color, 50%);
+        .footer-bg-gradient();
+
+        font-size: 0.75em;
+        font-family: "Days", Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+
+        &:hover {
+            background-color: desaturate(@cloud-color, 5%);
+            color: fadeout(@cloud-color, 25%);
+        }
+
+        &:focus {
+            background-color: fadeout(@light-purple-color, 25%);
+            color: @green-grass-color;
+        }
+
+        &:visited {
+            background-color: fadeout(@light-purple-color, 25%);
+            color: fadeout(@blue-color, 50%);
+        }
+
+        span {
+            vertical-align: 0.2em;
+        }
+    }
+}

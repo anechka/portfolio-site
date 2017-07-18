@@ -1,0 +1,42 @@
+.container {
+    @import "parallax";
+
+    &.main-content-container {
+        @import "tags";
+
+        div.avatar {
+            position: relative;
+
+            img.img-avatar {
+                .avatar
+            }
+        }
+
+        .margined-top-div {
+            margin-top: @top-margin-for-div;
+
+            @media (max-width: @screen-xs) {
+                margin-top: @top-margin-for-div / @decrease-margin-koeff-for-mobile;
+                line-height: 2em;
+            }
+
+            &.counter {
+                color: @sky-cloudly-color;
+                font-family: "Days", Helvetica, Arial, sans-serif;
+                font-size: 18px;
+
+                @media (max-width: 480px) {
+                    line-height: 1.0em;
+                }
+            }
+
+            .centered-scale-element {
+                @media (max-width: 480px) {
+                    width: 100%;
+                }
+            }
+
+            @import "projects";
+        }
+    }
+}

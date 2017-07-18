@@ -14,6 +14,10 @@ modelSetup = ->
 
   polyglot = new Polyglot(locale: 'en')
   polyglot.extend 'months': '%{smart_count} month |||| %{smart_count} months'
+  polyglot.extend 'years': '%{smart_count} year |||| %{smart_count} years'
+
+  for stack, years of about.experience
+    about.experience[stack] = polyglot.t('years', smart_count: years)
 
   result = projects.reverse()
 
