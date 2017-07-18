@@ -33,6 +33,13 @@
             return {
                 project: model.state.projects.displayCurrent()//Default project
             }
+        },
+        mounted: function () {
+            this.$nextTick(function () {
+                const counter = document.getElementById("counter");
+                counter.tabIndex = -1;
+                counter.focus();
+            })
         }
     }
 </script>

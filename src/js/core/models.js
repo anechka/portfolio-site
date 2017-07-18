@@ -72,11 +72,14 @@ const model = {
                 console.log(`displayByName: ${name}`);
 
                 const project = model.state.projects.getByName(name);
-                const projectName = project.name;
 
-                if (projectName.toLowerCase() === name.toLowerCase()) {
-                    model.state.selectedProject = project;
-                    model.state.counter.setCounter(projectName);
+                if (project) {
+                    const projectName = project.name;
+
+                    if (projectName.toLowerCase() === name.toLowerCase()) {
+                        model.state.selectedProject = project;
+                        model.state.counter.setCounter(projectName);
+                    }
                 }
 
 
