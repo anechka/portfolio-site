@@ -22,14 +22,15 @@
     "markdown": {
       "aboutProject": [
         "* !This is NDA project!",
-        "* [My project Link](http://google.ru)",
-        "* *TEST BOLD*"
+        "* [Git](http://git-scm.com/about)",
+        "* [NodeJS with many modules such as Compass](http://nodejs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)|[SASS](http://sass-lang.com/guide)",
+        "* [Bootstrap | 2](http://getbootstrap.com/css)",
+        "* [jQuery](http://jquery.com)"
       ],
       "aboutTeam": [
-        "On this work i contacted with my main manager from San Diego Calif.",
-        ">>## Header",
-        ">>The **team** consisted of me and NodeJS developer Alex.",
-        "^We worked in series: ^I received a design in"
+        "On this work i contacted with my main manager from **San Diego Calif.** The team consisted of me and NodeJS developer Alex. We worked in series: i received a design in PSD format, after i programmed html/css with Webstorm tool and LESS + SASS under Compass compiler. We used oDesk and e-mail communication with Skype. "
       ],
       "myRole": [
         "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code."
@@ -245,18 +246,75 @@
     "image": "sumati-page.jpg",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [GitLab](https://about.gitlab.com)",
+        "* [Python](https://www.python.org)",
+        "* [Django](https://www.djangoproject.com)",
+        "* [Sphinx](http://sphinxsearch.com)",
+        "* [AngularJS](https://angularjs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com/css)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer.",
+        "^We communicated via [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also used e-mail communication."
+      ],
+      "myRole": [
+        "The site based on Django and Jade template engine, Twitter Bootstrap as grid based CSS framework and LESS as main CSS preprocessor.",
+        "^As UI/UX Bootstrap consultant i disscused with Web designer design concept and developed design.",
+        "^Then i [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). Also i developed Django templates and helped Angular developer to develop angular application.",
+        "^When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). My tool is [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to repo on [GitLab](https://about.gitlab.com). I worked near 6 months with this project and developed many Jade pages with LESS code, Django templates and one part of Angular application.",
+        ">>",
+        "* Near 10 LESS files",
+        "* 5 Django templates",
+        "* Angular module for Django chart",
+        "* Search interface for internal flow documents",
+        "* Jade templates",
+        "* [Sumati main site](http://sumatigroup.com)"
+      ],
+      "result": [
+        "After 6 months i completed project and main goal was **developing design, coding Jade pages with LESS under Twitter Bootstrap, developing Django templates and Angular application.**",
+        "^President and CEO of Sumati said:>>",
+        "> I very liked what Anya have done!",
+        ">>During this project i improved my knowledge of Django template engine, Angular JS and increased Jade and LESS skills."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
+        "href": "http://sumatigroup.com",
+        "img": "sumati-page.jpg",
+        "txt": "Browse Sumati site",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "sumati-contracts.png",
+        "img": "sumati-contracts-page.png",
+        "txt": "Screenshot Django app",
         "class": "btn-default"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/less/components",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/django-templates",
+        "img": "django-code.png",
+        "txt": "Show Django templates",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/angular-app",
+        "img": "angular-code.png",
+        "txt": "Show Javascript code",
+        "class": "btn-primary"
       }
     ],
     "dir": "sumati"
