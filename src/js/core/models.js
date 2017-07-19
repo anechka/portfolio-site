@@ -22,7 +22,7 @@ const model = {
                 for (let project of model.state.projects.source) {
                     const projectTagsArray = project.tags;
 
-                    if (projectTagsArray.indexOf(tagName) !== -1) {
+                    if (projectTagsArray.includes(tagName)) {
                         projectsNumberWithTag++;
                     }
                 }

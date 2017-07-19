@@ -16,8 +16,6 @@
         components: {
             descriptionComponent,
             linksComponent
-        },
-        methods: {
         }
     }
 </script>
