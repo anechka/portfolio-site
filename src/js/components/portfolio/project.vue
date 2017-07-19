@@ -1,5 +1,5 @@
 <template lang="pug">
-    .col-md-10.col-md-offset-1.margined-top-div.description-content
+    .col-md-12.margined-top-div.description-content
         descriptionComponent
         linksComponent
 </template>
@@ -16,8 +16,6 @@
         components: {
             descriptionComponent,
             linksComponent
-        },
-        methods: {
         }
     }
 </script>

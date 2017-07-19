@@ -1,8 +1,7 @@
 <template lang="pug">
 .row
-    .counter.col-md-12.margined-top-div.text-center.text-uppercase
-        a(id="{{* name }}", v-for="name in tagsNames")
-        span(v-text="model.text")
+    .col-md-12.margined-top-div.text-center.text-uppercase
+        span(v-text="model.text")#counter
 </template>
 
 <script>
@@ -11,8 +10,7 @@
     export default {
         data() {
             return {
-                model: model.state.counter,
-                tagsNames: Object.keys(model.state.tags)
+                model: model.state.counter
             }
         }
     }
