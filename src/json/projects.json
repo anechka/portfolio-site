@@ -230,18 +230,50 @@
     "image": "redalgo-page.jpg",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Github](https://github.com/anechka)",
+        "* [NodeJS](http://nodejs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "Our team consisted of: i am as Web Developer, 1 project manager, 1 Web designer.",
+        "^Also i worked with Javascript developer.",
+        "^We communicated via [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also used e-mail communication."
+      ],
+      "myRole": [
+        "The site based on NodeJS and Jade template engine, Twitter Bootstrap as grid based CSS framework and LESS as main CSS preprocessor.",
+        "^I [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed many Jade pages with LESS code.",
+        ">>",
+        "* Near 7 Jade files",
+        "* Near 7 LESS files",
+        "* Main jade template"
+      ],
+      "result": [
+        "After 1 week i completed project and main goal was coding **Jade pages with LESS** under Twitter Bootstrap.",
+        "^My project manager's quote:>>",
+        "> Anya is very fast and did a great job with bootstrap responsive coding.",
+        ">>During this project i increased my Jade and LESS skills."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "redalgo-page.html",
+        "img": "redalgo-page.jpg",
+        "txt": "Browse Redalgo page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/redalgo-project/blob/master/less/main.less",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/redalgo-project/blob/master/jade/redalgo-page.jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
       }
     ],
     "dir": "redalgo"
@@ -290,7 +322,7 @@
         "* 4 pages for work with e-mails",
         "* 2 pages for selecting real estate",
         "* Google Ads page",
-        "* Main [site page](http://localhost:63342/portfolio-site/portfolio-content/imobo/imobo-page.html)"
+        "* Main jade template"
       ],
       "result": [
         "After 2 weeks i completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap.",
