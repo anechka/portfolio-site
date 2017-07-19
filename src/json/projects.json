@@ -193,7 +193,11 @@
     "image": "market-page.png",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Git](http://git-scm.com/about)",
+        "* [Yii PHP framework](http://yiiframework.com/)",
+        "* [Twig template engine](http://twig.sensiolabs.org/)",
+        "* [LESS | CSS](http://lesscss.org/features/)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
         "Replace with Text"
@@ -489,18 +493,48 @@
     "image": "catapult-page.png",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Github](https://github.com/anechka)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [Sass](http://sass-lang.com/guide)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "I worked as Web Developer.",
+        "^My client and i used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also e-mail for communication."
+      ],
+      "myRole": [
+        "The site based on Jade template engine, Twitter Bootstrap as grid based CSS framework and Sass as main CSS preprocessor.",
+        "^I [programmed Jade(HTML) / SASS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed Jade pages with SASS code. ",
+        ">>",
+        "* Near 3 Jade files",
+        "* Near 4 SASS files",
+        "* [Catapult Home page](portfolio-content/catapult/catapult-home-page.html)"
+      ],
+      "result": [
+        "After 1 week i completed project and main goal was **coding Jade pages with SASS** under Twitter Bootstrap.",
+        "^My client's quote:>>",
+        "> Well structured, good quality code, very happy with Anya's work!",
+        ">>During this project i increased my Jade and SASS skills."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "catapult-home-page.html",
+        "img": "catapult-page.png",
+        "txt": "Browse Catapult Home page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/catapult-project/tree/master/scss",
+        "img": "sass-code.png",
+        "txt": "Show SASS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/catapult-project/tree/master/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
       }
     ],
     "dir": "catapult"
@@ -525,18 +559,48 @@
     "image": "hammer-page@2x.png",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "I worked as Less and Jade Developer.",
+        "^My client and i used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype for communication."
+      ],
+      "myRole": [
+        "The site based on Jade template engine, Bootstrap 3 as CSS framework and Less as main CSS preprocessor.",
+        "^I [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). ",
+        "^I worked near 1 week with this project and developed Jade pages with LESS code.",
+        ">>",
+        "* Near 2 Jade files",
+        "* Near 2 LESS files",
+        "* [ConversionHammer Home page](portfolio-content/hammer/hammer-home-page.html)"
+      ],
+      "result": [
+        "After 1 week i completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap 3.",
+        "^My client's quote:>>",
+        "> Best contractor I have worked with through Upwork.",
+        ">>During this project i increased my Jade and LESS skills."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "hammer-home-page.html",
+        "img": "hammer-page@2x.png",
+        "txt": "Browse Hammer Home page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/hammer-project/tree/master/src/less",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/hammer-project/tree/master/src/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
       }
     ],
     "dir": "hammer"
