@@ -5,8 +5,8 @@
                 img.img-thumbnail(:src="`images/portfolio-thumb/${button.img}`", :alt="button.txt")
                 br
                 button.btn.btn-block(type="button", :class="button.class")
-                    i.icon-logout
-                    |Browse
+                    i(:class="button.iconClass")
+                    |{{ button.txt }}
 </template>
 
 <script>

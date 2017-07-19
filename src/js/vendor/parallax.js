@@ -536,7 +536,8 @@ export default class Parallax {
         if (!this.enabled) {
             return
         }
-        this.enabled = false
+
+        this.enabled = false;
 
         if (this.orientationSupport) {
             window.removeEventListener('deviceorientation', this.onDeviceOrientation)
@@ -546,8 +547,7 @@ export default class Parallax {
             window.removeEventListener('mousemove', this.onMouseMove)
         }
 
-        window.removeEventListener('resize', this.onWindowResize)
-        rqAnFr.cancel(this.raf)
+        window.removeEventListener('resize', this.onWindowResize);
     }
 
     calibrate(x, y) {

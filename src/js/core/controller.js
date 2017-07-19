@@ -44,6 +44,13 @@ function processProjects() {
 
                 //console.log(`After: ${src}`);
                 button.href = src;
+
+                const iconClassString = button.class;
+                button.iconClass = {
+                    "icon-logout": iconClassString.includes("btn-site-link"),
+                    "icon-github-alter": iconClassString.includes("btn-primary"),
+                    "icon-chrome": iconClassString.includes("btn-default")
+                }
             }
         }
 
