@@ -4,9 +4,8 @@
             a.thumbnail(:href="button.href", target="_blank")
                 img.img-thumbnail(:src="`images/portfolio-thumb/${button.img}`", :alt="button.txt")
                 br
-                button.btn.btn-block(type="button", :class="button.class")
+                button.btn.btn-block(type="button", :class="button.class", v-text="button.txt")
                     i.icon-logout
-                    |Browse
 </template>
 
 <script>

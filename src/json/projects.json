@@ -22,17 +22,25 @@
     "markdown": {
       "aboutProject": [
         "* !This is NDA project!",
-        "* [My project Link](http://google.ru)",
-        "* *TEST BOLD*"
+        "* [Git](http://git-scm.com/about)",
+        "* [NodeJS with many modules such as Compass](http://nodejs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)|[SASS](http://sass-lang.com/guide)",
+        "* [Bootstrap | 2](http://getbootstrap.com/css)",
+        "* [jQuery](http://jquery.com)"
       ],
       "aboutTeam": [
-        "On this work i contacted with my main manager from San Diego Calif.",
-        ">>## Header",
-        ">>The **team** consisted of me and NodeJS developer Alex.",
-        "^We worked in series: ^I received a design in"
+        "On this work i contacted with my main manager from **San Diego Calif.** The team consisted of me and NodeJS developer Alex. We worked in series: i received a design in **PSD format**, after i [programmed html/css with Webstorm tool](http://www.jetbrains.com/webstorm) and **LESS + SASS** under Compass compiler. We used [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and e-mail communication with Skype."
       ],
       "myRole": [
-        "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code."
+        "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code.",
+        ">>",
+        "* Near 20 SASS files",
+        "* Near 10 LESS files",
+        "* Near 50 JavaScript files for browser",
+        "* Hierarchical Jade templates (40 files **.jade**)",
+        "* Compass for SASS and JavaScript on server-side with jQuery on frontend",
+        "* LESS and SASS code with Bootstrap for all elements"
       ],
       "result": [
         "After 5 weeks i completed project and main goal was **converting inline CSS styles to SASS** under Twitter Bootstrap and completing JavaScript code.",
@@ -45,26 +53,44 @@
       {
         "href": "compose-page.jpg",
         "img": "conclave-page.png",
-        "txt": "main page of conclave",
+        "txt": "Main page screenshot",
         "class": "btn-default"
       },
       {
         "href": "less_code_optimized.png",
         "img": "less-code.png",
-        "txt": "Github PNG image",
-        "class": "btn-site-link"
+        "txt": "Show LESS screenshot",
+        "class": "btn-default"
       },
       {
         "href": "js_code_optimized.png",
         "img": "js-code.png",
-        "txt": "Catapult Home page example",
-        "class": "btn-primary"
+        "txt": "Show JS screenshot",
+        "class": "btn-default"
       },
       {
         "href": "sass_1_code_optimized.png",
         "img": "sass-code.png",
-        "txt": "Admin panel",
-        "class": "btn-default sass-button"
+        "txt": "Show 1 SASS screenshot",
+        "class": "btn-default"
+      },
+      {
+        "href": "sass_2_code_optimized.png",
+        "img": "sass-code.png",
+        "txt": "Show 2 SASS screenshot",
+        "class": "btn-default"
+      },
+      {
+        "href": "jade_1_code_optimized.png",
+        "img": "jade-code.png",
+        "txt": "Show 1 Jade screenshot",
+        "class": "btn-default"
+      },
+      {
+        "href": "jade_2_code_optimized.png",
+        "img": "jade-code.png",
+        "txt": "Show 2 Jade screenshot",
+        "class": "btn-default"
       }
     ],
     "dir": "conclave"
@@ -90,18 +116,56 @@
     "image": "premiumparts-adminka.png",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Mercurial Hg](https://www.mercurial-scm.org)",
+        "* [Python](https://www.python.org)",
+        "* [Django template engine | HTML](https://www.djangoproject.com)",
+        "* [Bootstrap | 3](http://getbootstrap.com/css)",
+        "* [jQuery](http://jquery.com)",
+        "* CSS3 responsive"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "It consisted of: i worked as Web-developer, 1 project manager, Web-designer and Python developer. I liked professionalism and good teamwork. "
+      ],
+      "myRole": [
+        "This e-commerce site based on Django and Scrapy, i used my knowledge of Django template system. When i worked with the team, i used my experience in usage of the [distributed version control system - Mercurial](http://mercurial.selenic.com). I worked 3 months under this project and coded main page for client area and administrative panel: ",
+        ">>",
+        "* Equipment movement in the Storage",
+        "* Client Billing",
+        "* Clients Orders Management",
+        "* Client Items Management in MySQL database | CRUD",
+        "* Marketplace and Manager Billing"
+      ],
+      "result": [
+        "We worked for three month. Work was hard, but we met the deadline.",
+        " Our customer appreciated result of our work by saying:>>",
+        "> Guys, i think users of my e-commerce site will be happy, so what is good for them is good for me. Good job!",
+        ">>During this time i grown professionally. I increased my knowledge and improved skills. I got a good experience and positive emotions, when i worked with them."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "adminka_en/adminka_en.html",
+        "img": "premiumparts-adminka.png",
+        "txt": "Browse Orders page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "adminka_en/clients_en.html",
+        "img": "premiumparts-clients.png",
+        "txt": "Browse Clients page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/premium-parts/tree/master/css",
+        "img": "css-code.png",
+        "txt": "Browse CSS from project",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/premium-parts/tree/master/js",
+        "img": "js-code.png",
+        "txt": "Browse JS from project",
+        "class": "btn-primary"
       }
     ],
     "dir": "pp"
@@ -203,18 +267,74 @@
     "image": "imobo-page.png",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [Github](https://github.com/anechka)",
+        "* [NodeJS](http://nodejs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)|[SASS](http://sass-lang.com/guide)",
+        "* [Bootstrap | 3](http://getbootstrap.com)",
+        "* Portuguese ISO 639-1 Language"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "In this project i contacted with my main manager from **Brazil.**",
+        "^Also i communicated with Javascript developer.",
+        "^I [developed Jade (compiled into HTML) / LESS (compiled into CSS) with Jetbrains Webstorm tool.](http://www.jetbrains.com/webstorm)",
+        "^We used [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and e-mail communication, Skype."
+      ],
+      "myRole": [
+        "This site based on NodeJS and Jade template engine, Twitter Bootstrap as a grid based CSS framework and LESS as main CSS preprocessor. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). For source code of this project was created private repo on [Github](https://github.com/anechka). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code. I worked near 2 weeks with this project and developed many Jade pages with LESS code. ",
+        ">>",
+        "* Near 11 Jade files",
+        "* Near 11 LESS files",
+        "* Login page",
+        "* 2 pages form registration",
+        "* 4 pages for work with e-mails",
+        "* 2 pages for selecting real estate",
+        "* Google Ads page",
+        "* Main [site page](http://localhost:63342/portfolio-site/portfolio-content/imobo/imobo-page.html)"
+      ],
+      "result": [
+        "After 2 weeks i completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap.",
+        "^My Brazil manager's quote:>>",
+        "> Anya did a great job using bootstrap. I'll work with her again soon."
       ]
     },
     "links": [
+
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "imobo-page.html",
+        "img": "imobo-page.png",
+        "txt": "Browse Imobo page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "marketing-form-page.html",
+        "img": "imobo-marketing-page.png",
+        "txt": "Browse marketing form page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/imobo-project/blob/master/jade/index.jade",
+        "img": "jade-code.png",
+        "txt": "Show Imobo page Jade code",
+        "class": "btn-primary "
+      },
+      {
+        "href": "https://github.com/anechka/imobo-project/blob/master/jade/email_marketing_form.jade",
+        "img": "jade-code.png",
+        "txt": "Show marketing form Jade",
+        "class": "btn-primary "
+      },
+      {
+        "href": "https://github.com/anechka/imobo-project/blob/master/less/main.less",
+        "img": "less-code.png",
+        "txt": "Show index page LESS",
+        "class": "btn-primary "
+      },
+      {
+        "href": "https://github.com/anechka/imobo-project/blob/master/less/email_marketing_form.less",
+        "img": "less-code.png",
+        "txt": "Show marketing LESS",
+        "class": "btn-primary "
       }
     ],
     "dir": "imobo"
@@ -245,18 +365,75 @@
     "image": "sumati-page.jpg",
     "markdown": {
       "aboutProject": [
-        "* Replace with Text"
+        "* [GitLab](https://about.gitlab.com)",
+        "* [Python](https://www.python.org)",
+        "* [Django](https://www.djangoproject.com)",
+        "* [Sphinx](http://sphinxsearch.com)",
+        "* [AngularJS](https://angularjs.org)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com/css)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "Our team included: I worked as Web Developer, 1 project manager, 1 Web designer, 1 Angular js Developer, 1 Python/Django Developer.",
+        "^We communicated via [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also used e-mail communication."
+      ],
+      "myRole": [
+        "The site based on Django and Jade template engine, Twitter Bootstrap as grid based CSS framework and LESS as main CSS preprocessor.",
+        "^As UI/UX Bootstrap consultant i disscused with Web designer design concept and developed design.",
+        "^Then i [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). Also i developed Django templates and helped Angular developer to develop angular application.",
+        "^When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). My tool is [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to repo on [GitLab](https://about.gitlab.com). I worked near 6 months with this project and developed many Jade pages with LESS code, Django templates and one part of Angular application.",
+        ">>",
+        "* Near 10 LESS files",
+        "* 5 Django templates",
+        "* Angular module for Django chart",
+        "* Search interface for internal flow documents",
+        "* Jade templates",
+        "* [Sumati main site](http://sumatigroup.com)"
+      ],
+      "result": [
+        "After 6 months i completed project and main goal was **developing design, coding Jade pages with LESS under Twitter Bootstrap, developing Django templates and Angular application.**",
+        "^President and CEO of Sumati said:>>",
+        "> I very liked what Anya have done!",
+        ">>During this project i improved my knowledge of Django template engine, Angular JS and increased Jade and LESS skills."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
+        "href": "http://sumatigroup.com",
+        "img": "sumati-page.jpg",
+        "txt": "Browse Sumati site",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "sumati-contracts.png",
+        "img": "sumati-contracts-page.png",
+        "txt": "Screenshot Django app",
         "class": "btn-default"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/less/components",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/django-templates",
+        "img": "django-code.png",
+        "txt": "Show Django templates",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/sumati-project/tree/master/angular-app",
+        "img": "angular-code.png",
+        "txt": "Show Javascript code",
+        "class": "btn-primary"
       }
     ],
     "dir": "sumati"
