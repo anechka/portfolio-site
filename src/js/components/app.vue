@@ -38,15 +38,12 @@
             setView(name) {
 
                 if (this.view !== name) {
-                    console.log(`setting view to ${name}`);
-
                     this.view = name;
                 }
-                else {console.log(`dn't change view to ${name}`);}
+
             }
         },
         created() {
-            console.log("Created app");
             model.state.projects.displayCurrent();
         }
     }
