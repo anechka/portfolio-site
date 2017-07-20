@@ -200,15 +200,50 @@
         "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "Replace with Text"
+        "It consisted of me and other russian freelancers, we worked in series: design to PSD, then html/css coding with Webstorm tool and LESS compiler, after php back-end on CMS system based on php Yii framework. Yii was a new experience for me, but work with Mustache was very simple, because i like language syntax of the Django template system :)",
+        "^Our team: project manager, Photoshop-designer, i am as HTML developer and PHP developer. We used the remote job system with Skype communication. "
+      ],
+      "myRole": [
+        "The site based on Yii and Mustache. I used my knowledge of LESS preprocessor with Twitter Bootstrap CSS framework and Mustache template system. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I worked near 2 weeks with this project and developed HTML main page for e-shop areas:",
+        ">>",
+        "* Categories",
+        "* Center Panel with registration button and text-info with Glyphicons Component from Bootstrap",
+        "* Goods Layout",
+        "* Help area for Clients",
+        "* LESS code with Bootstrap for all elements"
+      ],
+      "result": [
+        "After 2 weeks i completed project and main goal was **converting PSD to HTML and LESS**.",
+        "^Also all layout based on responsive base of Twitter Bootstrap 3 for mobile and desktop.",
+        "^My russian client said:>>",
+        "> Well, nice! We liked your work and skills. LESS is clean and beautiful.",
+        ">>During this project I increased my skills with Mustache and LESS."
       ]
     },
     "links": [
       {
-        "href": "compose-page.jpg",
-        "img": "conclave-page.png",
-        "txt": "main page of conclave",
-        "class": "btn-default"
+        "href": "market.html",
+        "img": "market-page.png",
+        "txt": "Browse ChipMarket page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/chipmarket/tree/master/less",
+        "img": "less-code.png",
+        "txt": "Browse LESS from project",
+        "class": " btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/chipmarket/tree/master/js",
+        "img": "js-code.png",
+        "txt": "Browse JS from project",
+        "class": " btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/chipmarket/",
+        "img": "html5-code.png",
+        "txt": "Show HTML5 code of site",
+        "class": " btn-primary"
       }
     ],
     "dir": "market"
