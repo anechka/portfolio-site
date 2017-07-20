@@ -1,10 +1,12 @@
-.footer-bg-gradient() {
-    background: transparent linear-gradient(
-            to right,
-            fadeout(darken(saturate(@water-blue-color, 25%), 10%), 25%) 0%,
-            fadeout(@water-blue-color, 25%) 50%,
-            fadeout(@dark-blue-color, 70%) 100%
-    );
+.footer-keyframes() {
+    50% {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }
 
 footer {
@@ -12,35 +14,30 @@ footer {
 
     @media (max-width: @screen-xs) {
         margin-top: @top-margin-for-div / @decrease-margin-koeff-for-mobile;
-        line-height: 2em;
     }
 
     a {
-        display: block;
-        padding: 0;
+        @-webkit-keyframes hvr-push {
+            .footer-keyframes()
+        }
+        @keyframes hvr-push {
+            .footer-keyframes()
+        }
 
-        color: fadeout(@dark-blue-color, 50%);
-        .footer-bg-gradient();
-
-        font-size: 0.75em;
-        font-family: "Days", Helvetica, Arial, sans-serif;
-        line-height: 1.5;
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+        }
 
         &:hover {
-            background-color: desaturate(@cloud-color, 5%);
-            color: fadeout(@cloud-color, 25%);
+            img {
+                animation-name: hvr-push;
+                animation-duration: 0.3s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+            }
         }
-
-        &:focus {
-            background-color: fadeout(@light-purple-color, 25%);
-            color: @green-grass-color;
-        }
-
-        &:visited {
-            background-color: fadeout(@light-purple-color, 25%);
-            color: fadeout(@blue-color, 50%);
-        }
-
-        span {}
     }
 }
