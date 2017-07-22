@@ -1,5 +1,5 @@
 <template lang="pug">
-    .col-md-6.description-project
+    .col-xs-6.col-md-6.description-project
         .row
             h3
                 i.icon-briefcase
@@ -22,7 +22,7 @@
         .row(v-if="this.project.markdown.result")
             h3 Result
 
-            section(v-html="this.project.markdown.result")
+            section(v-html="this.project.markdown.result", data-type="result")
 </template>
 
 <script>
