@@ -1,8 +1,6 @@
-import PluralizeJS from "../vendor/pluralize"
+import app from "../main"
 import markdown from "../vendor/markdown"
 import model from "./models"
-
-const pluralize = PluralizeJS();
 
 function processProjects() {
     const path = {
@@ -25,7 +23,7 @@ function processProjects() {
         project.image = `${path.portfolioThumbnails}/${project.image}`;
 
         project.href = `#project/${project.name}`;
-        project.time = project.time ? pluralize("month", project.time, true) : "1 week";
+        project.time = project.time ? app.pluralize("month", project.time, true) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
 
         // Processing links like buttons on external or internal resources
@@ -79,14 +77,14 @@ function processProjects() {
         }
     }
 
-    model.state.counter.text = `More than ${pluralize("project", model.state.projects.source.length, true)} released`
+    model.state.counter.text = "Choose technology above"
 }
 
 function setupAbout() {
     const exp = model.state.about.experience;
     for (let stackName in exp) {
         const yearsNumber = exp[stackName];
-        exp[stackName] = pluralize("year", yearsNumber, true);
+        exp[stackName] = app.pluralize("year", yearsNumber, true);
     }
 }
 

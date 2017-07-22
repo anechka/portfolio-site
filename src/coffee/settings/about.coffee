@@ -1,8 +1,0 @@
-about =
-  experience:
-    "JavaScript": 3
-    "Node.js": 3
-    "Vue.js": 1
-    "Python": 3
-  environment: "OS X, Webstorm, Gulp, Sublime Text 3, Git, Mercurial, Webkit"
-  availability: "Part-time"

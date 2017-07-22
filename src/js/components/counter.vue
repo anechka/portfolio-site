@@ -1,22 +1,24 @@
 <template lang="pug">
 .row
     .col-md-12.margined-top-div.text-center.text-uppercase
-        span(v-text="model.text")#counter
+        span(v-text="counter.text")#counter
 </template>
 
 <script>
+    import app from "../main"
     import model from "../core/models"
 
     export default {
         data() {
             return {
-                model: model.state.counter
+                counter: model.state.counter,
+                projectsNumber: model.state.projects.source.length
             }
         },
         methods: {
             createTyping(text) {
                 const newText = text;
-                const prevText = this.model.text;
+                const prevText = this.counter.text;
 
                 const current = {
                     string: prevText,
@@ -45,7 +47,7 @@
 
                                 current.string += newText[current.position];
 
-                                this.model.text = current.string;
+                                this.counter.text = current.string;
 
                                 current.position++;
 
@@ -54,7 +56,7 @@
                                 clear();
 
                                 setTimeout(() => {
-                                    this.model.text = prevText
+                                    this.counter.text = prevText
                                 }, 2000)
                             }
                         }
@@ -64,7 +66,7 @@
 
                                 current.string = current.string.substring(0, current.string.length - 1);
 
-                                this.model.text = current.string;
+                                this.counter.text = current.string;
 
                                 current.position--;
                             }
@@ -84,7 +86,7 @@
         },
         mounted() {
             setTimeout(() => {
-                this.createTyping("⇧Choose technology above⇧")
+                this.createTyping(`More than ${app.pluralize("project", this.projectsNumber, true)} released`)
             }, 5000)
         }
     }

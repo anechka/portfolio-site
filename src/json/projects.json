@@ -556,7 +556,7 @@
       {
         "href": "catapult-home-page.html",
         "img": "catapult-page.png",
-        "txt": "Browse Catapult Home page",
+        "txt": "Browse Home page",
         "class": "btn-site-link"
       },
       {
@@ -622,7 +622,7 @@
       {
         "href": "hammer-home-page.html",
         "img": "hammer-page@2x.png",
-        "txt": "Browse Hammer Home page",
+        "txt": "Browse Home page",
         "class": "btn-site-link"
       },
       {
