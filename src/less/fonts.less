@@ -1,31 +1,35 @@
 @font-face {
-    font-family: "Days";
-    src: url("@{fonts}/days.otf") format("opentype");
-    font-weight: normal;
+    font-family: Days;
+    src: url("@{fonts}/days.otf") format("opentype"),
+    url("@{fonts}/days.woff") format("woff"),
+    url("@{fonts}/days.woff2") format("woff2");
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Gotham Medium";
-    src: url("@{fonts}/gotham.otf") format("opentype");
-    font-weight: normal;
+    src: url("@{fonts}/gotham.otf") format("opentype"),
+    url("@{fonts}/gotham.woff") format("woff"),
+    url("@{fonts}/gotham.woff2") format("woff2");
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'fontello';
-    src: url('@{fonts}/fontello.eot');
-    src: url('@{fonts}/fontello.eot#iefix') format('embedded-opentype'),
-    url('@{fonts}/fontello.woff2') format('woff2'),
-    url('@{fonts}/fontello.woff') format('woff'),
-    url('@{fonts}/fontello.ttf') format('truetype'),
-    url('@{fonts}/fontello.svg#fontello') format('svg');
+    font-family: fontello;
+    src: url("@{fonts}/fontello.eot");
+    src: url("@{fonts}/fontello.eot#iefix") format("embedded-opentype"),
+    url("@{fonts}/fontello.woff2") format("woff2"),
+    url("@{fonts}/fontello.woff") format("woff"),
+    url("@{fonts}/fontello.ttf") format("truetype"),
+    url("@{fonts}/fontello.svg#fontello") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "fontello";
+    font-family: fontello;
     font-style: normal;
     font-weight: normal;
     speak: none;

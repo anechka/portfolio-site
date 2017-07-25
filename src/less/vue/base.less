@@ -3,13 +3,15 @@ BODY {
     background-size: 100% auto;
     color: fadeout(@cloud-color, 40%);
     overflow-x: hidden;
+    background-image: url("@{images}/background-mobile.jpg");
 
-    @media only screen and (max-width: 1365px) {
-        background-image: url("@{images}/background.jpg");
-    }
     // FullHD
     @media only screen and (min-width: 1366px) {
         background-image: url("@{images}/background-fhd.jpg");
+    }
+
+    @media only screen and (min-width: 360px) {
+        background-image: url("@{images}/background.jpg");
     }
     // Retina iPad
     @media only screen and (min-width: 768px) and (max-width: 1024px) and (min-resolution: 192dpi) {
@@ -22,11 +24,6 @@ BODY {
     // Retina x2 iPhone
     @media only screen and (max-width: 375px) and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
         background-image: url("@{images}/background-iphone@2x.jpg");
-    }
-
-    // Default Mobile
-    @media only screen and (max-width: 360px) {
-        background-image: url("@{images}/background-mobile.jpg")
     }
 
     // Samsung x3 and x4

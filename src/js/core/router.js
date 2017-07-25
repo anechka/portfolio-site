@@ -17,7 +17,7 @@ export default function() {
                 const tagName = decodeURI(urlArray[0]).toLowerCase();
                 console.log(`Tag is ${tagName}`);
 
-                application.view.setView(viewsTypes.flex);
+                application.view.setPortfolioView(viewsTypes.flex);
                 model.state.projects.displayProjectsByTag(tagName);
             }
             else if (urlArray.length === 2) {
@@ -27,7 +27,7 @@ export default function() {
                 console.log(`Project is ${projectName}`);
 
                 model.state.projects.displayByName(projectName);
-                application.view.setView(viewsTypes.project)
+                application.view.setPortfolioView(viewsTypes.project)
             }
         }
     }

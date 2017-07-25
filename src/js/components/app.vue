@@ -35,7 +35,7 @@
             }
         },
         methods: {
-            setView(name) {
+            setPortfolioView(name) {
 
                 if (this.view !== name) {
                     this.view = name;
@@ -43,8 +43,6 @@
 
             }
         },
-        created() {
-            model.state.projects.displayCurrent();
-        }
+        created() { model.state.projects.displayCurrent() }
     }
 </script>

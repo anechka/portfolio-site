@@ -3,7 +3,7 @@
 
     .description-content {
         /* Main div in the middle */
-        display: flex;
+        .flex();
         border-radius: 2px;
         background-image: url("../images/background_dots.png");
         color: @water;
@@ -13,7 +13,7 @@
         padding: 0;
 
         .description-project {
-            flex-flow: column;
+            .flex-col();
 
             i {
                 position: relative;
@@ -67,7 +67,7 @@
             }
         }
         .images-a-content {
-            flex-flow: column;
+            .flex-col();
             border-radius: 2px;
             padding: 4px 0;
             background-color: #FFF;

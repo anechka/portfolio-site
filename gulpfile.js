@@ -27,7 +27,7 @@ const siteDomain = "novikova.us";
 
 const production = !!util.env.production; // False for pretty HTML output in "jade" template engine task
 
-gulp.task('default', ['jade', 'jade-portfolio', 'less', 'javascript']);
+gulp.task('default', ['jade', 'less']);
 
 gulp.task('watch', () => {
         //gulp.watch(['src/jade/index.jade', 'src/jade/index-ru.jade', 'src/jade/components/*.jade'], ['jade']);
@@ -59,53 +59,6 @@ gulp.task('jade', () => {
         .pipe(gulp.dest('deploy/docker/dist'));
 });
 
-// Compile portfolio jade files
-gulp.task('jade-portfolio', () => {
-    let jadeVariables = {www: siteDomain};
-    let jadeConfig = production ? {data: jadeVariables} : {pretty: true, data: jadeVariables};
-
-    // Jade templates from /portfolio/projects
-    gulp.src('src/jade/portfolio/projects/conclave/conclave.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/conclave"));
-
-    gulp.src('src/jade/portfolio/projects/market/chipmarket.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/market"));
-
-    gulp.src('src/jade/portfolio/projects/pp/premium_parts.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/pp"));
-
-    gulp.src('src/jade/portfolio/projects/imobo/imobo.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/imobo"));
-
-    gulp.src('src/jade/portfolio/projects/redalgo/redalgo.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/redalgo"));
-
-    gulp.src('src/jade/portfolio/projects/sumati/sumati.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/sumati"));
-
-    gulp.src('src/jade/portfolio/projects/catapult/catapult.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/catapult"));
-
-    gulp.src('src/jade/portfolio/projects/hammer/hammer.jade')
-        .pipe(jade(jadeConfig))
-        .pipe(rename("index.html"))
-        .pipe(gulp.dest("deploy/docker/dist/portfolio-content/hammer"));
-
-});
 
 gulp.task('clean', () => {
 
