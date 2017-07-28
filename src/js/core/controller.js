@@ -45,9 +45,15 @@ function processProjects() {
 
                 const iconClassString = button.class;
                 button.iconClass = {
-                    "icon-logout": iconClassString.includes("btn-site-link"),
-                    "icon-github-alter": iconClassString.includes("btn-primary"),
-                    "icon-chrome": iconClassString.includes("btn-default")
+                    //TODO: [OPTIMIZE in new ES6]
+                    // iconClassString.includes("btn-site-link"),
+                    "icon-logout": iconClassString.indexOf("btn-site-link") !== -1,
+                    //TODO: [OPTIMIZE in new ES6]
+                    // iconClassString.includes("btn-primary"),
+                    "icon-github-alter": iconClassString.indexOf("btn-primary") !== -1,
+                    //TODO: [OPTIMIZE in new ES6]
+                    // iconClassString.includes("btn-default")
+                    "icon-chrome": iconClassString.indexOf("btn-default") !== -1
                 }
             }
         }

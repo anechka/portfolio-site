@@ -17,6 +17,8 @@
         },
         methods: {
             createTyping(text) {
+                let intervalId;// Butternut removing unused code fix
+
                 const newText = text;
                 const prevText = this.counter.text;
 
@@ -30,7 +32,7 @@
                     return speed;
                 };
 
-                let intervalId = setInterval(() => {typing.call(this)}, 100);
+                intervalId = setInterval(() => {typing.call(this)}, 100);
 
                 const clear = function () {
                     clearInterval(intervalId);

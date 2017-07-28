@@ -20,7 +20,9 @@ const model = {
                 for (let project of model.state.projects.source) {
                     const projectTagsArray = project.tags;
 
-                    if (projectTagsArray.includes(tagName)) {
+                    //TODO: [OPTIMIZE in new ES6]
+                    // projectTagsArray.includes(tagName)
+                    if (projectTagsArray.indexOf(tagName) !== -1) {
                         projectsNumberWithTag++;
                     }
                 }
