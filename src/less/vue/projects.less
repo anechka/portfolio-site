@@ -74,14 +74,18 @@
                 .project-header-container {
                     min-height: 120px;
                     background: @projects-header-background;
-                    padding: 10px 0;
+                    padding: 10px;
                     line-height: 1.2;
 
                     .header-top {
                         margin: 0.6em 0;
 
-                        @media (min-width: @screen-md-min) {
+                        @media (max-width: @screen-sm-max) {
                             margin: 0.4em 0;
+
+                            span.link, span.text {
+                                display: inline-block;
+                            }
                         }
 
                         color: @gold-color;
