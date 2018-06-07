@@ -1,15 +1,33 @@
 {
   "name": "portfolio-site-ane4kin",
-  "version": "1.0.0",
-  "repository": { "type": "git", "url": "https://github.com/anechka/portfolio-site.git" },
+  "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anechka/portfolio-site.git"
+  },
   "description": "Freelancer parallax portfolio web-site",
   "homepage": "http://anya.site",
-  "dependencies": {
-    "gulp": "^3.8.11",
-    "gulp-clean": "^0.3.1",
-    "gulp-jade": "^1.0.0",
-    "gulp-rename": "*",
-    "gulp-concat": "^2.6.0"
+  "scripts": {
+    "pug": "pug src/pug/ --out dist/ --pretty",
+    "pug:watch": "pug --out dist/ --pretty --watch src/pug/",
+    "serve": "http-server --silent -c 1 -o",
+    "js": "rollup -c",
+    "js:watch": "rollup -c -w --sourcemap",
+    "lint": "eslint --format codeframe --ext .js,.vue src/javascript || exit 0",
+    "less": "lessc src/less/styles.less dist/css/styles.css --source-map --clean-css='--s1 --advanced'",
+    "less:watch": "./node_modules/.bin/watch --interval=0.3 'echo Less files compiling && lessc src/less/styles.less dist/css/styles.css --source-map' src/less",
+    "watch": "concurrently \"npm run less:watch\" \"npm run js:watch\" \"npm run pug:watch\"",
+    "build": "npm run pug && npm run less && npm run js"
   },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "rollup": "^0.45.1",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-butternut": "^0.1.0",
+    "rollup-plugin-json": "^2.1.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-vue": "^2.4.0",
+    "vue": "^2.3.4"
+  }
 }

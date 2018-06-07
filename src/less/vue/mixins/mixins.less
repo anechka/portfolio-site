@@ -1,0 +1,20 @@
+@import "mobile";
+@import "transition";
+@import "flexbox";
+
+.avatar() {
+    max-width: @max-avatar-size;
+    max-height: @max-avatar-size;
+    border: 4px solid #e5e9ee;
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.25);
+    margin-top: @top-margin-for-div + 5px;
+}
+// Header icon design
+.header-icon() {
+    color: @cloud-rain-color;
+    opacity: 0.6;
+}
+// tag sprite position in .svg image
+.process-sprite-position(@tagNumber, @width, @tag-gutter) {
+    @sprite-position: (@tagNumber - 1) * -(@width + @tag-gutter);
+}

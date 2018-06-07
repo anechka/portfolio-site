@@ -1,0 +1,62 @@
+&.parallax_container {
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @media (max-width: @screen-sm) {
+        max-width: 100%;
+    }
+
+    ul {
+        li {
+            list-style-type: none;
+        }
+    }
+
+    .design-copy {
+        position: absolute;
+
+        right: 0;
+        top: 5em;
+
+        padding: 10px;
+        width: 9em;
+
+        color: #FFF;
+        opacity: 0.1;
+
+        font-family: Days, Helvetica, Arial, sans-serif;
+        font-size: 1.0em;
+    }
+
+    ul#scene {
+        margin-left: 25%;
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            img.cloud_layer {
+                position: relative;
+                left: -50%;
+
+                &.cloud_two {
+                    left: -25%;
+                }
+
+                &.cloud_three {
+                    left: -30%;
+
+                    @media (max-width: @screen-md) {
+                        opacity: 0.9;
+                    }
+                }
+
+                &.cloud_four {
+                    left: -45%;
+                }
+            }
+        }
+    }
+}

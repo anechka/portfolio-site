@@ -1,0 +1,21 @@
+.row
+    .col-md-6.margined-top-div.text-center
+        email
+
+    .col-md-6.margined-top-div.text-center
+        a(href="skype:ane4kanoka?chat").skype
+            span(alt="Skype login", title="My login in Skype").left
+                i.icon-skype
+            span(alt="Skype login", title="My login in Skype").center ane4kanoka
+.row
+    .col-md-12.margined-top-div.text-center.profiles-content
+        // Upwork profile
+        .col-md-6
+            a.external-profile.upwork-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                //- SVG include as inline <svg> element
+                include ../../../../deploy/docker/dist/images/upwork-profile-link.svg
+        // Github profile
+        .col-md-6.margined-top-div
+            a.external-profile.github-profile(href="https://github.com/anechka")
+                i.icon-github-alter
+                | Github account

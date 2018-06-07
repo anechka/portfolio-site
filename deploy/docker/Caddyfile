@@ -1,0 +1,30 @@
+0.0.0.0:8080
+
+root /var/www/html
+
+log stdout
+
+errors stdout
+
+gzip {
+	ext "" ".txt" ".htm" ".html" ".css" ".js" ".otf" ".woff" ".eot" ".svg"
+	level 5
+}
+
+mime {
+	.woff2 application/font-woff2
+	.otf font/opentype
+	.ttf application/x-font-ttf
+	.eot application/vnd.ms-fontobject
+}
+
+redir {
+    /django     "/#/django"
+    /bootstrap     "/#/bootstrap"
+    /less     "/#/less"
+    /sass     "/#/sass"
+    /nodejs     "/#/nodejs"
+    /python     "/#/python"
+    /jquery     "/#/jquery"
+    /angular     "/#/angular"
+}
