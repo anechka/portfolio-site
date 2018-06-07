@@ -1,0 +1,111 @@
+doctype html
+html(lang="en", data-type="index")
+    head
+        title Аня Новикова | Портфолио HTML5, Bootstrap, Jade, Javascript, Django разработчик
+
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content="Топовый веб разработчик HTML5, CSS3, Jade, Javascript и Django шаблонов")
+        meta(name="keywords", content="960grid, adaptive, ajax, angular, bootstrap, css, css3, code, developer, design, django, flat, foundation, framework, frontend, git, github, hg, html, html5, jquery, javascript, jade, jinja2, landing, layout, less, mobile, nodejs, nginx, oDesk, parallax, photoshop, project, psd, responsive, sass, sketch, stylesheet, twitterbootstrap, template, ui, userinterface, userexperience, upwork, web, веб-разработчик, программист, разработчик, смоленск, удалённый, фрилансер")
+
+        style(rel='stylesheet').
+            A.external-profile { color: #6fda44 }
+
+    body
+        .container.parallax_container
+            .design-copy Menangen design
+            ul#scene
+                -
+                    var VueLayer1 = {":src": "cloud1"}
+                    var VueLayer2 = {":src": "cloud2"}
+                    var VueLayer3 = {":src": "cloud3"}
+                    var VueLayer4 = {":src": "cloud4"}
+                    var VueLayer5 = {":src": "cloud5"}
+                li.layer(data-depth="0.00"): img.cloud_layer&attributes(VueLayer5)
+                li.layer(data-depth="0.10"): img.cloud_layer&attributes(VueLayer1)
+                li.layer(data-depth="0.30"): img.cloud_layer.cloud_two&attributes(VueLayer2)
+                li.layer(data-depth="0.60"): img.cloud_layer.cloud_three&attributes(VueLayer3)
+                li.layer(data-depth="1.00"): img.cloud_layer.cloud_four&attributes(VueLayer4)
+
+        .container.image_container
+
+            .row
+                .col-md-12.avatar.text-center
+                    img.img-circle.img-avatar(src="images/avatar.jpg", width="120px", height="120px", alt="Фото Новиковой Ани", title="Новикова Аня")
+            .row
+                .col-md-12.margined-top-div.text-center
+                    span(title="ТОП 10 Upwork HTML5 Разработчик").name-header.centered-scale-element HTML5 Jade Javascript разработчик Аня Новикова
+            .row
+                .col-md-6.margined-top-div.text-center#mail
+
+                    - var mailView = {":href": "link"}
+                    a&attributes(mailView)
+                        span.email
+                            i.icon-mail-alter
+
+                        - mailView = {"v-text": "email"}
+                        span(title="Почта Ани Новиковой").email.centered-scale-element&attributes(mailView)
+
+                .col-md-6.margined-top-div.text-center
+                    span(alt="Я в сети Skype", title="Skype Ани Новиковой").skype-header.left
+                        i.icon-skype
+                    span(alt="Я в сети Skype", title="Skype Ани Новиковой").skype-header.center ane4kanoka
+            .row
+                .col-md-12.margined-top-div.text-center.profiles-content
+                    // Upwork profile
+                    .col-md-6
+                        a.external-profile.odesk-profile(href="https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a/")
+                            //- SVG include as inline <svg> element
+                            include ../../deploy/docker/dist/images/upwork-profile-link.svg
+                    // Github profile
+                    .col-md-6.margined-top-div
+                        a.external-profile.github-profile(href="https://github.com/anechka")
+                            i.icon-github-alter
+                            | github.com/anechka
+
+            .row
+                .tags.col-md-12.margined-top-div.text-center#tags
+                    // Django tag
+                    tag(tagname="django")
+                    // Twitter Bootstrap tag
+                    tag(tagname="bootstrap")
+                    // Less framework tag
+                    tag(tagname="less")
+                    // Sass / SCSS tag
+                    tag(tagname="sass")
+                    // Node.js tag
+                    tag(tagname="nodejs")
+                    // Python tag
+                    tag(tagname="python")
+                    // Javascript ECMAScript 6 tag
+                    tag(tagname="javascript")
+                    // jQuery tag
+                    tag(tagname="jquery")
+                    // Angular tag
+                    tag(tagname="angular")
+
+            .row
+
+                - var VueAttributes = {"v-text": "projectsCounterText"}
+                .col-md-12&attributes(VueAttributes).margined-top-div.text-center.text-uppercase#counter
+            .row
+                .col-md-10.col-md-offset-1.margined-top-div#projectsList
+                    //- Display filtered projects in loop
+                    include components/projects
+            //- Russian website link hidden now
+            //-.row
+                nav.col-md-4.col-md-offset-4.col-xs-12.text-center.flag-language
+                    a(href="http://anya.site")
+                        img(src="images/flag-english.svg", alt="english site", title="english", width="48px")
+                        span(data-hover="ENGLISH") English
+
+        link(rel="stylesheet", href="css/main.min.css")
+        //- Concatenated by gulp task Javascript: js/vendor/src/vue.min.js + js/vendor/src/zepto.min.js custom build (core only) + js/vendor/src/parallax.min.js
+        script(type="text/javascript", src="js/all.js", async="async")
+        //- Google Analytics script
+        script(type='text/javascript').
+            window._gaq = window._gaq || [];
+            window._gaq.push(['_setAccount', 'UA-50636137-1']);
+            window._gaq.push(['_trackPageview']);
+        //- script(type="text/javascript", src="http://www.google-analytics.com/ga.js", async="async")
+include components/tag.jade

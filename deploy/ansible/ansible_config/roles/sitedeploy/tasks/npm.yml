@@ -1,0 +1,19 @@
+---
+- name: NPM | installing on node
+  apt:
+   name=npm
+   state=present
+- name: NPM | installing libs from package.json
+  npm:
+   path={{ site_root_dir }}
+   production=yes
+- name: NPM | set symlink
+  file:
+   src=/usr/bin/nodejs
+   dest=/usr/bin/node
+   state=link
+- name: NPM | gulp compilation
+  shell: node_modules/.bin/gulp --production chdir={{ site_root_dir }}
+  notify: 
+   - restart nginx
+#Created by Punko <Punkoivan@yandex.ru> 16.02.16

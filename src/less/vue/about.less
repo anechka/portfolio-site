@@ -1,0 +1,47 @@
+.padding-inline() {
+    padding-right: @about-developer-padding;
+    display: inline;
+}
+
+.about-developer {
+    // Fix vertical position for centering between header and tags
+    position: relative;
+    top: 12px;
+
+    .col-md-12 {
+        padding: 3px 15px;
+        // .text-center fix on mobile < 480px
+        @media (max-width: @screen-xs) {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        h4, h5, h6 {
+            .padding-inline;
+            font-family: Days, sans-serif;
+            transition: color @transition-header-time ease-in;
+            color: @about-developer-header-color;
+        }
+
+        span.environment, span.availability { color: @sky-cloudly-color
+        }
+
+        summary {
+            display: inline;
+
+            strong {
+                .padding-inline;
+                color: @cloud-color;
+            }
+            span {
+                .padding-inline;
+                color: @sky-cloudly-color;
+            }
+        }
+
+
+        &:hover {
+            h4, h5, h6 { color: @green-grass-color; .reset-transition() }
+        }
+    }
+}
