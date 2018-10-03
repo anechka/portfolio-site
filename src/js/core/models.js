@@ -1,4 +1,4 @@
-import app from "../main"
+import pluralize from "pluralize"
 import about from "../../json/about.json"
 import projects from "../../json/projects.json"
 
@@ -47,7 +47,7 @@ const model = {
                     tags[tagName] = true;
 
                     const counterProjects = model.state.projects.howManyProjectsOn(tagName);
-                    counterText = `${app.pluralize("project", counterProjects, true)} on ${tagName}`;
+                    counterText = `${pluralize("project", counterProjects, true)} on ${tagName}`;
 
                     for (let project of model.state.projects.source) {
                         const projectTagsArray = project.tags;
@@ -108,7 +108,7 @@ const model = {
             text: "",
             setCounter(value) {
                 if (typeof value === "string") this.text = value;
-                else this.text = `Show ${app.pluralize("project", value, true)}`;
+                else this.text = `Show ${pluralize("project", value, true)}`;
             },
             setDefaultCounter() {
                 this.text = this.prevText;

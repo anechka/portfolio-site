@@ -1,32 +1,40 @@
-const vue = require("rollup-plugin-vue");
-const nodeResolve = require("rollup-plugin-node-resolve");
-const replace = require("rollup-plugin-replace");
-const json = require("rollup-plugin-json");
-const butternut = require("rollup-plugin-butternut");
-const buble = require("rollup-plugin-buble");
+import vue from 'rollup-plugin-vue'
+import json from 'rollup-plugin-json';
 
-const production = process.env.NODE_ENV === "production";
+const terser = require("rollup-plugin-terser").terser;
+const includePaths = require("rollup-plugin-includepaths");
+
+const isDev = process.env.NODE_ENV !== "production";
 
 export default {
-    entry: "src/js/main.js",
-    format: "iife",
-    moduleName: "website",
-    useStrict: false,
-    sourceMap: !production,
-    dest: "deploy/docker/dist/js/bundle.js",
+    input: "src/js/main.js",
+    output: {
+        file: "deploy/docker/dist/js/app.js",
+        format: "iife",
+        sourcemap: isDev,
+        interop: false,
+        strict: false,
+        exports: "named",
+        globals: {
+            vue: "vendor.Vue",
+            pluralize: "vendor.Pluralize",
+            markdown: "vendor.markdown",
+            Parallax: "vendor.Parallax"
+        },
+        name: "app"
+    },
+    external: [ "vue", "pluralize", "markdown", "Parallax" ],
+    watch: {
+        include: "src/js/**",
+        exclude: "node_modules/**"
+    },
     plugins: [
-        vue({compileTemplate: true}),
-        replace({
-            "process.env.NODE_ENV": JSON.stringify(production ? "production" : "development")
+        includePaths({
+            paths: ["src/js"],
+            extensions: [".js", ".json", ".vue"]
         }),
+        vue({ css: false }),
         json(),
-        buble({
-            transforms: {
-                forOf: false,
-                modules: false
-            }
-        }),
-        nodeResolve({ browser: true, jsnext: true, main: true }),
-        production ? butternut({ sourceMap: false }) : {}
+        (!isDev && terser({ sourcemap: false }))
     ]
 }

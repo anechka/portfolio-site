@@ -1,6 +1,4 @@
 import model from "../core/models"
-import viewsTypes from "./viewController"
-import application from "../main"
 
 export default function() {
     const trailingSlashRE = /[^\/#]+/ig;
@@ -17,7 +15,7 @@ export default function() {
                 const tagName = decodeURI(urlArray[0]).toLowerCase();
                 console.log(`Tag is ${tagName}`);
 
-                application.view.setPortfolioView(viewsTypes.flex);
+                application.view.setPortfolioView("flex");
                 model.state.projects.displayProjectsByTag(tagName);
             }
             else if (urlArray.length === 2) {
@@ -27,7 +25,7 @@ export default function() {
                 console.log(`Project is ${projectName}`);
 
                 model.state.projects.displayByName(projectName);
-                application.view.setPortfolioView(viewsTypes.project)
+                application.view.setPortfolioView("project");
             }
         }
     }

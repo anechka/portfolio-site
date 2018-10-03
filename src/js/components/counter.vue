@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import app from "../main"
+    import pluralize from "pluralize"
     import model from "../core/models"
 
     export default {
@@ -88,7 +88,7 @@
         },
         mounted() {
             setTimeout(() => {
-                this.createTyping(`More than ${app.pluralize("project", this.projectsNumber, true)} released`)
+                this.createTyping(`More than ${pluralize("project", this.projectsNumber, true)} released`)
             }, 5000)
         }
     }

@@ -1,5 +1,5 @@
-import app from "../main"
-import markdown from "../vendor/markdown"
+import pluralize from "pluralize"
+import markdown from "markdown"
 import model from "./models"
 
 function processProjects() {
@@ -23,7 +23,7 @@ function processProjects() {
         project.image = `${path.portfolioThumbnails}/${project.image}`;
 
         project.href = `#project/${project.name}`;
-        project.time = project.time ? app.pluralize("month", project.time, true) : "1 week";
+        project.time = project.time ? pluralize("month", project.time, true) : "1 week";
         project.task = project.task ? project.task : "PSD to HTML";
 
         // Processing links like buttons on external or internal resources
@@ -32,16 +32,13 @@ function processProjects() {
             const linksArray = project.links;
 
             for (let button of linksArray) {
-                //console.log(`Before: ${button.href}`);
-
-                let src = button.href
+                // console.log(`Before: ${button.href}`);
+                button.href = button.href
                 // Local Images replace path
-                .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
-                // Local Pages replace path
-                .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
-
-                //console.log(`After: ${src}`);
-                button.href = src;
+                    .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
+                    // Local Pages replace path
+                    .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
+                // console.log(`After: ${button.href}`);
 
                 const iconClassString = button.class;
                 button.iconClass = {
@@ -90,7 +87,7 @@ function setupAbout() {
     const exp = model.state.about.experience;
     for (let stackName in exp) {
         const yearsNumber = exp[stackName];
-        exp[stackName] = app.pluralize("year", yearsNumber, true);
+        exp[stackName] = pluralize("year", yearsNumber, true);
     }
 }
 
