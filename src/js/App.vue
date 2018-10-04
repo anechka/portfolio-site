@@ -8,7 +8,7 @@
         about
         tags
         counter
-        portfolio(:currentView="dynamicView")
+        portfolio(:currentView="state.dynamicView")
 
         include templates/feedback
         include templates/social
@@ -26,7 +26,6 @@
     import email from "components/email.vue"
 
     import model from "core/models"
-    import router from "./core/router"
     import setupModels from "./core/controller"
 
     export default {
@@ -34,28 +33,14 @@
         components: { clouds, about, tags, counter, portfolio, email },
         data() {
             return {
-                dynamicView: "flex"
+                state: model.state
             }
         },
-        methods: {
-            setPortfolioView(type) {
-
-                if (type in ["flex", "project"]) {
-                    this.dynamicView = type;
-                }
-
-            }
-        },
+        methods: {},
         created() {
-            router();
             setupModels();
 
-            model.state.projects.displayCurrent()
-        },
-        /*mounted() {
-            window.addEventListener("hashchange", router, false);
-
-            window.addEventListener("load", () => { alert("Complete load") }, false);
-        }*/
+            this.state.projects.displayCurrent()
+        }
     }
 </script>

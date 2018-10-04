@@ -1,9 +1,11 @@
 import pluralize from "pluralize"
+
 import about from "../../json/about.json"
 import projects from "../../json/projects.json"
 
 const model = {
     state: {
+        dynamicView: "flex",
         about,
         projects: {
             source: projects,
@@ -120,7 +122,7 @@ const model = {
                 this.setCounter(counterProjects);
             }
         },
-        www: null
+        domain: null
     }
 };
 

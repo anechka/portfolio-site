@@ -10,7 +10,7 @@
   with_items:
    - { src: 'nginx.conf.j2', dest: '{{ nginx_config_dir }}/nginx.conf' }   
    - { src: 'ane4k.in.j2', dest: '{{ nginx_config_dir }}/sites-available/ane4k.in' }  
-   - { src: 'anya.site.j2', dest: '{{ nginx_config_dir }}/sites-available/anya.site' }
+   - { src: 'novikova.us.j2', dest: '{{ nginx_config_dir }}/sites-available/novikova.us' }
 - name: Nginx | set correct permission for site file
   file:
    path={{ site_root_dir }}
@@ -18,9 +18,9 @@
    owner={{ nginx_user }}
    group={{ nginx_group }}
    mode=0755
-- name: Nginx | create symlink to sites-enabled for anya.site and ane4k.in
+- name: Nginx | create symlink to sites-enabled for novikova.us and ane4k.in
   file: src={{ item.src }} dest={{ item.dest }} state=link
   with_items: 
    - { src: '{{ nginx_config_dir }}/sites-available/ane4k.in', dest: '{{ nginx_config_dir }}/sites-enabled/ane4k.in' }
-   - { src: '{{ nginx_config_dir }}/sites-available/anya.site', dest: '{{ nginx_config_dir }}/sites-enabled/anya.site' }
+   - { src: '{{ nginx_config_dir }}/sites-available/novikova.us', dest: '{{ nginx_config_dir }}/sites-enabled/novikova.us' }
 #Created by Punko <Punkoivan@yandex.ru> 16.02.16

@@ -49,7 +49,7 @@ gulp.task('less', () => {
 
 // Compile only 2 templates: index[-RU].jade
 gulp.task('jade', () => {
-    let jadeVariables = {www: siteDomain};
+    let jadeVariables = {domain: siteDomain};
     // Jade templates from src/jade folder
     gulp.src([
         'src/jade/index.jade'// ,'src/jade/index-ru.jade'

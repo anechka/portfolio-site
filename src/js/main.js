@@ -1,4 +1,6 @@
 import Vue from "vue"
 import App from "App.vue"
+import RouterPlugin from "core/router"
 
-export default new Vue(App);
+Vue.use(RouterPlugin);
+new Vue(App);

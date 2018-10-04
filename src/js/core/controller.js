@@ -92,7 +92,7 @@ function setupAbout() {
 }
 
 export default function setupModels() {
-    model.state.www = document.querySelector("meta[name=author]").content;
+    model.state.domain = document.querySelector("meta[name=author]").content;
     processProjects();
     setupAbout();
 
