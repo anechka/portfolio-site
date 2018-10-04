@@ -8,7 +8,7 @@
         about
         tags
         counter
-        portfolio(:currentView="state.dynamicView")
+        portfolio
 
         include templates/feedback
         include templates/social

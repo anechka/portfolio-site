@@ -1,6 +1,6 @@
 <template lang="pug">
     .row.portfolio
-        component(v-bind:is="currentView", ref="view")
+        component(v-bind:is="state.dynamicView", ref="view")
 </template>
 
 <script>
@@ -14,6 +14,11 @@
         components: {
             "flex": flexBoxComponent,
             "project": projectComponent
+        },
+        data() {
+            return {
+                state: model.state
+            }
         }
     }
 </script>

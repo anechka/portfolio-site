@@ -5,14 +5,12 @@
 </template>
 
 <script>
-    import pluralize from "pluralize"
     import model from "../core/models"
 
     export default {
         data() {
             return {
-                counter: model.state.counter,
-                projectsNumber: model.state.projects.source.length
+                counter: model.state.counter
             }
         },
         methods: {
@@ -28,11 +26,11 @@
                 };
 
                 const delay = function( speed ) {
-                    speed += Math.floor(Math.random() * 120);
+                    speed += Math.floor(Math.random() * 170);
                     return speed;
                 };
 
-                intervalId = setInterval(() => {typing.call(this)}, 100);
+                intervalId = setInterval(() => {typing.call(this)}, 70);
 
                 const clear = function () {
                     clearInterval(intervalId);
@@ -88,8 +86,8 @@
         },
         mounted() {
             setTimeout(() => {
-                this.createTyping(`More than ${pluralize("project", this.projectsNumber, true)} released`)
-            }, 5000)
+                this.createTyping(model.state.counter.defaultText)
+            }, 3000)
         }
     }
 </script>

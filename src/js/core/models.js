@@ -5,7 +5,7 @@ import projects from "../../json/projects.json"
 
 const model = {
     state: {
-        dynamicView: "flex",
+        dynamicView: null,
         about,
         projects: {
             source: projects,
@@ -67,8 +67,10 @@ const model = {
                     if (couple.length === 1) group.push(couple);
                 }
 
+                console.info(counterText);
+
                 model.state.counter.text = counterText;
-                model.state.counter.prevText = model.state.counter.text;
+                model.state.counter.prevText = model.state.counter.defaultText;
             },
             displayByName(name) {
                 console.log(`displayByName: ${name}`);
@@ -106,13 +108,18 @@ const model = {
             angular: false
         },
         counter: {
+            defaultText: "",
             prevText: "",
-            text: "",
+            text: "Choose technology above",
             setCounter(value) {
                 if (typeof value === "string") this.text = value;
-                else this.text = `Show ${pluralize("project", value, true)}`;
+                else this.text = `Display ${pluralize("project", value, true)}`;
             },
-            setDefaultCounter() {
+            setDefaultCounterText(txt) {
+                model.state.counter.defaultText = txt || model.state.counter.text;
+                model.state.counter.prevText = model.state.counter.defaultText;
+            },
+            setPrevCounter() {
                 this.text = this.prevText;
             },
             showCounterTextForTag(tagName) {

@@ -4,7 +4,6 @@ const RouterPlugin = {
     trailingSlashRE: /[^\/#]+/ig,
     processRoute(e) {
         const hash = location.hash || '';
-
         if (hash) {
             //console.info(`hash is ${hash}`);
             const urlArray = hash.match(RouterPlugin.trailingSlashRE) || [];
@@ -26,6 +25,14 @@ const RouterPlugin = {
                 model.state.projects.displayByName(projectName);
                 model.state.dynamicView = "project";
             }
+        } else {
+            // Index route
+            model.state.dynamicView = null;
+            // Disable all tags on loop
+            for (let key in model.state.tags) {
+                model.state.tags[key] = false
+            }
+            model.state.counter.setDefaultCounterText()
         }
     },
     install (Vue, options) {

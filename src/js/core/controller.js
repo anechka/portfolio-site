@@ -79,8 +79,6 @@ function processProjects() {
             }
         }
     }
-
-    model.state.counter.text = "Choose technology above"
 }
 
 function setupAbout() {
@@ -95,6 +93,11 @@ export default function setupModels() {
     model.state.domain = document.querySelector("meta[name=author]").content;
     processProjects();
     setupAbout();
+
+    model.state.counter.setDefaultCounterText(
+        `More than 
+        ${pluralize("project", model.state.projects.source.length, true)}
+        released`);
 
     console.info("Complete setup Models");
 }
