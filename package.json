@@ -8,15 +8,15 @@
   "description": "Freelancer parallax portfolio web-site",
   "homepage": "http://anya.site",
   "scripts": {
-    "pug": "pug src/pug/index.pug --out deploy/docker/dist/ -O '{\"domain\": \"novikova.us\"}'",
-    "pug:watch": "pug --out deploy/docker/dist/ --pretty --watch src/pug/ -O '{\"domain\": \"novikova.us\"}'",
+    "pug": "pug src/pug/index.pug --out deploy/docker/dist/ -O '{\"domain\": \"novikova.us\"}' || exit 0",
+    "pug:watch": "pug --out deploy/docker/dist/ --pretty --watch src/pug/ -O '{\"domain\": \"novikova.us\"}' || exit 0",
     "js": "rollup -c",
     "js:vendor": "rollup -c rollup.config.vendor.js",
     "js:watch": "rollup -c -w --sourcemap",
-    "less": "lessc src/less/main.less deploy/docker/dist/css/main.min.css --source-map --clean-css='--s1 --advanced'",
-    "less:watch": "watch --interval=0.3 'echo Less files compiling && lessc src/less/main.less deploy/docker/dist/css/main.min.css --source-map --clean-css=\"--s1 --advanced\"' src/less",
-    "watch": "concurrently \"npm run less:watch\" \"npm run js:watch\" \"npm run pug:watch\"",
-    "build": "concurrently \"npm run pug\" \"npm run less\" \"npm run js\""
+    "less": "lessc src/less/main.less deploy/docker/dist/css/main.min.css --source-map --clean-css='--s1 --advanced' || exit 0",
+    "less:watch": "watch --interval=0.3 'echo Less files compiling && lessc src/less/main.less deploy/docker/dist/css/main.min.css --source-map --clean-css=\"--s1 --advanced\"' src/less || exit 0",
+    "watch": "concurrently \"npm run less:watch\" \"npm run js:watch\" \"npm run pug:watch\" || exit 0",
+    "build": "concurrently \"npm run pug\" \"npm run less\" \"npm run js\" || exit 0"
   },
   "dependencies": {},
   "devDependencies": {

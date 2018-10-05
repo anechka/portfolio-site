@@ -70,7 +70,7 @@ const model = {
                 console.info(counterText);
 
                 model.state.counter.text = counterText;
-                model.state.counter.prevText = model.state.counter.defaultText;
+                model.state.counter.prevText = model.state.counter.text;
             },
             displayByName(name) {
                 console.log(`displayByName: ${name}`);
@@ -108,16 +108,16 @@ const model = {
             angular: false
         },
         counter: {
-            defaultText: "",
+            defaultText: "Choose technology above",
             prevText: "",
-            text: "Choose technology above",
+            text: "",
             setCounter(value) {
                 if (typeof value === "string") this.text = value;
                 else this.text = `Display ${pluralize("project", value, true)}`;
             },
-            setDefaultCounterText(txt) {
-                model.state.counter.defaultText = txt || model.state.counter.text;
-                model.state.counter.prevText = model.state.counter.defaultText;
+            setCounterText(txt) {
+                this.prevText = this.text || this.defaultText;
+                this.text = txt || this.defaultText;
             },
             setPrevCounter() {
                 this.text = this.prevText;

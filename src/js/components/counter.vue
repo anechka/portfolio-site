@@ -6,6 +6,7 @@
 
 <script>
     import model from "../core/models"
+    import pluralize from "pluralize"
 
     export default {
         data() {
@@ -18,7 +19,7 @@
                 let intervalId;// Butternut removing unused code fix
 
                 const newText = text;
-                const prevText = this.counter.text;
+                const prevText = this.counter.prevText;
 
                 const current = {
                     string: prevText,
@@ -26,7 +27,7 @@
                 };
 
                 const delay = function( speed ) {
-                    speed += Math.floor(Math.random() * 170);
+                    speed += Math.floor(Math.random() * 100);
                     return speed;
                 };
 
@@ -78,7 +79,7 @@
                                 forwardDirectionFlag = !forwardDirectionFlag;
                             }
                         }
-                    }, delay(100));
+                    }, delay(50));
                 };
 
 
@@ -86,7 +87,8 @@
         },
         mounted() {
             setTimeout(() => {
-                this.createTyping(model.state.counter.defaultText)
+                let text = `More than ${pluralize("project", model.state.projects.source.length, true)} released`;
+                this.createTyping(text)
             }, 3000)
         }
     }

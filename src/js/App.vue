@@ -3,15 +3,15 @@
     .container.parallax_container
         clouds
     .container.main-content-container
-        include templates/headers
+        include templates/headers.pug
 
         about
         tags
         counter
         portfolio
 
-        include templates/feedback
-        include templates/social
+        include templates/feedback.pug
+        include templates/social.pug
 
     link(rel="stylesheet", href="css/main.min.css")
     link(rel="icon", href="favicon.ico")

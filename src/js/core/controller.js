@@ -94,10 +94,5 @@ export default function setupModels() {
     processProjects();
     setupAbout();
 
-    model.state.counter.setDefaultCounterText(
-        `More than 
-        ${pluralize("project", model.state.projects.source.length, true)}
-        released`);
-
     console.info("Complete setup Models");
 }

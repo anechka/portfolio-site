@@ -1,3 +1,14 @@
+@import "colors";
+
+.header-theme-opaque() {
+    color: #7cdfff80;
+    background-image: linear-gradient(90deg,#185e7e,#1f3c5e);
+}
+
+.header-theme-blue() {
+    color: #b9e6ff80;
+    background-image: linear-gradient(90deg,#043b80,#00a5ff);
+}
 
 .portfolio {
 
@@ -18,12 +29,24 @@
             i {
                 position: relative;
                 top: -2px;
+
+                &::before {
+                    margin-right: .5em;
+                }
             }
 
             h1, h2, h3,
             h4, h5, h6 {
                 color: @portfolio-site-header-color;
                 margin-left: 12px;
+
+                &.about-project {
+                    text-align: center;
+                    margin: 0;
+                    padding: 24px;
+
+                    .header-theme-blue;
+                }
             }
 
             p {
@@ -43,10 +66,19 @@
                 }
             }
 
+            section > ol, ul {
+                margin: 10px;
+                color: @water-deep-color;
+            }
             ul {
                 list-style-type: square;
                 > li > a {
-                    color: #0071a0;
+                    padding: 0 2px 2px 2px;
+                    border-radius: 4px;
+
+                    font-weight: bold;
+
+                    color: @water-deep-color;
                     background: #c9e4ff;
                     &:hover {
                         color: #2B8473;

@@ -32,7 +32,7 @@ const RouterPlugin = {
             for (let key in model.state.tags) {
                 model.state.tags[key] = false
             }
-            model.state.counter.setDefaultCounterText()
+            model.state.counter.setCounterText()
         }
     },
     install (Vue, options) {
