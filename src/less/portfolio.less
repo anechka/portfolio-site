@@ -38,7 +38,7 @@
             h1, h2, h3,
             h4, h5, h6 {
                 color: @portfolio-site-header-color;
-                margin-left: 12px;
+                margin: 0 0 10px 12px;
 
                 &.about-project {
                     text-align: center;
@@ -69,6 +69,10 @@
             section > ol, ul {
                 margin: 10px;
                 color: @water-deep-color;
+
+                @media screen and (max-width: @screen-xs) {
+                  padding-left: 10px;
+                }
             }
             ul {
                 list-style-type: square;

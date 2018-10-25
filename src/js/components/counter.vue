@@ -87,8 +87,7 @@
         },
         mounted() {
             setTimeout(() => {
-                let text = `More than ${pluralize("project", model.state.projects.source.length, true)} released`;
-                this.createTyping(text)
+                this.createTyping("Choose technology above")
             }, 3000)
         }
     }

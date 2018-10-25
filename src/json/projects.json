@@ -102,7 +102,7 @@
     "task": "Django templates, Bootstrap design",
     "tags": [
       "django",
-      "templates",
+      "jinja 2",
       "python",
       "bootstrap",
       "javascript",
@@ -231,19 +231,19 @@
         "href": "https://github.com/anechka/chipmarket/tree/master/less",
         "img": "less-code.png",
         "txt": "Browse LESS from project",
-        "class": " btn-primary"
+        "class": "btn-primary"
       },
       {
         "href": "https://github.com/anechka/chipmarket/tree/master/js",
         "img": "js-code.png",
         "txt": "Browse JS from project",
-        "class": " btn-primary"
+        "class": "btn-primary"
       },
       {
         "href": "https://github.com/anechka/chipmarket/",
         "img": "html5-code.png",
         "txt": "Show HTML5 code of site",
-        "class": " btn-primary"
+        "class": "btn-primary"
       }
     ],
     "dir": "market"
@@ -639,6 +639,155 @@
       }
     ],
     "dir": "hammer"
-  }
+  },
 
+  {
+    "name": "GoHealthy",
+    "time": 1,
+    "task": "Landing page",
+    "tags": [
+      "django",
+      "PostgreSQL",
+      "bootstrap",
+      "less",
+      "jade",
+      "python",
+      "javascript",
+      "riot.js"
+    ],
+    "description": [
+      "Go Healthy Travel is a service provider specializing exclusively in healthy lifestyle vacations in the charming Playa del Carmen, near Cancun, México.",
+      "Riot.js (like React) & Bootstrap 3, Jade templates.",
+      "I worked as React Developer.",
+      "Client from Upwork, live task management over Skype :)"
+    ],
+    "image": "gohealthy.jpg",
+    "markdown": {
+      "aboutProject": [
+        "* [Riot.js reactive framework](https://riot.js.org/)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
+      ],
+      "aboutTeam": [
+        "I worked as lead React/Riot Developer.",
+        "^My client and I used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype for communication."
+      ],
+      "myRole": [
+        "The landing page for a travel business with riot based app, Jade template engine, Bootstrap 3 as CSS framework and Less as main CSS preprocessor.",
+        "^I developed Jade(HTML5) / LESS(CSS3), [Riot UI with AJAX sending](https://riot.js.org) to Django + PostgreSQL backend, with Git/Github and Webstorm tool.",
+        "^2 months for development & testing Django backend for sending AJAX data at Landing page.",
+        ">>",
+        "* 5 Jade files",
+        "* Near 10 LESS files",
+        "* Riot.js",
+        "* Django backend",
+        "* PostgreSQL"
+      ],
+      "result": [
+        "I completed project after 2 months and main goal was develop website with **Riot.js DOM engine** for sending form's data with AJAX to internal Django backend with PostgreSQL.",
+        "^My client's quote:>>",
+        "> Great working with you Anya. Well done! And looking forward to extend more contracts to you in the future.",
+        ">>During this project I improved my React/Riot skills."
+      ]
+    },
+    "links": [
+      {
+        "href": "http://gohealthy.travel",
+        "img": "hammer-page@2x.png",
+        "txt": "Browse Landing page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/travel/tree/master/src/less",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/travel/tree/master/src/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/travel/blob/master/dist/js",
+        "img": "js-code.png",
+        "txt": "Browse JS from project",
+        "class": "btn-primary"
+      }
+    ],
+    "dir": null
+  },
+
+  {
+    "name": "Bookreport",
+    "time": 4,
+    "task": "Port Angular 1.5 app to Vue 2",
+    "tags": [
+      "angular",
+      "vue",
+      "vuex",
+      "vuetify",
+      "javascript",
+      "rest",
+      "stylus",
+      "uppy",
+      "material UI",
+      "python",
+      "redis",
+      "amazon",
+      "lambda",
+      "microservices",
+      "docker",
+      "slack"
+    ],
+    "description": [
+      "Cedarwood Bookreport is complex application deployed on Amazon infrastructure",
+      "App for working with organization files, document flow.",
+      "I worked as Vue js developer with Angular js knowledge , used experience work with Redis, Python, Amazon Lambda & S3",
+      "Communicate with client from Upwork through [Slack](https://slack.com)."
+
+    ],
+    "image": "gohealthy.jpg",
+    "markdown": {
+      "aboutProject": [
+        "[Vue.js is the progressive JavaScript framework](https://vuejs.org)",
+        "[Vuex as state management](https://vuex.vuejs.org/guide)",
+        "[Vuetify UI Material Design Component Framework for Vue](https://vuetifyjs.com/en/)",
+        "[Angular 1.5 legacy code](https://angular.io)",
+        "[Stylus CSS preprocessing](http://stylus-lang.com)",
+        "[Uppy for modular JavaScript file uploader to Amazon S3](https://uppy.io)",
+        "[Amazon S3](https://aws.amazon.com/s3)",
+        "[Amazon Lambda](https://aws.amazon.com/lambda/)",
+        "[Docker for Python REST microservices](https://www.docker.com)"
+      ],
+      "aboutTeam": [
+        "I worked with main System Architect as Vue Developer with Vue stack, Docker, AWS on backend + Material UI realize with Vuetify & Stylus."
+      ],
+      "myRole": [
+        "Port Angular code to [Vue js](https://vuejs.org): vue components + [Vuetify](https://vuetifyjs.com/en/) and [Stylus](http://stylus-lang.com), vue Routing and Navigation, [Vuex storage](https://vuex.vuejs.org/guide) - single source of true, vue Services",
+        "Developed functionality such as user authorization, user profile settings, ajax requests, fetch api, file uploading - for example used [Uppy](https://uppy.io), documents search.",
+        "Used knowledge of AWS, Node.js, Python, Redis, Docker",
+        ">>",
+        "* Vue & Vuetify",
+        "* 20 Vue own components",
+        "* Vuex",
+        "* Vue router",
+        "* Uppy",
+        "* Stylus",
+        "* Redis",
+        "* Fetch API (AJAX)",
+        "* Python microservices",
+        "* Amazon Lambda: Node.js microservice for uploading documents into S3 buckets"
+      ],
+      "result": [
+        "I finished project after 4 months. Developed app with UI in material design style for working with organizaton files and document flow.",
+        "^My client's quote:>>",
+        "Bla bla bla",
+        "I expand my experience with Vuex state management for building large app, now I know more about usage of Vuetify, project increased my Stylus skills."
+      ]
+    },
+    "dir": null
+  }
 ]

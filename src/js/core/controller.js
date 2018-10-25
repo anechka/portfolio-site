@@ -34,7 +34,7 @@ function processProjects() {
             for (let button of linksArray) {
                 // console.log(`Before: ${button.href}`);
                 button.href = button.href
-                // Local Images replace path
+                    // Local Images replace path
                     .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(png|jpg|jpeg|gif)$/g, `${path.portfolioFolder}/${project.dir}/images/$1.$2`)
                     // Local Pages replace path
                     .replace(/(^[A-Za-z]+[_.-A-Za-z]*[0-9]*)\.(htm[l]?)$/g, `${path.portfolioFolder}/${project.dir}/$1.$2`);
@@ -90,9 +90,10 @@ function setupAbout() {
 }
 
 export default function setupModels() {
-    model.state.domain = document.querySelector("meta[name=author]").content;
     processProjects();
     setupAbout();
 
+    model.state.domain = document.querySelector("meta[name=author]").content;
+    model.state.counter.setCounterText(`More ${pluralize("project", model.state.projects.source.length, true)} in USA released`);
     console.info("Complete setup Models");
 }
