@@ -744,26 +744,34 @@
     ],
     "description": [
       "Cedarwood Bookreport is complex application deployed on Amazon infrastructure",
-      "App for working with organization files, document flow.",
-      "I worked as Vue js developer with Angular js knowledge , used experience work with Redis, Python, Amazon Lambda & S3",
-      "Communicate with client from Upwork through [Slack](https://slack.com)."
+      "App for working with organization's files, document flow.",
+      "I worked as Vue js developer with Angular js knowledge, used experience with Docker, Python, Amazon Lambda and S3",
+      "Communicate with client from Upwork through Slack channels."
 
     ],
-    "image": "gohealthy.jpg",
+    "image": "bookreport.png",
+    "links": [
+      {
+        "href": "bookreport.png",
+        "img": "bookreport.png",
+        "txt": "Vue app screenshot",
+        "class": "btn-default"
+      }
+    ],
     "markdown": {
       "aboutProject": [
-        "[Vue.js is the progressive JavaScript framework](https://vuejs.org)",
-        "[Vuex as state management](https://vuex.vuejs.org/guide)",
-        "[Vuetify UI Material Design Component Framework for Vue](https://vuetifyjs.com/en/)",
-        "[Angular 1.5 legacy code](https://angular.io)",
-        "[Stylus CSS preprocessing](http://stylus-lang.com)",
-        "[Uppy for modular JavaScript file uploader to Amazon S3](https://uppy.io)",
-        "[Amazon S3](https://aws.amazon.com/s3)",
-        "[Amazon Lambda](https://aws.amazon.com/lambda/)",
-        "[Docker for Python REST microservices](https://www.docker.com)"
+        "* [Vue.js is the progressive JavaScript framework](https://vuejs.org)",
+        "* [Vuex as state management](https://vuex.vuejs.org/guide)",
+        "* [Vuetify UI Material Design Component Framework for Vue](https://vuetifyjs.com/en/)",
+        "* [Angular 1.5 legacy code](https://angular.io)",
+        "* [Stylus CSS preprocessing](http://stylus-lang.com)",
+        "* [Uppy for modular JavaScript file uploader to Amazon S3](https://uppy.io)",
+        "* [Amazon S3](https://aws.amazon.com/s3)",
+        "* [Amazon Lambda](https://aws.amazon.com/lambda/)",
+        "* [Docker for Python REST microservices](https://www.docker.com)"
       ],
       "aboutTeam": [
-        "I worked with main System Architect as Vue Developer with Vue stack, Docker, AWS on backend + Material UI realize with Vuetify & Stylus."
+        "I worked in cooperation with main System Architect as Vue Developer with Vue stack, Docker, AWS + Python microservices on backend, and main goal was realization Material UI for Vue app with Vuetify & Stylus."
       ],
       "myRole": [
         "Port Angular code to [Vue js](https://vuejs.org): vue components + [Vuetify](https://vuetifyjs.com/en/) and [Stylus](http://stylus-lang.com), vue Routing and Navigation, [Vuex storage](https://vuex.vuejs.org/guide) - single source of true, vue Services",
@@ -788,6 +796,6 @@
         "I expand my experience with Vuex state management for building large app, now I know more about usage of Vuetify, project increased my Stylus skills."
       ]
     },
-    "dir": null
+    "dir": "bookreport"
   }
 ]
