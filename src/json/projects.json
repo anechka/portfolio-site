@@ -30,10 +30,10 @@
         "* [jQuery](http://jquery.com)"
       ],
       "aboutTeam": [
-        "On this work i contacted with my main manager from **San Diego Calif.** The team consisted of me and NodeJS developer Alex. We worked in series: i received a design in **PSD format**, after i [programmed html/css with Webstorm tool](http://www.jetbrains.com/webstorm) and **LESS + SASS** under Compass compiler. We used [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and e-mail communication with Skype."
+        "On this work I contacted with my main manager from **San Diego Calif.** The team consisted of me and NodeJS developer Alex. We worked in series: I received a design in **PSD format**, after I [programmed html/css with Webstorm tool](http://www.jetbrains.com/webstorm) and **LESS + SASS** under Compass compiler. We used [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and e-mail communication with Skype."
       ],
       "myRole": [
-        "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and i used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code.",
+        "This e-social network site based on NodeJS and Jade template engine also used SASS as main CSS preprocessor and I used my knowledge of LESS preprocessor also with Twitter Bootstrap as grid based CSS framework. When I worked with project's repo I used [GIT version control system](http://git-scm.com/about) and dedicated server on Linux. I programmed this project under my Mac with SSH port-forwarding techniques. I worked near 5 weeks with this project and developed Jade pages with many SASS code.",
         ">>",
         "* Near 20 SASS files",
         "* Near 10 LESS files",
@@ -43,7 +43,7 @@
         "* LESS and SASS code with Bootstrap for all elements"
       ],
       "result": [
-        "After 5 weeks i completed project and main goal was **converting inline CSS styles to SASS** under Twitter Bootstrap and completing JavaScript code.",
+        "After 5 weeks I completed project and main goal was **converting inline CSS styles to SASS** under Twitter Bootstrap and completing JavaScript code.",
         "^My American manager's quote:>>",
         "> I would like to keep working with her as much as possible for future projects too."
       ]
@@ -102,7 +102,7 @@
     "task": "Django templates, Bootstrap design",
     "tags": [
       "django",
-      "templates",
+      "jinja 2",
       "python",
       "bootstrap",
       "javascript",
@@ -124,10 +124,10 @@
         "* CSS3 responsive"
       ],
       "aboutTeam": [
-        "It consisted of: i worked as Web-developer, 1 project manager, Web-designer and Python developer. I liked professionalism and good teamwork. "
+        "It consisted of: I worked as Web-developer, 1 project manager, Web-designer and Python developer. I liked professionalism and good teamwork. "
       ],
       "myRole": [
-        "This e-commerce site based on Django and Scrapy, i used my knowledge of Django template system. When i worked with the team, i used my experience in usage of the [distributed version control system - Mercurial](http://mercurial.selenic.com). I worked 3 months under this project and coded main page for client area and administrative panel: ",
+        "This e-commerce site based on Django and Scrapy, I used my knowledge of Django template system. When I worked with the team, I used my experience in usage of the [distributed version control system - Mercurial](http://mercurial.selenic.com). I worked 3 months under this project and coded main page for client area and administrative panel: ",
         ">>",
         "* Equipment movement in the Storage",
         "* Client Billing",
@@ -138,8 +138,8 @@
       "result": [
         "We worked for three month. Work was hard, but we met the deadline.",
         " Our customer appreciated result of our work by saying:>>",
-        "> Guys, i think users of my e-commerce site will be happy, so what is good for them is good for me. Good job!",
-        ">>During this time i grown professionally. I increased my knowledge and improved skills. I got a good experience and positive emotions, when i worked with them."
+        "> Guys, I think users of my e-commerce site will be happy, so what is good for them is good for me. Good job!",
+        ">>During this time I grown professionally. I increased my knowledge and improved skills. I got a good experience and positive emotions, when I worked with them."
       ]
     },
     "links": [
@@ -200,11 +200,11 @@
         "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "It consisted of me and other russian freelancers, we worked in series: design to PSD, then html/css coding with Webstorm tool and LESS compiler, after php back-end on CMS system based on php Yii framework. Yii was a new experience for me, but work with Mustache was very simple, because i like language syntax of the Django template system :)",
-        "^Our team: project manager, Photoshop-designer, i am as HTML developer and PHP developer. We used the remote job system with Skype communication. "
+        "It consisted of me and other russian freelancers, we worked in series: design to PSD, then html/css coding with Webstorm tool and LESS compiler, after php back-end on CMS system based on php Yii framework. Yii was a new experience for me, but work with Mustache was very simple, because I like language syntax of the Django template system :)",
+        "^Our team: project manager, Photoshop-designer, I am as HTML developer and PHP developer. We used the remote job system with Skype communication. "
       ],
       "myRole": [
-        "The site based on Yii and Mustache. I used my knowledge of LESS preprocessor with Twitter Bootstrap CSS framework and Mustache template system. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I worked near 2 weeks with this project and developed HTML main page for e-shop areas:",
+        "The site based on Yii and Mustache. I used my knowledge of LESS preprocessor with Twitter Bootstrap CSS framework and Mustache template system. When I worked with project's repo I used [GIT version control system](http://git-scm.com/about). I worked near 2 weeks with this project and developed HTML main page for e-shop areas:",
         ">>",
         "* Categories",
         "* Center Panel with registration button and text-info with Glyphicons Component from Bootstrap",
@@ -213,7 +213,7 @@
         "* LESS code with Bootstrap for all elements"
       ],
       "result": [
-        "After 2 weeks i completed project and main goal was **converting PSD to HTML and LESS**.",
+        "After 2 weeks I completed project and main goal was **converting PSD to HTML and LESS**.",
         "^Also all layout based on responsive base of Twitter Bootstrap 3 for mobile and desktop.",
         "^My russian client said:>>",
         "> Well, nice! We liked your work and skills. LESS is clean and beautiful.",
@@ -231,19 +231,19 @@
         "href": "https://github.com/anechka/chipmarket/tree/master/less",
         "img": "less-code.png",
         "txt": "Browse LESS from project",
-        "class": " btn-primary"
+        "class": "btn-primary"
       },
       {
         "href": "https://github.com/anechka/chipmarket/tree/master/js",
         "img": "js-code.png",
         "txt": "Browse JS from project",
-        "class": " btn-primary"
+        "class": "btn-primary"
       },
       {
         "href": "https://github.com/anechka/chipmarket/",
         "img": "html5-code.png",
         "txt": "Show HTML5 code of site",
-        "class": " btn-primary"
+        "class": "btn-primary"
       }
     ],
     "dir": "market"
@@ -263,7 +263,7 @@
     ],
     "description": [
       "This is site of educational games for children.",
-      "Our team consisted of: I'm as Web Developer, 1 project manager, 1 Web designer. Also i worked with Javascript developer.",
+      "Our team consisted of: I'm as Web Developer, 1 project manager, 1 Web designer. Also I worked with Javascript developer.",
       "We communicated via Upwork and Skype, and also used e-mail communication."
     ],
     "image": "redalgo-page.jpg",
@@ -276,23 +276,23 @@
         "* [Bootstrap | 3](http://getbootstrap.com)"
       ],
       "aboutTeam": [
-        "Our team consisted of: i am as Web Developer, 1 project manager, 1 Web designer.",
-        "^Also i worked with Javascript developer.",
+        "Our team consisted of: I am as Web Developer, 1 project manager, 1 Web designer.",
+        "^Also I worked with Javascript developer.",
         "^We communicated via [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also used e-mail communication."
       ],
       "myRole": [
         "The site based on NodeJS and Jade template engine, Twitter Bootstrap as grid based CSS framework and LESS as main CSS preprocessor.",
-        "^I [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed many Jade pages with LESS code.",
+        "^I [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When I worked with project's repo I used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed many Jade pages with LESS code.",
         ">>",
         "* Near 7 Jade files",
         "* Near 7 LESS files",
         "* Main jade template"
       ],
       "result": [
-        "After 1 week i completed project and main goal was coding **Jade pages with LESS** under Twitter Bootstrap.",
+        "After 1 week I completed project and main goal was coding **Jade pages with LESS** under Twitter Bootstrap.",
         "^My project manager's quote:>>",
         "> Anya is very fast and did a great job with bootstrap responsive coding.",
-        ">>During this project i increased my Jade and LESS skills."
+        ">>During this project I increased my Jade and LESS skills."
       ]
     },
     "links": [
@@ -346,13 +346,13 @@
         "* Portuguese ISO 639-1 Language"
       ],
       "aboutTeam": [
-        "In this project i contacted with my main manager from **Brazil.**",
-        "^Also i communicated with Javascript developer.",
+        "In this project I contacted with my main manager from **Brazil.**",
+        "^Also I communicated with Javascript developer.",
         "^I [developed Jade (compiled into HTML) / LESS (compiled into CSS) with Jetbrains Webstorm tool.](http://www.jetbrains.com/webstorm)",
         "^We used [oDesk](https://www.odesk.com/o/profiles/users/_~01ffe04a2db9f8b16a) and e-mail communication, Skype."
       ],
       "myRole": [
-        "This site based on NodeJS and Jade template engine, Twitter Bootstrap as a grid based CSS framework and LESS as main CSS preprocessor. When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). For source code of this project was created private repo on [Github](https://github.com/anechka). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code. I worked near 2 weeks with this project and developed many Jade pages with LESS code. ",
+        "This site based on NodeJS and Jade template engine, Twitter Bootstrap as a grid based CSS framework and LESS as main CSS preprocessor. When I worked with project's repo I used [GIT version control system](http://git-scm.com/about). For source code of this project was created private repo on [Github](https://github.com/anechka). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code. I worked near 2 weeks with this project and developed many Jade pages with LESS code. ",
         ">>",
         "* Near 11 Jade files",
         "* Near 11 LESS files",
@@ -364,7 +364,7 @@
         "* Main jade template"
       ],
       "result": [
-        "After 2 weeks i completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap.",
+        "After 2 weeks I completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap.",
         "^My Brazil manager's quote:>>",
         "> Anya did a great job using bootstrap. I'll work with her again soon."
       ]
@@ -451,9 +451,9 @@
       ],
       "myRole": [
         "The site based on Django and Jade template engine, Twitter Bootstrap as grid based CSS framework and LESS as main CSS preprocessor.",
-        "^As UI/UX Bootstrap consultant i disscused with Web designer design concept and developed design.",
-        "^Then i [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). Also i developed Django templates and helped Angular developer to develop angular application.",
-        "^When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). My tool is [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to repo on [GitLab](https://about.gitlab.com). I worked near 6 months with this project and developed many Jade pages with LESS code, Django templates and one part of Angular application.",
+        "^As UI/UX Bootstrap consultant I disscused with Web designer design concept and developed design.",
+        "^Then I [programmed Jade(HTML) / LESS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). Also I developed Django templates and helped Angular developer to develop angular application.",
+        "^When I worked with project's repo I used [GIT version control system](http://git-scm.com/about). My tool is [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to repo on [GitLab](https://about.gitlab.com). I worked near 6 months with this project and developed many Jade pages with LESS code, Django templates and one part of Angular application.",
         ">>",
         "* Near 10 LESS files",
         "* 5 Django templates",
@@ -463,10 +463,10 @@
         "* [Sumati main site](http://sumatigroup.com)"
       ],
       "result": [
-        "After 6 months i completed project and main goal was **developing design, coding Jade pages with LESS under Twitter Bootstrap, developing Django templates and Angular application.**",
+        "After 6 months I completed project and main goal was **developing design, coding Jade pages with LESS under Twitter Bootstrap, developing Django templates and Angular application.**",
         "^President and CEO of Sumati said:>>",
         "> I very liked what Anya have done!",
-        ">>During this project i improved my knowledge of Django template engine, Angular JS and increased Jade and LESS skills."
+        ">>During this project I improved my knowledge of Django template engine, Angular JS and increased Jade and LESS skills."
       ]
     },
     "links": [
@@ -523,7 +523,7 @@
       "Catapult site is a platform to find and offer short term jobs.",
       " SASS & Bootstrap 3, Jade templates.",
       "I worked as Web Developer.",
-      "My client and i used Upwork and Skype, and also e-mail for communication."
+      "My client and I used Upwork and Skype, and also e-mail for communication."
     ],
     "image": "catapult-page.png",
     "markdown": {
@@ -535,21 +535,21 @@
       ],
       "aboutTeam": [
         "I worked as Web Developer.",
-        "^My client and i used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also e-mail for communication."
+        "^My client and I used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype, and also e-mail for communication."
       ],
       "myRole": [
         "The site based on Jade template engine, Twitter Bootstrap as grid based CSS framework and Sass as main CSS preprocessor.",
-        "^I [programmed Jade(HTML) / SASS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When i worked with project's repo i used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed Jade pages with SASS code. ",
+        "^I [programmed Jade(HTML) / SASS(CSS) with Webstorm tool](http://www.jetbrains.com/webstorm). When I worked with project's repo I used [GIT version control system](http://git-scm.com/about). I used [SourceTree](https://www.sourcetreeapp.com) for pushing and pulling code to created private repo on [Github](https://github.com/anechka). I worked near 1 week with this project and developed Jade pages with SASS code. ",
         ">>",
         "* Near 3 Jade files",
         "* Near 4 SASS files",
         "* [Catapult Home page](portfolio-content/catapult/catapult-home-page.html)"
       ],
       "result": [
-        "After 1 week i completed project and main goal was **coding Jade pages with SASS** under Twitter Bootstrap.",
+        "After 1 week I completed project and main goal was **coding Jade pages with SASS** under Twitter Bootstrap.",
         "^My client's quote:>>",
         "> Well structured, good quality code, very happy with Anya's work!",
-        ">>During this project i increased my Jade and SASS skills."
+        ">>During this project I increased my Jade and SASS skills."
       ]
     },
     "links": [
@@ -589,7 +589,7 @@
       "ConversionHammer is a contact form for lead-generation businesses to instantly convert more sales leads through your website.",
       "LESS & Bootstrap 3, Jade templates.",
       "I worked as Web Developer.",
-      "My client and i used Upwork and Skype, and also e-mail for communication."
+      "My client and I used Upwork and Skype, and also e-mail for communication."
     ],
     "image": "hammer-page@2x.png",
     "markdown": {
@@ -600,7 +600,7 @@
       ],
       "aboutTeam": [
         "I worked as Less and Jade Developer.",
-        "^My client and i used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype for communication."
+        "^My client and I used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype for communication."
       ],
       "myRole": [
         "The site based on Jade template engine, Bootstrap 3 as CSS framework and Less as main CSS preprocessor.",
@@ -612,10 +612,10 @@
         "* [ConversionHammer Home page](portfolio-content/hammer/hammer-home-page.html)"
       ],
       "result": [
-        "After 1 week i completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap 3.",
+        "After 1 week I completed project and main goal was **coding Jade pages with LESS** under Twitter Bootstrap 3.",
         "^My client's quote:>>",
         "> Best contractor I have worked with through Upwork.",
-        ">>During this project i increased my Jade and LESS skills."
+        ">>During this project I increased my Jade and LESS skills."
       ]
     },
     "links": [
@@ -639,6 +639,163 @@
       }
     ],
     "dir": "hammer"
-  }
+  },
 
+  {
+    "name": "GoHealthy",
+    "time": 1,
+    "task": "Landing page",
+    "tags": [
+      "django",
+      "PostgreSQL",
+      "bootstrap",
+      "less",
+      "jade",
+      "python",
+      "javascript",
+      "riot.js"
+    ],
+    "description": [
+      "Go Healthy Travel is a service provider specializing exclusively in healthy lifestyle vacations in the charming Playa del Carmen, near Cancun, México.",
+      "Riot.js (like React) & Bootstrap 3, Jade templates.",
+      "I worked as React Developer.",
+      "Client from Upwork, live task management over Skype :)"
+    ],
+    "image": "gohealthy.jpg",
+    "markdown": {
+      "aboutProject": [
+        "* [Riot.js reactive framework](https://riot.js.org/)",
+        "* [Jade template engine](http://jade-lang.com)",
+        "* [LESS](http://lesscss.org/features)",
+        "* [Bootstrap | 3](http://getbootstrap.com)"
+      ],
+      "aboutTeam": [
+        "I worked as lead React/Riot Developer.",
+        "^My client and I used [Upwork](https://www.upwork.com/o/profiles/users/_~01ffe04a2db9f8b16a) and Skype for communication."
+      ],
+      "myRole": [
+        "The landing page for a travel business with riot based app, Jade template engine, Bootstrap 3 as CSS framework and Less as main CSS preprocessor.",
+        "^I developed Jade(HTML5) / LESS(CSS3), [Riot UI with AJAX sending](https://riot.js.org) to Django + PostgreSQL backend, with Git/Github and Webstorm tool.",
+        "^2 months for development & testing Django backend for sending AJAX data at Landing page.",
+        ">>",
+        "* 5 Jade files",
+        "* Near 10 LESS files",
+        "* Riot.js",
+        "* Django backend",
+        "* PostgreSQL"
+      ],
+      "result": [
+        "I completed project after 2 months and main goal was develop website with **Riot.js DOM engine** for sending form's data with AJAX to internal Django backend with PostgreSQL.",
+        "^My client's quote:>>",
+        "> Great working with you Anya. Well done! And looking forward to extend more contracts to you in the future.",
+        ">>During this project I improved my React/Riot skills."
+      ]
+    },
+    "links": [
+      {
+        "href": "http://gohealthy.travel",
+        "img": "hammer-page@2x.png",
+        "txt": "Browse Landing page",
+        "class": "btn-site-link"
+      },
+      {
+        "href": "https://github.com/anechka/travel/tree/master/src/less",
+        "img": "less-code.png",
+        "txt": "Show LESS code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/travel/tree/master/src/jade",
+        "img": "jade-code.png",
+        "txt": "Show Jade code",
+        "class": "btn-primary"
+      },
+      {
+        "href": "https://github.com/anechka/travel/blob/master/dist/js",
+        "img": "js-code.png",
+        "txt": "Browse JS from project",
+        "class": "btn-primary"
+      }
+    ],
+    "dir": null
+  },
+
+  {
+    "name": "Bookreport",
+    "time": 4,
+    "task": "Port Angular 1.5 app to Vue 2",
+    "tags": [
+      "angular",
+      "vue",
+      "vuex",
+      "vuetify",
+      "javascript",
+      "rest",
+      "stylus",
+      "uppy",
+      "material UI",
+      "python",
+      "redis",
+      "amazon",
+      "lambda",
+      "microservices",
+      "docker",
+      "slack"
+    ],
+    "description": [
+      "Cedarwood Bookreport is complex application deployed on Amazon infrastructure",
+      "App for working with organization's files, document flow.",
+      "I worked as Vue js developer with Angular js knowledge, used experience with Docker, Python, Amazon Lambda and S3",
+      "Communicate with client from Upwork through Slack channels."
+
+    ],
+    "image": "bookreport.png",
+    "links": [
+      {
+        "href": "bookreport.png",
+        "img": "bookreport.png",
+        "txt": "Vue app screenshot",
+        "class": "btn-default"
+      }
+    ],
+    "markdown": {
+      "aboutProject": [
+        "* [Vue.js is the progressive JavaScript framework](https://vuejs.org)",
+        "* [Vuex as state management](https://vuex.vuejs.org/guide)",
+        "* [Vuetify UI Material Design Component Framework for Vue](https://vuetifyjs.com/en/)",
+        "* [Angular 1.5 legacy code](https://angular.io)",
+        "* [Stylus CSS preprocessing](http://stylus-lang.com)",
+        "* [Uppy for modular JavaScript file uploader to Amazon S3](https://uppy.io)",
+        "* [Amazon S3](https://aws.amazon.com/s3)",
+        "* [Amazon Lambda](https://aws.amazon.com/lambda/)",
+        "* [Docker for Python REST microservices](https://www.docker.com)"
+      ],
+      "aboutTeam": [
+        "I worked in cooperation with main System Architect as Vue Developer with Vue stack, Docker, AWS + Python microservices on backend, and main goal was realization Material UI for Vue app with Vuetify & Stylus."
+      ],
+      "myRole": [
+        "Port Angular code to [Vue js](https://vuejs.org): vue components + [Vuetify](https://vuetifyjs.com/en/) and [Stylus](http://stylus-lang.com), vue Routing and Navigation, [Vuex storage](https://vuex.vuejs.org/guide) - single source of true, vue Services",
+        "Developed functionality such as user authorization, user profile settings, ajax requests, fetch api, file uploading - for example used [Uppy](https://uppy.io), documents search.",
+        "Used knowledge of AWS, Node.js, Python, Redis, Docker",
+        ">>",
+        "* Vue & Vuetify",
+        "* 20 Vue own components",
+        "* Vuex",
+        "* Vue router",
+        "* Uppy",
+        "* Stylus",
+        "* Redis",
+        "* Fetch API (AJAX)",
+        "* Python microservices",
+        "* Amazon Lambda: Node.js microservice for uploading documents into S3 buckets"
+      ],
+      "result": [
+        "I finished project after 4 months. Developed app with UI in material design style for working with organizaton files and document flow.",
+        "^My client's quote:>>",
+        "Bla bla bla",
+        "I expand my experience with Vuex state management for building large app, now I know more about usage of Vuetify, project increased my Stylus skills."
+      ]
+    },
+    "dir": "bookreport"
+  }
 ]

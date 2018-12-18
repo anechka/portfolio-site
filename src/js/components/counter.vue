@@ -5,14 +5,13 @@
 </template>
 
 <script>
-    import app from "../main"
     import model from "../core/models"
+    import pluralize from "pluralize"
 
     export default {
         data() {
             return {
-                counter: model.state.counter,
-                projectsNumber: model.state.projects.source.length
+                counter: model.state.counter
             }
         },
         methods: {
@@ -20,7 +19,7 @@
                 let intervalId;// Butternut removing unused code fix
 
                 const newText = text;
-                const prevText = this.counter.text;
+                const prevText = this.counter.prevText;
 
                 const current = {
                     string: prevText,
@@ -28,11 +27,11 @@
                 };
 
                 const delay = function( speed ) {
-                    speed += Math.floor(Math.random() * 120);
+                    speed += Math.floor(Math.random() * 100);
                     return speed;
                 };
 
-                intervalId = setInterval(() => {typing.call(this)}, 100);
+                intervalId = setInterval(() => {typing.call(this)}, 70);
 
                 const clear = function () {
                     clearInterval(intervalId);
@@ -80,7 +79,7 @@
                                 forwardDirectionFlag = !forwardDirectionFlag;
                             }
                         }
-                    }, delay(100));
+                    }, delay(50));
                 };
 
 
@@ -88,8 +87,8 @@
         },
         mounted() {
             setTimeout(() => {
-                this.createTyping(`More than ${app.pluralize("project", this.projectsNumber, true)} released`)
-            }, 5000)
+                this.createTyping("Choose technology above")
+            }, 3000)
         }
     }
 </script>

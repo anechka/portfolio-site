@@ -32,7 +32,7 @@
                                 .col-md-12.col-sm-12.col-xs-12.tags-container
 
                                     .tag.text-center(v-for="tag in project.tags")
-                                        span.label.label-tag(v-text="tag")
+                                        span.label.label-tag.text-uppercase(v-text="tag")
 
                         .col-md-8.col-sm-12.description(v-html="project.descriptionHTML")
 </template>

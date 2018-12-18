@@ -1,18 +1,6 @@
-import PluralizeJS from "./vendor/pluralize"
-import setupModels from "./core/controller"
-import { setupView } from "./core/viewController"
-import router from "./core/router"
+import Vue from "vue"
+import App from "App.vue"
+import RouterPlugin from "core/router"
 
-let application = {
-    pluralize: PluralizeJS()
-};
-
-window.addEventListener("load", () => {
-    setupModels();
-    setupView();
-    router();
-
-    window.addEventListener("hashchange", router, false);
-}, false);
-
-export default application
+Vue.use(RouterPlugin);
+new Vue(App);

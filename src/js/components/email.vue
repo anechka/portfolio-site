@@ -11,7 +11,7 @@
         data() {
             // Alphabet for email encoder
             const a = 'na';
-            const email = `${a.charAt(1)+a.charAt(0)+a.charAt(0)+a.charAt(1)}@${model.state.www}`;
+            const email = `${a.charAt(1)+a.charAt(0)+a.charAt(0)+a.charAt(1)}@${model.state.domain}`;
             const link = `mailto:${email}`;
             return {
                 email,

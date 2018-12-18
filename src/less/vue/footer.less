@@ -10,7 +10,7 @@
 }
 
 footer {
-    margin-top: @top-margin-for-div;
+    margin-bottom: 1px;
 
     @media (max-width: @screen-xs) {
         margin-top: @top-margin-for-div / @decrease-margin-koeff-for-mobile;
@@ -25,6 +25,8 @@ footer {
         }
 
         img {
+            opacity: 0.2;
+
             display: inline-block;
             vertical-align: middle;
             transform: perspective(1px) translateZ(0);
@@ -33,6 +35,8 @@ footer {
 
         &:hover {
             img {
+                opacity: 1;
+
                 animation-name: hvr-push;
                 animation-duration: 0.3s;
                 animation-timing-function: linear;

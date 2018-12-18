@@ -44,7 +44,7 @@
                 model.state.counter.showCounterTextForTag(this.tagname);
             },
             mouseOut() {
-                model.state.counter.setDefaultCounter();
+                model.state.counter.setPrevCounter();
             }
         }
     }

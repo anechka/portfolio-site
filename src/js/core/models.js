@@ -1,9 +1,11 @@
-import app from "../main"
+import pluralize from "pluralize"
+
 import about from "../../json/about.json"
 import projects from "../../json/projects.json"
 
 const model = {
     state: {
+        dynamicView: null,
         about,
         projects: {
             source: projects,
@@ -47,7 +49,7 @@ const model = {
                     tags[tagName] = true;
 
                     const counterProjects = model.state.projects.howManyProjectsOn(tagName);
-                    counterText = `${app.pluralize("project", counterProjects, true)} on ${tagName}`;
+                    counterText = `${pluralize("project", counterProjects, true)} on ${tagName}`;
 
                     for (let project of model.state.projects.source) {
                         const projectTagsArray = project.tags;
@@ -64,6 +66,8 @@ const model = {
 
                     if (couple.length === 1) group.push(couple);
                 }
+
+                console.info(counterText);
 
                 model.state.counter.text = counterText;
                 model.state.counter.prevText = model.state.counter.text;
@@ -104,13 +108,18 @@ const model = {
             angular: false
         },
         counter: {
+            defaultText: "Choose technology above",
             prevText: "",
             text: "",
             setCounter(value) {
                 if (typeof value === "string") this.text = value;
-                else this.text = `Show ${app.pluralize("project", value, true)}`;
+                else this.text = `Display ${pluralize("project", value, true)}`;
             },
-            setDefaultCounter() {
+            setCounterText(txt) {
+                this.prevText = this.text || this.defaultText;
+                this.text = txt || this.defaultText;
+            },
+            setPrevCounter() {
                 this.text = this.prevText;
             },
             showCounterTextForTag(tagName) {
@@ -120,7 +129,7 @@ const model = {
                 this.setCounter(counterProjects);
             }
         },
-        www: null
+        domain: null
     }
 };
 

@@ -9,7 +9,7 @@ ul#scene
 </template>
 
 <script>
-    import Parallax from '../vendor/parallax'
+    import Parallax from "Parallax"
     
     let thunders = 0;
     let clouds_move_to_right = false;
