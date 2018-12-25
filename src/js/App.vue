@@ -1,6 +1,8 @@
 <template lang="pug">
 .app
-    .container.parallax_container
+    include templates/routes.pug
+
+    .container.parallax_container(v-else)
         clouds
     .container.main-content-container
         include templates/headers.pug
@@ -14,10 +16,11 @@
         include templates/social.pug
 
     link(rel="stylesheet", href="css/main.min.css")
-    link(rel="icon", href="favicon.ico")
 </template>
 
 <script>
+    import CDN from "../json/cdn.json"
+
     import clouds from "components/parallax.vue"
     import about from "components/about.vue"
     import tags from "components/tags.vue"
@@ -25,7 +28,6 @@
     import portfolio from "components/portfolio.vue"
     import email from "components/email.vue"
 
-    import model from "core/models"
     import setupModels from "./core/controller"
 
     export default {
@@ -33,14 +35,21 @@
         components: { clouds, about, tags, counter, portfolio, email },
         data() {
             return {
-                state: model.state
+                CDN: CDN[CDN.use],
+                displayRoutes: false
             }
         },
         methods: {},
         created() {
             setupModels();
 
-            this.state.projects.displayCurrent()
+            window.addEventListener('keydown', (event) => {
+
+                if (event.key === "F1") {
+                    this.displayRoutes = !this.displayRoutes
+                }
+
+            });
         }
     }
 </script>

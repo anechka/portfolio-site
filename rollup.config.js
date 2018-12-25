@@ -1,10 +1,12 @@
 import vue from 'rollup-plugin-vue'
 import json from 'rollup-plugin-json';
+import serve from 'rollup-plugin-serve'
 
 const terser = require("rollup-plugin-terser").terser;
 const includePaths = require("rollup-plugin-includepaths");
 
 const isDev = process.env.NODE_ENV !== "production";
+const isWatchMode = process.env.ROLLUP_WATCH;
 
 export default {
     input: "src/js/main.js",
@@ -35,6 +37,11 @@ export default {
         }),
         vue({ css: false }),
         json(),
-        (!isDev && terser({ sourcemap: false }))
+        (!isDev && terser({ sourcemap: isDev, safari10: true, mangle: { reserved: ["Vue", "exports"]}})),
+        isWatchMode && serve({
+            contentBase: "deploy/docker/dist",
+            host: "0.0.0.0",
+            port: 8080,
+        })
     ]
 }
