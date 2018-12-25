@@ -1,14 +1,47 @@
-0.0.0.0:8080
+0.0.0.0:80, https://novikova.us
 
-root /var/www/html
+redir {
+    /django     "/#/django"
+    /bootstrap  "/#/bootstrap"
+    /less       "/#/less"
+    /sass       "/#/sass"
+    /nodejs     "/#/nodejs"
+    /python     "/#/python"
+    /javascript "/#/javascript"
+    /js         "/#/javascript"
+    /jquery     "/#/jquery"
+    /angular    "/#/angular"
 
-log stdout
+    /bookreport "/#project/Bookreport"
+    /sumati "/#/project/Sumati"
+    /hammer "/#/project/Hammer"
+    /premium "/#/project/Premium%20Parts"
+    /catapult "https://novikova.us/#project/Catapult"
+    /imobo "https://novikova.us/#project/Imobo"
+    /redalgo "https://novikova.us/#project/Redalgo"
+    /conclave "https://novikova.us/#project/Conclave"
+    /healthy "https://novikova.us/#project/GoHealthy"
+}
 
-errors stdout
+header / Cache-Control "max-age=2592000"
 
 gzip {
 	ext "" ".txt" ".htm" ".html" ".css" ".js" ".otf" ".woff" ".eot" ".svg"
 	level 5
+}
+
+push / {
+    /favicon.ico
+
+    /js/app.js
+    /js/vendor.js
+    /css/main.min.css
+
+    /images/avatar.jpg
+    /images/menangen-logo.svg
+    /images/upwork-profile-link.svg
+    /images/web-logos.svg
+    /images/web-logos-hover.svg
 }
 
 mime {
@@ -18,13 +51,6 @@ mime {
 	.eot application/vnd.ms-fontobject
 }
 
-redir {
-    /django     "/#/django"
-    /bootstrap     "/#/bootstrap"
-    /less     "/#/less"
-    /sass     "/#/sass"
-    /nodejs     "/#/nodejs"
-    /python     "/#/python"
-    /jquery     "/#/jquery"
-    /angular     "/#/angular"
-}
+root /var/www/html
+log stdout
+errors stdout

@@ -14,21 +14,23 @@ ul#scene
     let thunders = 0;
     let clouds_move_to_right = false;
     let parallaxView;
-    
+
     export default {
         data() {
+            const imageCDN = this.$root.CDN;
+
             return {
                 cloudsImages: {
-                    cloud1: "images/clouds_layer_1.png",
-                    cloud2: "images/clouds_layer_2.png",
-                    cloud3: "images/clouds_layer_3.png",
-                    cloud4: "images/clouds_layer_4.png",
-                    cloud5: "images/clouds_layer_5.png"
+                    cloud1: `${imageCDN}/clouds_layer_1.png`,
+                    cloud2: `${imageCDN}/clouds_layer_2.png`,
+                    cloud3: `${imageCDN}/clouds_layer_3.png`,
+                    cloud4: `${imageCDN}/clouds_layer_4.png`,
+                    cloud5: `${imageCDN}/clouds_layer_5.png`
                 },
                 hiddenImages: {
-                    storm1: "images/clouds_layer_5_storm1.png",
-                    storm2: "images/clouds_layer_5_storm2.png",
-                    storm3: "images/clouds_layer_5_storm2_extra.png"
+                    storm1: `${imageCDN}/clouds_layer_5_storm1.png`,
+                    storm2: `${imageCDN}/clouds_layer_5_storm2.png`,
+                    storm3: `${imageCDN}/clouds_layer_5_storm2_extra.png`
                 }
             }
         },

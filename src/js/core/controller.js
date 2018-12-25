@@ -94,6 +94,9 @@ export default function setupModels() {
     setupAbout();
 
     model.state.domain = document.querySelector("meta[name=author]").content;
+
     model.state.counter.setCounterText(`More ${pluralize("project", model.state.projects.source.length, true)} in USA released`);
-    console.info("Complete setup Models");
+    model.state.projects.displayCurrent();
+
+    // console.info("Complete setup Models");
 }
