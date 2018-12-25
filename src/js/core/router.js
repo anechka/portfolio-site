@@ -36,11 +36,11 @@ const RouterPlugin = {
         }
     },
     install (Vue, options) {
-        console.info("Setup route plugin");
+        // console.info("Setup route plugin");
         if (location.hasOwnProperty("hash")) {
             window.addEventListener("hashchange", RouterPlugin.processRoute, false);
 
-            RouterPlugin.processRoute();
+            RouterPlugin.processRoute()
         }
     }
 };

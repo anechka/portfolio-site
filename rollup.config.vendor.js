@@ -26,6 +26,6 @@ export default {
         }),
         json(),
         nodeResolve({ browser: true, jsnext: true, main: true, modulesOnly: true }),
-        (!isDev && terser({ sourcemap: false }))
+        (!isDev && terser({ sourcemap: false, safari10: true, mangle: { reserved: ["Vue", "exports"]}}))
     ]
 }

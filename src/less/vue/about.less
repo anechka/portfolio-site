@@ -1,8 +1,3 @@
-.padding-inline() {
-    padding-right: @about-developer-padding;
-    display: inline;
-}
-
 .about-developer {
     // Fix vertical position for centering between header and tags
     position: relative;
@@ -17,28 +12,34 @@
         }
 
         h4, h5, h6 {
-            .padding-inline;
             font-family: Days, sans-serif;
             transition: color @transition-header-time ease-in;
             color: @about-developer-header-color;
         }
 
-        span.environment, span.availability { color: @sky-cloudly-color
+        h4 {
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
 
-        summary {
-            display: inline;
+        .info {
+            margin-bottom: 0;
 
-            strong {
-                .padding-inline;
-                color: @cloud-color;
-            }
-            span {
-                .padding-inline;
-                color: @sky-cloudly-color;
+            li {
+                display: inline-block;
+                padding-right: @about-developer-padding;
+
+                strong {
+                    padding-right: @about-developer-padding;
+                    color: @cloud-color;
+                }
+
+                span {
+                    color: @sky-cloudly-color;
+                }
+
             }
         }
-
 
         &:hover {
             h4, h5, h6 { color: @green-grass-color; .reset-transition() }

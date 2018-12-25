@@ -7,15 +7,15 @@
 @tag-margin-right-md: 4px;
 
 .position-sprite(@imageSrc) {
-    &.sprite-django { .process-sprite-position(1, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0;};
-    &.sprite-javascript { .process-sprite-position(2, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-python { .process-sprite-position(3, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-nodejs { .process-sprite-position(4, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-sass { .process-sprite-position(5, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-bootstrap { .process-sprite-position(6, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-jquery { .process-sprite-position(7, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-angular { .process-sprite-position(8, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
-    &.sprite-less { .process-sprite-position(9, @tag-width, @tag-gutter); background: url("@{images}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-django { .process-sprite-position(1, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0;};
+    &.sprite-javascript { .process-sprite-position(2, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-python { .process-sprite-position(3, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-nodejs { .process-sprite-position(4, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-sass { .process-sprite-position(5, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-bootstrap { .process-sprite-position(6, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-jquery { .process-sprite-position(7, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-angular { .process-sprite-position(8, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
+    &.sprite-less { .process-sprite-position(9, @tag-width, @tag-gutter); background: url("@{images-local}/@{imageSrc}") @sprite-position 0; };
 }
 
 .position-sprite-hover() {
