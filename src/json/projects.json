@@ -693,8 +693,8 @@
     },
     "links": [
       {
-        "href": "http://gohealthy.travel",
-        "img": "hammer-page@2x.png",
+        "href": "index.html",
+        "img": "gohealthy.jpg",
         "txt": "Browse Landing page",
         "class": "btn-site-link"
       },
@@ -717,7 +717,7 @@
         "class": "btn-primary"
       }
     ],
-    "dir": null
+    "dir": "healthy"
   },
 
   {
