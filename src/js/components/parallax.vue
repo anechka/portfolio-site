@@ -5,7 +5,6 @@ ul#scene
     li.layer(data-depth="0.30"): img.cloud_layer.cloud_two(:src="cloudsImages.cloud2")
     li.layer(data-depth="0.60"): img.cloud_layer.cloud_three(:src="cloudsImages.cloud3")
     li.layer(data-depth="1.00"): img.cloud_layer.cloud_four(:src="cloudsImages.cloud4")
-    li.invisible: img(v-for="(image, src) in hiddenImages", :src="image", width="0", height="0")
 </template>
 
 <script>
@@ -48,27 +47,27 @@ ul#scene
                     parallaxView.friction(0.2, 0.1);
                 }
             },
-            intervalHandler() {
-                const makeThunder = () => {
-                    const cloudDefaultSource = this.cloudsImages.cloud5;
+            makeThunder() {
+                const cloudDefaultSource = this.cloudsImages.cloud5;
 
-                    const luke_const = Math.random();
-                    let src = this.hiddenImages.storm1;
+                const luke_const = Math.random();
+                let src = this.hiddenImages.storm1;
 
-                    if (luke_const > 0.5) {
-                        src = this.hiddenImages.storm2;
+                if (luke_const > 0.5) {
+                    src = this.hiddenImages.storm2;
 
-                        if (luke_const > 0.77) {
-                            src = this.hiddenImages.storm3
-                        }
+                    if (luke_const > 0.77) {
+                        src = this.hiddenImages.storm3
                     }
+                }
 
-                    this.cloudsImages.cloud5 = src;
+                this.cloudsImages.cloud5 = src;
 
-                    setTimeout(() => {
-                        this.cloudsImages.cloud5 = cloudDefaultSource;
-                    }, 100);
-                };
+                setTimeout(() => {
+                    this.cloudsImages.cloud5 = cloudDefaultSource;
+                }, 100);
+            },
+            intervalHandler() {
 
                 const luke_const = Math.random();
 
@@ -86,7 +85,7 @@ ul#scene
                 }
 
                 if ((luke_const > 0.85 && thunders < 5) || luke_const > 0.97) {
-                    makeThunder();
+                    this.makeThunder();
                     thunders++;
 
                     if (thunders > 10) {

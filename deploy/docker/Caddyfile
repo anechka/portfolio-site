@@ -42,6 +42,14 @@ push / {
     /images/upwork-profile-link.svg
     /images/web-logos.svg
     /images/web-logos-hover.svg
+
+    /images/clouds_layer_1.png
+    /images/clouds_layer_2.png
+    /images/clouds_layer_3.png
+    /images/clouds_layer_4.png
+    /images/clouds_layer_5.png
+
+    /images/clouds_rain_background.png
 }
 
 mime {
