@@ -1,55 +1,57 @@
 .feedback {
 
-    table {
-        margin: auto;
+    .client-feedback {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
 
-        tr {
-            span {
-                display: inline-block;
-                max-width: 15em;
+        &:hover {
+            span { color: @green-grass-color; .reset-transition(); }
 
-                // Bootstrap's blockquote margin clone
-                margin-bottom: 20px;
-                //padding-left: 32px;
-
-                font-size: 1.5em;
-                font-weight: bold;
-
-                color: @feedback-color;
-                .header-transition(0.1s)
-            }
-
-            &:hover {
-                span { color: @green-grass-color; .reset-transition(); }
-
-                blockquote {
-                    color: @feedback-text-hover-color;
-                    border-color: @feedback-bg-color;
-                    background-color: @feedback-highlight-color;
-                    .reset-transition();
-                }
+            blockquote {
+                color: @feedback-text-hover-color;
+                border-color: @feedback-bg-color;
+                background-color: @feedback-highlight-color;
+                .reset-transition();
             }
         }
 
+        @media(max-width: 600px) {
+            flex-direction: column;
+        }
+
+        span {
+            font-size: 1.5em;
+            font-weight:700;
+            color: #fff;
+            flex: 1 0 0;
+            padding-right: 10px;
+            @media(max-width: 600px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        blockquote {
+            margin: 0;
+            max-width: 15em;
+            border-left: 5px solid;
+            border-color: @feedback-left-border-color;
+            //border-radius: 2px;
+
+            background-color: @feedback-bg-color;
+            color: @feedback-color;
+            .background-transition(@transition-background-time);
+        }
     }
 
 
     h1 {
         color: @green-light-color;
+        margin-bottom: 20px;
 
         &:hover { color: @green-grass-color }
-    }
-
-    blockquote {
-        border-left: 5px solid;
-        border-color: @feedback-left-border-color;
-        //border-radius: 2px;
-
-        background-color: @feedback-bg-color;
-        color: @feedback-color;
-        .background-transition(@transition-background-time);
-
-        max-width: 15.0em;
     }
 
     @media (max-width: 480px) {
